@@ -1,0 +1,6 @@
+# Logs / temp
+*.log
+.DS_Store
+Thumbs.db
+
+# 工作区无关产物（保留 media/ 下原始产物原样）
