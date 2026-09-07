@@ -600,81 +600,115 @@ a{color:inherit;text-decoration:none}
       <p class="reveal" data-reveal-delay="1">五个环节各司其职，每个环节都有校验兜底，而不是一个黑箱；三库分离，一条数据只进一次。</p>
     </div>
     <div class="reveal">
-      <svg class="diagram" viewBox="0 0 1040 170" role="img" aria-label="海盟 五步流水线">
+      <svg class="diagram" viewBox="0 0 1040 196" role="img" aria-label="系统 五步流水线">
         <defs>
           <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="arrow"/></marker>
         </defs>
         <g font-family="Geist, sans-serif">
-          <rect class="box" x="20" y="34" width="180" height="104" rx="14"/>
-          <circle cx="52" cy="66" r="13" fill="var(--accent)"/><text class="n" x="52" y="71" text-anchor="middle">1</text>
-          <text class="t" x="44" y="98" font-size="16">价表上传</text>
-          <text class="s" x="44" y="120" font-size="12">Excel 源文件</text>
+          <rect x="20" y="6" width="1000" height="22" rx="7" fill="var(--accent)" opacity="0.10"/>
+          <text x="520" y="21" text-anchor="middle" font-size="11" fill="var(--accent)" font-weight="700">AI 智能引擎 × 商务专业把关</text>
 
-          <rect class="box" x="225" y="34" width="180" height="104" rx="14"/>
-          <circle cx="257" cy="66" r="13" fill="var(--accent)"/><text class="n" x="257" y="71" text-anchor="middle">2</text>
-          <text class="t" x="249" y="98" font-size="16">解析入库</text>
-          <text class="s" x="249" y="120" font-size="12">卡派 / 海派 / 船期</text>
+          <rect class="box" x="20" y="42" width="180" height="90" rx="14"/>
+          <circle cx="52" cy="68" r="13" fill="var(--accent)"/><text class="n" x="52" y="73" text-anchor="middle">1</text>
+          <text class="t" x="44" y="98" font-size="15">价表上传</text>
+          <text class="s" x="44" y="116" font-size="11">Excel 源文件</text>
 
-          <rect class="box" x="430" y="34" width="180" height="104" rx="14"/>
-          <circle cx="462" cy="66" r="13" fill="var(--accent)"/><text class="n" x="462" y="71" text-anchor="middle">3</text>
-          <text class="t" x="454" y="98" font-size="16">渠道归类</text>
-          <text class="s" x="454" y="120" font-size="12">母集对照表映射</text>
+          <rect class="box" x="225" y="42" width="180" height="90" rx="14"/>
+          <rect x="367" y="46" width="30" height="15" rx="7" fill="var(--accent)" opacity="0.16"/>
+          <text x="382" y="57" text-anchor="middle" font-size="9" fill="var(--accent)" font-weight="700">AI</text>
+          <circle cx="257" cy="68" r="13" fill="var(--accent)"/><text class="n" x="257" y="73" text-anchor="middle">2</text>
+          <text class="t" x="249" y="98" font-size="15">解析入库</text>
+          <text class="s" x="249" y="116" font-size="11">卡派 · 海派 · 船期 · 规则</text>
 
-          <rect class="box" x="635" y="34" width="180" height="104" rx="14"/>
-          <circle cx="667" cy="66" r="13" fill="var(--accent)"/><text class="n" x="667" y="71" text-anchor="middle">4</text>
-          <text class="t" x="659" y="98" font-size="16">报价询价</text>
-          <text class="s" x="659" y="120" font-size="12">一条查询三秒出底价</text>
+          <rect class="box" x="430" y="42" width="180" height="90" rx="14"/>
+          <rect x="572" y="46" width="30" height="15" rx="7" fill="var(--accent)" opacity="0.16"/>
+          <text x="587" y="57" text-anchor="middle" font-size="9" fill="var(--accent)" font-weight="700">AI</text>
+          <circle cx="462" cy="68" r="13" fill="var(--accent)"/><text class="n" x="462" y="73" text-anchor="middle">3</text>
+          <text class="t" x="454" y="98" font-size="15">渠道归类</text>
+          <text class="s" x="454" y="116" font-size="11">母集对照表自动映射</text>
 
-          <rect class="box-accent" x="840" y="34" width="180" height="104" rx="14"/>
-          <circle cx="872" cy="66" r="13" fill="var(--accent)"/><text class="n" x="872" y="71" text-anchor="middle">5</text>
-          <text class="t" x="864" y="98" font-size="16">监控展示</text>
-          <text class="s" x="864" y="120" font-size="12">对比表 / 网页 / 周报</text>
+          <rect class="box" x="635" y="42" width="180" height="90" rx="14"/>
+          <rect x="777" y="46" width="30" height="15" rx="7" fill="var(--accent)" opacity="0.16"/>
+          <text x="792" y="57" text-anchor="middle" font-size="9" fill="var(--accent)" font-weight="700">AI</text>
+          <circle cx="667" cy="68" r="13" fill="var(--accent)"/><text class="n" x="667" y="73" text-anchor="middle">4</text>
+          <text class="t" x="659" y="98" font-size="15">智能报价询价</text>
+          <text class="s" x="659" y="116" font-size="11">三秒出底价 · 全渠道比价</text>
+
+          <rect class="box-accent" x="840" y="42" width="180" height="90" rx="14"/>
+          <circle cx="872" cy="68" r="13" fill="var(--accent)"/><text class="n" x="872" y="73" text-anchor="middle">5</text>
+          <text class="t" x="864" y="98" font-size="15">监控展示</text>
+          <text class="s" x="864" y="116" font-size="11">对比表 · 网页 · 周报</text>
 
           <path class="link" d="M200 86 L215 86" marker-end="url(#arr)"/>
           <path class="link" d="M405 86 L420 86" marker-end="url(#arr)"/>
           <path class="link" d="M610 86 L625 86" marker-end="url(#arr)"/>
           <path class="link" d="M815 86 L830 86" marker-end="url(#arr)"/>
+
+          <path class="link" d="M412 90 L412 136"/>
+          <rect x="375" y="138" width="74" height="20" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+          <text x="412" y="152" text-anchor="middle" font-size="10" fill="var(--muted)">商务审核</text>
+
+          <path class="link" d="M617 90 L617 136"/>
+          <rect x="580" y="138" width="74" height="20" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+          <text x="617" y="152" text-anchor="middle" font-size="10" fill="var(--muted)">商务审核</text>
+
+          <text x="520" y="188" text-anchor="middle" font-size="11" fill="var(--muted)">AI 负责解析 · 归类 · 匹配 · 计算，商务负责审核 · 决策 · 定价</text>
         </g>
       </svg>
     </div>
     <div class="reveal" style="margin-top:40px">
-      <svg class="diagram" viewBox="0 0 1040 470" role="img" aria-label="海盟 三库分离架构">
+      <svg class="diagram" viewBox="0 0 1040 460" role="img" aria-label="系统 三库分离架构">
         <defs>
           <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="arrow"/></marker>
         </defs>
         <g font-family="Geist, sans-serif">
-          <rect class="box" x="420" y="14" width="200" height="54" rx="12"/>
-          <text class="t" x="520" y="46" text-anchor="middle" font-size="16">Excel 价表源</text>
-          <path class="link" d="M520 68 L520 92" marker-end="url(#arr2)"/>
+          <rect x="20" y="6" width="1000" height="22" rx="7" fill="var(--accent)" opacity="0.10"/>
+          <text x="520" y="21" text-anchor="middle" font-size="11" fill="var(--accent)" font-weight="700">数据治理 · 一条数据只进一次</text>
 
-          <rect class="box" x="420" y="96" width="200" height="54" rx="12"/>
-          <text class="t" x="520" y="128" text-anchor="middle" font-size="16">统一入库管道</text>
-          <path class="link" d="M520 150 L520 174" marker-end="url(#arr2)"/>
+          <rect class="box" x="420" y="36" width="200" height="46" rx="12"/>
+          <text class="t" x="520" y="64" text-anchor="middle" font-size="15">Excel 价表源</text>
+          <path class="link" d="M520 82 L520 96" marker-end="url(#arr2)"/>
 
-          <rect class="box" x="40" y="178" width="270" height="128" rx="14"/>
-          <text class="t" x="175" y="210" text-anchor="middle" font-size="16">测试库</text>
-          <text class="s" x="175" y="232" text-anchor="middle" font-size="12">实验室 · 新产出先落这里</text>
-          <text class="s" x="175" y="252" text-anchor="middle" font-size="12">审批通过才迁生产</text>
+          <rect class="box" x="420" y="100" width="200" height="46" rx="12"/>
+          <text class="t" x="520" y="128" text-anchor="middle" font-size="15">统一入库管道</text>
+          <path class="link" d="M520 146 L520 164" marker-end="url(#arr2)"/>
 
-          <rect class="box-accent" x="360" y="178" width="320" height="128" rx="14"/>
-          <text class="t" x="520" y="210" text-anchor="middle" font-size="16">生产库（军火库）</text>
-          <text class="s" x="520" y="232" text-anchor="middle" font-size="12">报价 / 查询 / 对比只读这里</text>
-          <rect class="box" x="376" y="248" width="90" height="46" rx="8"/>
-          <text class="t" x="421" y="275" text-anchor="middle" font-size="12">prices</text>
-          <rect class="box" x="476" y="248" width="90" height="46" rx="8"/>
-          <text class="t" x="521" y="275" text-anchor="middle" font-size="12">prices_eu</text>
-          <rect class="box" x="576" y="248" width="90" height="46" rx="8"/>
-          <text class="t" x="621" y="275" text-anchor="middle" font-size="12">prices_ca</text>
+          <rect class="box" x="40" y="168" width="270" height="136" rx="14"/>
+          <text class="t" x="175" y="198" text-anchor="middle" font-size="15">测试库</text>
+          <text class="s" x="175" y="220" text-anchor="middle" font-size="11">实验室 · 新产出先落这里</text>
+          <text class="s" x="175" y="240" text-anchor="middle" font-size="11">审批通过才迁生产</text>
+          <text x="175" y="264" text-anchor="middle" font-size="10" fill="var(--accent)">研发 · 试错 · 验证</text>
 
-          <rect class="box" x="730" y="178" width="270" height="128" rx="14"/>
-          <text class="t" x="865" y="210" text-anchor="middle" font-size="16">档案库</text>
-          <text class="s" x="865" y="232" text-anchor="middle" font-size="12">博物馆 · 旧数据去时效封存</text>
-          <text class="s" x="865" y="252" text-anchor="middle" font-size="12">趋势图的数据来源</text>
+          <rect class="box-accent" x="360" y="168" width="320" height="136" rx="14"/>
+          <text class="t" x="520" y="198" text-anchor="middle" font-size="15">生产库（军火库）</text>
+          <text class="s" x="520" y="220" text-anchor="middle" font-size="11">报价 / 查询 / 对比只读这里</text>
+          <rect class="box" x="378" y="232" width="90" height="44" rx="8"/>
+          <text class="t" x="423" y="259" text-anchor="middle" font-size="11">prices</text>
+          <rect class="box" x="478" y="232" width="90" height="44" rx="8"/>
+          <text class="t" x="523" y="259" text-anchor="middle" font-size="11">prices_eu</text>
+          <rect class="box" x="578" y="232" width="90" height="44" rx="8"/>
+          <text class="t" x="623" y="259" text-anchor="middle" font-size="11">prices_ca</text>
 
-          <path class="link" d="M520 306 L520 334" marker-end="url(#arr2)"/>
+          <rect class="box" x="730" y="168" width="270" height="136" rx="14"/>
+          <text class="t" x="865" y="198" text-anchor="middle" font-size="15">档案库</text>
+          <text class="s" x="865" y="220" text-anchor="middle" font-size="11">博物馆 · 旧数据去时效封存</text>
+          <text class="s" x="865" y="240" text-anchor="middle" font-size="11">趋势图的数据来源</text>
+          <text x="865" y="264" text-anchor="middle" font-size="10" fill="var(--accent)">只进不出 · 永久留档</text>
 
-          <rect class="box" x="360" y="338" width="320" height="56" rx="12"/>
-          <text class="t" x="520" y="372" text-anchor="middle" font-size="16">查询 · 报价 · 监控 · 展示</text>
+          <path class="link" d="M310 236 L350 236" marker-end="url(#arr2)"/>
+          <text x="330" y="226" text-anchor="middle" font-size="10" fill="var(--muted)">审批迁移</text>
+
+          <path class="link" d="M680 236 L720 236" marker-end="url(#arr2)"/>
+          <text x="700" y="226" text-anchor="middle" font-size="10" fill="var(--muted)">去时效归档</text>
+
+          <path class="link" d="M520 304 L520 328" marker-end="url(#arr2)"/>
+
+          <rect class="box" x="360" y="332" width="320" height="46" rx="12"/>
+          <text class="t" x="520" y="360" text-anchor="middle" font-size="15">查询 · 报价 · 监控 · 展示</text>
+          <path class="link" d="M520 378 L520 398" marker-end="url(#arr2)"/>
+
+          <rect class="box-accent" x="360" y="402" width="320" height="46" rx="12"/>
+          <text class="t" x="520" y="430" text-anchor="middle" font-size="15">商务决策支持</text>
         </g>
       </svg>
     </div>
