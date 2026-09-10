@@ -384,38 +384,54 @@ a{color:inherit;text-decoration:none}
       <h2 class="reveal">项目背景</h2>
       <p class="reveal" data-reveal-delay="1">这些痛点不是凭空假设，是每一单都在真实发生的成本——错一次就是真金白银，慢一次客户就转走。</p>
     </div>
-    <div class="problem-grid">
-      <div class="p-card reveal">
-        <div class="p-num mono">01</div>
-        <h3>价表格式五花八门</h3>
-        <p>二十五家供应商，渠道名、重量段、进仓点写法全不一样。有的仓码在 A 列，有的用中文逗号分隔，人工核对慢且容易看串行。</p>
-      </div>
-      <div class="p-card reveal" data-reveal-delay="1">
-        <div class="p-num mono">02</div>
-        <h3>附加费藏在表外</h3>
-        <p>比重折扣、尺寸附加费、报关费散落各处。单价之外漏一项，报出去的就是一个错的整票价。</p>
-      </div>
-      <div class="p-card reveal" data-reveal-delay="2">
-        <div class="p-num mono">03</div>
-        <h3>价表七天就失效</h3>
-        <p>价表七天一过期，装柜集中在周四五。人工很难盯住每家的有效期，报价用的是过期数据而不自知。</p>
-      </div>
-      <div class="p-card reveal" data-reveal-delay="3">
-        <div class="p-num mono">04</div>
-        <h3>价格散乱，比价全凭人脑</h3>
-        <p>二十五家价格散在几十个 Excel 里，同仓不同家、同渠道多名、重量档全不统一。比一次价要十几张表横向跳，比不快，也未必比得准。</p>
-      </div>
-      <div class="p-card reveal" data-reveal-delay="4">
-        <div class="p-num mono">05</div>
-        <h3>渠道说法不一，撞名就成错价</h3>
-        <p>同一渠道各家叫法天差地别，普船、卡派、海派一个词指好几条线。归错一条线，报价就偏一个档，多一档就是几十块一公斤。</p>
-      </div>
-      <div class="p-card reveal" data-reveal-delay="5">
-        <div class="p-num mono">06</div>
-        <h3>更新快、节奏散，人的反应跟不上</h3>
-        <p>二十五家每周都在出新价，可装柜都挤在周四五。人工根本盯不住谁周一换了表，往往报出去的是上一周的价。</p>
-      </div>
-    </div>
+    <svg class="diagram reveal" viewBox="0 0 1040 460" role="img" aria-label="项目背景 六大痛点 现象与后果对照">
+      <defs>
+        <marker id="arr13" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="arrow"/></marker>
+      </defs>
+      <g font-family="Geist, sans-serif">
+        <rect class="box" x="20" y="16" width="440" height="56" rx="14"/>
+        <text class="t" x="240" y="38" text-anchor="middle" font-size="14">价表格式五花八门</text>
+        <text class="s" x="240" y="58" text-anchor="middle" font-size="11">二十五家渠道名、重量段、进仓点写法全不一样</text>
+        <path class="link" d="M460 44 L576 44" marker-end="url(#arr13)"/>
+        <rect class="box-accent" x="580" y="16" width="440" height="56" rx="14"/>
+        <text class="t" x="800" y="44" text-anchor="middle" font-size="14">人工核对慢 · 容易看串行</text>
+
+        <rect class="box" x="20" y="88" width="440" height="56" rx="14"/>
+        <text class="t" x="240" y="110" text-anchor="middle" font-size="14">附加费藏在表外</text>
+        <text class="s" x="240" y="130" text-anchor="middle" font-size="11">比重折扣 · 尺寸费 · 报关费散落各处</text>
+        <path class="link" d="M460 116 L576 116" marker-end="url(#arr13)"/>
+        <rect class="box-accent" x="580" y="88" width="440" height="56" rx="14"/>
+        <text class="t" x="800" y="116" text-anchor="middle" font-size="14">漏一项 · 报错价</text>
+
+        <rect class="box" x="20" y="160" width="440" height="56" rx="14"/>
+        <text class="t" x="240" y="182" text-anchor="middle" font-size="14">价表七天就失效</text>
+        <text class="s" x="240" y="202" text-anchor="middle" font-size="11">装柜集中在周四五，盯不住每家有效期</text>
+        <path class="link" d="M460 188 L576 188" marker-end="url(#arr13)"/>
+        <rect class="box-accent" x="580" y="160" width="440" height="56" rx="14"/>
+        <text class="t" x="800" y="188" text-anchor="middle" font-size="14">用过期数据报价而不自知</text>
+
+        <rect class="box" x="20" y="232" width="440" height="56" rx="14"/>
+        <text class="t" x="240" y="254" text-anchor="middle" font-size="14">价格散乱，比价凭人脑</text>
+        <text class="s" x="240" y="274" text-anchor="middle" font-size="11">几十个 Excel 横向跳，重量档全不统一</text>
+        <path class="link" d="M460 260 L576 260" marker-end="url(#arr13)"/>
+        <rect class="box-accent" x="580" y="232" width="440" height="56" rx="14"/>
+        <text class="t" x="800" y="260" text-anchor="middle" font-size="14">比不快 · 未必比得准</text>
+
+        <rect class="box" x="20" y="304" width="440" height="56" rx="14"/>
+        <text class="t" x="240" y="326" text-anchor="middle" font-size="14">渠道说法不一，撞名成错价</text>
+        <text class="s" x="240" y="346" text-anchor="middle" font-size="11">普船、卡派、海派一个词指好几条线</text>
+        <path class="link" d="M460 332 L576 332" marker-end="url(#arr13)"/>
+        <rect class="box-accent" x="580" y="304" width="440" height="56" rx="14"/>
+        <text class="t" x="800" y="332" text-anchor="middle" font-size="14">归错线 · 偏一个档就是几十块</text>
+
+        <rect class="box" x="20" y="376" width="440" height="56" rx="14"/>
+        <text class="t" x="240" y="398" text-anchor="middle" font-size="14">更新快、节奏散，人跟不上</text>
+        <text class="s" x="240" y="418" text-anchor="middle" font-size="11">每周都在出新价，盯不住谁周一换了表</text>
+        <path class="link" d="M460 404 L576 404" marker-end="url(#arr13)"/>
+        <rect class="box-accent" x="580" y="376" width="440" height="56" rx="14"/>
+        <text class="t" x="800" y="404" text-anchor="middle" font-size="14">报出去的是上一周的价</text>
+      </g>
+    </svg>
 
 
   <!-- 复杂价表演示：3×2 网格 + 点击放大 -->
@@ -456,6 +472,7 @@ a{color:inherit;text-decoration:none}
         </div>
       </div>
     </div>
+  </div>
   </div>
   <!-- 放大弹窗 -->
   <div class="sheet-backdrop" id="sheetBackdrop"></div>
@@ -840,45 +857,73 @@ a{color:inherit;text-decoration:none}
     </div>
 
     <div class="sol-block reveal" id="impact-pain">
-      <div class="sol-tag">痛点破解成效</div>
-      <div class="problem-grid">
-        <div class="p-card">
-          <div class="p-num mono">01</div>
-          <h3>格式混乱 → 白名单统一</h3>
-          <p>各家格式各异，被统一成一条标准管道，仓码过白名单、渠道走对照表，看串行的毛病从根上断掉。</p>
-        </div>
-        <div class="p-card">
-          <div class="p-num mono">02</div>
-          <h3>附加费漏算 → 逐条核</h3>
-          <p>比重折扣、尺寸附加费、报关费逐条列出，不再堆总价，漏一项当场就能发现。</p>
-        </div>
-        <div class="p-card">
-          <div class="p-num mono">03</div>
-          <h3>价表过期 → 七天有效期门槛</h3>
-          <p>统一按价表日期加七天判过期，到期自动过滤失效价表，报价永远用最新在效的数据。</p>
-        </div>
-      </div>
+      <div class="sol-tag">痛点破解 · 三个老毛病，逐个断根</div>
+      <svg class="diagram" viewBox="0 0 1040 300" role="img" aria-label="痛点破解成效 三组对照">
+        <defs>
+          <marker id="arr8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="arrow"/></marker>
+        </defs>
+        <g font-family="Geist, sans-serif">
+          <rect class="box" x="20" y="20" width="440" height="72" rx="14"/>
+          <text class="t" x="240" y="52" text-anchor="middle" font-size="15">格式混乱 · 各家各写各的</text>
+          <text class="s" x="240" y="74" text-anchor="middle" font-size="11">仓码写法五花八门，看串行</text>
+          <path class="link" d="M460 56 L576 56" marker-end="url(#arr8)"/>
+          <rect class="box-accent" x="580" y="20" width="440" height="72" rx="14"/>
+          <text class="t" x="800" y="52" text-anchor="middle" font-size="15">白名单统一</text>
+          <text class="s" x="800" y="74" text-anchor="middle" font-size="11">仓码过白名单 · 渠道走对照表</text>
+
+          <rect class="box" x="20" y="112" width="440" height="72" rx="14"/>
+          <text class="t" x="240" y="144" text-anchor="middle" font-size="15">附加费漏算 · 堆总价看漏</text>
+          <text class="s" x="240" y="166" text-anchor="middle" font-size="11">漏一项当场发现不了</text>
+          <path class="link" d="M460 148 L576 148" marker-end="url(#arr8)"/>
+          <rect class="box-accent" x="580" y="112" width="440" height="72" rx="14"/>
+          <text class="t" x="800" y="144" text-anchor="middle" font-size="15">逐条核</text>
+          <text class="s" x="800" y="166" text-anchor="middle" font-size="11">比重折扣 · 尺寸费 · 报关费全列出</text>
+
+          <rect class="box" x="20" y="204" width="440" height="72" rx="14"/>
+          <text class="t" x="240" y="236" text-anchor="middle" font-size="15">价表过期 · 报旧价没人管</text>
+          <text class="s" x="240" y="258" text-anchor="middle" font-size="11">用没更新的价表报错价</text>
+          <path class="link" d="M460 240 L576 240" marker-end="url(#arr8)"/>
+          <rect class="box-accent" x="580" y="204" width="440" height="72" rx="14"/>
+          <text class="t" x="800" y="236" text-anchor="middle" font-size="15">七天有效期门槛</text>
+          <text class="s" x="800" y="258" text-anchor="middle" font-size="11">到期自动过滤 · 报价永远用最新在效数据</text>
+        </g>
+      </svg>
     </div>
 
     <div class="sol-block reveal" id="impact-ip">
-      <div class="sol-tag">知识产权转化</div>
-      <div class="problem-grid">
-        <div class="p-card">
-          <div class="p-num mono">01</div>
-          <h3>布局模板库 + 引擎族</h3>
-          <p>在册 25 家供应商的布局归纳成 4 个真模板，渠道映射、进仓点、重量档位全部结构化沉淀，新供应商对号即用、不靠人肉。</p>
-        </div>
-        <div class="p-card">
-          <div class="p-num mono">02</div>
-          <h3>技能库与方法论</h3>
-          <p>入库、报价、监控、展示、验证拆成独立 Skill，铁律写进规范；自我学习四件套让系统「知道自己不知道」，方法可复用、能力可持续。</p>
-        </div>
-        <div class="p-card">
-          <div class="p-num mono">03</div>
-          <h3>工程化与版本管理</h3>
-          <p>测试门禁、数据防线、三仓库版本管理，形成可持续演进的工程底座。</p>
-        </div>
-      </div>
+      <div class="sol-tag">知识产权转化 · 零散解法，沉淀成可复用资产</div>
+      <svg class="diagram" viewBox="0 0 1040 440" role="img" aria-label="知识产权转化 沉淀流水线">
+        <defs>
+          <marker id="arr9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="arrow"/></marker>
+        </defs>
+        <g font-family="Geist, sans-serif">
+          <rect class="box" x="320" y="12" width="400" height="52" rx="12"/>
+          <text class="t" x="520" y="43" text-anchor="middle" font-size="15">25 家在册供应商</text>
+          <path class="link" d="M520 64 L520 82" marker-end="url(#arr9)"/>
+
+          <rect class="box" x="320" y="86" width="400" height="56" rx="14"/>
+          <text class="t" x="520" y="110" text-anchor="middle" font-size="14">归纳 4 个真模板 · 引擎族</text>
+          <text class="s" x="520" y="130" text-anchor="middle" font-size="11">渠道映射 · 进仓点 · 重量档位 结构化沉淀</text>
+          <path class="link" d="M520 142 L520 160" marker-end="url(#arr9)"/>
+
+          <rect class="box" x="320" y="164" width="400" height="56" rx="14"/>
+          <text class="t" x="520" y="188" text-anchor="middle" font-size="14">拆成独立 Skill · 铁律写规范</text>
+          <text class="s" x="520" y="208" text-anchor="middle" font-size="11">入库 · 报价 · 监控 · 展示 · 验证 各司其职</text>
+          <path class="link" d="M520 220 L520 238" marker-end="url(#arr9)"/>
+
+          <rect class="box" x="320" y="242" width="400" height="56" rx="14"/>
+          <text class="t" x="520" y="266" text-anchor="middle" font-size="14">工程底座兜底</text>
+          <text class="s" x="520" y="286" text-anchor="middle" font-size="11">测试门禁 · 数据防线 · 三仓库版本管理</text>
+          <path class="link" d="M520 298 L520 316" marker-end="url(#arr9)"/>
+
+          <rect class="box-accent" x="320" y="320" width="400" height="56" rx="14"/>
+          <text class="t" x="520" y="344" text-anchor="middle" font-size="14">新供应商对号即用 · 能力可持续</text>
+          <text class="s" x="520" y="364" text-anchor="middle" font-size="11">别人带不走 · 我能复用</text>
+
+          <path class="link" d="M520 376 L520 392" marker-end="url(#arr9)"/>
+          <text class="s" x="520" y="412" text-anchor="middle" font-size="11">漂移 → 报警喊人重新学 · 学不会的喊得出来</text>
+        </g>
+      </svg>
     </div>
   </div>
   <!-- 放大弹窗 -->
@@ -894,66 +939,111 @@ a{color:inherit;text-decoration:none}
     </div>
 
     <div class="sol-block reveal" id="value-leap">
-      <div class="sol-tag">能力跃升 · 从做不了到自动做</div>
-      <div class="problem-grid">
-        <div class="p-card">
-          <div class="p-num mono">01</div>
-          <h3>全渠道全仓点 25 家在册价格</h3>
-          <p>以前人工做不完每个渠道、每个仓点的在册价格，现在对比表自动生成，一屏看清每家优劣。</p>
-        </div>
-        <div class="p-card">
-          <div class="p-num mono">02</div>
-          <h3>周报自动出</h3>
-          <p>以前没有精力做周报，现在核心指数、航线走势、市场动态、下周预测自动成稿。</p>
-        </div>
-        <div class="p-card">
-          <div class="p-num mono">03</div>
-          <h3>价格监控与月度起伏</h3>
-          <p>以前这周价格变动没人盯、更没有历史数据，现在价表入库即触发比对，一个月内起伏一眼看清，价格漂移还会主动喊你重新学。</p>
-        </div>
-      </div>
+      <div class="sol-tag">能力跃升 · 以前做不了，现在自动出</div>
+      <svg class="diagram" viewBox="0 0 1040 300" role="img" aria-label="能力跃升 以前现在对照">
+        <defs>
+          <marker id="arr10" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="arrow"/></marker>
+        </defs>
+        <g font-family="Geist, sans-serif">
+          <rect class="box" x="20" y="20" width="440" height="72" rx="14"/>
+          <text class="t" x="240" y="52" text-anchor="middle" font-size="15">全渠道全仓点在册价</text>
+          <text class="s" x="240" y="74" text-anchor="middle" font-size="11">以前人工做不完每个渠道仓点</text>
+          <path class="link" d="M460 56 L576 56" marker-end="url(#arr10)"/>
+          <rect class="box-accent" x="580" y="20" width="440" height="72" rx="14"/>
+          <text class="t" x="800" y="52" text-anchor="middle" font-size="15">对比表自动生成</text>
+          <text class="s" x="800" y="74" text-anchor="middle" font-size="11">25 家一屏看清每家优劣</text>
+
+          <rect class="box" x="20" y="112" width="440" height="72" rx="14"/>
+          <text class="t" x="240" y="144" text-anchor="middle" font-size="15">周报没精力做</text>
+          <text class="s" x="240" y="166" text-anchor="middle" font-size="11">以前指数走势全靠手攒</text>
+          <path class="link" d="M460 148 L576 148" marker-end="url(#arr10)"/>
+          <rect class="box-accent" x="580" y="112" width="440" height="72" rx="14"/>
+          <text class="t" x="800" y="144" text-anchor="middle" font-size="15">周报自动成稿</text>
+          <text class="s" x="800" y="166" text-anchor="middle" font-size="11">核心指数 · 走势 · 动态 · 预测</text>
+
+          <rect class="box" x="20" y="204" width="440" height="72" rx="14"/>
+          <text class="t" x="240" y="236" text-anchor="middle" font-size="15">价格变动没人盯</text>
+          <text class="s" x="240" y="258" text-anchor="middle" font-size="11">以前没有历史可比</text>
+          <path class="link" d="M460 240 L576 240" marker-end="url(#arr10)"/>
+          <rect class="box-accent" x="580" y="204" width="440" height="72" rx="14"/>
+          <text class="t" x="800" y="236" text-anchor="middle" font-size="15">入库即触发比对</text>
+          <text class="s" x="800" y="258" text-anchor="middle" font-size="11">月度起伏一眼看清 · 漂移主动喊你重新学</text>
+        </g>
+      </svg>
     </div>
 
     <div class="sol-block reveal" id="value-sustain">
-      <div class="sol-tag">项目持续性</div>
-      <div class="problem-grid">
-        <div class="p-card">
-          <div class="p-num mono">01</div>
-          <h3>价表周更新，持续保鲜</h3>
-          <p>每周新价表入库、旧价表归档，价格监控快照自动比对涨跌，数据永远不陈旧。</p>
-        </div>
-        <div class="p-card">
-          <div class="p-num mono">02</div>
-          <h3>决策留痕，越用越准</h3>
-          <p>供应商冻结、沿用、搁置等决策写进决策日志，下次会话自动加载，规则越沉淀越可靠。</p>
-        </div>
-        <div class="p-card">
-          <div class="p-num mono">03</div>
-          <h3>三仓库版本管理</h3>
-          <p>工程骨架、核心代码、询价网页分仓管理，每次改动可追溯、可回滚。</p>
-        </div>
-      </div>
+      <div class="sol-tag">项目持续性 · 越跑越新，越用越准</div>
+      <svg class="diagram" viewBox="0 0 1040 300" role="img" aria-label="项目持续性 保鲜循环">
+        <defs>
+          <marker id="arr11" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="arrow"/></marker>
+        </defs>
+        <g font-family="Geist, sans-serif">
+          <rect class="box" x="60" y="100" width="260" height="84" rx="14"/>
+          <text class="t" x="190" y="136" text-anchor="middle" font-size="15">价表周更新</text>
+          <text class="s" x="190" y="158" text-anchor="middle" font-size="11">新价入库 · 旧价归档</text>
+
+          <path class="link" d="M320 142 L380 142" marker-end="url(#arr11)"/>
+
+          <rect class="box" x="390" y="100" width="260" height="84" rx="14"/>
+          <text class="t" x="520" y="136" text-anchor="middle" font-size="15">快照自动比对</text>
+          <text class="s" x="520" y="158" text-anchor="middle" font-size="11">涨跌一眼看清</text>
+
+          <path class="link" d="M650 142 L710 142" marker-end="url(#arr11)"/>
+
+          <rect class="box" x="720" y="100" width="260" height="84" rx="14"/>
+          <text class="t" x="850" y="136" text-anchor="middle" font-size="15">决策留痕</text>
+          <text class="s" x="850" y="158" text-anchor="middle" font-size="11">冻结 · 沿用 · 搁置 全进日志</text>
+
+          <path class="link" d="M850 184 L850 214" marker-end="url(#arr11)"/>
+
+          <rect class="box-accent" x="720" y="218" width="260" height="64" rx="14"/>
+          <text class="t" x="850" y="246" text-anchor="middle" font-size="14">下次会话自动加载</text>
+          <text class="s" x="850" y="266" text-anchor="middle" font-size="11">规则越沉淀越可靠</text>
+
+          <path class="link" d="M720 250 L400 250" marker-end="url(#arr11)"/>
+          <text class="s" x="560" y="240" text-anchor="middle" font-size="11">三仓库版本管理 · 可追溯可回滚</text>
+
+          <path class="link" d="M190 184 L190 216"/>
+
+          <path class="link" d="M190 216 L190 142" marker-end="url(#arr11)"/>
+        </g>
+      </svg>
     </div>
 
     <div class="sol-block reveal" id="value-cover">
-      <div class="sol-tag">场景覆盖面</div>
-      <div class="problem-grid">
-        <div class="p-card">
-          <div class="p-num mono">04</div>
-          <h3>三条线路</h3>
-          <p>美线 16 家、欧英线 5 家、加拿大线 4 家（巨人/陆行/速鋆/英美）全入生产库，三表物理隔离，路由自动选表，永不串线。</p>
-        </div>
-        <div class="p-card">
-          <div class="p-num mono">05</div>
-          <h3>卡派海派全覆盖</h3>
-          <p>卡派、海派、船期、计费规则四类数据统一入库，一个口径管到底。</p>
-        </div>
-        <div class="p-card">
-          <div class="p-num mono">06</div>
-          <h3>双端输出</h3>
-          <p>企业微信端即时报价 + 询价网页公开查询，同一套底价，同一份保障。</p>
-        </div>
-      </div>
+      <div class="sol-tag">场景覆盖面 · 一套底座，多线复用</div>
+      <svg class="diagram" viewBox="0 0 1040 320" role="img" aria-label="场景覆盖面 三路汇聚">
+        <defs>
+          <marker id="arr12" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="arrow"/></marker>
+        </defs>
+        <g font-family="Geist, sans-serif">
+          <rect class="box" x="20" y="20" width="300" height="96" rx="14"/>
+          <text class="t" x="170" y="52" text-anchor="middle" font-size="15">三条线路</text>
+          <text class="s" x="170" y="74" text-anchor="middle" font-size="11">美线 16 · 欧英 5 · 加拿大 4</text>
+          <text class="s" x="170" y="92" text-anchor="middle" font-size="11">三表隔离 · 路由自动选表</text>
+
+          <rect class="box" x="370" y="20" width="300" height="96" rx="14"/>
+          <text class="t" x="520" y="52" text-anchor="middle" font-size="15">四类数据统一入库</text>
+          <text class="s" x="520" y="74" text-anchor="middle" font-size="11">卡派 · 海派 · 船期 · 计费规则</text>
+          <text class="s" x="520" y="92" text-anchor="middle" font-size="11">一个口径管到底</text>
+
+          <rect class="box" x="720" y="20" width="300" height="96" rx="14"/>
+          <text class="t" x="870" y="52" text-anchor="middle" font-size="15">双端输出</text>
+          <text class="s" x="870" y="74" text-anchor="middle" font-size="11">企业微信即时报价</text>
+          <text class="s" x="870" y="92" text-anchor="middle" font-size="11">询价网页公开查询</text>
+
+          <path class="link" d="M170 116 L170 132"/>
+          <path class="link" d="M520 116 L520 132"/>
+          <path class="link" d="M870 116 L870 132"/>
+          <path class="link" d="M170 132 L870 132"/>
+          <path class="link" d="M520 132 L520 150" marker-end="url(#arr12)"/>
+
+          <rect class="box-accent" x="320" y="154" width="400" height="72" rx="14"/>
+          <text class="t" x="520" y="184" text-anchor="middle" font-size="15">同一套底价</text>
+          <text class="s" x="520" y="204" text-anchor="middle" font-size="11">同一份保障 · 复制到更多线路场景</text>
+        </g>
+      </svg>
     </div>
   </div>
   <!-- 放大弹窗 -->
