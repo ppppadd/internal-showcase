@@ -279,6 +279,57 @@ a{color:inherit;text-decoration:none}
 /* ===== 新增：分组标签 + 达成目标清单 ===== */
 .sol-block{margin-top:52px}
 .sol-block:first-of-type{margin-top:0}
+
+/* ===== Solution Flow Cards (HTML/CSS) ===== */
+.sf{position:relative;margin-top:0}
+.sf-hd{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.sf-row{display:flex;gap:14px;margin-bottom:14px;align-items:stretch}
+.sf-row.cent{justify-content:center}
+.sf-card{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 24px;position:relative;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s cubic-bezier(.16,1,.3,1)}
+.sf-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.14)}
+.sf-card::after{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:2px 0 0 2px}
+.sf-card.accent-g::after{background:linear-gradient(180deg,var(--accent),var(--accent-on-dark))}
+.sf-card.accent-b::after{background:var(--accent)}
+.sf-card.accent-r::after{background:#e53e3e}
+.sf-card.accent-n::after{background:#718096}
+.sf-card.w2{flex:2}
+.sf-card.w3{flex:3}
+.sf-card.w-half{flex:0 0 48%}
+.sf-card.w-full{flex:0 0 100%}
+.sf-card.dk{background:#1a1212;border-color:#742a2a}
+.sf-card.dk2{background:#1a1a1a;border-color:#3a3a3a}
+.sf-card.fill{background:var(--accent-soft);border-color:var(--accent);border-width:1.2px}
+.sf-card.fill-s{background:var(--accent);border-color:var(--accent-ink)}
+.sf-card .sf-badge{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;font-size:11px;font-weight:700;flex:none}
+.sf-card .sf-badge.i{background:#e53e3e;color:#fff}
+.sf-card .sf-badge.ii{background:#718096;color:#fff}
+.sf-card .sf-badge.iii{background:var(--accent);color:#fff}
+.sf-card .sf-badge.iv{background:var(--accent);color:#fff}
+.sf-card .sf-label{font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.04em}
+.sf-card .sf-label.r{color:#fc8181}
+.sf-card .sf-label.g{color:#a0aec0}
+.sf-card h4{font-size:15px;font-weight:700;margin:4px 0 2px;letter-spacing:-.01em}
+.sf-card h4.w{color:#fff}
+.sf-card h4.r{color:#fc8181}
+.sf-card h4.g{color:#a0aec0}
+.sf-card p{font-size:12.5px;color:var(--muted);line-height:1.6;margin:0}
+.sf-card p.dk{color:#9b2c2c}
+.sf-card p.w{color:rgba(255,255,255,.72)}
+.sf-conn{display:flex;align-items:center;justify-content:center;padding:8px 0}
+.sf-conn .line{width:2px;height:20px;background:var(--accent);border-radius:1px;opacity:0.4}
+.sf-conn .pill{display:inline-flex;align-items:center;justify-content:center;padding:6px 20px;border-radius:999px;background:var(--accent);color:#fff;font-size:12px;font-weight:600}
+.sf-conn .pill span{font-size:13px;margin-right:6px}
+.sf-prog{display:flex;gap:12px;padding:6px 0;align-items:center}
+.sf-prog .seg{height:3px;border-radius:1.5px}
+.sf-prog .dot{width:8px;height:8px;border-radius:50%}
+.sf-dots{display:flex;flex-direction:column;align-items:center;gap:5px;opacity:0.35;padding:8px 0}
+.sf-dots span{width:4px;height:4px;border-radius:50%;background:var(--accent)}
+.sf-split{display:flex;gap:0;align-items:stretch;margin-bottom:14px}
+.sf-split .sf-left{flex:1;display:flex;flex-direction:column;gap:10px}
+.sf-split .sf-gap{width:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.sf-split .sf-gap line{stroke:var(--accent);stroke-width:1;opacity:0.35}
+.sf-split .sf-right{flex:1;display:flex;flex-direction:column}
+@media(max-width:768px){.sf-row,.sf-split{flex-direction:column}.sf-card.w2,.sf-card.w3{flex:1}.sf-split .sf-gap{width:100%;height:14px;flex-direction:row}}
 .sol-tag{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:24px;display:flex;align-items:center;gap:12px}
 .sol-tag::before{content:'';width:24px;height:2px;background:var(--accent);display:inline-block}
 .goal-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
@@ -491,219 +542,240 @@ a{color:inherit;text-decoration:none}
     </div>
 
     <div class="sol-block reveal" id="sol-arch">
-      <div class="sol-tag">系统架构 · 一条询价，永不串线</div>
-      <svg class="diagram" viewBox="0 0 1040 360" role="img" aria-label="系统架构 三线路由">
-        <defs>
-          <marker id="arr3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="arrow"/></marker>
-        </defs>
-        <g font-family="Geist, sans-serif">
-          <rect class="box" x="420" y="16" width="200" height="48" rx="12"/>
-          <text class="t" x="520" y="45" text-anchor="middle" font-size="15">一条询价</text>
-          <path class="link" d="M520 64 L520 84" marker-end="url(#arr3)"/>
-
-          <rect class="box-accent" x="370" y="88" width="300" height="56" rx="14"/>
-          <text class="t" x="520" y="114" text-anchor="middle" font-size="15">路由自动选表 · 唯一入口</text>
-          <text class="s" x="520" y="134" text-anchor="middle" font-size="11">查价只走这一条通道</text>
-
-          <path class="link" d="M520 144 L520 160"/>
-          <path class="link" d="M200 160 L850 160"/>
-          <path class="link" d="M200 160 L200 178" marker-end="url(#arr3)"/>
-          <path class="link" d="M520 160 L520 178" marker-end="url(#arr3)"/>
-          <path class="link" d="M850 160 L850 178" marker-end="url(#arr3)"/>
-
-          <rect class="box" x="60" y="180" width="280" height="96" rx="14"/>
-          <text class="t" x="200" y="210" text-anchor="middle" font-size="15">美线</text>
-          <text x="200" y="234" text-anchor="middle" font-size="13" fill="var(--accent)" font-weight="600">prices</text>
-          <text class="s" x="200" y="254" text-anchor="middle" font-size="11">普船 · 美森 · 卡派 · 海派</text>
-
-          <rect class="box" x="390" y="180" width="280" height="96" rx="14"/>
-          <text class="t" x="530" y="210" text-anchor="middle" font-size="15">欧英线</text>
-          <text x="530" y="234" text-anchor="middle" font-size="13" fill="var(--accent)" font-weight="600">prices_eu</text>
-          <text class="s" x="530" y="254" text-anchor="middle" font-size="11">欧洲 · 英国 · 卡航 · 铁路</text>
-
-          <rect class="box" x="720" y="180" width="260" height="96" rx="14"/>
-          <text class="t" x="850" y="210" text-anchor="middle" font-size="15">加拿大线</text>
-          <text x="850" y="234" text-anchor="middle" font-size="13" fill="var(--accent)" font-weight="600">prices_ca</text>
-          <text class="s" x="850" y="254" text-anchor="middle" font-size="11">美转加 · 海卡</text>
-
-          <path class="link" d="M200 276 L200 290"/>
-          <path class="link" d="M530 276 L530 290"/>
-          <path class="link" d="M850 276 L850 290"/>
-          <path class="link" d="M200 290 L850 290"/>
-          <path class="link" d="M520 290 L520 310" marker-end="url(#arr3)"/>
-
-          <rect class="box" x="320" y="312" width="400" height="44" rx="12"/>
-          <text class="t" x="520" y="339" text-anchor="middle" font-size="15">报价只认一份 · 永不串线</text>
-        </g>
-      </svg>
+      <div class="sol-tag">系统架构 · 一条询价进来，三秒出底价</div>
+      <div class="sf">
+        <div class="sf-row cent">
+          <div class="sf-card w-half" style="text-align:center">
+            <span class="sf-badge iii" style="margin-right:8px;width:auto;padding:0 12px;border-radius:999px;font-size:10px">INPUT</span>
+            <h4>「LAX9 · 200kg · 普船卡派」</h4>
+            <p>客户一条消息，系统自动拆解</p>
+          </div>
+        </div>
+        <div class="sf-conn"><div class="line"></div></div>
+        <div class="sf-card w-full fill" style="text-align:center">
+          <h4 style="color:var(--accent)">25 家供应商底价一秒拉齐 · 三线数据物理隔离永不串线</h4>
+          <div class="sf-row" style="margin-top:14px;margin-bottom:0">
+            <div class="sf-card w2" style="text-align:center;padding:14px 16px">
+              <h4>美线 16 家</h4><p style="font-size:10px">prices</p>
+            </div>
+            <div class="sf-card w2" style="text-align:center;padding:14px 16px">
+              <h4>欧英线 5 家</h4><p style="font-size:10px">prices_eu</p>
+            </div>
+            <div class="sf-card w2" style="text-align:center;padding:14px 16px">
+              <h4>加拿大线 4 家</h4><p style="font-size:10px">prices_ca</p>
+            </div>
+          </div>
+        </div>
+        <div class="sf-conn"><div class="line"></div></div>
+        <div class="sf-card w-full fill-s">
+          <div class="sf-row" style="text-align:center;margin-bottom:6px">
+            <h4 class="w" style="flex:1;font-size:13px">仓库</h4>
+            <h4 class="w" style="flex:1;font-size:13px">渠道（原始名）</h4>
+            <h4 class="w" style="flex:1;font-size:13px">单价</h4>
+            <h4 class="w" style="flex:1;font-size:13px">开船后时效</h4>
+            <h4 class="w" style="flex:1;font-size:13px">进仓地</h4>
+          </div>
+          <div class="sf-row" style="text-align:center;margin-bottom:0">
+            <p class="w" style="flex:1;font-size:10px">自动解析FBA仓码</p>
+            <p class="w" style="flex:1;font-size:10px">各家写法自动归一</p>
+            <p class="w" style="flex:1;font-size:10px">取最低档位单价</p>
+            <p class="w" style="flex:1;font-size:10px">预计入仓天数</p>
+            <p class="w" style="flex:1;font-size:10px">华东/华南双对比</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="sol-block reveal" id="sol-biz">
-      <div class="sol-tag">业务模式 · 从翻表到秒出底价</div>
-      <svg class="diagram" viewBox="0 0 1040 360" role="img" aria-label="业务模式 从翻表到秒出底价">
-        <defs>
-          <marker id="arr4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="arrow"/></marker>
-        </defs>
-        <g font-family="Geist, sans-serif">
-          <text x="20" y="30" font-size="12" fill="var(--muted)" font-weight="600">以前</text>
-          <rect class="box" x="20" y="44" width="300" height="84" rx="14"/>
-          <text class="t" x="170" y="80" text-anchor="middle" font-size="15">翻 25 份 Excel</text>
-          <text class="s" x="170" y="102" text-anchor="middle" font-size="11">一份一份手工比价</text>
-          <path class="link" d="M320 86 L360 86" marker-end="url(#arr4)"/>
-
-          <rect class="box" x="370" y="44" width="300" height="84" rx="14"/>
-          <text class="t" x="520" y="80" text-anchor="middle" font-size="15">手工比对</text>
-          <text class="s" x="520" y="102" text-anchor="middle" font-size="11">容易看漏、比错</text>
-          <path class="link" d="M670 86 L710 86" marker-end="url(#arr4)"/>
-
-          <rect class="box" x="720" y="44" width="300" height="84" rx="14"/>
-          <text class="t" x="870" y="80" text-anchor="middle" font-size="15">半小时一版</text>
-          <text class="s" x="870" y="102" text-anchor="middle" font-size="11">又慢又怕报错价</text>
-
-          <path class="link" d="M520 128 L520 190" marker-end="url(#arr4)"/>
-          <text x="536" y="162" font-size="12" fill="var(--accent)" font-weight="700">一次跃迁</text>
-
-          <text x="20" y="182" font-size="12" fill="var(--accent)" font-weight="600">现在</text>
-          <rect class="box-accent" x="20" y="196" width="300" height="84" rx="14"/>
-          <text class="t" x="170" y="232" text-anchor="middle" font-size="15">一条查询指令</text>
-          <text class="s" x="170" y="254" text-anchor="middle" font-size="11">说一句 / 发张截图</text>
-          <path class="link" d="M320 238 L360 238" marker-end="url(#arr4)"/>
-
-          <rect class="box-accent" x="370" y="196" width="300" height="84" rx="14"/>
-          <text class="t" x="520" y="232" text-anchor="middle" font-size="15">三秒全渠道最低价</text>
-          <text class="s" x="520" y="254" text-anchor="middle" font-size="11">美欧加一次拉齐</text>
-          <path class="link" d="M670 238 L710 238" marker-end="url(#arr4)"/>
-
-          <rect class="box-accent" x="720" y="196" width="300" height="84" rx="14"/>
-          <text class="t" x="870" y="232" text-anchor="middle" font-size="15">人只做判断</text>
-          <text class="s" x="870" y="254" text-anchor="middle" font-size="11">拍板定价 · 接不接</text>
-
-          <rect class="box" x="270" y="308" width="500" height="44" rx="12"/>
-          <text class="t" x="520" y="335" text-anchor="middle" font-size="14">从「翻表工」变「决策者」</text>
-        </g>
-      </svg>
+      <div class="sol-tag">业务模式 · 以前怎么痛，现在怎么解</div>
+      <div class="sf">
+        <div class="sf-hd"><span style="color:#fc8181">⬤</span> 以前的三大痛 — 人脑记忆、手工翻表、效率极低</div>
+        <div class="sf-row">
+          <div class="sf-card dk" style="flex:1.8">
+            <span class="sf-label r" style="display:block;margin-bottom:6px">PAIN 01</span>
+            <h4 class="r">翻 25 份 Excel</h4>
+            <p class="dk">各家写法全不一样，翻完至少半小时</p>
+          </div>
+          <div class="sf-card dk" style="flex:2.5;border-color:#c53030">
+            <span class="sf-label r" style="display:block;margin-bottom:6px;color:#fc8181">最大痛点 PAIN 02</span>
+            <h4 class="r">渠道名靠脑子对</h4>
+            <p class="dk">一家叫"美森至尊达"，另一家叫"CLX"，同渠道 20+ 种叫法</p>
+          </div>
+          <div class="sf-card dk" style="flex:1.8">
+            <span class="sf-label r" style="display:block;margin-bottom:6px">PAIN 03</span>
+            <h4 class="r">进仓点靠记忆</h4>
+            <p class="dk">"全国同价"含义乌，忘了就漏掉</p>
+          </div>
+        </div>
+        <div class="sf-conn"><div class="pill"><span>→</span>系统化重构 —— 从手工翻表到 AI 秒级输出</div></div>
+        <div class="sf-hd"><span style="color:var(--accent)">⬤</span> 现在的三个解 — 一条命令拉齐，三秒出价</div>
+        <div class="sf-row">
+          <div class="sf-card">
+            <span class="sf-label" style="display:block;margin-bottom:6px">SOLUTION</span>
+            <h4>一条命令拉齐所有底价</h4>
+            <p>输入仓码+重量+渠道，25家底价一秒呈现</p>
+          </div>
+          <div class="sf-card">
+            <span class="sf-label" style="display:block;margin-bottom:6px">SOLUTION</span>
+            <h4>渠道自动归一</h4>
+            <p>11个标准渠道，各家 20+ 种写法自动映射</p>
+          </div>
+          <div class="sf-card">
+            <span class="sf-label" style="display:block;margin-bottom:6px">SOLUTION</span>
+            <h4>进仓点智能匹配</h4>
+            <p>查"深圳"自动命中"福永/坂田"</p>
+          </div>
+        </div>
+        <div class="sf-card w-full fill-s" style="text-align:center;margin-top:14px">
+          <h4 class="w" style="font-size:14px">三秒出底价，人只做一件事 —— 判断能不能接、拍板定价</h4>
+        </div>
+      </div>
     </div>
 
     <div class="sol-block reveal" id="sol-ai">
-      <div class="sol-tag">AI 融合 · 补三个盲区</div>
-      <svg class="diagram" viewBox="0 0 1040 300" role="img" aria-label="AI 融合 三个盲区补盲">
-        <defs>
-          <marker id="arr5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="arrow"/></marker>
-        </defs>
-        <g font-family="Geist, sans-serif">
-          <rect class="box" x="20" y="16" width="300" height="64" rx="12"/>
-          <text class="t" x="170" y="44" text-anchor="middle" font-size="14">客户发的报价截图</text>
-          <text class="s" x="170" y="64" text-anchor="middle" font-size="11">O/0、I/1 容易看混</text>
-          <path class="link" d="M170 80 L170 96" marker-end="url(#arr5)"/>
-          <rect class="box-accent" x="20" y="100" width="300" height="88" rx="12"/>
-          <text class="t" x="170" y="130" text-anchor="middle" font-size="14">视觉模型逐字 OCR</text>
-          <text class="s" x="170" y="150" text-anchor="middle" font-size="11">疑似仓码列候选</text>
-          <text class="s" x="170" y="168" text-anchor="middle" font-size="11">不硬报 · 让人确认</text>
-
-          <rect class="box" x="370" y="16" width="300" height="64" rx="12"/>
-          <text class="t" x="520" y="44" text-anchor="middle" font-size="14">渠道名五花八门</text>
-          <text class="s" x="520" y="64" text-anchor="middle" font-size="11">各家用词都不一样</text>
-          <path class="link" d="M520 80 L520 96" marker-end="url(#arr5)"/>
-          <rect class="box-accent" x="370" y="100" width="300" height="88" rx="12"/>
-          <text class="t" x="520" y="130" text-anchor="middle" font-size="14">大模型归唯一大类</text>
-          <text class="s" x="520" y="150" text-anchor="middle" font-size="11">按母集对照表</text>
-          <text class="s" x="520" y="168" text-anchor="middle" font-size="11">宁少勿多 · 表外不入库</text>
-
-          <rect class="box" x="720" y="16" width="300" height="64" rx="12"/>
-          <text class="t" x="870" y="44" text-anchor="middle" font-size="14">进仓点写法不一</text>
-          <text class="s" x="870" y="64" text-anchor="middle" font-size="11">深圳 / 福永坂田 / 义乌</text>
-          <path class="link" d="M870 80 L870 96" marker-end="url(#arr5)"/>
-          <rect class="box-accent" x="720" y="100" width="300" height="88" rx="12"/>
-          <text class="t" x="870" y="130" text-anchor="middle" font-size="14">别名反向展开</text>
-          <text class="s" x="870" y="150" text-anchor="middle" font-size="11">查「深圳」命中「福永/坂田」</text>
-          <text class="s" x="870" y="168" text-anchor="middle" font-size="11">复合仓点不截断</text>
-
-          <path class="link" d="M170 188 L170 204"/>
-          <path class="link" d="M520 188 L520 204"/>
-          <path class="link" d="M870 188 L870 204"/>
-          <path class="link" d="M170 204 L870 204"/>
-          <path class="link" d="M520 204 L520 224" marker-end="url(#arr5)"/>
-
-          <rect class="box" x="320" y="228" width="400" height="44" rx="12"/>
-          <text class="t" x="520" y="255" text-anchor="middle" font-size="14">报价更全 · 更准 · 不丢一个渠道</text>
-        </g>
-      </svg>
+      <div class="sol-tag">AI 融合 · 模型做识别，规则做校验，人在边界做决策</div>
+      <div class="sf">
+        <div class="sf-hd">AI 补盲三类场景 — 每一类都有明确边界，不靠一个模型梭哈</div>
+        <div class="sf-row">
+          <div class="sf-card w2">
+            <span class="sf-label" style="display:block;margin-bottom:4px">场景 01</span>
+            <h4>截图 OCR 自动提取</h4>
+            <p>客户发截图 → 自动读仓码/重量/渠道 → 白名单校验通过直接报价</p>
+          </div>
+          <div class="sf-card w3">
+            <span class="sf-label" style="display:block;margin-bottom:4px">场景 02</span>
+            <h4>渠道名自动归一</h4>
+            <p>"至尊达" / "CLX" / "限时达" → 全部命中同一标准渠道</p>
+          </div>
+        </div>
+        <div class="sf-row">
+          <div class="sf-card w-full fill">
+            <span class="sf-label" style="display:block;margin-bottom:4px">场景 03 · 最易漏的坑</span>
+            <h4 style="color:var(--accent)">进仓点智能补盲</h4>
+            <p>查"义乌仓最低价"→ 自动纳入"全国同价"渠道 · 无匹配进仓点 → 华东华南双区对比</p>
+          </div>
+        </div>
+        <div class="sf-card w-full fill-s" style="text-align:center;margin-top:14px">
+          <h4 class="w" style="font-size:14px">AI 做识别 → 规则做校验 → 人在边界做决策</h4>
+        </div>
+      </div>
     </div>
 
     <div class="sol-block reveal" id="sol-engine">
-      <div class="sol-tag">入库引擎 · 越用越懂供应商</div>
-      <svg class="diagram" viewBox="0 0 1040 440" role="img" aria-label="入库引擎 越用越聪明循环">
-        <defs>
-          <marker id="arr6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="arrow"/></marker>
-        </defs>
-        <g font-family="Geist, sans-serif">
-          <rect class="box" x="370" y="16" width="300" height="56" rx="14"/>
-          <text class="t" x="520" y="49" text-anchor="middle" font-size="15">新供应商价表</text>
-          <path class="link" d="M520 72 L520 92" marker-end="url(#arr6)"/>
-
-          <rect class="box" x="370" y="96" width="300" height="56" rx="14"/>
-          <text class="t" x="520" y="129" text-anchor="middle" font-size="15">引擎族对号入座（4 个模板）</text>
-          <path class="link" d="M520 152 L520 172" marker-end="url(#arr6)"/>
-
-          <rect class="box" x="370" y="176" width="300" height="56" rx="14"/>
-          <text class="t" x="520" y="209" text-anchor="middle" font-size="15">模板库匹配</text>
-          <path class="link" d="M520 232 L520 252" marker-end="url(#arr6)"/>
-
-          <rect class="box-accent" x="370" y="256" width="300" height="56" rx="14"/>
-          <text class="t" x="520" y="289" text-anchor="middle" font-size="15">装配线自动产出 · 入库</text>
-          <path class="link" d="M520 312 L520 332" marker-end="url(#arr6)"/>
-
-          <rect class="box" x="370" y="336" width="300" height="56" rx="14"/>
-          <text class="t" x="520" y="369" text-anchor="middle" font-size="15">模板漂移检测</text>
-
-          <path class="link" d="M520 392 L520 408" marker-end="url(#arr6)"/>
-          <text class="s" x="520" y="426" text-anchor="middle" font-size="11">正常 → 继续跑</text>
-
-          <path class="link" d="M670 364 L756 364" marker-end="url(#arr6)"/>
-          <rect class="box" x="760" y="336" width="260" height="56" rx="14"/>
-          <text class="t" x="890" y="369" text-anchor="middle" font-size="14">人工确认 · 回灌模板库</text>
-          <path class="link" d="M890 336 L890 204" marker-end="url(#arr6)"/>
-          <path class="link" d="M890 204 L674 204" marker-end="url(#arr6)"/>
-          <text class="s" x="890" y="196" text-anchor="middle" font-size="11">漂移 → 报警</text>
-        </g>
-      </svg>
+      <div class="sol-tag">入库引擎 · 从价表到生产库，三道关卡</div>
+      <div class="sf">
+        <div class="sf-hd">每一格数据进生产库前，先在测试库挡掉所有脏数据</div>
+        <div style="padding-left:28px;border-left:2px solid var(--accent);margin-left:12px">
+          <div class="sf-card w-full" style="margin-bottom:12px">
+            <div style="display:flex;align-items:center;gap:12px">
+              <span class="sf-badge iii" style="width:28px;height:28px;font-size:13px">1</span>
+              <div>
+                <h4>文件准入 + 渠道归类 + 仓码校验</h4>
+                <p>新价表 Excel 到达 → 自动提取日期 → 渠道不在标准表不入库 → 非白名单仓码直接退件</p>
+              </div>
+            </div>
+          </div>
+          <div class="sf-card w-full fill" style="margin-bottom:12px;border-color:var(--accent)">
+            <div style="display:flex;align-items:center;gap:12px">
+              <span class="sf-badge iii" style="width:28px;height:28px;font-size:13px">2</span>
+              <div>
+                <h4 style="color:var(--accent)">真值器三方对账 · 防火墙核心闸门</h4>
+                <p>独立程序逐格解析标准答案 → 提取器产出、真值器结果、数据库三方比对 → 有任何偏差直接阻断</p>
+              </div>
+            </div>
+          </div>
+          <div class="sf-card w-full" style="margin-bottom:0">
+            <div style="display:flex;align-items:center;gap:12px">
+              <span class="sf-badge iii" style="width:28px;height:28px;font-size:13px">3</span>
+              <div>
+                <h4>漂移检测 · 入库后自动巡检</h4>
+                <p>列偏移 / 行结构异常自动发现 → 新供应商当天对号即用</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sf-prog" style="margin-top:16px;justify-content:center">
+          <div class="seg" style="width:100px;background:var(--accent);opacity:.4"></div>
+          <div class="dot" style="background:var(--accent);opacity:.4"></div>
+          <div class="seg" style="width:100px;background:var(--accent);opacity:.65"></div>
+          <div class="dot" style="background:var(--accent);opacity:.65"></div>
+          <div class="seg" style="width:100px;background:var(--accent);opacity:.9"></div>
+          <div class="dot" style="background:var(--accent);opacity:.9"></div>
+          <span style="font-size:11px;color:var(--muted);margin-left:8px">逐级放行 →</span>
+        </div>
+      </div>
     </div>
 
     <div class="sol-block reveal" id="sol-firewall">
-      <div class="sol-tag">防火墙 · 四道闸门，错价出不去</div>
-      <svg class="diagram" viewBox="0 0 1040 476" role="img" aria-label="防火墙 四道闸门">
-        <defs>
-          <marker id="arr7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="arrow"/></marker>
-        </defs>
-        <g font-family="Geist, sans-serif">
-          <rect class="box" x="420" y="12" width="200" height="44" rx="12"/>
-          <text class="t" x="520" y="39" text-anchor="middle" font-size="15">数据进入</text>
-          <path class="link" d="M520 56 L520 76" marker-end="url(#arr7)"/>
-
-          <rect class="box" x="300" y="80" width="440" height="64" rx="14"/>
-          <text class="t" x="520" y="106" text-anchor="middle" font-size="15">第一层 · 硬束缚</text>
-          <text class="s" x="520" y="128" text-anchor="middle" font-size="11">物理隔离 · 非法数据当场拒绝</text>
-          <path class="link" d="M520 144 L520 164" marker-end="url(#arr7)"/>
-
-          <rect class="box" x="300" y="168" width="440" height="64" rx="14"/>
-          <text class="t" x="520" y="194" text-anchor="middle" font-size="15">第二层 · 软引导</text>
-          <text class="s" x="520" y="216" text-anchor="middle" font-size="11">四类失效自动拦 · 宁可不报不可报错</text>
-          <path class="link" d="M520 232 L520 252" marker-end="url(#arr7)"/>
-
-          <rect class="box" x="300" y="256" width="440" height="64" rx="14"/>
-          <text class="t" x="520" y="282" text-anchor="middle" font-size="15">第三层 · 围栏</text>
-          <text class="s" x="520" y="304" text-anchor="middle" font-size="11">强不变量扫描 · 异常自动扫</text>
-          <path class="link" d="M520 320 L520 340" marker-end="url(#arr7)"/>
-
-          <rect class="box" x="300" y="344" width="440" height="64" rx="14"/>
-          <text class="t" x="520" y="370" text-anchor="middle" font-size="15">第四层 · 规则</text>
-          <text class="s" x="520" y="392" text-anchor="middle" font-size="11">高风险操作 · 人点头才动手</text>
-          <path class="link" d="M520 408 L520 428" marker-end="url(#arr7)"/>
-
-          <rect class="box-accent" x="320" y="432" width="400" height="44" rx="12"/>
-          <text class="t" x="520" y="459" text-anchor="middle" font-size="15">报价出口 · 错价出不去</text>
-        </g>
-      </svg>
+      <div class="sol-tag">防火墙 · 四道防线，层层过筛</div>
+      <div class="sf">
+        <div class="sf-hd">不是一道墙，是四层递进 — 每一道过不去的自己拦住</div>
+        <div class="sf-split">
+          <div class="sf-left">
+            <div class="sf-card dk" style="padding:16px 18px">
+              <div style="display:flex;align-items:center;gap:10px">
+                <span class="sf-badge i" style="width:28px;height:28px;font-size:13px">I</span>
+                <div>
+                  <h4 class="r" style="font-size:14px;margin:0">硬束缚 · 物理隔离</h4>
+                  <p class="dk" style="font-size:11px">测试库/生产库/档案库三文件，跨线查询直接拒绝</p>
+                </div>
+              </div>
+            </div>
+            <div class="sf-card dk2" style="padding:16px 18px">
+              <div style="display:flex;align-items:center;gap:10px">
+                <span class="sf-badge ii" style="width:28px;height:28px;font-size:13px">II</span>
+                <div>
+                  <h4 class="g" style="font-size:14px;margin:0">软引导 · 自动拦截</h4>
+                  <p style="color:#718096;font-size:11px">过期价表/冻结供应商/渠道不在标准表/非白名单仓码 → 自动排除</p>
+                </div>
+              </div>
+            </div>
+            <div class="sf-card fill" style="padding:16px 18px;border-color:var(--accent)">
+              <div style="display:flex;align-items:center;gap:10px">
+                <span class="sf-badge iii" style="width:28px;height:28px;font-size:13px">III</span>
+                <div>
+                  <h4 style="font-size:14px;margin:0;color:var(--accent)">围栏 · 自动巡检 + 对账</h4>
+                  <p style="font-size:11px">入库后强不变量自动扫描，独立真值器逐格对账，偏差立即报警</p>
+                </div>
+              </div>
+            </div>
+            <div class="sf-card" style="padding:16px 18px">
+              <div style="display:flex;align-items:center;gap:10px">
+                <span class="sf-badge iv" style="width:28px;height:28px;font-size:13px">IV</span>
+                <div>
+                  <h4 style="font-size:14px;margin:0">最后一关 · 人点头才动手</h4>
+                  <p style="font-size:11px">写生产库/删数据/改关键代码 → 先列"改什么、为什么" → 人批准 → 再动</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sf-gap">
+            <svg width="20" height="250" viewBox="0 0 20 250"><line x1="10" y1="0" x2="10" y2="250" stroke="var(--accent)" stroke-width="1" opacity="0.25"/></svg>
+          </div>
+          <div class="sf-right">
+            <div class="sf-card" style="height:100%">
+              <div class="sf-hd" style="margin-bottom:16px">四层防线的设计逻辑</div>
+              <div style="font-size:12px;color:var(--muted);line-height:2.2">
+                <div>→ 价格数据是商务命脉</div>
+                <div>→ 宁可不报价，不可报错价</div>
+                <div>→ 测试库试水 → 真值器对账 → 生产库放行</div>
+                <div>→ 三道物理文件隔离 + 三线分表路由</div>
+                <div>→ 过期自动过期 · 冻结自动跳过</div>
+                <div>→ 不是防火墙挡住便宜价，是挡住脏数据</div>
+                <div>→ 人永远在最后一层</div>
+                <div style="padding-left:12px">高风险操作必须先列"改什么、为什么"，批准再动</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sf-prog" style="margin-top:14px;justify-content:flex-start">
+          <div class="seg" style="width:40px;background:#e53e3e;opacity:.7"></div>
+          <div class="seg" style="width:60px;background:#718096;opacity:.7"></div>
+          <div class="seg" style="width:80px;background:var(--accent);opacity:.6"></div>
+          <div class="seg" style="width:110px;background:var(--accent);opacity:.8"></div>
+          <span style="font-size:10px;color:var(--muted);margin-left:8px">力度递增 →</span>
+        </div>
+      </div>
     </div>
   </div>
   <!-- 放大弹窗 -->
