@@ -637,16 +637,22 @@ body {
 .pn-arrow {
   position: absolute; top: 50%; transform: translateY(-50%);
   z-index: 10;
-  width: 48px; height: 48px; border-radius: 50%;
-  background: rgba(28,28,30,.98); border: 2px solid rgba(255,255,255,.35);
-  color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255,255,255,.62);
+  border: 1px solid rgba(0,0,0,.07);
+  color: var(--muted,#6E6E73);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  box-shadow: 0 1px 3px rgba(0,0,0,.05);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
   transition: all .25s cubic-bezier(.16,1,.3,1);
   pointer-events: auto; user-select: none;
 }
 .pn-prev { left: max(16px, calc(50vw - 880px)); } .pn-next { right: max(16px, calc(50vw - 880px)); }
-.pn-arrow:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-50%) scale(1.08); }
+.pn-arrow svg { width: 20px; height: 20px; }
+
+.pn-arrow:hover { background: var(--accent); border-color: var(--accent); color: #fff; transform: translateY(-50%) scale(1.06); }
 .pn-arrow:active { transform: translateY(-50%) scale(.95); }
-[data-theme="dark"] .pn-arrow { background: rgba(44,44,46,.98); border-color: rgba(255,255,255,.35); }
+[data-theme="dark"] .pn-arrow { background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.14); color: rgba(255,255,255,.78); box-shadow: 0 1px 3px rgba(0,0,0,.35); }
 .nav, .scroll-progress, .hero .nav, header.hero .nav, #top .nav { display: none !important; visibility: hidden; pointer-events: none; }
 @media (max-width: 1024px) {
   .pn-arrow { width: 40px; height: 40px; } .pn-prev { left: 12px; } .pn-next { right: 12px; }
