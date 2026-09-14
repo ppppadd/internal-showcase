@@ -121,7 +121,7 @@ a{color:inherit;text-decoration:none}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center;animation:heroSettle 2.8s cubic-bezier(.16,1,.3,1) both}
 @keyframes heroSettle{from{transform:scale(1.06)}to{transform:scale(1)}}
 .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(8,13,22,.66) 0%,rgba(8,13,22,.42) 45%,rgba(8,13,22,.85) 100%)}
-.hero-fullpage{position:relative;height:calc(100vh - var(--nav-h));overflow:hidden;flex-shrink:0}
+.hero-fullpage{position:relative;height:100vh;overflow:hidden;flex-shrink:0}
 /* 恢复 hero 类后代选择器后，覆盖 .hero 的 flex/padding，保持首屏分层 */
 .hero.hero-fullpage{display:block;align-items:initial;padding:0;min-height:0}
 .hero-content{position:relative;z-index:2;color:#fff;width:100%;display:flex;flex-direction:column;justify-content:center;height:100%}
@@ -563,6 +563,12 @@ body {
   background: rgba(10,14,22,.5); backdrop-filter: blur(20px) saturate(1.4);
   -webkit-backdrop-filter: blur(20px) saturate(1.4);
   border-bottom: 1px solid rgba(255,255,255,.08); color: #fff;
+  transition: background .4s cubic-bezier(.16,1,.3,1), border-color .4s cubic-bezier(.16,1,.3,1);
+}
+
+.pn-nav.nav-clear {
+  background: transparent; border-bottom-color: transparent;
+  -webkit-backdrop-filter: none; backdrop-filter: none;
 }
 .pn-nav-inner {
   max-width: 1600px; margin: 0 auto; padding: 0 32px;
@@ -598,7 +604,7 @@ body {
 }
 .theme-btn:hover { transform: translateY(-1px); background: rgba(255,255,255,.12); }
 .pn-stage {
-  position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
   overflow: hidden; background: var(--bg);
 }
 .pn-panel {
@@ -659,7 +665,7 @@ body {
   .pn-nav-inner { padding: 0 16px; gap: 12px; } .pn-tab { padding: 6px 12px; font-size: 12px; }
 }
 @media (max-width: 768px) {
-  .pn-nav { height: 48px; } .pn-stage { top: 48px; } .pn-arrow { display: none; }
+  .pn-nav { height: 48px; } .pn-stage { top: 0; } .pn-arrow { display: none; }
   .pn-tab { padding: 6px 10px; font-size: 11px; } .pn-counter { display: none; }
   .pn-nav-logo { font-size: 15px; } .sec { padding: 48px 0; }
 }
@@ -1652,6 +1658,7 @@ body {
     nextBtn.style.pointerEvents = idx === TOTAL - 1 ? 'none' : 'auto';
 
     cur = idx;
+    updateNavState();
   }
 
   tabs.forEach(function(t) {
@@ -1689,6 +1696,18 @@ body {
 
   prevBtn.style.opacity = '0.25';
   prevBtn.style.pointerEvents = 'none';
+
+  // 导航栏：首屏与背景图融合，滚动后才浮现毛玻璃
+  var navEl = document.getElementById('pnNav');
+  function updateNavState() {
+    var sc = document.querySelector('#pn' + cur + ' .pn-panel-scroll');
+    var st = sc ? sc.scrollTop : 0;
+    navEl.classList.toggle('nav-clear', cur === 0 && st < 12);
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.pn-panel-scroll'), function(sc) {
+    sc.addEventListener('scroll', updateNavState, {passive: true});
+  });
+  updateNavState();
 
   // Theme toggle
   var btn = document.getElementById('themeBtn');
