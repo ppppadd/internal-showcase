@@ -22,6 +22,7 @@
   --accent-soft-2:rgba(0,122,255,.20);
   --blue:#007AFF;
   --accent-on-dark:#0A84FF;
+  --accent-on-photo:#64D2FF;
   --green:#34C759;
   --shadow:0 1px 2px rgba(0,0,0,.05),0 8px 24px rgba(0,0,0,.06);
   --shadow-lg:0 2px 6px rgba(0,0,0,.05),0 20px 48px rgba(0,0,0,.08);
@@ -106,12 +107,8 @@ a{color:inherit;text-decoration:none}
 .btn{display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer;font-family:inherit;font-weight:700;
   font-size:15px;white-space:nowrap;border-radius:999px;transition:transform .3s cubic-bezier(.16,1,.3,1),background .2s}
 .btn:active{transform:scale(.97)}
-.btn-primary{background:var(--accent);color:#fff;padding:12px 24px;position:relative;overflow:hidden}
-.btn-primary::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;
-  background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.25) 50%,transparent 70%);
-  transform:translateX(-130%);transition:transform .65s cubic-bezier(.16,1,.3,1);pointer-events:none}
-.btn-primary:hover::before{transform:translateX(130%)}
-.btn-primary:hover{background:var(--accent-ink);transform:translateY(-1px)}
+.btn-primary{background:var(--accent-ink);color:#fff;padding:12px 24px;position:relative;overflow:hidden}
+.btn-primary:hover{background:#0058B0;transform:translateY(-1px)}
 .btn-ghost{background:transparent;color:#fff;padding:12px 24px;border:1px solid rgba(255,255,255,.35)}
 .btn-ghost:hover{border-color:#fff}
 
@@ -399,8 +396,9 @@ a{color:inherit;text-decoration:none}
 .footer{background:var(--ink);color:#fff;padding:96px 0 48px;border-top:1px solid rgba(255,255,255,.08)}
 .footer-statement{font-size:clamp(30px,4vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1.08;max-width:22ch;margin-bottom:40px}
 .footer-statement .hl{color:var(--accent)}
-.hero .eyebrow,.hero h1 .hl,.footer-statement .hl{color:var(--accent-on-dark)}
-.hero .eyebrow::before{background:var(--accent-on-dark)}
+.hero .eyebrow,.hero h1 .hl{color:var(--accent-on-photo)}
+.footer-statement .hl{color:var(--accent-on-dark)}
+.hero .eyebrow::before{background:var(--accent-on-photo)}
 .footer .btn-ghost{border-color:rgba(255,255,255,.3)}
 .footer-row{display:flex;align-items:center;justify-content:space-between;padding-top:32px;border-top:1px solid rgba(255,255,255,.1);font-size:15px;color:rgba(255,255,255,.55)}
 .footer-row .c{display:flex;gap:24px}
@@ -534,6 +532,7 @@ a{color:inherit;text-decoration:none}
 }
 .sol-tag{font-size:var(--t-cap);font-weight:700;letter-spacing:normal;text-transform:none;color:var(--accent);margin-bottom:24px;display:flex;align-items:center;gap:12px}
 .sol-tag::before{content:'';width:24px;height:2px;background:var(--accent);display:inline-block}
+.blk-title{font-size:var(--t-h4);font-weight:700;color:var(--text);margin:0 0 20px;letter-spacing:normal}
 .goal-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 .goal{display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px 24px;position:relative;overflow:hidden;box-shadow:var(--shadow);transition:transform .3s cubic-bezier(.16,1,.3,1),border-color .3s cubic-bezier(.16,1,.3,1),box-shadow .3s cubic-bezier(.16,1,.3,1)}
 .goal::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-on-dark));transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.16,1,.3,1)}
@@ -766,8 +765,8 @@ body {
     </div>
     <div class="hero-stats hero-enter d4">
       <div class="hstat"><div class="v"><span class="accent" data-count="25">0</span></div><div class="l">家供应商</div></div>
-      <div class="hstat"><div class="v" data-count="92172">0</div><div class="l">条底价</div></div>
-      <div class="hstat"><div class="v" data-count="632">0</div><div class="l">个通达仓码</div></div>
+      <div class="hstat"><div class="v" data-count="92188">0</div><div class="l">条底价</div></div>
+      <div class="hstat"><div class="v" data-count="683">0</div><div class="l">个通达仓码</div></div>
       <div class="hstat"><div class="v">3</div><div class="l">条线路路由</div></div>
     </div>
     <div class="hero-scroll-hint">
@@ -779,7 +778,7 @@ body {
 <div class="wrap">
     <div class="sec-head" id="bkg-pain">
       <h2 class="reveal">项目背景</h2>
-      <p class="reveal" data-reveal-delay="1">这些痛点不是凭空假设，是每一单都在真实发生的成本——错一次就是真金白银，慢一次客户就转走。</p>
+      <p class="reveal" data-reveal-delay="1">这些痛点不是凭空假设，是每一单都在真实发生的成本。错一次就是真金白银，慢一次客户就转走。</p>
     </div>
     <div class="diagram-html reveal pain-grid">
     <div class="pain-grid-inner">
@@ -904,9 +903,8 @@ body {
     </div>
 
     <div class="sol-block reveal" id="sol-biz">
-      <div class="sol-tag">业务模式 · 以前怎么痛，现在怎么解</div>
       <div class="sf">
-        <div class="sf-hd"><span style="color:var(--accent)">⬤</span> 以前的三大痛 — 人脑记忆、手工翻表、效率极低</div>
+        <div class="sf-hd"><span style="color:var(--accent)">⬤</span> 以前的三大痛：人脑记忆、手工翻表、效率极低</div>
         <div class="sf-row">
           <div class="sf-card dk" style="flex:1.8">
             <span class="sf-label r" style="display:block;margin-bottom:6px">PAIN 01</span>
@@ -924,8 +922,8 @@ body {
             <p class="dk">"全国同价"含义乌，忘了就漏掉</p>
           </div>
         </div>
-        <div class="sf-conn"><div class="pill"><span>→</span>系统化重构 —— 从手工翻表到 AI 秒级输出</div></div>
-        <div class="sf-hd"><span style="color:var(--accent)">⬤</span> 现在的三个解 — 一条命令拉齐，三秒出价</div>
+        <div class="sf-conn"><div class="pill"><span>→</span>系统化重构：从手工翻表到 AI 秒级输出</div></div>
+        <div class="sf-hd"><span style="color:var(--accent)">⬤</span> 现在的三个解：一条命令拉齐，三秒出价</div>
         <div class="sf-row">
           <div class="sf-card">
             <span class="sf-label" style="display:block;margin-bottom:6px">SOLUTION</span>
@@ -944,15 +942,14 @@ body {
           </div>
         </div>
         <div class="sf-card w-full fill-s" style="text-align:center;margin-top:14px">
-          <h4 class="w" style="font-size:15px">三秒出底价，人只做一件事 —— 判断能不能接、拍板定价</h4>
+          <h4 class="w" style="font-size:15px">三秒出底价，人只做一件事：判断能不能接、拍板定价</h4>
         </div>
       </div>
     </div>
 
     <div class="sol-block reveal" id="sol-ai">
-      <div class="sol-tag">AI 融合 · 模型做识别，规则做校验，人在边界做决策</div>
       <div class="sf">
-        <div class="sf-hd">AI 补盲三类场景 — 每一类都有明确边界，不靠一个模型梭哈</div>
+        <div class="sf-hd">AI 补盲三类场景：每一类都有明确边界，不靠一个模型梭哈</div>
         <div class="sf-row">
           <div class="sf-card w2">
             <span class="sf-label" style="display:block;margin-bottom:4px">场景 01</span>
@@ -979,7 +976,6 @@ body {
     </div>
 
     <div class="sol-block reveal" id="sol-engine">
-      <div class="sol-tag">入库引擎 · 从价表到生产库，三道关卡</div>
       <div class="sf">
         <div class="sf-hd">每一格数据进生产库前，先在测试库挡掉所有脏数据</div>
         <div style="padding-left:28px;border-left:2px solid var(--accent);margin-left:12px">
@@ -1024,9 +1020,8 @@ body {
     </div>
 
     <div class="sol-block reveal" id="sol-firewall">
-      <div class="sol-tag">防火墙 · 四道防线，层层过筛</div>
       <div class="sf">
-        <div class="sf-hd">不是一道墙，是四层递进 — 每一道过不去的自己拦住</div>
+        <div class="sf-hd">不是一道墙，是四层递进：每一道过不去的自己拦住</div>
         <div class="sf-split">
           <div class="sf-left">
             <div class="sf-card dk" style="padding:16px 18px">
@@ -1106,7 +1101,7 @@ body {
   <div class="wrap">
     <div class="sec-head">
       <h2 class="reveal">一条询价，人机协作跑完</h2>
-      <p class="reveal" data-reveal-delay="1">从客户开口到方案到手 —— AI 秒级出底价，商务审核拍板，一分钟给专业报价。</p>
+      <p class="reveal" data-reveal-delay="1">从客户开口到方案到手：AI 秒级出底价，商务审核拍板，一分钟给专业报价。</p>
     </div>
     <div class="reveal"><div class="diagram-html reveal flow-2lane">
     <div class="flow-entry">
@@ -1238,7 +1233,7 @@ body {
   <div class="wrap">
     <div class="sec-head">
       <h2 class="reveal">创新成效</h2>
-      <p class="reveal" data-reveal-delay="1">痛点逐个破解，价值用数字说话；把 25 家供应商抽象成 4 套模板、把零散解法沉淀成可复用的资产——这才是别人带不走、我却能复用的能力。</p>
+      <p class="reveal" data-reveal-delay="1">痛点逐个破解，价值用数字说话；把 25 家供应商抽象成 8 个布局族、把零散解法沉淀成可复用的资产。这才是别人带不走、我却能复用的能力。</p>
     </div>
 
     <div class="sol-block reveal" id="impact-q">
@@ -1252,7 +1247,7 @@ body {
     </div>
 
     <div class="sol-block reveal" id="impact-pain">
-      <div class="sol-tag">痛点破解 · 三个老毛病，逐个断根</div>
+      <h3 class="blk-title">痛点破解</h3>
       <div class="diagram-html reveal fix-list">
     <div class="fix-row">
         <div class="fix-old">
@@ -1289,12 +1284,12 @@ body {
     </div>
 
     <div class="sol-block reveal" id="impact-ip">
-      <div class="sol-tag">知识产权转化 · 零散解法，沉淀成可复用资产</div>
+      <h3 class="blk-title">知识产权转化</h3>
       <div class="diagram-html reveal flow-vert"><div class="flow-box" style="margin:0 auto">25 家在册供应商</div><div class="flow-vert-line"></div>
         <div class="flow-vert-step">
             <div class="flow-num">1</div>
             <div>
-                <div class="flow-stitle">归纳 4 个真模板 · 引擎族</div>
+                <div class="flow-stitle">归纳 8 个布局族 · 引擎族</div>
                 <div class="flow-ssub">渠道映射 · 进仓点 · 重量档位 → 结构沉淀</div>
             </div>
         </div>
@@ -1334,11 +1329,10 @@ body {
   <div class="wrap">
     <div class="sec-head">
       <h2 class="reveal">推广价值</h2>
-      <p class="reveal" data-reveal-delay="1">不只服务一家业务，而是一套可以复制到更多线路和场景的底座——把以前做不了的事，变成自动出。</p>
+      <p class="reveal" data-reveal-delay="1">不只服务一家业务，而是一套可以复制到更多线路和场景的底座。把以前做不了的事，变成自动出。</p>
     </div>
 
     <div class="sol-block reveal" id="value-leap">
-      <div class="sol-tag">能力跃升 · 以前做不了，现在自动出</div>
       <div class="diagram-html reveal cmp-wrap">
     <table class="cmp-table">
         <thead>
@@ -1367,7 +1361,7 @@ body {
     </div>
 
     <div class="sol-block reveal" id="value-sustain">
-      <div class="sol-tag">项目持续性 · 越跑越新，越用越准</div>
+      <h3 class="blk-title">项目持续性</h3>
       <div class="diagram-html reveal sustain-loop">
     <div class="sustain-top">
         <div class="sustain-card">
@@ -1375,7 +1369,7 @@ body {
             <div>
                 <div class="flow-stitle">价表周更新</div>
                 <div class="flow-ssub">新价入库 · 旧价归档</div>
-                <div class="flow-ssub">20 家供应商每周轮动</div>
+                <div class="flow-ssub">25 家供应商每周轮动</div>
             </div>
         </div>
         <div class="sustain-arrow-r"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M0 10 L16 10 M10 4 L16 10 L10 16" stroke="var(--accent)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -1411,7 +1405,7 @@ body {
     </div>
 
     <div class="sol-block reveal" id="value-cover">
-      <div class="sol-tag">场景覆盖面 · 一套底座，多线复用</div>
+      <h3 class="blk-title">场景覆盖面</h3>
       <div class="diagram-html reveal cover-3">
     <div class="cover-3-cards">
         <div class="cover-card">
@@ -1463,12 +1457,12 @@ body {
   <div class="wrap">
     <div class="sec-head">
       <h2 class="reveal">现阶段已达成目标</h2>
-      <p class="reveal" data-reveal-delay="1">从一张 Excel 到一套能自我进化的货运报价系统——把对货运的理解和对 AI 的落地拧成一股，每一项都可点开验证。</p>
+      <p class="reveal" data-reveal-delay="1">从一张 Excel 到一套能自我进化的货运报价系统。把对货运的理解和对 AI 的落地拧成一股，每一项都可点开验证。</p>
     </div>
         <div class="goal-list reveal">
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
-        <div><h3>16 家美线供应商价表全量入库</h3><p>卡派、海派、船期、规则四类数据，73,344 条底价在册。</p></div>
+        <div><h3>16 家美线供应商价表全量入库</h3><p>卡派、海派、船期、规则四类数据，73,360 条底价在册。</p></div>
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
@@ -1496,7 +1490,7 @@ body {
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
-        <div><h3>自我学习引擎族上线</h3><p>25 家供应商归纳成 4 个布局模板，通用引擎 + 模板库 + 持续学习四件套闭环，新供应商对号即用。</p></div>
+        <div><h3>自我学习引擎族上线</h3><p>25 家供应商归纳成 8 个布局族，通用引擎 + 模板库 + 持续学习四件套闭环，新供应商对号即用。</p></div>
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
@@ -1611,7 +1605,7 @@ body {
       </div>
     </div>
     <div class="ui-panel on reveal">
-      <div class="ui-frame"><a href="https://ppppadd.github.io/price-query/" target="_blank"><img src="assets/showcase-web-hero.png" alt="询价网页 Hero 页 · 一搜比价"><div class="ui-cap"><span><b>询价网页</b> · Hero 页一搜比价，输入仓码即返最低价</span></div></a></div>
+      <div class="ui-frame"><a href="https://ppppadd.github.io/price-query/" target="_blank"><img src="assets/showcase-web-hero-v2.png" alt="询价网页 Hero 页 · 一搜比价"><div class="ui-cap"><span><b>询价网页</b> · Hero 页一搜比价，输入仓码即返最低价</span></div></a></div>
     </div>
   </div>
     
