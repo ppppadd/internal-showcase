@@ -597,7 +597,7 @@ a{color:inherit;text-decoration:none}
 .sol-tag::before{content:'';width:24px;height:2px;background:var(--accent);display:inline-block}
 .blk-title{font-size:var(--t-h4);font-weight:700;color:var(--text);margin:0 0 20px;letter-spacing:normal}
 .goal-list{display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:16px}
-.goal{display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);padding:24px 24px;position:relative;overflow:hidden;box-shadow:var(--shadow);transition:transform var(--dur-base) cubic-bezier(.16,1,.3,1),border-color var(--dur-base) cubic-bezier(.16,1,.3,1),box-shadow var(--dur-base) cubic-bezier(.16,1,.3,1)}
+.goal{display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);min-height:135px;padding:24px 24px;position:relative;overflow:hidden;box-shadow:var(--shadow);transition:transform var(--dur-base) cubic-bezier(.16,1,.3,1),border-color var(--dur-base) cubic-bezier(.16,1,.3,1),box-shadow var(--dur-base) cubic-bezier(.16,1,.3,1)}
 .goal::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-on-dark));transform:scaleX(0);transform-origin:left;transition:transform var(--dur-base) cubic-bezier(.16,1,.3,1)}
 .goal:hover{transform:translateY(-2px);border-color:var(--accent-soft-2);box-shadow:var(--shadow-lg)}
 .goal:hover::before{transform:scaleX(1)}
@@ -724,6 +724,8 @@ body {
 @media (max-width: 1024px) {
   .pn-arrow { width: 44px; height: 44px; } .pn-prev { left: 12px; } .pn-next { right: 12px; }
   .pn-nav-inner { padding: 0 48px; gap: 12px; } .pn-tab { padding: var(--space-2) var(--space-3); font-size:var(--t-cap); }
+  .sustain-card { padding: var(--space-6) var(--space-6); }
+  .sustain-card .flow-ssub { font-size: var(--t-cap); }
   .fix-row { grid-template-columns: minmax(0,1fr); gap: 12px; }
   .fix-row, .cmp-table th, .cmp-table td { padding-left: 16px; padding-right: 16px; }
 }
@@ -842,8 +844,8 @@ body {
     <div class="hero-stats hero-enter d4">
       <div class="hstat"><div class="v"><span class="accent" data-count="25">0</span></div><div class="l">家供应商</div></div>
       <div class="hstat"><div class="v" data-count="91571">0</div><div class="l">条底价</div></div>
-      <div class="hstat"><div class="v" data-count="678">0</div><div class="l">个通达仓码</div></div>
-      <div class="hstat"><div class="v">3</div><div class="l">条线路路由</div></div>
+      <div class="hstat"><div class="v" data-count="678">0</div><div class="l">个仓码</div></div>
+      <div class="hstat"><div class="v" data-count="3">0</div><div class="l">条线路</div></div>
     </div>
   </div>
 </div>
@@ -941,7 +943,7 @@ body {
         </div>
         <div class="sf-conn"><div class="line"></div></div>
         <div class="sf-card w-full fill sf-flat">
-          <h4>25 家供应商底价一秒拉齐，三线数据物理隔离永不串线</h4>
+          <h4>三线合计 25 家供应商底价一秒拉齐，三线数据物理隔离永不串线</h4>
           <ul class="sf-cells">
             <li><h4>美线 16 家</h4><p class="sf-cap">prices</p></li>
             <li><h4>欧英线 5 家</h4><p class="sf-cap">prices_eu</p></li>
@@ -999,7 +1001,7 @@ body {
           <div class="sf-card">
             <span class="sf-label" style="display:block;margin-bottom:6px">SOLUTION</span>
             <h4>渠道自动归一</h4>
-            <p>11个标准渠道，各家 20+ 种写法自动映射</p>
+            <p>11 个标准渠道，各家 20+ 种写法自动映射</p>
           </div>
           <div class="sf-card">
             <span class="sf-label" style="display:block;margin-bottom:6px">SOLUTION</span>
@@ -1305,10 +1307,10 @@ body {
     <div class="sol-block reveal" id="impact-q">
       <div class="sol-tag">量化价值呈现</div>
       <div class="metrics">
-        <div class="metric"><div class="v"><span class="accent">200×</span></div><div class="l">比价提速 · 10 分钟到 3 秒</div></div>
+        <div class="metric"><div class="v">200×</div><div class="l">比价提速 · 10 分钟到 3 秒</div></div>
         <div class="metric"><div class="v">4→25</div><div class="l">查价广度 · 最多 4 家到全量 25 家</div></div>
         <div class="metric"><div class="v">1</div><div class="l">人入库 · 全员直接用数</div></div>
-        <div class="metric"><div class="v"><span class="accent">0→1</span></div><div class="l">周报监控趋势 · 从无到有</div></div>
+        <div class="metric"><div class="v">0→1</div><div class="l">周报监控趋势 · 从无到有</div></div>
       </div>
     </div>
 
@@ -1536,11 +1538,11 @@ body {
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
-        <div><h3>加拿大线四家全量入库，三线打通</h3><p>巨人、陆行、速鋆、英美 4 家全量入生产库，6,370 条底价在册。至此美线 16 家、欧线 5 家、加拿大 4 家三线并行，查价广度从单一美线扩到美欧加全覆盖。</p></div>
+        <div><h3>加拿大线四家全量入库，三线打通</h3><p>巨人、陆行、速鋆、英美 4 家全量入生产库，6,370 条底价在册，美欧加三线并行。</p></div>
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
-        <div><h3>六个企业微信端输出功能上线</h3><p>基础智能询价、智能对比查价、供应商价格对比、供应商评分排名、供应商价表更新、供应商信息查询，业务日常全接上。</p></div>
+        <div><h3>六个企业微信端输出功能上线</h3><p>智能询价、对比查价、价格对比、评分排名、价表更新、信息查询 6 项，业务日常全接上。</p></div>
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
