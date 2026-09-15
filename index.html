@@ -130,6 +130,12 @@ a{color:inherit;text-decoration:none}
 .ui-frame > a:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}
 .ui-qr a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .modal-close:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+/* DD-23：:focus-visible 不支持时的兜底（老 WebView 键盘不可达）；现代浏览器整块不生效 */
+:focus:not(:focus-visible){outline:none}
+@supports not selector(:focus-visible){
+  :focus{outline:2px solid var(--accent);outline-offset:2px}
+  .pn-tab:focus,.theme-btn:focus,.demo-tab:focus{outline:2px solid var(--accent-on-dark);outline-offset:-2px}
+}
 .btn:disabled,.pn-arrow:disabled,.demo-tab:disabled{opacity:.55;cursor:not-allowed}
 .pn-tab[aria-disabled="true"]{opacity:.55;cursor:not-allowed}
 
@@ -237,7 +243,7 @@ a{color:inherit;text-decoration:none}
 .pain-grid{max-width:100%;margin:0 auto}
 .pain-grid-inner{display:flex;flex-direction:column;gap:var(--space-4)}
 .pain-row{display:flex;align-items:stretch;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;transition:transform var(--dur-base) cubic-bezier(.16,1,.3,1),box-shadow var(--dur-base) cubic-bezier(.16,1,.3,1)}
-.pain-row:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.pain-row:hover{box-shadow:var(--shadow)}
 .pain-left{flex:1.35;display:flex;align-items:center;gap:20px;padding:var(--space-6) var(--space-7);min-width:0}
 .pain-num{flex:none;width:32px;font-size:var(--t-cap);font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums;letter-spacing:var(--ls-num)}
 .pain-copy{min-width:0}
@@ -289,7 +295,7 @@ a{color:inherit;text-decoration:none}
 .flow-3db-tag{font-size:var(--t-cap);font-weight:700;color:var(--accent);margin:var(--space-2) 0}
 .flow-3db-sub{font-size:var(--t-cap);color:var(--muted);margin-top:6px}
 .flow-3db-3cols{display:flex;gap:8px;margin:var(--space-3) 0}
-.flow-3db-col{flex:1;background:var(--surface);border-radius:var(--r-md);padding:8px;text-align:center}
+.flow-3db-col{flex:1;min-width:0;background:var(--surface);border-radius:var(--r-md);padding:8px;text-align:center}
 .flow-3db-col-t{font-size:var(--t-cap);font-weight:700;color:var(--text)}
 .flow-3db-col-s{font-size:var(--t-cap);color:var(--muted)}
 .flow-3db-arrow{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:none;gap:4px}
@@ -324,8 +330,8 @@ a{color:inherit;text-decoration:none}
               box-shadow .35s cubic-bezier(.16,1,.3,1),
               border-color .35s cubic-bezier(.16,1,.3,1);
 }
-/* flow-step hover */
-.flow-step:hover{transform:translateX(4px);box-shadow:var(--shadow-sm);border-color:var(--accent-soft-2)}
+/* flow-step hover（DD-25：位移被入场动画 itemSlideIn forwards 压制为死代码，按 DD-22 规则 1 明确移除，仅留阴影/边框）*/
+.flow-step:hover{box-shadow:var(--shadow-sm);border-color:var(--accent-soft-2)}
 /* flow-box hover */
 .flow-box:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm);border-color:var(--accent)}
 /* flow-lane hover */
@@ -334,15 +340,15 @@ a{color:inherit;text-decoration:none}
 /* flow-result hover */
 .flow-result:hover{transform:translateY(-2px);box-shadow:var(--shadow-accent)}
 /* flow-3db-card hover */
-.flow-3db-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.flow-3db-card:hover{box-shadow:var(--shadow-sm)}
 .flow-3db-prod:hover{box-shadow:var(--shadow-accent);border-color:var(--accent)}
 .flow-3db-col:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm)}
 /* flow-vert-step hover */
-.flow-vert-step:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm);border-color:var(--accent-soft-2)}
+.flow-vert-step:hover{box-shadow:var(--shadow-sm);border-color:var(--accent-soft-2)}
 /* sustain-card hover */
-.sustain-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm);border-color:var(--accent-soft-2)}
+.sustain-card:hover{box-shadow:var(--shadow-sm);border-color:var(--accent-soft-2)}
 /* cover-card hover */
-.cover-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--accent-soft-2)}
+.cover-card:hover{box-shadow:var(--shadow-lg);border-color:var(--accent-soft-2)}
 .cover-card:hover .flow-num{transform:scale(1.12)}
 /* flow-num hover */
 .flow-num,.cover-card .flow-num,.sustain-card .flow-num{transition:transform var(--dur-base) cubic-bezier(.16,1,.3,1)}
@@ -493,6 +499,13 @@ a{color:inherit;text-decoration:none}
   .metric:nth-child(n+3){border-bottom:1px solid var(--line)}
   .metric:last-child{border-bottom:none}
   .footer-statement{font-size:var(--t-num)}
+  /* DD-24：窄屏真实内容裁剪修复（三处横排容器在 ≤414px 被 overflow-x:hidden 静默裁掉） */
+  .flow-lanes{flex-direction:column}
+  .cover-3-cards{flex-direction:column}
+  .sustain-top{flex-direction:column;gap:8px}
+  .sustain-top .sustain-arrow-r svg{transform:rotate(90deg)}
+  .sustain-card{max-width:100%}
+  .demo-nav{flex-wrap:wrap;overflow-x:visible}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation:none !important;transition:none !important}
