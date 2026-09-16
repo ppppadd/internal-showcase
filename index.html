@@ -131,7 +131,7 @@
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
 }.mono{font-family:"Geist Mono","SFMono-Regular",ui-monospace,monospace;font-variant-numeric:tabular-nums}.wrap{max-width:1600px;margin:0 auto;padding:0 48px}a{color:inherit;text-decoration:none}::selection{background:var(--accent);color:#fff}:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:inherit}.pn-tab:focus-visible{outline:2px solid var(--nav-accent);outline-offset:-2px}.pn-arrow:focus-visible{outline:2px solid var(--accent);outline-offset:2px;box-shadow:0 0 0 4px rgba(255,255,255,.55)}.btn:focus-visible{outline:2px solid #fff;outline-offset:3px;box-shadow:0 0 0 5px rgba(0,122,255,.55)}.btn-ghost:focus-visible{outline-color:#fff}.theme-btn:focus-visible{outline:2px solid var(--nav-accent);outline-offset:-2px}.demo-tab:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}.video-cover:focus-visible{outline:2px solid #fff;outline-offset:-3px}.ui-frame > a:focus-visible{outline:2px solid var(--accent);outline-offset:-3px}.ui-qr a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}/* DD-23：:focus-visible 不支持时的兜底（老 WebView 键盘不可达）；现代浏览器整块不生效 */
 :focus:not(:focus-visible){outline:none}
-@supports not selector(:focus-visible){:focus{outline:2px solid var(--accent);outline-offset:2px}.pn-tab:focus,.theme-btn:focus,.demo-tab:focus{outline:2px solid var(--nav-accent);outline-offset:-2px}
+@supports not selector(:focus-visible){:focus{outline:2px solid var(--accent);outline-offset:2px}/* 鼠标点击后不留 focus 轮廓（对齐参考页：点完不高亮）；键盘可达性由各自的 :focus-visible 负责 */
 }.btn:disabled,.pn-arrow:disabled,.demo-tab:disabled{opacity:.55;cursor:not-allowed}.pn-tab[aria-disabled="true"]{opacity:.55;cursor:not-allowed}/* Nav */
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;height:64px;display:flex;align-items:center;
   background:rgba(10,14,22,.35);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);
@@ -266,7 +266,7 @@
   display: flex; gap: 4px; flex: 1; overflow-x: auto; scrollbar-width: none;
   -ms-overflow-style: none;
 }.pn-nav-tabs::-webkit-scrollbar{ display: none; }.pn-tab{
-  font-family: inherit; font-size:var(--t-cap); font-weight: 400; color: var(--nav-ink-2);
+  font-family: inherit; font-size:var(--t-cap); font-weight: 500; color: var(--nav-ink-2);
   position: relative; background: transparent; border: none; padding: 0 var(--space-4);
   height: 44px; border-radius: var(--r-pill);
   cursor: pointer; white-space: nowrap; transition: color .25s var(--ease-apple), background-color .25s var(--ease-apple), transform .25s var(--ease-apple); letter-spacing:normal;
@@ -274,7 +274,7 @@
   border-radius:2px; background: var(--nav-accent); transform: scaleX(0); transform-origin:left;
   transition: transform .32s var(--ease-apple); }
 .pn-tab:hover::after{ transform: scaleX(1); }
-.pn-tab:hover{ color: var(--nav-ink); background: var(--nav-hover-bg); }.pn-tab:active{ transform: scale(.96); }.pn-tab.on{ color: var(--nav-accent); background: var(--nav-on-bg); font-weight: 700; }.pn-nav-right{ display: flex; align-items:center; gap: 12px; flex: none; }.pn-counter{ font-size:var(--t-cap); color: var(--nav-ink-2); letter-spacing:var(--ls-num); }.theme-btn{
+.pn-tab:hover{ color: var(--nav-ink); background: var(--nav-hover-bg); }.pn-tab:active{ transform: scale(.96); }/* 对齐参考页 freight-rfq-demo：tab 无选中常亮态；当前页由 counter + 进度条指示，tab 只保留 hover 反馈 */.pn-nav-right{ display: flex; align-items:center; gap: 12px; flex: none; }.pn-counter{ font-size:var(--t-cap); color: var(--nav-ink-2); letter-spacing:var(--ls-num); }.theme-btn{
   width: 44px; height: 44px; border-radius: var(--r-pill); border: 1px solid var(--nav-line);
   background: var(--nav-fill); cursor: pointer; display: inline-flex;
   align-items:center; justify-content:center; color: var(--nav-ink);
@@ -1263,6 +1263,7 @@
 
     newPanel.querySelector('.pn-panel-scroll').scrollTop = 0;
 
+    /* on 类仅作「当前页」状态标记，不产生常亮样式（对齐参考页：tab 无选中态） */
     tabs.forEach(function(t) { t.classList.remove('on'); });
     tabs[idx].classList.add('on');
     counter.textContent = (idx + 1) + ' / ' + TOTAL;
