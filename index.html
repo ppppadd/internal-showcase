@@ -333,6 +333,28 @@
 }
 @media (prefers-reduced-motion:reduce){.hero-particles{display:none}.hero-bg{inset:0; transition:none}
 }
+
+/* ===== 二维码放大（对齐询价网页渠道排名卡片的 Apple 分层放大 + 毛玻璃幕布） ===== */
+@keyframes appleExpand{0%{transform:scaleY(0);opacity:0}60%{opacity:1}100%{transform:scaleY(1);opacity:1}}
+@keyframes appleFadeUp{0%{opacity:0;transform:translateY(12px)}100%{opacity:1;transform:translateY(0)}}
+.apple-expand{animation:appleExpand .7s cubic-bezier(.25,.1,.25,1) both;transform-origin:center}
+.apple-fade-up{animation:appleFadeUp .5s cubic-bezier(.25,.1,.25,1) both;opacity:0}
+.ui-qr{cursor:zoom-in;transition:transform .3s cubic-bezier(.25,.1,.25,1),box-shadow .3s cubic-bezier(.25,.1,.25,1)}
+@media (hover:hover) and (pointer:fine){.ui-qr:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.06),0 24px 56px rgba(0,0,0,.12)}}
+.ui-qr:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.ui-qr-hint{display:inline-block;margin-top:10px;padding:3px 10px;border-radius:999px;background:rgba(0,122,255,.10);color:var(--accent);font-size:var(--t-cap-xs,11px);line-height:1.6}
+.qr-zoom-backdrop{position:fixed;inset:0;z-index:80;background:rgba(10,14,22,.30);backdrop-filter:blur(6px) saturate(.9);-webkit-backdrop-filter:blur(6px) saturate(.9);opacity:0;pointer-events:none;transition:opacity .4s cubic-bezier(.22,.61,.36,1)}
+.qr-zoom-backdrop.on{opacity:1;pointer-events:auto}
+.qr-zoom{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.92);opacity:0;display:none;flex-direction:column;align-items:center;text-align:center;z-index:81;width:calc(100% - 32px);max-width:400px;padding:28px 26px 24px;background:var(--card-bg,#fff);border:1px solid var(--frame-line,rgba(0,0,0,.10));border-radius:var(--r-card,20px);box-shadow:0 6px 16px rgba(0,0,0,.10),0 32px 72px rgba(0,0,0,.22);transition:transform .45s cubic-bezier(.25,.1,.25,1),opacity .35s cubic-bezier(.25,.1,.25,1)}
+.qr-zoom.on{display:flex;transform:translate(-50%,-50%) scale(1);opacity:1}
+.qr-zoom img{width:min(62vw,300px);height:min(62vw,300px);border-radius:var(--r-md,12px);background:#fff;padding:6px;box-sizing:border-box}
+.qr-zoom-title{margin-top:18px;font-size:var(--t-body,16px);color:var(--text,#1D1D1F)}
+.qr-zoom-sub{margin:8px 0 0;font-size:var(--t-cap,13px);color:var(--frame-cap,#86868B);line-height:var(--lh-body,1.6)}
+.qr-zoom-link{margin-top:18px;display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:999px;background:var(--accent,#007AFF);color:#fff;font-size:var(--t-cap,13px);text-decoration:none}
+.qr-zoom-x{position:absolute;top:12px;right:12px;width:30px;height:30px;border-radius:50%;border:1px solid var(--frame-line,rgba(0,0,0,.10));background:transparent;color:var(--frame-cap,#86868B);cursor:pointer;font-size:13px;line-height:1;padding:0}
+.qr-zoom-x:hover{color:var(--text,#1D1D1F)}
+@media (max-width:480px){.qr-zoom{padding:22px 18px 20px}}
+@media (prefers-reduced-motion:reduce){.qr-zoom,.qr-zoom-backdrop{transition:none}.apple-expand,.apple-fade-up{animation:none;opacity:1}}
 </style>
 <script>try{document.documentElement.setAttribute("data-navinit",/^#pn[0-7]$/.test(location.hash)?"panel":"hero")}catch(e){}</script>
 </head>
@@ -1223,11 +1245,12 @@
       <h2 class="reveal">公开询价网页</h2>
       <p class="reveal" data-reveal-delay="1">企业微信之外，同一套底价另开一个公开询价网页：输入仓码即可查价对比。</p>
     </div>
-    <div class="ui-qr reveal" data-reveal-delay="1" style="display:flex;gap:16px;align-items:center;margin:0 0 24px;padding:16px 24px;background:var(--card-bg,#fff);border:1px solid var(--frame-line,#e5e7eb);border-radius:var(--r-card);box-shadow:var(--shadow-lg)">
+    <div class="ui-qr reveal" data-reveal-delay="1" role="button" tabindex="0" data-qr-zoom aria-label="点击放大询价网页二维码" style="display:flex;gap:16px;align-items:center;margin:0 0 24px;padding:16px 24px;background:var(--card-bg,#fff);border:1px solid var(--frame-line,#e5e7eb);border-radius:var(--r-card);box-shadow:var(--shadow-lg)">
       <img src="assets/qr-price-query.png" alt="扫码访问询价网页" style="width:110px;height:110px;border-radius:var(--r-md);flex:none">
       <div>
         <strong style="font-size:var(--t-body);color:var(--text)">手机扫码 · 直达询价网页</strong>
         <p style="margin:8px 0 0;font-size:var(--t-cap);color:var(--frame-cap);line-height:var(--lh-body)">企业微信之外，同一套底价。扫码即可在手机打开<a href="https://ppppadd.github.io/price-query/" target="_blank" style="color:var(--accent)">ppppadd.github.io/price-query</a></p>
+        <span class="ui-qr-hint">点击放大二维码</span>
       </div>
     </div>
     <div class="ui-panel on reveal">
@@ -1693,6 +1716,84 @@
 
 initFromHashFromLocation();
 
+})();
+</script>
+
+<!-- ===== 二维码放大浮层（对齐询价网页排名卡片放大：毛玻璃幕布 + Apple 分层动画） ===== -->
+<div class="qr-zoom-backdrop" id="qrZoomBackdrop"></div>
+<div class="qr-zoom" id="qrZoom" role="dialog" aria-modal="true" aria-label="询价网页二维码">
+  <button class="qr-zoom-x" id="qrZoomClose" type="button" aria-label="关闭">✕</button>
+  <img id="qrZoomImg" src="assets/qr-price-query.png" alt="询价网页二维码（放大）">
+  <strong class="qr-zoom-title" id="qrZoomTitle">手机扫码 · 直达询价网页</strong>
+  <p class="qr-zoom-sub" id="qrZoomSub">企业微信之外，同一套底价。扫码即可在手机打开 ppppadd.github.io/price-query</p>
+  <a class="qr-zoom-link" href="https://ppppadd.github.io/price-query/" target="_blank" rel="noopener">打开询价网页</a>
+</div>
+<script>
+(function(){
+  var COLLAPSE_MS = 520;                       /* 与询价网页收起过渡一致 */
+  var panel = document.getElementById('qrZoom');
+  var backdrop = document.getElementById('qrZoomBackdrop');
+  var img = document.getElementById('qrZoomImg');
+  var title = document.getElementById('qrZoomTitle');
+  var sub = document.getElementById('qrZoomSub');
+  var closeBtn = document.getElementById('qrZoomClose');
+  var card = document.querySelector('[data-qr-zoom]');
+  if (!panel || !backdrop || !card) return;
+  var isOpen = false, lastFocus = null, timer = null;
+
+  function open(){
+    if (isOpen) return;
+    isOpen = true;
+    lastFocus = document.activeElement;
+    /* 重置子元素动画并强制回流，确保动画可重播 */
+    [img, title, sub].forEach(function(el){ el.classList.remove('apple-expand','apple-fade-up'); el.style.animationDelay=''; });
+    void img.offsetWidth;
+    panel.style.display = 'flex';
+    void panel.offsetWidth;
+    requestAnimationFrame(function(){
+      panel.classList.add('on');
+      /* 二维码从中心竖直展开（延迟 0.12s）／标题立即淡入／说明延迟 0.32s —— 对齐排名卡片口径 */
+      title.classList.add('apple-fade-up');
+      img.classList.add('apple-expand'); img.style.animationDelay = '0.12s';
+      sub.classList.add('apple-fade-up'); sub.style.animationDelay = '0.32s';
+    });
+    backdrop.classList.add('on');
+    if (closeBtn && closeBtn.focus) closeBtn.focus();
+  }
+
+  function close(){
+    if (!isOpen) return;
+    isOpen = false;
+    panel.classList.remove('on');
+    backdrop.classList.remove('on');
+    [img, title, sub].forEach(function(el){ el.classList.remove('apple-expand','apple-fade-up'); el.style.animationDelay=''; });
+    clearTimeout(timer);
+    timer = setTimeout(function(){
+      if (!panel.classList.contains('on')) panel.style.display = 'none';
+    }, COLLAPSE_MS);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  /* 卡片：点开（卡内链接照常跳转，不拦截） */
+  card.addEventListener('click', function(e){
+    if (e.target.closest('a')) return;
+    e.preventDefault();
+    open();
+  });
+  card.addEventListener('keydown', function(e){
+    if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar'){ e.preventDefault(); open(); }
+  });
+
+  /* 点浮层与卡片以外任意区域收起（对齐询价网页 collapseTrend 的 document 级监听） */
+  document.addEventListener('click', function(e){
+    if (!isOpen) return;
+    if (e.target.closest('.qr-zoom') || e.target.closest('[data-qr-zoom]')) return;
+    close();
+  });
+  if (closeBtn) closeBtn.addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && isOpen) close(); });
+  window.addEventListener('hashchange', close);
+  window.qrZoomClose = close;
 })();
 </script>
 </body>
