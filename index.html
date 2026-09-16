@@ -204,8 +204,7 @@
 @media(prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}.reveal,.hero-enter{opacity:1;transform:none}
 }/* ===== 新增：分组标签 + 达成目标清单 ===== */
 .sol-block{margin-top:var(--space-12)}.sol-block:first-of-type{margin-top:0}/* ===== Solution Flow Cards (HTML/CSS) ===== */
-.sf{position:relative;margin-top:0}.sf-hd{font-size:var(--t-cap);font-weight:700;letter-spacing:normal;text-transform:none;color:var(--muted);margin-bottom:20px;
-  display:flex;align-items:center;gap:8px;padding-left:12px;border-left:2px solid var(--accent)}.sf-row{display:flex;gap:var(--space-4);margin-bottom:14px;align-items:stretch}.sf-row.cent{justify-content:center}.sf-card{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);padding:var(--space-7) var(--space-8);
+.sf{position:relative;margin-top:0}.sf-hd{font-size:var(--t-h4);font-weight:700;letter-spacing:normal;text-transform:none;color:var(--text);margin-bottom:20px;display:flex;align-items:center;gap:10px;padding-left:14px;border-left:3px solid var(--accent)}.sf-row{display:flex;gap:var(--space-4);margin-bottom:14px;align-items:stretch}.sf-row.cent{justify-content:center}.sf-card{flex:1;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);padding:var(--space-7) var(--space-8);
   position:relative;overflow:hidden;
   box-shadow:var(--shadow-sm);
   transition:transform var(--dur-base) cubic-bezier(.16,1,.3,1),box-shadow var(--dur-base) cubic-bezier(.16,1,.3,1)}.sf-card:hover{box-shadow:var(--shadow-lg);border-color:var(--accent-soft-2)}.sf-card::after{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:var(--r-hair) 0 0 var(--r-hair)}.sf-cells{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:0;margin:var(--space-4) 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}.sf-cells li{padding:var(--space-4) 0;text-align:center;border-left:1px solid var(--line)}.sf-cells li:first-child{border-left:0}.sf-cells h4{font-size:var(--t-h4);font-weight:700;margin:0 0 var(--space-1);letter-spacing:normal}.sf-cap{font-size:var(--t-cap);color:var(--muted);margin:0}.sf-card.sf-flat::after{display:none}
@@ -213,9 +212,14 @@
 }.sf-card.w2{flex:2}.sf-card.w3{flex:3}.sf-card.w-half{flex:0 0 48%}.sf-card.w-full{flex:0 0 100%}/* dark card */
 .sf-card.dk{background:var(--surface-2);border-color:var(--line)}.sf-card.dk2{background:var(--ink);border-color:var(--on-dark-line-4)}/* brand fill */
 .sf-card.fill{background:var(--fill-soft);border-color:var(--fill-soft-line);border-width:var(--bw-hair)}.sf-card.fill-hd{background:var(--surface);border:1px solid var(--line);border-top:2px solid var(--accent);box-shadow:none}.sf-card.fill-s{background:var(--accent);border-color:var(--accent-ink)}.sf-card .sf-badge{display:inline-flex;align-items:center;justify-content:center;
-  width:24px;height:24px;border-radius:50%;font-size:var(--t-cap);font-weight:700;flex:none}.sf-card .sf-badge.i{background:var(--accent);color:#fff}.sf-card .sf-badge.ii{background:var(--muted-2);color:#fff}.sf-card .sf-badge.iii{background:var(--accent);color:#fff}.sf-card .sf-badge.iv{background:var(--accent);color:#fff}.sf-card .sf-label{font-size:var(--t-cap);font-weight:700;color:var(--accent);letter-spacing:normal}.sf-card .sf-label.r{color:var(--accent)}.sf-card .sf-label.g{color:#a0aec0}.sf-card h4{font-size:var(--t-h4);font-weight:700;margin:var(--space-1) 0 var(--space-1);letter-spacing:normal}.sf-card h4.w{color:#fff}.sf-card h4.r{color:var(--accent)}.sf-card h4.g{color:#a0aec0}.sf-card p{font-size:var(--t-body);color:var(--muted);line-height:var(--lh-body);margin:0}.sf-card p.dk{color:var(--muted)}.sf-card p.w{color:rgba(255,255,255,.72)}.sf-conn{display:flex;align-items:center;justify-content:center;padding:8px 0}.sf-conn .line{width:2px;height:20px;background:var(--accent);border-radius:var(--r-hair);opacity:0.4}.sf-conn .pill{display:inline-flex;align-items:center;justify-content:center;
-  padding:var(--space-2) var(--space-5);border-radius:var(--r-pill);background:var(--accent);color:#fff;
-  font-size:var(--t-cap);font-weight:700}.sf-conn .pill span{font-size:var(--t-cap);margin-right:6px}/* progress bar */
+  width:24px;height:24px;border-radius:50%;font-size:var(--t-cap);font-weight:700;flex:none}.sf-card .sf-badge.i{background:var(--accent);color:#fff}.sf-card .sf-badge.ii{background:var(--muted-2);color:#fff}.sf-card .sf-badge.iii{background:var(--accent);color:#fff}.sf-card .sf-badge.iv{background:var(--accent);color:#fff}.sf-card .sf-label{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.01em}.sf-card .sf-label.r{color:var(--muted-2)}.sf-card .sf-label.g{color:#a0aec0}
+/* 以前 / 现在 对比徽标（09-16 强化对比模式） */
+.sf-era{display:inline-flex;align-items:center;font-size:var(--t-cap);font-weight:700;padding:3px 12px;border-radius:var(--r-pill);flex:none;letter-spacing:.02em}
+.sf-era.before{background:#E4E4E7;color:#4B4B50;border:1px solid #D6D6DA}
+.sf-era.after{background:var(--accent);color:#fff}
+.sf-card.cur::after{background:var(--accent)}
+.sf-card.cur{box-shadow:var(--shadow)}
+.sf-card.dk{box-shadow:none}.sf-card h4{font-size:var(--t-h4);font-weight:700;margin:var(--space-1) 0 var(--space-1);letter-spacing:normal}.sf-card h4.w{color:#fff}.sf-card h4.r{color:var(--muted)}.sf-card h4.g{color:#a0aec0}.sf-card p{font-size:var(--t-body);color:var(--muted);line-height:var(--lh-body);margin:0}.sf-card p.dk{color:var(--muted)}.sf-card p.w{color:rgba(255,255,255,.72)}.sf-conn{display:flex;align-items:center;justify-content:center;padding:8px 0}.sf-conn .line{width:2px;height:24px;background:var(--accent);border-radius:var(--r-hair);opacity:.45}.sf-conn .pill{display:inline-flex;align-items:center;justify-content:center;padding:10px 26px;border-radius:var(--r-pill);background:var(--accent);color:#fff;font-size:var(--t-h4);font-weight:700;box-shadow:var(--shadow-accent)}.sf-conn .pill span{font-size:var(--t-cap);margin-right:6px}/* progress bar */
 .sf-prog{display:flex;gap:12px;padding:var(--space-2) 0;align-items:center}.sf-prog .seg{height:3px;border-radius:var(--r-hair)}.sf-prog .dot{width:8px;height:8px;border-radius:50%}/* split row with connector lines */
 .sf-split{display:flex;gap:0;align-items:stretch;margin-bottom:14px}.sf-split .sf-left{flex:1;display:flex;flex-direction:column;gap:var(--space-3)}.sf-split .sf-gap{width:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-3)}.sf-split .sf-gap line{stroke:var(--accent);stroke-width:1;opacity:0.35}.sf-split .sf-right{flex:1;display:flex;flex-direction:column}
 @media (max-width: 768px) {.sf-row,.sf-split{flex-direction:column}.sf-card.w2,.sf-card.w3{flex:1}.sf-split .sf-gap{width:100%;height:14px;flex-direction:row}
@@ -521,7 +525,7 @@
 
     <div class="sol-block reveal" id="sol-biz">
       <div class="sf">
-        <div class="sf-hd">以前的三大痛：人脑记忆、手工翻表、效率极低</div>
+        <div class="sf-hd"><span class="sf-era before">以前</span>三大痛：人脑记忆、手工翻表、效率极低</div>
         <div class="sf-row">
           <div class="sf-card dk" style="flex:1.8">
             <span class="sf-label r" style="display:block;margin-bottom:6px">PAIN 01</span>
@@ -540,19 +544,19 @@
           </div>
         </div>
         <div class="sf-conn"><div class="pill"><span>→</span>系统化重构：从手工翻表到 AI 秒级输出</div></div>
-        <div class="sf-hd">现在的三个解：一条命令拉齐，三秒出价</div>
+        <div class="sf-hd"><span class="sf-era after">现在</span>三个解：一条命令拉齐，三秒出价</div>
         <div class="sf-row">
-          <div class="sf-card">
+          <div class="sf-card cur">
             <span class="sf-label" style="display:block;margin-bottom:6px">SOLUTION</span>
             <h4>一条命令拉齐所有底价</h4>
             <p>输入仓码+重量+渠道，25 家底价一秒呈现</p>
           </div>
-          <div class="sf-card">
+          <div class="sf-card cur">
             <span class="sf-label" style="display:block;margin-bottom:6px">SOLUTION</span>
             <h4>渠道自动归一</h4>
             <p>11 个标准渠道，各家 20+ 种写法自动映射</p>
           </div>
-          <div class="sf-card">
+          <div class="sf-card cur">
             <span class="sf-label" style="display:block;margin-bottom:6px">SOLUTION</span>
             <h4>进仓点智能匹配</h4>
             <p>查"深圳"自动命中"福永/坂田"</p>
