@@ -1271,7 +1271,9 @@
   var nextBtn = document.getElementById('pnNext');
 
   function showPanel(idx, dir) {
-    if (idx < 0 || idx >= TOTAL || (!inHero && idx === cur)) return;
+    /* idx < 0 = 从第 1 页（项目背景）左翻 → 回到封面页 #pnHero */
+    if (idx < 0) { openHero(); return; }
+    if (idx >= TOTAL || (!inHero && idx === cur)) return;
     var wasHero = inHero;
     inHero = false;
     var oldPanel = wasHero ? heroPanel : document.getElementById('pn' + cur);
@@ -1296,8 +1298,9 @@
     tabs[idx].classList.add('on');
     counter.textContent = (idx + 1) + ' / ' + TOTAL;
 
-    prevBtn.style.opacity = idx === 0 ? '0.25' : '1';
-    prevBtn.style.pointerEvents = idx === 0 ? 'none' : 'auto';
+    /* 第 1 页左箭头仍可用：点击回封面页（09-16） */
+    prevBtn.style.opacity = '1';
+    prevBtn.style.pointerEvents = 'auto';
     nextBtn.style.opacity = idx === TOTAL - 1 ? '0.25' : '1';
     nextBtn.style.pointerEvents = idx === TOTAL - 1 ? 'none' : 'auto';
 
