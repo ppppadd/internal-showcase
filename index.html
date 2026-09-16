@@ -244,7 +244,7 @@
 .pn-nav-inner{position:relative;overflow:hidden;display:flex;align-items:center;gap:8px;width:100%;max-width:1180px;height:56px;padding:0 8px 0 16px;border-radius:999px;border:1px solid transparent;background:rgba(255,255,255,.24);-webkit-backdrop-filter:blur(34px) saturate(180%);backdrop-filter:blur(34px) saturate(180%);pointer-events:auto;transition:background .3s ease,border-color .3s ease,box-shadow .3s ease,-webkit-backdrop-filter .3s ease,backdrop-filter .3s ease}
 .pn-nav.nav-glass .pn-nav-inner{background:var(--nav-bg);border-color:var(--nav-line);box-shadow:0 8px 28px rgba(0,0,0,.10);-webkit-backdrop-filter:blur(28px) saturate(180%);backdrop-filter:blur(28px) saturate(180%)}
 .pn-nav.nav-photo .pn-nav-inner{background:rgba(28,28,30,.55);border-color:rgba(255,255,255,.12);box-shadow:0 8px 28px rgba(0,0,0,.28);-webkit-backdrop-filter:blur(28px) saturate(180%);backdrop-filter:blur(28px) saturate(180%)}
-.pn-nav.nav-clear .pn-nav-inner{background:transparent;border-color:transparent;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+.pn-nav.nav-clear .pn-nav-inner{background:transparent;border-color:transparent;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}html[data-navinit="panel"] .pn-nav{--nav-ink:#1D1D1F;--nav-ink-2:rgba(29,29,31,.62);--nav-line:rgba(0,0,0,.08);--nav-fill:rgba(0,0,0,.05);--nav-fill-2:rgba(0,0,0,.09);--nav-accent:#0071E3;--nav-on-bg:rgba(0,113,227,.14);--nav-hover-bg:rgba(0,113,227,.10)}html[data-navinit="panel"] .pn-nav.nav-clear .pn-nav-inner{background:rgba(255,255,255,.24);border-color:transparent;box-shadow:none;-webkit-backdrop-filter:blur(34px) saturate(180%);backdrop-filter:blur(34px) saturate(180%)}
 .pn-nav .pn-tab,.pn-nav .theme-btn,.pn-nav .pn-nav-logo{position:relative;overflow:hidden}
 .pn-nav.nav-glass .pn-nav-progress,.pn-nav.nav-photo .pn-nav-progress{opacity:.9}
 .pn-nav .ripple{position:absolute;border-radius:50%;background:var(--nav-ink);opacity:.14;transform:scale(0);pointer-events:none;animation:rbSpread .36s ease-out forwards}
@@ -334,9 +334,10 @@
 @media (prefers-reduced-motion:reduce){.hero-particles{display:none}.hero-bg{inset:0; transition:none}
 }
 </style>
+<script>try{document.documentElement.setAttribute("data-navinit",/^#pn[0-7]$/.test(location.hash)?"panel":"hero")}catch(e){}</script>
 </head>
 <body>
-<nav class="pn-nav" id="pnNav">
+<nav class="pn-nav nav-clear" id="pnNav">
   <div class="pn-nav-inner">
     <div class="pn-nav-logo" id="pnLogo" tabindex="0" role="button" aria-label="打开封面页"><img class="logo-mark" src="assets/showcase-logo.png" alt="海盟" width="28" height="28">海盟</div>
     <div class="pn-nav-tabs" id="pnTabs">
