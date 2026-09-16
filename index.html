@@ -219,6 +219,15 @@
 .sf-era.after{background:var(--accent);color:#fff}
 .sf-card.cur::after{background:var(--accent)}
 .sf-card.cur{box-shadow:var(--shadow)}
+/* 四层防线：卡面统一 + 力度递进（09-16 治「颜色混乱」） */
+.sf-split .sf-left .sf-card.lv{background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.sf-split .sf-left .sf-card.lv::after{background:var(--accent);opacity:.32}
+.sf-split .sf-left .sf-card.lv:nth-child(2)::after{opacity:.55}
+.sf-split .sf-left .sf-card.lv:nth-child(3)::after{opacity:.78}
+.sf-split .sf-left .sf-card.lv:nth-child(4)::after{opacity:1}
+.sf-split .sf-left .sf-card.lv .sf-badge{background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent-soft-2)}
+.sf-split .sf-left .sf-card.lv h4{color:var(--text)}
+.sf-split .sf-left .sf-card.lv p{color:var(--muted)}
 .sf-card.dk{box-shadow:none}.sf-card h4{font-size:var(--t-h4);font-weight:700;margin:var(--space-1) 0 var(--space-1);letter-spacing:normal}.sf-card h4.w{color:#fff}.sf-card h4.r{color:var(--muted)}.sf-card h4.g{color:#a0aec0}.sf-card p{font-size:var(--t-body);color:var(--muted);line-height:var(--lh-body);margin:0}.sf-card p.dk{color:var(--muted)}.sf-card p.w{color:rgba(255,255,255,.72)}.sf-conn{display:flex;align-items:center;justify-content:center;padding:8px 0}.sf-conn .line{width:2px;height:24px;background:var(--accent);border-radius:var(--r-hair);opacity:.45}.sf-conn .pill{display:inline-flex;align-items:center;justify-content:center;padding:10px 26px;border-radius:var(--r-pill);background:var(--accent);color:#fff;font-size:var(--t-h4);font-weight:700;box-shadow:var(--shadow-accent)}.sf-conn .pill span{font-size:var(--t-cap);margin-right:6px}/* progress bar */
 .sf-prog{display:flex;gap:12px;padding:var(--space-2) 0;align-items:center}.sf-prog .seg{height:3px;border-radius:var(--r-hair)}.sf-prog .dot{width:8px;height:8px;border-radius:50%}/* split row with connector lines */
 .sf-split{display:flex;gap:0;align-items:stretch;margin-bottom:14px}.sf-split .sf-left{flex:1;display:flex;flex-direction:column;gap:var(--space-3)}.sf-split .sf-gap{width:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-3)}.sf-split .sf-gap line{stroke:var(--accent);stroke-width:1;opacity:0.35}.sf-split .sf-right{flex:1;display:flex;flex-direction:column}
@@ -645,39 +654,39 @@
         <div class="sf-hd">不是一道墙，是四层递进：每一道过不去的自己拦住</div>
         <div class="sf-split">
           <div class="sf-left">
-            <div class="sf-card dk" style="padding:var(--space-4) var(--space-5)">
+            <div class="sf-card lv" style="padding:var(--space-4) var(--space-5)">
               <div style="display:flex;align-items:center;gap:var(--space-3)">
-                <span class="sf-badge i" style="width:28px;height:28px;font-size:var(--t-cap)">I</span>
+                <span class="sf-badge i" style="width:28px;height:28px;font-size:13px">I</span>
                 <div>
-                  <h4 class="r" style="font-size:var(--t-body);margin:0">硬束缚 · 物理隔离</h4>
-                  <p class="dk" style="font-size:var(--t-cap)">测试库/生产库/档案库三文件，跨线查询直接拒绝</p>
+                  <h4 style="font-size:var(--t-body);margin:0">硬束缚 · 物理隔离</h4>
+                  <p style="font-size:13px">测试库/生产库/档案库三文件，跨线查询直接拒绝</p>
                 </div>
               </div>
             </div>
-            <div class="sf-card dk2" style="padding:var(--space-4) var(--space-5)">
+            <div class="sf-card lv" style="padding:var(--space-4) var(--space-5)">
               <div style="display:flex;align-items:center;gap:var(--space-3)">
-                <span class="sf-badge ii" style="width:28px;height:28px;font-size:var(--t-cap)">II</span>
+                <span class="sf-badge ii" style="width:28px;height:28px;font-size:13px">II</span>
                 <div>
-                  <h4 class="g" style="font-size:var(--t-body);margin:0">软引导 · 自动拦截</h4>
-                  <p style="color:var(--muted-2);font-size:var(--t-cap)">过期价表/冻结供应商/渠道不在标准表/非白名单仓码 → 自动排除</p>
+                  <h4 style="font-size:var(--t-body);margin:0">软引导 · 自动拦截</h4>
+                  <p style="font-size:13px">过期价表/冻结供应商/渠道不在标准表/非白名单仓码 → 自动排除</p>
                 </div>
               </div>
             </div>
-            <div class="sf-card fill" style="padding:var(--space-4) var(--space-5);border-color:var(--accent)">
+            <div class="sf-card lv" style="padding:var(--space-4) var(--space-5)">
               <div style="display:flex;align-items:center;gap:var(--space-3)">
-                <span class="sf-badge iii" style="width:28px;height:28px;font-size:var(--t-cap)">III</span>
+                <span class="sf-badge iii" style="width:28px;height:28px;font-size:13px">III</span>
                 <div>
-                  <h4 style="font-size:var(--t-body);margin:0;color:var(--accent)">围栏 · 自动巡检 + 对账</h4>
-                  <p style="font-size:var(--t-cap)">入库后强不变量自动扫描，独立真值器逐格对账，偏差立即报警</p>
+                  <h4 style="font-size:var(--t-body);margin:0">围栏 · 自动巡检 + 对账</h4>
+                  <p style="font-size:13px">入库后强不变量自动扫描，独立真值器逐格对账，偏差立即报警</p>
                 </div>
               </div>
             </div>
-            <div class="sf-card" style="padding:var(--space-4) var(--space-5)">
+            <div class="sf-card lv" style="padding:var(--space-4) var(--space-5)">
               <div style="display:flex;align-items:center;gap:var(--space-3)">
-                <span class="sf-badge iv" style="width:28px;height:28px;font-size:var(--t-cap)">IV</span>
+                <span class="sf-badge iv" style="width:28px;height:28px;font-size:13px">IV</span>
                 <div>
                   <h4 style="font-size:var(--t-body);margin:0">最后一关 · 人点头才动手</h4>
-                  <p style="font-size:var(--t-cap)">写生产库/删数据/改关键代码 → 先列"改什么、为什么" → 人批准 → 再动</p>
+                  <p style="font-size:13px">写生产库/删数据/改关键代码 → 先列"改什么、为什么" → 人批准 → 再动</p>
                 </div>
               </div>
             </div>
@@ -688,7 +697,7 @@
           <div class="sf-right">
             <div class="sf-card" style="height:100%">
               <div class="sf-hd" style="margin-bottom:16px">四层防线的设计逻辑</div>
-              <div style="font-size:var(--t-cap);color:var(--muted);line-height:var(--lh-body)">
+              <div style="font-size:13px;color:var(--muted);line-height:var(--lh-body)">
                 <div>→ 价格数据是商务命脉</div>
                 <div>→ 宁可不报价，不可报错价</div>
                 <div>→ 测试库试水 → 真值器对账 → 生产库放行</div>
@@ -702,11 +711,11 @@
           </div>
         </div>
         <div class="sf-prog" style="margin-top:14px;justify-content:flex-start">
-          <div class="seg" style="width:40px;background:var(--accent);opacity:.7"></div>
-          <div class="seg" style="width:60px;background:var(--muted-2);opacity:.7"></div>
-          <div class="seg" style="width:80px;background:var(--accent);opacity:.6"></div>
-          <div class="seg" style="width:110px;background:var(--accent);opacity:.8"></div>
-          <span style="font-size:var(--t-cap);color:var(--muted);margin-left:8px">力度递增 →</span>
+          <div class="seg" style="width:40px;background:var(--accent);opacity:.35"></div>
+          <div class="seg" style="width:60px;background:var(--accent);opacity:.55"></div>
+          <div class="seg" style="width:80px;background:var(--accent);opacity:.78"></div>
+          <div class="seg" style="width:110px;background:var(--accent);opacity:1"></div>
+          <span style="font-size:13px;color:var(--muted);margin-left:8px">力度递增 →</span>
         </div>
       </div>
     </div>
