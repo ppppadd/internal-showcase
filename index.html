@@ -238,39 +238,19 @@
   font-family: "Geist", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
   background: var(--bg); color: var(--text); line-height: var(--lh-body); font-size:var(--t-body);
   -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
-}.pn-nav{
-  position: fixed; top: 0; left: 0; right: 0; z-index: 70; height: var(--nav-h);
-  background: var(--nav-bg);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid var(--nav-line); color: var(--nav-ink);
-  transition: background .4s var(--ease-apple), border-color .4s var(--ease-apple), box-shadow .4s var(--ease-apple);
-}.pn-nav.nav-clear{
-  /* pn0 首屏：全透明，深色影像上用白色系（局部覆盖 token） */
-  --nav-ink:#fff; --nav-ink-2:rgba(255,255,255,.62);
-  --nav-line:transparent; --nav-fill:rgba(255,255,255,.06); --nav-fill-2:rgba(255,255,255,.10);
-  --nav-accent:var(--accent-on-dark);
-  --nav-on-bg:rgba(10,132,255,.22);
-  --nav-hover-bg:rgba(255,255,255,.10);
-  background: transparent; border-bottom-color: transparent;
-  -webkit-backdrop-filter: none; backdrop-filter: none;
-}.pn-nav.nav-photo{
-  /* pn0 深色影像 + 已滚动：深色毛玻璃，维持影像上的玻璃质感 */
-  --nav-ink:#fff; --nav-ink-2:rgba(255,255,255,.62);
-  --nav-line:rgba(255,255,255,.10);
-  --nav-fill:rgba(255,255,255,.06); --nav-fill-2:rgba(255,255,255,.12);
-  --nav-accent:var(--accent-on-dark);
-  --nav-on-bg:rgba(10,132,255,.22);
-  --nav-hover-bg:rgba(255,255,255,.10);
-  background: rgba(10,14,22,.55);
-}/* 面板进度条：对齐参考页 .progress（2px accent），随面板切换平滑推进 */
-.pn-nav-progress{ position: absolute; left: 0; bottom: -1px; height: 2px; width: 0;
-  background: var(--nav-accent); border-radius: 0 2px 2px 0; opacity: .9;
-  transition: width .4s var(--ease-apple); }
-.pn-nav-inner{
-  max-width: 1600px; margin: 0 auto; padding: 0 48px;
-  display: flex; align-items:center; height: 100%; gap: 24px;
-}.pn-nav-logo{
+}/* ── 悬浮胶囊导航（deepseek 官网同款 · 09-16）── */
+.pn-nav{position:fixed;top:0;left:0;right:0;z-index:70;padding:12px 20px;display:flex;justify-content:center;color:var(--nav-ink);pointer-events:none;background:transparent;border-bottom:0;animation:navEnter .5s ease both}
+@keyframes navEnter{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+.pn-nav-inner{position:relative;overflow:hidden;display:flex;align-items:center;gap:8px;width:100%;max-width:1180px;height:56px;padding:0 8px 0 16px;border-radius:999px;border:1px solid transparent;background:transparent;-webkit-backdrop-filter:saturate(180%);backdrop-filter:saturate(180%);pointer-events:auto;transition:background .3s ease,border-color .3s ease,box-shadow .3s ease,-webkit-backdrop-filter .3s ease,backdrop-filter .3s ease}
+.pn-nav.nav-glass .pn-nav-inner{background:var(--nav-bg);border-color:var(--nav-line);box-shadow:0 8px 28px rgba(0,0,0,.10);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%)}
+.pn-nav.nav-photo .pn-nav-inner{background:rgba(28,28,30,.55);border-color:rgba(255,255,255,.12);box-shadow:0 8px 28px rgba(0,0,0,.28);-webkit-backdrop-filter:blur(20px) saturate(180%);backdrop-filter:blur(20px) saturate(180%)}
+.pn-nav.nav-clear .pn-nav-inner{background:transparent;border-color:transparent;box-shadow:none;-webkit-backdrop-filter:blur(0) saturate(180%);backdrop-filter:blur(0) saturate(180%)}
+.pn-nav .pn-tab,.pn-nav .theme-btn,.pn-nav .pn-nav-logo{position:relative;overflow:hidden}
+.pn-nav.nav-glass .pn-nav-progress,.pn-nav.nav-photo .pn-nav-progress{opacity:.9}
+.pn-nav .ripple{position:absolute;border-radius:50%;background:var(--nav-ink);opacity:.14;transform:scale(0);pointer-events:none;animation:rbSpread .36s ease-out forwards}
+@keyframes rbSpread{to{transform:scale(1);opacity:0}}.pn-nav.nav-clear{--nav-ink:#fff; --nav-ink-2:rgba(255,255,255,.62); --nav-line:transparent; --nav-fill:rgba(255,255,255,.06); --nav-fill-2:rgba(255,255,255,.10); --nav-accent:var(--accent-on-dark); --nav-on-bg:rgba(10,132,255,.22); --nav-hover-bg:rgba(255,255,255,.10);}.pn-nav.nav-photo{--nav-ink:#fff; --nav-ink-2:rgba(255,255,255,.62); --nav-line:rgba(255,255,255,.10); --nav-fill:rgba(255,255,255,.06); --nav-fill-2:rgba(255,255,255,.12); --nav-accent:var(--accent-on-dark); --nav-on-bg:rgba(10,132,255,.22); --nav-hover-bg:rgba(255,255,255,.10);}/* 面板进度条：对齐参考页 .progress（2px accent），随面板切换平滑推进 */
+.pn-nav-progress{ position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--nav-accent); border-radius: 0 2px 2px 0; opacity: 0; transition: width .4s var(--ease-apple), opacity .3s ease; }
+/* .pn-nav-inner 已并入上方悬浮胶囊规则 */.pn-nav-logo{
   font-weight: 700; font-size:var(--t-body); letter-spacing:normal;
   color: var(--nav-ink); flex: none; cursor: pointer; padding: 4px 8px; min-height: 44px;
   border-radius: var(--r-sm); transition: background var(--dur-fast) var(--ease-apple);
@@ -332,11 +312,11 @@
   transition: background-color var(--dur-fast) cubic-bezier(.16,1,.3,1), border-color var(--dur-fast) cubic-bezier(.16,1,.3,1), color var(--dur-fast) cubic-bezier(.16,1,.3,1), box-shadow var(--dur-fast) cubic-bezier(.16,1,.3,1), transform var(--dur-fast) cubic-bezier(.16,1,.3,1);
   pointer-events: auto; user-select: none;
 }.pn-prev{ left: max(16px, calc(50vw - 880px)); }.pn-next{ right: max(16px, calc(50vw - 880px)); }.pn-arrow svg{ width: 20px; height: 20px; }.pn-arrow:hover{ background: var(--accent); border-color: var(--accent); color: #fff; transform: translateY(-50%) scale(1.06); }.pn-arrow:active{ transform: translateY(-50%) scale(.96); }[data-theme="dark"] .pn-arrow{ background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.14); color: rgba(255,255,255,.78); }.nav, .hero .nav, header.hero .nav, #top .nav{ display: none !important; visibility: hidden; pointer-events: none; }
-@media (max-width: 1024px) {.pn-arrow{ width: 44px; height: 44px; }.pn-prev{ left: 12px; }.pn-next{ right: 12px; }.pn-nav-inner{ padding: 0 48px; gap: 12px; }.pn-tab{ padding: var(--space-2) var(--space-3); font-size:var(--t-cap); }.sustain-card{ padding: var(--space-6) var(--space-6); }.sustain-card .flow-ssub{ font-size: var(--t-cap); }.fix-row{ grid-template-columns: minmax(0,1fr); gap: 12px; }.fix-row, .cmp-table th, .cmp-table td{ padding-left: 16px; padding-right: 16px; }
+@media (max-width: 1024px) {.pn-arrow{ width: 44px; height: 44px; }.pn-prev{ left: 12px; }.pn-next{ right: 12px; }.pn-nav-inner{ padding: 0 6px 0 14px; gap: 6px; }.pn-tab{ padding: var(--space-2) var(--space-3); font-size:var(--t-cap); }.sustain-card{ padding: var(--space-6) var(--space-6); }.sustain-card .flow-ssub{ font-size: var(--t-cap); }.fix-row{ grid-template-columns: minmax(0,1fr); gap: 12px; }.fix-row, .cmp-table th, .cmp-table td{ padding-left: 16px; padding-right: 16px; }
 }
-@media (max-width: 768px) {.pn-nav{ height: 48px; }.pn-stage{ top: 0; }.pn-arrow{ display: none; }.pn-tab{ padding: var(--space-2) var(--space-3); font-size: var(--t-cap-xs); }.pn-counter{ display: none; }.pn-nav-logo{ font-size:var(--t-body); }.pn-nav-inner{ padding: 0 24px; }.goal-list{ grid-template-columns: minmax(0,1fr); }
+@media (max-width: 768px) {.pn-nav{ padding: 8px 12px; }.pn-stage{ top: 0; }.pn-arrow{ display: none; }.pn-tab{ padding: var(--space-2) var(--space-3); font-size: var(--t-cap-xs); }.pn-counter{ display: none; }.pn-nav-logo{ font-size:var(--t-body); }.pn-nav-inner{ padding: 0 6px 0 12px; height: 48px; }.goal-list{ grid-template-columns: minmax(0,1fr); }
 }
-@media (max-width: 480px) {.pn-nav-inner{ padding: 0 24px; gap: 4px; }.pn-tab{ padding: 4px 8px; font-size: var(--t-cap-2xs); }
+@media (max-width: 480px) {.pn-nav-inner{ padding: 0 4px 0 10px; gap: 4px; }.pn-tab{ padding: 4px 8px; font-size: var(--t-cap-2xs); }
 }/* P1#5 卡片内文字容器撑满剩余宽度，消除大面积空白 */
 .pain-left > div:last-child, .flow-step > div:last-child, .goal > div:last-child, .sustain-card > div:last-child, .cover-card > div:last-child, .flow-vert-step > div:last-child{ flex: 1 1 auto; min-width: 0; }/* 小修C 视频自绘播放封面，替代原生控件第一眼 */
 .video-cover{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-4);background:rgba(10,14,22,.52);border:0;cursor:pointer;color:#fff;transition:opacity var(--dur-base) var(--ease-out-quint),visibility var(--dur-base) var(--ease-out-quint);z-index:2}.video-cover.off{opacity:0;visibility:hidden;pointer-events:none}.vc-play{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.16);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;padding-left:5px;transition:transform var(--dur-base) cubic-bezier(.16,1,.3,1)}.video-cover:hover .vc-play{transform:scale(1.08)}.vc-cap{font-size:var(--t-cap);letter-spacing:normal;color:rgba(255,255,255,.9)}/* P2#9 宽屏放宽版心 + 目标清单三栏 */
@@ -375,8 +355,8 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
       </button>
     </div>
+    <span class="pn-nav-progress" id="pnProgress"></span>
   </div>
-  <span class="pn-nav-progress" id="pnProgress"></span>
 </nav>
 <div class="pn-stage" id="pnStage">
 <button type="button" class="pn-arrow pn-prev" id="pnPrev" aria-label="上一个板块">
@@ -1366,6 +1346,21 @@
     });
   }
 
+  /* 按钮中心扩散涟漪（deepseek 同款 · 0.36s ease-out） */
+  Array.prototype.forEach.call(document.querySelectorAll('.pn-nav .pn-tab, .pn-nav .theme-btn, .pn-nav .pn-nav-logo'), function(el) {
+    el.addEventListener('pointerdown', function() {
+      var r = el.getBoundingClientRect();
+      var d = Math.max(r.width, r.height) * 2.2;
+      var sp = document.createElement('span');
+      sp.className = 'ripple';
+      sp.style.width = sp.style.height = d + 'px';
+      sp.style.left = ((r.width - d) / 2) + 'px';
+      sp.style.top = ((r.height - d) / 2) + 'px';
+      el.appendChild(sp);
+      setTimeout(function() { if (sp.parentNode) sp.parentNode.removeChild(sp); }, 380);
+    });
+  });
+
   document.addEventListener('keydown', function(e) {
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
       e.preventDefault(); showPanel(inHero ? 0 : cur + 1, 1);
@@ -1401,6 +1396,7 @@
     var st = sc ? sc.scrollTop : 0;
     navEl.classList.toggle('nav-clear', inHero && st < 12);
     navEl.classList.toggle('nav-photo', inHero && st >= 12);
+    navEl.classList.toggle('nav-glass', !inHero && st >= 12);
     if (navProgress) navProgress.style.width = (inHero ? 0 : (cur + 1) / 8 * 100) + '%';
   }
   Array.prototype.forEach.call(document.querySelectorAll('.pn-panel-scroll'), function(sc) {
