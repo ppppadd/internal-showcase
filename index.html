@@ -1292,7 +1292,12 @@
 
   /* 封面页：左侧 logo 打开 #pnHero；进度条归零、计数显示「封面」、无 tab 高亮 */
   function openHero() {
-    if (inHero) { heroPanel.querySelector('.pn-panel-scroll').scrollTop = 0; return; }
+    if (inHero) {
+      heroPanel.querySelector('.pn-panel-scroll').scrollTop = 0;
+      /* 09-16 修：已在封面页点击 logo 也要确保粒子活着（滚出屏幕 stop 后可能无事件重启） */
+      if (window.heroFx) window.heroFx.setActive(true);
+      return;
+    }
     var oldPanel = document.getElementById('pn' + cur);
     oldPanel.classList.remove('on');
     oldPanel.classList.add('pn-exit-right');
@@ -1310,6 +1315,9 @@
     updateNavState();
     observeReveals();
     if (history.replaceState) history.replaceState(null, '', '#hero');
+    /* 09-16 修：回封面页必须重新激活粒子 —— openHero 不经过 showPanel 包装器，
+       此前只有经 pn0（项目背景）才会 setActive(true)，故从功能页直接回封面时粒子停死 */
+    if (window.heroFx) window.heroFx.setActive(true);
   }
 
   /* 面板深链：URL hash 直达（#pn3）· 刷新保持 · 前进后退跟随 */
@@ -1458,7 +1466,10 @@
     var _showPanelFx = showPanel;
     showPanel = function(idx, dir) {
       _showPanelFx(idx, dir);
-      if (window.heroFx) window.heroFx.setActive(idx === 0);
+      /* showPanel 只在进入内容面板 pn0~pn7 时被调用（封面另走 openHero）→ 一律暂停。
+         原写法 setActive(idx === 0) 是「hero 还叫 pn0」时代的旧语义：hero 于 09-16 拆成
+         #pnHero 后，它变成「进项目背景才开粒子」，而回封面永不恢复。 */
+      if (window.heroFx) window.heroFx.setActive(false);
     };
   })();
 
@@ -1655,7 +1666,7 @@
   scroll.addEventListener('scroll', onScroll, {passive: true});
   document.addEventListener('visibilitychange', function(){
     visible = !document.hidden;
-    if (visible && cur === 0) start(); else stop();   /* P-2：仅在 pn0 恢复 */
+    if (visible && inHero) start(); else stop();   /* 仅在封面页恢复（09-16 修：cur===0 是旧语义） */
   });
   if (REDUCE.addEventListener){
     REDUCE.addEventListener('change', function(){
