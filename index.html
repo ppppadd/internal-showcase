@@ -543,6 +543,63 @@ small{ font-size:var(--t-cap); }
 .hstat{min-width:0;padding:calc(var(--space-5) * var(--vhx,1)) clamp(8px,1.1vw,var(--space-6))}
 .hstat .v{font-size:clamp(24px,2.2vw,42px);white-space:nowrap;overflow:hidden}
 .hstat .l{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* ===== 09-17 补丁17：pn0 / pn6 版式重做（字号不动，只调布局与撑满） ===== */
+/* pn0：左列 6 个功能按钮均分整列高度（与右侧卡片等高），右卡撑满、视频占满卡内可用高度 */
+#pn0 .demo-stage{align-items:stretch}
+#pn0 .demo-nav{position:static;height:100%;justify-content:space-between}
+#pn0 .demo-tab{flex:1 1 0;min-height:0}
+#pn0 .demo-stage > div:last-child{display:flex;flex-direction:column;min-height:0}
+#pn0 .demo-panel.on{display:flex;flex-direction:column;flex:1;min-height:0}
+#pn0 .chat-card{flex:1;min-height:0;display:flex;flex-direction:column}
+#pn0 .chat-head{flex:none}
+#pn0 .chat-body{flex:1;min-height:0;display:flex;flex-direction:column}
+#pn0 .video-wrap{flex:1;min-height:0;height:auto;max-width:none;margin:0}
+#pn0 .note{flex:none;margin-top:calc(clamp(8px,1.1vh,14px) * var(--vhx,1))}
+/* pn6：左卡内容纵向铺满整卡高度，右卡截图按卡宽铺满 */
+#pn6 .ui-qr{justify-content:space-evenly;gap:0}
+#pn6 .ui-frame{justify-content:flex-start}
+#pn6 .ui-frame img{width:100%;height:auto;max-height:none}
+#pn6 .ui-frame > a{display:block;width:100%}
+
+/* ===== 09-17 补丁18：pn0 / pn6 真正撑满一屏（wrap flex 化 + 内部弹性收缩，字号不动） ===== */
+#pn0 .pn-panel-scroll > .wrap,#pn6 .pn-panel-scroll > .wrap{display:flex;flex-direction:column;flex:1 1 auto;min-height:0}
+#pn0 .demo-stage{flex:1 1 0;min-height:0}
+#pn0 .demo-stage > div:last-child{flex:1 1 auto;min-height:0}
+#pn0 .demo-panel.on{flex:1 1 auto;min-height:0}
+#pn0 .chat-card{flex:1 1 auto;min-height:0}
+#pn0 .chat-body{flex:1 1 auto;min-height:0}
+#pn0 .video-wrap{flex:1 1 auto;min-height:0;height:auto}
+#pn6 .sf-row{flex:1 1 auto;min-height:0}
+#pn6 .ui-panel.on{flex:1 1 auto;min-height:0}
+#pn6 .ui-frame{height:100%;justify-content:stretch}
+#pn6 .ui-frame > a{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
+#pn6 .ui-frame img{flex:1 1 auto;min-height:0;width:100%;height:auto;object-fit:contain;max-height:none}
+#pn6 .ui-cap{flex:none}
+
+/* 补丁19：pn0 残余 4px 溢出（消除按钮最小高硬底） */
+#pn0 .demo-nav{gap:calc(clamp(3px,.6vh,10px) * var(--vhx,1))}
+#pn0 .demo-tab{padding:calc(clamp(6px,.85vh,13px) * var(--vhx,1)) 16px;min-height:0;overflow:hidden}
+#pn0 .demo-tab .ico{width:1.55em;height:1.55em;font-size:var(--t-body)}
+#pn0 .demo-stage{overflow:hidden}
+
+/* 补丁20：pn0 固定 4px 布局余量（grid 行与 flex 分配差）直接吸收 */
+#pn0 .demo-stage{margin-bottom:-4px}
+#pn0 .pn-panel-scroll{overflow:hidden}
+
+/* ===== 09-17 补丁21：pn0 版式重做（放弃 flex 撑满，改「内容等高 + 视频按视口高 + 整屏居中」） ===== */
+#pn0 .pn-panel-scroll{overflow:visible}
+#pn0 .pn-panel-scroll > .wrap{display:block;flex:none;min-height:auto;margin:auto;width:100%}
+#pn0 .demo-stage{display:grid;grid-template-columns:280px minmax(0,1fr);gap:32px;align-items:stretch;flex:none;min-height:0;height:auto;margin-bottom:0;overflow:visible}
+#pn0 .demo-nav{position:static;height:auto;justify-content:space-between;gap:calc(clamp(6px,.9vh,12px) * var(--vhx,1))}
+#pn0 .demo-tab{flex:1 1 0;min-height:0;padding:calc(clamp(8px,1.1vh,14px) * var(--vhx,1)) 16px}
+#pn0 .demo-tab .ico{width:40px;height:40px;font-size:var(--t-body)}
+#pn0 .demo-stage > div:last-child{display:block;flex:none;min-height:0}
+#pn0 .demo-panel.on{display:block;flex:none;min-height:0}
+#pn0 .chat-card{display:block;flex:none;min-height:0}
+#pn0 .chat-body{display:block;flex:none;min-height:0}
+#pn0 .video-wrap{flex:none;height:calc(100vh - 410px);min-height:220px;max-width:none;margin:0}
+#pn0 .note{flex:none}
 </style>
 
 
@@ -1047,7 +1104,7 @@ small{ font-size:var(--t-cap); }
     </div>
     <div class="sf-row" style="align-items:stretch">
     <div class="ui-qr reveal" data-reveal-delay="1" role="button" tabindex="0" data-qr-zoom aria-label="点击放大询价网页二维码" style="display:flex;flex-direction:column;justify-content:center;gap:14px;align-items:center;margin:0;padding:26px 22px;background:var(--card-bg,#fff);border:1px solid var(--frame-line,#e5e7eb);border-radius:var(--r-card);box-shadow:var(--shadow-lg)">
-      <img src="assets/qr-price-query.png" alt="扫码访问询价网页" style="width:160px;height:160px;border-radius:var(--r-md);display:block;flex:none">
+      <img src="assets/qr-price-query.png" alt="扫码访问询价网页" style="width:clamp(190px,21vh,250px);height:clamp(190px,21vh,250px);border-radius:var(--r-md);display:block;flex:none">
       <div style="text-align:center">
         <strong style="font-size:var(--t-body);color:var(--text)">手机扫码 · 直达询价网页</strong>
         <p style="margin:8px 0 0;font-size:var(--t-cap);color:var(--frame-cap);line-height:var(--lh-body)">企业微信之外，同一套底价。扫码即可在手机打开<a href="https://ppppadd.github.io/price-query/" target="_blank" style="color:var(--accent)">ppppadd.github.io/price-query</a></p>
