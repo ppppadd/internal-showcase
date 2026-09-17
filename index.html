@@ -420,12 +420,14 @@ small{ font-size:var(--t-cap); }
 
 /* 9) pn2 流程图（页面内概览） */
 #sol-flow{display:flex;flex-direction:column}
-.flowmap{display:flex;align-items:stretch}
-.fm-step{flex:1;min-width:0;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:var(--r-card);padding:24px 22px 26px;box-shadow:var(--shadow)}
-.fm-num{display:inline-flex;align-items:center;justify-content:center;width:1.7em;height:1.7em;border-radius:50%;background:var(--accent);color:#fff;font-size:var(--t-cap);font-weight:700;margin-bottom:12px}
-.fm-step h4{font-size:var(--t-body);font-weight:700;color:var(--text);margin:0 0 10px;letter-spacing:normal}
-.fm-step p{font-size:var(--t-cap);color:var(--muted);line-height:var(--lh-body);margin:0}
-.fm-arrow{flex:none;display:flex;align-items:center;justify-content:center;width:2.4em;font-size:var(--t-h3);color:var(--accent);font-weight:700}
+.fg-stripes{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px;margin-bottom:18px}
+.fg-stripe{display:block;text-align:center;font-size:var(--t-cap);font-weight:700;color:var(--accent);background:rgba(37,99,235,.08);border-radius:var(--r-pill);padding:9px 8px;letter-spacing:normal}
+.fm-track{position:relative;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px;background:linear-gradient(rgba(37,99,235,.35),rgba(37,99,235,.35)) center/100% 3px no-repeat}
+.fm-col{display:flex;flex-direction:column;align-items:center;text-align:center}
+.fm-above{height:4.8em;display:flex;align-items:flex-end;justify-content:center;font-size:var(--t-cap);color:var(--muted);line-height:1.4}
+.fm-node{display:inline-flex;align-items:center;gap:10px;background:var(--surface);border:2px solid var(--accent);border-radius:var(--r-pill);padding:12px 20px;font-size:var(--t-body);font-weight:700;color:var(--text);box-shadow:var(--shadow-sm);white-space:nowrap}
+.fm-dot{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;border-radius:50%;background:var(--accent);color:#fff;font-size:var(--t-cap);font-weight:700}
+.fm-below{height:4.8em;display:flex;align-items:flex-start;justify-content:center;font-size:var(--t-cap);color:var(--accent);line-height:1.4;padding-top:12px}
 .fm-monitor{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;background:var(--surface-2);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--r-card);padding:20px 28px;margin-top:24px;text-align:center}
 .fm-monitor strong{font-size:var(--t-body);color:var(--text)}
 .fm-monitor span{font-size:var(--t-body);color:var(--muted);line-height:var(--lh-tight)}
@@ -457,9 +459,10 @@ small{ font-size:var(--t-cap); }
 
 /* 10) pn7：内容撑满整屏，消除上方空档（09-17） */
 #pn7 .wrap{display:flex;flex-direction:column;min-height:100vh}
-#pn7 .sec-head{margin-bottom:24px}
-#pn7 .goal-list{flex:1;align-content:space-between;gap:20px}
-#pn7 .goal{min-height:0;padding:26px 28px;align-items:center}
+#pn7 .sec-head{margin-bottom:18px}
+#pn7 .goal-list{flex:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:1fr;gap:14px;align-content:stretch}
+#pn7 .goal{min-height:0;padding:18px 22px;align-items:center}
+#pn7 .goal h3{margin-bottom:8px}
 
 /* 11) 收紧：pn5 内容扩充后一屏不滚（09-17） */
 #pn5 .sec-head{margin-bottom:22px}
@@ -701,18 +704,42 @@ small{ font-size:var(--t-cap); }
 
     <div class="sol-block reveal" id="sol-flow">
       <div class="sol-tag">全流程模拟 · 一条「LAX9 · 200kg · 普船卡派」从入库到出价</div>
-      <div class="flowmap">
-        <div class="fm-step"><span class="fm-num">1</span><h4>价表入库</h4><p>卡派 / 海派 / 船期 / 规则<br>四类数据同一口径落库</p></div>
-        <span class="fm-arrow">→</span>
-        <div class="fm-step"><span class="fm-num">2</span><h4>准入拦截</h4><p>渠道不在标准表不入库<br>非白名单仓码直接退件</p></div>
-        <span class="fm-arrow">→</span>
-        <div class="fm-step"><span class="fm-num">3</span><h4>逐格对账</h4><p>真值器三方逐格比对<br>全过才进生产库</p></div>
-        <span class="fm-arrow">→</span>
-        <div class="fm-step"><span class="fm-num">4</span><h4>渠道与仓点归一</h4><p>20 多种叫法归 11 个标准渠道<br>查「深圳」自动含「福永/坂田」</p></div>
-        <span class="fm-arrow">→</span>
-        <div class="fm-step"><span class="fm-num">5</span><h4>一键比价 25 家</h4><p>同口径取最低档位<br>多仓逐仓择优</p></div>
-        <span class="fm-arrow">→</span>
-        <div class="fm-step"><span class="fm-num">6</span><h4>截图即出价</h4><p>OCR 识别 → 底价 + 附加费逐条<br>五项要素齐全</p></div>
+      <div class="fg-stripes">
+        <span class="fg-stripe" style="grid-column:span 3">阶段一 · 数据进来（入库 + 两道校验）</span>
+        <span class="fg-stripe" style="grid-column:span 1">阶段二 · 归一</span>
+        <span class="fg-stripe" style="grid-column:span 2">阶段三 · 报价出去（比价 + 出价）</span>
+      </div>
+      <div class="fm-track">
+        <div class="fm-col">
+          <div class="fm-above">自动识别布局族，四类数据一次落库</div>
+          <div class="fm-node"><span class="fm-dot">1</span>价表入库</div>
+          <div class="fm-below">防错｜结构变了先阻断，不猜着入库</div>
+        </div>
+        <div class="fm-col">
+          <div class="fm-above">渠道比对标准归类表，仓码比对白名单</div>
+          <div class="fm-node"><span class="fm-dot">2</span>准入拦截</div>
+          <div class="fm-below">防错｜不合规直接退件，出具准入清单</div>
+        </div>
+        <div class="fm-col">
+          <div class="fm-above">真值解析 vs 提取结果 vs 库内，逐格对账</div>
+          <div class="fm-node"><span class="fm-dot">3</span>逐格对账</div>
+          <div class="fm-below">关卡｜一格不一致即阻断，全过才放行</div>
+        </div>
+        <div class="fm-col">
+          <div class="fm-above">20 多种叫法归到 11 个标准渠道</div>
+          <div class="fm-node"><span class="fm-dot">4</span>渠道与仓点归一</div>
+          <div class="fm-below">口径｜查「深圳」自动含「福永 / 坂田」</div>
+        </div>
+        <div class="fm-col">
+          <div class="fm-above">同口径取最低档位、多仓逐仓择优</div>
+          <div class="fm-node"><span class="fm-dot">5</span>一键比价 25 家</div>
+          <div class="fm-below">口径｜公斤与按方两套绝不混算</div>
+        </div>
+        <div class="fm-col">
+          <div class="fm-above">OCR 识别仓码 / 重量 / 方数 → 底价 + 附加费</div>
+          <div class="fm-node"><span class="fm-dot">6</span>截图即出价</div>
+          <div class="fm-below">产出｜五要素齐全的报价单</div>
+        </div>
       </div>
       <div class="fm-monitor">
         <strong>全程监控 · 入库后自动巡检</strong>
@@ -1005,7 +1032,7 @@ small{ font-size:var(--t-cap); }
   <div class="wrap">
     <div class="sec-head">
       <h2 class="reveal">现阶段达成目标</h2>
-      <p class="reveal" data-reveal-delay="1">从供应商价表到可验证的报价系统：业务规则与 AI 能力落在同一条流程里，每一条都可现场验证。</p>
+      <p class="reveal" data-reveal-delay="1">从供应商价表到可验证的报价：规则与 AI 落在同一条流程里，每条都可现场验证。</p>
     </div>
         <div class="goal-list reveal">
       <div class="goal">
@@ -1018,11 +1045,11 @@ small{ font-size:var(--t-cap); }
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
-        <div><h3>询价网页上线公开</h3><p>GitHub Pages 托管 · 扫码即查，与企微端同一份底价、同一套校验。</p></div>
+        <div><h3>询价网页上线公开</h3><p>GitHub Pages 托管、扫码即查，与企微端同一份底价、同一套校验，外部也能自取。</p></div>
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
-        <div><h3>价格监控自动比对</h3><p>价表入库即触发全量对比，涨跌一目了然，最低价自动生成。</p></div>
+        <div><h3>价格监控自动比对</h3><p>价表入库即触发全量对比，涨跌一目了然，最低价自动生成，不用人工翻表。</p></div>
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
@@ -1030,7 +1057,19 @@ small{ font-size:var(--t-cap); }
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
-        <div><h3>自我学习引擎族 + 工程化底座</h3><p>25 家归纳成 8 个布局族，新供应商对号即用；测试门禁、三仓库版本管理，可持续演进。</p></div>
+        <div><h3>时效与船期数据接入</h3><p>截单、开船日期与「开船后入仓」时效逐家落库，缺源的按周模式自动推算。</p></div>
+      </div>
+      <div class="goal">
+        <span class="check" aria-hidden="true"></span>
+        <div><h3>对比表与评分排名自动刷新</h3><p>入库即重算价格对比表与供应商评分排名，交付即最新，无需人工整理。</p></div>
+      </div>
+      <div class="goal">
+        <span class="check" aria-hidden="true"></span>
+        <div><h3>供应商画像随问随答</h3><p>随口问「某某家怎么样」，直接出渠道构成、价格水平、进仓点全维度画像。</p></div>
+      </div>
+      <div class="goal">
+        <span class="check" aria-hidden="true"></span>
+        <div><h3>报价全程留痕可溯源</h3><p>每条报价都能指回「哪份价表、哪次入库、哪条规则」，逐格对账记录留存可复盘。</p></div>
       </div>
     </div>
   </div>
