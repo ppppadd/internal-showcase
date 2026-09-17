@@ -636,7 +636,7 @@ small{ font-size:var(--t-cap); }
 
 /* 7) 小屏（高度不足）兜底：允许页面内滚动，避免内容被截 */
 @media (max-height:860px){.pn-panel-scroll{overflow-y:auto}}
-</style>
+#pn3 .flow-lanes{flex:none;margin:6px 0 8px}#pn3 .flow-lane{padding:14px 18px}#pn3 .flow-lane-hd{margin-bottom:8px}#pn3 .flow-step{padding:9px 14px;margin-bottom:8px}#pn3 .flow-stitle{margin-bottom:0}#pn3 .flow-connect-line{display:none}#pn3 .flow-result{padding:12px 36px;margin:6px auto}#pn3 .flow-remark{margin-top:4px}#pn3 .flow-arrow-d{margin:2px 0}@media (max-height:960px){#pn3 .flow-lanes{margin:2px 0 6px}#pn3 .flow-lane{padding:11px 16px}#pn3 .flow-lane-hd{margin-bottom:6px}#pn3 .flow-step{padding:7px 12px;margin-bottom:7px}#pn3 .flow-ssub{line-height:1.15}#pn3 .flow-result{padding:8px 32px;margin:4px auto}#pn3 .flow-remark{display:none}}</style>
 
 
 <script>try{document.documentElement.setAttribute("data-navinit",/^#pn[0-7]$/.test(location.hash)?"panel":"hero")}catch(e){}</script>
@@ -785,8 +785,8 @@ small{ font-size:var(--t-cap); }
     <div class="pn-panel-scroll">
 <div class="wrap">
     <div class="sec-head" id="bkg-pain">
-      <h2 class="reveal">项目背景：慢、乱、散，易错</h2>
-      <p class="reveal" data-reveal-delay="1">三个痛点全部来自日常单据，任一环看错，报价就是错价。</p>
+      <h2 class="reveal">项目背景：慢、乱、散、断</h2>
+      <p class="reveal" data-reveal-delay="1">四个痛点全部来自日常单据，任一环看错，报价就是错价。</p>
     </div>
     <div class="diagram-html reveal pain-grid">
     <div class="pain-grid-inner">
@@ -820,8 +820,18 @@ small{ font-size:var(--t-cap); }
             </div>
             <div class="pain-consequence"><span class="pain-arrow" aria-hidden="true">→</span><span class="pain-cost-tag">代价</span><span class="pain-result">漏一项 · 用了过期的价</span></div>
         </div>
+        <div class="pain-row">
+            <div class="pain-left">
+                <div class="pain-num">断</div>
+                <div class="pain-copy">
+                    <div class="pain-title">报价发出去就断了依据</div>
+                    <div class="pain-sub">哪份价表、哪条规则、哪次入库，事后无从复盘</div>
+                </div>
+            </div>
+            <div class="pain-consequence"><span class="pain-arrow" aria-hidden="true">→</span><span class="pain-cost-tag">代价</span><span class="pain-result">说不清依据 · 复盘靠回忆</span></div>
+        </div>
     </div>
-    <div class="pain-footer">慢、乱、散叠加 → 任一处看错，报出去的就是错价</div>
+    <div class="pain-footer">慢、乱、散、断叠加 → 任一处看错，报出去的就是错价</div>
 </div>
   </div>
     </div>
@@ -978,10 +988,16 @@ small{ font-size:var(--t-cap); }
                 <div class="flow-num">2</div>
                 <div>
                     <div class="flow-stitle">全渠道底价比对并出价</div>
-                    <div class="flow-ssub">25 家三线一次拉齐 · 计费规则自动套用</div>
+                    <div class="flow-ssub">25 家三线一次拉齐 · 只取该仓最低档</div>
                 </div>
             </div>
-            
+            <div class="flow-step">
+                <div class="flow-num">3</div>
+                <div>
+                    <div class="flow-stitle">计费规则自动套用</div>
+                    <div class="flow-ssub">比重优惠 · 按方与 KG 两套口径 · 报关费逐条核</div>
+                </div>
+            </div>
         </div>
         <div class="flow-arrow-r">
             <div class="flow-arrow-label">底价结果</div>
@@ -990,20 +1006,26 @@ small{ font-size:var(--t-cap); }
         <div class="flow-lane flow-lane-biz">
             <div class="flow-lane-hd flow-lane-hd-biz">商务把关 · 专业决策</div>
             <div class="flow-step flow-step-biz">
-                <div class="flow-num">3</div>
+                <div class="flow-num">4</div>
                 <div>
                     <div class="flow-stitle">审核价格</div>
                     <div class="flow-ssub">底价 · 附加费逐条核对</div>
                 </div>
             </div>
             <div class="flow-step flow-step-biz">
-                <div class="flow-num">4</div>
+                <div class="flow-num">5</div>
                 <div>
                     <div class="flow-stitle">拍板定价 · 判断能不能接</div>
                     <div class="flow-ssub">加价幅度、拒收 / 沿用 / 冻结由商务定</div>
                 </div>
             </div>
-            
+            <div class="flow-step flow-step-biz">
+                <div class="flow-num">6</div>
+                <div>
+                    <div class="flow-stitle">异常与例外 · 商务终审</div>
+                    <div class="flow-ssub">新渠道 / 异常价 / 条件型附加费由商务裁定</div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="flow-connect-line"></div>
