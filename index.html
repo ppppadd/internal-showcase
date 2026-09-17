@@ -600,6 +600,42 @@ small{ font-size:var(--t-cap); }
 #pn0 .chat-body{display:block;flex:none;min-height:0}
 #pn0 .video-wrap{flex:none;height:calc(100vh - 410px);min-height:220px;max-width:none;margin:0}
 #pn0 .note{flex:none}
+
+/* ===== 09-17 补丁22：全屏铺满（全屏展示时不留上下大片空白）+ pn0 视频去黑边 + pn6 图贴顶 ===== */
+/* 1) 内容区撑满视口剩余高度（仅 8 个内容页，hero 封面不动） */
+#pn0 .pn-panel-scroll > .wrap,#pn1 .pn-panel-scroll > .wrap,#pn2 .pn-panel-scroll > .wrap,#pn3 .pn-panel-scroll > .wrap,
+#pn4 .pn-panel-scroll > .wrap,#pn5 .pn-panel-scroll > .wrap,#pn6 .pn-panel-scroll > .wrap,#pn7 .pn-panel-scroll > .wrap{
+  display:flex;flex-direction:column;flex:1 1 auto;min-height:0;margin:0 auto}
+#pn0 .sec-head,#pn1 .sec-head,#pn2 .sec-head,#pn3 .sec-head,#pn4 .sec-head,#pn5 .sec-head,#pn6 .sec-head,#pn7 .sec-head{flex:none}
+/* 2) 各页主内容块吃掉剩余高度 */
+#pn1 .pn-panel-scroll > .wrap > .diagram-html.pain-grid,#pn2 .pn-panel-scroll > .wrap > .sol-block,#pn4 .pn-panel-scroll > .wrap > .sol-block,#pn5 .pn-panel-scroll > .wrap > .sol-block,#pn6 .pn-panel-scroll > .wrap > .sf-row,#pn7 .pn-panel-scroll > .wrap > .goal-list,
+#pn3 .pn-panel-scroll > .wrap > .reveal{flex:1 1 auto;min-height:0}
+/* 3) 块内弹性分布 */
+#pn1 .diagram-html.pain-grid{display:flex;flex-direction:column}
+#pn1 .pain-grid-inner{flex:1 1 auto;min-height:0;grid-auto-rows:1fr}
+#pn2 .sol-block{display:flex;flex-direction:column;justify-content:space-between}
+#pn3 .pn-panel-scroll > .wrap > .reveal{display:flex;flex-direction:column}
+#pn3 .flow-2lane{flex:1 1 auto;min-height:0}
+#pn4 .sol-block{display:flex;flex-direction:column;justify-content:space-between}
+#pn5 .sol-block{flex:2 1 0;display:flex;flex-direction:column;justify-content:space-between}
+#pn5 .metrics{flex:1 1 0}
+#pn7 .goal-list{align-content:space-between}
+/* 4) pn0：视频容器贴合视频真实比例（消除 contain 上下黑边），标题与内容两端对齐铺满 */
+#pn0 .pn-panel-scroll > .wrap{justify-content:space-between}
+#pn0 .video-wrap{flex:none;height:auto;aspect-ratio:1916/1026;min-height:0;max-height:calc(100vh - 470px)}
+/* 视频区随视口高度收窄（保证视频等比完整、不滚动、无黑边） */
+#pn0 .demo-stage{max-width:calc((100vh - 470px) * 1.867 + 362px);margin-inline:auto}
+/* 5) pn6：截图贴卡顶（不再居中留空），卡片撑满 */
+#pn6 .ui-frame img{object-position:top center}
+
+/* 6) pn3：两栏卡片吃掉剩余高度（消除底部大片空白） */
+#pn3 .pn-panel-scroll > .wrap > .reveal > .flow-2lane{display:flex;flex-direction:column;flex:1 1 auto;min-height:0}
+#pn3 .flow-lanes{flex:1 1 auto;min-height:0;grid-auto-rows:1fr}
+#pn3 .flow-lane{justify-content:space-between}
+#pn3 .flow-step{flex:1 1 0;display:flex;flex-direction:column;justify-content:center}
+
+/* 7) 小屏（高度不足）兜底：允许页面内滚动，避免内容被截 */
+@media (max-height:860px){.pn-panel-scroll{overflow-y:auto}}
 </style>
 
 
