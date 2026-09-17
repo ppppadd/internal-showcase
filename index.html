@@ -357,20 +357,9 @@
 @media (max-width:480px){.qr-zoom{padding:22px 18px 20px}}
 @media (prefers-reduced-motion:reduce){.qr-zoom,.qr-zoom-backdrop{transition:none}.apple-expand,.apple-fade-up{animation:none;opacity:1}}
 
-/* ── 投屏放大档（09-17）：仅放大面板内容字号，导航胶囊不受影响 ── */
-.zoom-btn{ font-weight:700; font-size:15px; line-height:1; letter-spacing:0; }
-.zoom-btn.on{ background:var(--nav-on-bg); border-color:var(--nav-accent); color:var(--nav-accent); }
 small{ font-size:var(--t-cap); }
 .demo-tab{ font-size:var(--t-cap); }
 .video-cover{ font-size:var(--t-cap); }
-html[data-zoom="presentation"] .pn-panel{
-  --t-cap:26px; --t-body:31px; --t-h4:37px; --t-h3:45px;
-  --t-num:62px; --t-display-num:86px;
-  --t-display-1:clamp(68px,8.4vw,140px);
-  --t-display-2:clamp(58px,6.2vw,88px);
-  --t-display-3:clamp(56px,6.6vw,98px);
-  --t-cap-xs:22px; --t-cap-2xs:20px;
-}
 
 /* 09-17 展示流程重排：面板内垂直节奏微调（仅作用于对应面板，不改全局 token） */
 #pn1 .sol-block,#pn2 .sol-block,#pn3 .sol-block,#pn4 .sol-block,#pn5 .sol-block{margin-top:34px}
@@ -381,26 +370,6 @@ html[data-zoom="presentation"] .pn-panel{
 #pn6 .ui-qr{flex:0 0 340px}
 #pn6 .ui-panel.on{display:block;flex:1;min-width:0}
 /* 投屏档（A+）：进一步收紧垂直节奏，保证后排看得清且一屏不滚 */
-html[data-zoom="presentation"] .sec-head{margin-bottom:10px}
-html[data-zoom="presentation"] .sol-block{margin-top:18px}
-html[data-zoom="presentation"] .sf-card{padding:18px}
-html[data-zoom="presentation"] .pain-row{padding:12px 18px}
-html[data-zoom="presentation"] #pn3 .flow-lane{padding:12px}
-html[data-zoom="presentation"] #pn3 .flow-step{padding:12px}
-html[data-zoom="presentation"] .sf-row{margin-bottom:10px}
-html[data-zoom="presentation"] .blk-title{margin-bottom:12px}
-html[data-zoom="presentation"] .sol-tag{margin-bottom:12px}
-html[data-zoom="presentation"] .pain-footer{margin-top:10px}
-html[data-zoom="presentation"] .flow-lanes{margin:2px 0 4px}
-html[data-zoom="presentation"] .flow-result{margin:6px auto;padding:12px 28px}
-html[data-zoom="presentation"] .flow-remark{margin-top:0}
-html[data-zoom="presentation"] #pn4 .metric,html[data-zoom="presentation"] #pn5 .metric{padding:14px 20px}
-html[data-zoom="presentation"] .cmp-cap{width:20%;white-space:nowrap}
-html[data-zoom="presentation"] .metric .v{margin-bottom:4px}
-html[data-zoom="presentation"] #pn4 .metric{padding:10px 18px}
-html[data-zoom="presentation"] #pn4 .cmp-table td{padding-top:6px;padding-bottom:6px}
-html[data-zoom="presentation"] #pn4 .pain-footer{margin-top:4px}
-html[data-zoom="presentation"] .pn-panel-scroll .wrap{padding-top:88px;padding-bottom:16px}
 
 /* ===== 排版修版 v4（09-17）：内容垂直居中 + 节奏收紧 + pn3 双栏对齐（字号一律不动）===== */
 /* 1) 垂直居中：消除「内容挤在上半屏、下半屏一片空」 */
@@ -437,28 +406,8 @@ html[data-zoom="presentation"] .pn-panel-scroll .wrap{padding-top:88px;padding-b
 #pn6 .ui-panel{display:flex;flex-direction:column}
 #pn6 .ui-frame{flex:1;display:flex;flex-direction:column;justify-content:center}
 
-/* 6) A+ 投屏档：只收紧垂直节奏，字号一律不动 */
-html[data-zoom="presentation"] .pn-panel-scroll > .wrap{padding-top:calc(var(--nav-h) + 18px);padding-bottom:14px}
-html[data-zoom="presentation"] .pn-panel-scroll > .wrap > .sec-head:first-child{margin-bottom:20px}
-html[data-zoom="presentation"] .pain-grid-inner{gap:12px}
-html[data-zoom="presentation"] .pain-row{padding:14px 22px;min-height:0}
-html[data-zoom="presentation"] .sf-card{padding:18px}
-html[data-zoom="presentation"] #pn4 .metric,html[data-zoom="presentation"] #pn5 .metric{padding:16px 22px}
-html[data-zoom="presentation"] .flow-lanes{grid-template-columns:minmax(0,1fr) 150px minmax(0,1fr)}
-html[data-zoom="presentation"] .flow-lane{gap:10px}
-html[data-zoom="presentation"] .flow-arrow-d{margin:2px 0}
-html[data-zoom="presentation"] #pn3 .flow-step{padding:10px}
-html[data-zoom="presentation"] .flow-result{padding:12px 30px;margin-top:8px}
-html[data-zoom="presentation"] .pain-footer,html[data-zoom="presentation"] .flow-remark,
-html[data-zoom="presentation"] .sustain-bottom,html[data-zoom="presentation"] .cover-converge{margin-top:16px}
 
-/* 7) 微调补丁（09-17）：A+ 档 pn3 再收 3px 级溢出；内容偏少的页把卡片撑满 */
-html[data-zoom="presentation"] #pn3 .flow-step{padding:8px}
-html[data-zoom="presentation"] .flow-lane{gap:8px}
-html[data-zoom="presentation"] .flow-result{padding:10px 28px;margin-top:6px}
-html[data-zoom="presentation"] .flow-entry .flow-box{padding:10px 34px}
 #pn5 .sf-card{min-height:196px;display:flex;flex-direction:column;justify-content:center}
-html[data-zoom="presentation"] #pn5 .sf-card{min-height:150px}
 </style>
 
 
@@ -480,7 +429,6 @@ html[data-zoom="presentation"] #pn5 .sf-card{min-height:150px}
     </div>
     <div class="pn-nav-right">
       <div class="pn-counter mono" id="pnCounter">封面</div>
-      <button class="theme-btn zoom-btn" id="zoomBtn" aria-label="投屏放大字号" title="投屏放大字号（会议室演示用）" aria-pressed="false">A+</button>
       <button class="theme-btn" id="themeBtn" aria-label="切换主题">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
       </button>
@@ -1112,22 +1060,6 @@ html[data-zoom="presentation"] #pn5 .sf-card{min-height:150px}
   updateNavState();
 
   // Theme toggle
-  /* 投屏放大档（09-17）：A+ 按钮，localStorage 记忆，默认关闭 */
-  var zbtn = document.getElementById('zoomBtn');
-  var zsaved = null;
-  try { zsaved = localStorage.getItem('fg-zoom'); } catch(e) {}
-  function applyZoom(on) {
-    if (on) document.documentElement.setAttribute('data-zoom', 'presentation');
-    else document.documentElement.removeAttribute('data-zoom');
-    if (zbtn) { zbtn.classList.toggle('on', !!on); zbtn.setAttribute('aria-pressed', on ? 'true' : 'false'); }
-  }
-  applyZoom(zsaved === 'presentation');
-  if (zbtn) zbtn.addEventListener('click', function(e) {
-    e.preventDefault(); e.stopPropagation();
-    var on = document.documentElement.getAttribute('data-zoom') !== 'presentation';
-    applyZoom(on);
-    try { localStorage.setItem('fg-zoom', on ? 'presentation' : 'normal'); } catch(e) {}
-  });
   var btn = document.getElementById('themeBtn');
   var saved = null;
   try { saved = localStorage.getItem('fg-theme'); } catch(e) {}
