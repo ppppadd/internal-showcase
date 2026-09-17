@@ -44,12 +44,12 @@
   --cost:#C0392B;
   --cost-soft:#FBEFEE;
   --fill-soft-line:#C7DBF8;
-  --t-cap:12px;
-  --t-body:15px;
-  --t-h4:17px;
-  --t-h3:22px;
-  --t-num:32px;
-  --t-h2:46px;
+  --t-cap:16px;
+  --t-body:19px;
+  --t-h4:22px;
+  --t-h3:28px;
+  --t-num:40px;
+  --t-h2:56px;
   /* 圆角系统（Shape Consistency Lock）：4 级角 + 胶囊 + 细线 */
   --r-card:20px;   /* 卡片 / 面板 / 媒体框 / 表格容器 */
   --r-md:12px;     /* 小控件 / 图标底板 / 内层容器 */
@@ -70,11 +70,11 @@
   --ls-num:.02em; --ls-num-tight:-.02em;
   --lh-display:1.05; --lh-tight:1.5; --lh-body:1.7;
   /* 展示级字号（不并入文本 6 档） */
-  --t-display-1:clamp(40px,6.4vw,84px);  /* hero H1（min 40px 吸收原 @480 覆盖）*/
-  --t-display-2:clamp(30px,3.6vw,46px);  /* .sec-head h2 */
-  --t-display-3:clamp(30px,4vw,52px);    /* .footer-statement */
-  --t-display-num:44px;                  /* .metric .v 主视觉数字 */
-  --t-cap-xs:11px; --t-cap-2xs:10px;     /* 导航 tab 响应式两档 */
+  --t-display-1:clamp(48px,6.6vw,100px);  /* hero H1（min 40px 吸收原 @480 覆盖）*/
+  --t-display-2:clamp(40px,4.4vw,60px);  /* .sec-head h2 */
+  --t-display-3:clamp(40px,4.8vw,68px);    /* .footer-statement */
+  --t-display-num:54px;                  /* .metric .v 主视觉数字 */
+  --t-cap-xs:14px; --t-cap-2xs:13px;     /* 导航 tab 响应式两档 */
   /* 深底/玻璃面上的白色半透明族（深底专用命名层，两主题共用同一值）*/
   --on-dark-line:rgba(255,255,255,.08);    /* 深底发丝线（最弱）*/
   --on-dark-line-2:rgba(255,255,255,.12);  /* 深底分隔线（中）*/
@@ -144,7 +144,7 @@
 .hero.hero-fullpage{display:block;padding:0;min-height:0}.hero-content{position:relative;z-index:2;color:#fff;width:100%;display:flex;flex-direction:column;justify-content:center;height:100%}.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:var(--t-cap);font-weight:700;letter-spacing:normal;
   text-transform:none;color:var(--accent);margin-bottom:28px}.eyebrow::before{content:"";width:24px;height:2px;background:var(--accent)}.hero h1{font-size:var(--t-display-1);line-height:var(--lh-display);letter-spacing:normal;font-weight:700;margin-bottom:24px}.hero h1 .hl{color:var(--accent)}.hero-sub{font-size:var(--t-h4);line-height:var(--lh-body);color:rgba(255,255,255,.8);max-width:46ch;margin-bottom:40px}.hero-cta{display:flex;align-items:center;gap:16px;margin-bottom:56px}.hero-stats{position:absolute;right:48px;bottom:100px;display:grid;grid-template-columns:repeat(4, minmax(0,1fr));width:min(50%,680px);border:1px solid var(--on-dark-line-4);
   border-radius:var(--r-card);background:rgba(255,255,255,.07);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);overflow:hidden}.hstat{padding:var(--space-5) var(--space-6);border-right:1px solid var(--on-dark-line-2)}.hstat:last-child{border-right:none}.hstat .v{font-size:var(--t-num);font-weight:700;letter-spacing:var(--ls-num-tight);line-height:1;font-variant-numeric:tabular-nums}.hstat .v .accent{color:var(--accent)}.hstat .l{font-size:var(--t-cap);color:rgba(255,255,255,.66);margin-top:8px}/* Section 通用 */
-.sec-head{margin-bottom:var(--space-12)}.sec-head h2{font-size:var(--t-display-2);line-height:var(--lh-display);letter-spacing:normal;font-weight:700;margin-bottom:16px;max-width:26ch}.sec-head p{font-size:var(--t-h4);color:var(--muted);max-width:72ch;line-height:var(--lh-body)}.ui-tab{font-family:inherit;font-size:var(--t-body);font-weight:700;padding:12px 24px;border-radius:var(--r-pill);cursor:pointer;
+.sec-head{margin-bottom:var(--space-8)}.sec-head h2{font-size:var(--t-display-2);line-height:var(--lh-display);letter-spacing:normal;font-weight:700;margin-bottom:16px;max-width:26ch}.sec-head p{font-size:var(--t-h4);color:var(--muted);max-width:72ch;line-height:var(--lh-body)}.ui-tab{font-family:inherit;font-size:var(--t-body);font-weight:700;padding:12px 24px;border-radius:var(--r-pill);cursor:pointer;
   border:1px solid var(--line);background:transparent;color:var(--muted);transition:color var(--dur-fast) var(--ease-out-quint),border-color var(--dur-fast) var(--ease-out-quint),background var(--dur-fast) var(--ease-out-quint)}.ui-tab:hover{border-color:var(--accent);color:var(--accent)}.ui-tab:active{transform:scale(.97)}.ui-tab.on{background:var(--text);border-color:var(--text);color:var(--bg)}.ui-panel{display:none}.ui-panel.on{display:block}.ui-frame{background:var(--frame-bg);border:1px solid var(--frame-line);border-radius:var(--r-card);overflow:hidden;box-shadow:var(--shadow-lg)}.ui-frame img{width:100%;height:auto;display:block}[data-theme="dark"] .ui-frame img{filter:brightness(.92)}[data-theme="dark"] .ui-frame{box-shadow:0 0 0 1px var(--on-dark-fill-2)}.ui-cap{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;border-top:1px solid var(--frame-line);font-size:var(--t-cap);color:var(--frame-cap)}.ui-cap b{color:var(--frame-ink);font-weight:700}/* ===== HTML/CSS Diagram 替换 SVG 组件 ===== */
 .diagram-html{width:100%;margin:0 auto}/* 痛点网格 */
 .pain-grid{max-width:100%;margin:0 auto}.pain-grid-inner{display:flex;flex-direction:column;gap:var(--space-4)}.pain-row{display:flex;align-items:stretch;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;transition:transform var(--dur-base) cubic-bezier(.16,1,.3,1),box-shadow var(--dur-base) cubic-bezier(.16,1,.3,1)}.pain-row:hover{box-shadow:var(--shadow)}.pain-left{flex:1.35;display:flex;align-items:center;gap:20px;padding:var(--space-6) var(--space-7);min-width:0}.pain-num{flex:none;width:32px;font-size:var(--t-cap);font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums;letter-spacing:var(--ls-num)}.pain-copy{min-width:0}.pain-title{font-size:var(--t-h4);font-weight:700;color:var(--text);margin-bottom:3px;letter-spacing:normal}.pain-sub{font-size:var(--t-body);color:var(--muted);line-height:var(--lh-tight)}.pain-arrow{flex:none;font-size:var(--t-body);color:var(--muted-2);line-height:1;margin-right:2px}.pain-footer{text-align:center;font-size:var(--t-cap);color:var(--muted);margin-top:16px;padding-bottom:4px}
@@ -212,7 +212,7 @@
 }.sf-card.w2{flex:2}.sf-card.w3{flex:3}.sf-card.w-half{flex:0 0 48%}.sf-card.w-full{flex:0 0 100%}/* dark card */
 .sf-card.dk{background:var(--surface-2);border-color:var(--line)}.sf-card.dk2{background:var(--ink);border-color:var(--on-dark-line-4)}/* brand fill */
 .sf-card.fill{background:var(--fill-soft);border-color:var(--fill-soft-line);border-width:var(--bw-hair)}.sf-card.fill-hd{background:var(--surface);border:1px solid var(--line);border-top:2px solid var(--accent);box-shadow:none}.sf-card.fill-s{background:var(--accent);border-color:var(--accent-ink)}.sf-card .sf-badge{display:inline-flex;align-items:center;justify-content:center;
-  width:24px;height:24px;border-radius:50%;font-size:var(--t-cap);font-weight:700;flex:none}.sf-card .sf-badge.i{background:var(--accent);color:#fff}.sf-card .sf-badge.ii{background:var(--muted-2);color:#fff}.sf-card .sf-badge.iii{background:var(--accent);color:#fff}.sf-card .sf-badge.iv{background:var(--accent);color:#fff}.sf-card .sf-label{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.01em}.sf-card .sf-label.r{color:var(--muted-2)}.sf-card .sf-label.g{color:#a0aec0}
+  width:24px;height:24px;border-radius:50%;font-size:var(--t-cap);font-weight:700;flex:none}.sf-card .sf-badge.i{background:var(--accent);color:#fff}.sf-card .sf-badge.ii{background:var(--muted-2);color:#fff}.sf-card .sf-badge.iii{background:var(--accent);color:#fff}.sf-card .sf-badge.iv{background:var(--accent);color:#fff}.sf-card .sf-label{font-size:var(--t-cap);font-weight:700;color:var(--accent);letter-spacing:.01em}.sf-card .sf-label.r{color:var(--muted-2)}.sf-card .sf-label.g{color:#a0aec0}
 /* 以前 / 现在 对比徽标（09-16 强化对比模式） */
 .sf-era{display:inline-flex;align-items:center;font-size:var(--t-cap);font-weight:700;padding:3px 12px;border-radius:var(--r-pill);flex:none;letter-spacing:.02em}
 .sf-era.before{background:#E4E4E7;color:#4B4B50;border:1px solid #D6D6DA}
@@ -283,7 +283,7 @@
   height: 100%; overflow-y: auto; overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 }/* P0#1 面板标题呼吸区：原为 0，标题贴着固定导航 */
-.pn-panel-scroll > .wrap{ padding-top: var(--space-24); padding-bottom: var(--space-24); }.pn-panel:not(.on) .pn-panel-scroll{ pointer-events: none; }.pn-panel.pn-exit-left{ animation: pnExitLeft var(--dur-base) cubic-bezier(.16,1,.3,1) forwards; }.pn-panel.pn-exit-right{ animation: pnExitRight var(--dur-base) cubic-bezier(.16,1,.3,1) forwards; }.pn-panel.pn-enter-left{ animation: pnEnterLeft var(--dur-base) cubic-bezier(.16,1,.3,1) forwards; }.pn-panel.pn-enter-right{ animation: pnEnterRight var(--dur-base) cubic-bezier(.16,1,.3,1) forwards; }
+.pn-panel-scroll > .wrap{ padding-top: var(--space-16); padding-bottom: var(--space-16); }.pn-panel:not(.on) .pn-panel-scroll{ pointer-events: none; }.pn-panel.pn-exit-left{ animation: pnExitLeft var(--dur-base) cubic-bezier(.16,1,.3,1) forwards; }.pn-panel.pn-exit-right{ animation: pnExitRight var(--dur-base) cubic-bezier(.16,1,.3,1) forwards; }.pn-panel.pn-enter-left{ animation: pnEnterLeft var(--dur-base) cubic-bezier(.16,1,.3,1) forwards; }.pn-panel.pn-enter-right{ animation: pnEnterRight var(--dur-base) cubic-bezier(.16,1,.3,1) forwards; }
 @keyframes pnExitLeft {
   from { transform: translateX(0); opacity: 1; visibility: visible; }
   to { transform: translateX(-30px); opacity: 0; visibility: hidden; }
@@ -342,19 +342,34 @@
 .ui-qr{cursor:zoom-in;transition:transform .3s cubic-bezier(.25,.1,.25,1),box-shadow .3s cubic-bezier(.25,.1,.25,1)}
 @media (hover:hover) and (pointer:fine){.ui-qr:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.06),0 24px 56px rgba(0,0,0,.12)}}
 .ui-qr:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.ui-qr-hint{display:inline-block;margin-top:10px;padding:3px 10px;border-radius:999px;background:rgba(0,122,255,.10);color:var(--accent);font-size:var(--t-cap-xs,11px);line-height:1.6}
+.ui-qr-hint{display:inline-block;margin-top:10px;padding:3px 10px;border-radius:999px;background:rgba(0,122,255,.10);color:var(--accent);font-size:var(--t-cap-xs,14px);line-height:1.6}
 .qr-zoom-backdrop{position:fixed;inset:0;z-index:80;background:rgba(10,14,22,.30);backdrop-filter:blur(6px) saturate(.9);-webkit-backdrop-filter:blur(6px) saturate(.9);opacity:0;pointer-events:none;transition:opacity .4s cubic-bezier(.22,.61,.36,1)}
 .qr-zoom-backdrop.on{opacity:1;pointer-events:auto}
 .qr-zoom{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.92);opacity:0;display:none;flex-direction:column;align-items:center;text-align:center;z-index:81;width:calc(100% - 32px);max-width:400px;padding:28px 26px 24px;background:var(--card-bg,#fff);border:1px solid var(--frame-line,rgba(0,0,0,.10));border-radius:var(--r-card,20px);box-shadow:0 6px 16px rgba(0,0,0,.10),0 32px 72px rgba(0,0,0,.22);transition:transform .45s cubic-bezier(.25,.1,.25,1),opacity .35s cubic-bezier(.25,.1,.25,1)}
 .qr-zoom.on{display:flex;transform:translate(-50%,-50%) scale(1);opacity:1}
 .qr-zoom img{width:min(62vw,300px);height:min(62vw,300px);border-radius:var(--r-md,12px);background:#fff;padding:6px;box-sizing:border-box}
-.qr-zoom-title{margin-top:18px;font-size:var(--t-body,16px);color:var(--text,#1D1D1F)}
-.qr-zoom-sub{margin:8px 0 0;font-size:var(--t-cap,13px);color:var(--frame-cap,#86868B);line-height:var(--lh-body,1.6)}
-.qr-zoom-link{margin-top:18px;display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:999px;background:var(--accent,#007AFF);color:#fff;font-size:var(--t-cap,13px);text-decoration:none}
-.qr-zoom-x{position:absolute;top:12px;right:12px;width:30px;height:30px;border-radius:50%;border:1px solid var(--frame-line,rgba(0,0,0,.10));background:transparent;color:var(--frame-cap,#86868B);cursor:pointer;font-size:13px;line-height:1;padding:0}
+.qr-zoom-title{margin-top:18px;font-size:var(--t-body,19px);color:var(--text,#1D1D1F)}
+.qr-zoom-sub{margin:8px 0 0;font-size:var(--t-cap,16px);color:var(--frame-cap,#86868B);line-height:var(--lh-body,1.6)}
+.qr-zoom-link{margin-top:18px;display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:999px;background:var(--accent,#007AFF);color:#fff;font-size:var(--t-cap,16px);text-decoration:none}
+.qr-zoom-x{position:absolute;top:12px;right:12px;width:30px;height:30px;border-radius:50%;border:1px solid var(--frame-line,rgba(0,0,0,.10));background:transparent;color:var(--frame-cap,#86868B);cursor:pointer;font-size:var(--t-cap);line-height:1;padding:0}
 .qr-zoom-x:hover{color:var(--text,#1D1D1F)}
 @media (max-width:480px){.qr-zoom{padding:22px 18px 20px}}
 @media (prefers-reduced-motion:reduce){.qr-zoom,.qr-zoom-backdrop{transition:none}.apple-expand,.apple-fade-up{animation:none;opacity:1}}
+
+/* ── 投屏放大档（09-17）：仅放大面板内容字号，导航胶囊不受影响 ── */
+.zoom-btn{ font-weight:700; font-size:15px; line-height:1; letter-spacing:0; }
+.zoom-btn.on{ background:var(--nav-on-bg); border-color:var(--nav-accent); color:var(--nav-accent); }
+small{ font-size:var(--t-cap); }
+.demo-tab{ font-size:var(--t-cap); }
+.video-cover{ font-size:var(--t-cap); }
+html[data-zoom="presentation"] .pn-panel{
+  --t-cap:20px; --t-body:24px; --t-h4:28px; --t-h3:34px;
+  --t-num:48px; --t-display-num:64px;
+  --t-display-1:clamp(56px,7.2vw,116px);
+  --t-display-2:clamp(46px,5vw,70px);
+  --t-display-3:clamp(44px,5.4vw,78px);
+  --t-cap-xs:18px; --t-cap-2xs:16px;
+}
 </style>
 <script>try{document.documentElement.setAttribute("data-navinit",/^#pn[0-7]$/.test(location.hash)?"panel":"hero")}catch(e){}</script>
 </head>
@@ -374,6 +389,7 @@
     </div>
     <div class="pn-nav-right">
       <div class="pn-counter mono" id="pnCounter">封面</div>
+      <button class="theme-btn zoom-btn" id="zoomBtn" aria-label="投屏放大字号" title="投屏放大字号（会议室演示用）" aria-pressed="false">A+</button>
       <button class="theme-btn" id="themeBtn" aria-label="切换主题">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
       </button>
@@ -659,37 +675,37 @@
           <div class="sf-left">
             <div class="sf-card lv" style="padding:var(--space-4) var(--space-5)">
               <div style="display:flex;align-items:center;gap:var(--space-3)">
-                <span class="sf-badge i" style="width:28px;height:28px;font-size:13px">I</span>
+                <span class="sf-badge i" style="width:28px;height:28px;font-size:var(--t-cap)">I</span>
                 <div>
                   <h4 style="font-size:var(--t-body);margin:0">硬束缚 · 物理隔离</h4>
-                  <p style="font-size:13px">测试库/生产库/档案库三文件，跨线查询直接拒绝</p>
+                  <p style="font-size:var(--t-cap)">测试库/生产库/档案库三文件，跨线查询直接拒绝</p>
                 </div>
               </div>
             </div>
             <div class="sf-card lv" style="padding:var(--space-4) var(--space-5)">
               <div style="display:flex;align-items:center;gap:var(--space-3)">
-                <span class="sf-badge ii" style="width:28px;height:28px;font-size:13px">II</span>
+                <span class="sf-badge ii" style="width:28px;height:28px;font-size:var(--t-cap)">II</span>
                 <div>
                   <h4 style="font-size:var(--t-body);margin:0">软引导 · 自动拦截</h4>
-                  <p style="font-size:13px">过期价表/冻结供应商/渠道不在标准表/非白名单仓码 → 自动排除</p>
+                  <p style="font-size:var(--t-cap)">过期价表/冻结供应商/渠道不在标准表/非白名单仓码 → 自动排除</p>
                 </div>
               </div>
             </div>
             <div class="sf-card lv" style="padding:var(--space-4) var(--space-5)">
               <div style="display:flex;align-items:center;gap:var(--space-3)">
-                <span class="sf-badge iii" style="width:28px;height:28px;font-size:13px">III</span>
+                <span class="sf-badge iii" style="width:28px;height:28px;font-size:var(--t-cap)">III</span>
                 <div>
                   <h4 style="font-size:var(--t-body);margin:0">围栏 · 自动巡检 + 对账</h4>
-                  <p style="font-size:13px">入库后强不变量自动扫描，独立真值器逐格对账，偏差立即报警</p>
+                  <p style="font-size:var(--t-cap)">入库后强不变量自动扫描，独立真值器逐格对账，偏差立即报警</p>
                 </div>
               </div>
             </div>
             <div class="sf-card lv" style="padding:var(--space-4) var(--space-5)">
               <div style="display:flex;align-items:center;gap:var(--space-3)">
-                <span class="sf-badge iv" style="width:28px;height:28px;font-size:13px">IV</span>
+                <span class="sf-badge iv" style="width:28px;height:28px;font-size:var(--t-cap)">IV</span>
                 <div>
                   <h4 style="font-size:var(--t-body);margin:0">最后一关 · 人点头才动手</h4>
-                  <p style="font-size:13px">写生产库/删数据/改关键代码 → 先列"改什么、为什么" → 人批准 → 再动</p>
+                  <p style="font-size:var(--t-cap)">写生产库/删数据/改关键代码 → 先列"改什么、为什么" → 人批准 → 再动</p>
                 </div>
               </div>
             </div>
@@ -700,7 +716,7 @@
           <div class="sf-right">
             <div class="sf-card" style="height:100%">
               <div class="sf-hd" style="margin-bottom:16px">四层防线的设计逻辑</div>
-              <div style="font-size:13px;color:var(--muted);line-height:var(--lh-body)">
+              <div style="font-size:var(--t-cap);color:var(--muted);line-height:var(--lh-body)">
                 <div>→ 价格数据是商务命脉</div>
                 <div>→ 宁可不报价，不可报错价</div>
                 <div>→ 测试库试水 → 真值器对账 → 生产库放行</div>
@@ -718,7 +734,7 @@
           <div class="seg" style="width:60px;background:var(--accent);opacity:.55"></div>
           <div class="seg" style="width:80px;background:var(--accent);opacity:.78"></div>
           <div class="seg" style="width:110px;background:var(--accent);opacity:1"></div>
-          <span style="font-size:13px;color:var(--muted);margin-left:8px">力度递增 →</span>
+          <span style="font-size:var(--t-cap);color:var(--muted);margin-left:8px">力度递增 →</span>
         </div>
       </div>
     </div>
@@ -1449,6 +1465,22 @@
   updateNavState();
 
   // Theme toggle
+  /* 投屏放大档（09-17）：A+ 按钮，localStorage 记忆，默认关闭 */
+  var zbtn = document.getElementById('zoomBtn');
+  var zsaved = null;
+  try { zsaved = localStorage.getItem('fg-zoom'); } catch(e) {}
+  function applyZoom(on) {
+    if (on) document.documentElement.setAttribute('data-zoom', 'presentation');
+    else document.documentElement.removeAttribute('data-zoom');
+    if (zbtn) { zbtn.classList.toggle('on', !!on); zbtn.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+  }
+  applyZoom(zsaved === 'presentation');
+  if (zbtn) zbtn.addEventListener('click', function(e) {
+    e.preventDefault(); e.stopPropagation();
+    var on = document.documentElement.getAttribute('data-zoom') !== 'presentation';
+    applyZoom(on);
+    try { localStorage.setItem('fg-zoom', on ? 'presentation' : 'normal'); } catch(e) {}
+  });
   var btn = document.getElementById('themeBtn');
   var saved = null;
   try { saved = localStorage.getItem('fg-theme'); } catch(e) {}
