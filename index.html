@@ -537,6 +537,12 @@ small{ font-size:var(--t-cap); }
 /* pn7 达成目标 */
 #pn7 .goal-list{gap:calc(clamp(8px,1.2vh,14px) * var(--vhx,1))}
 #pn7 .goal{padding:calc(clamp(10px,1.6vh,18px) * var(--vhx,1)) clamp(14px,1.4vw,22px)}
+
+/* ===== 09-17 补丁16：封面四格数字不超框（宽度放开 + 字号随视口 + 不换行） ===== */
+.hero-stats{width:min(56%,780px)}
+.hstat{min-width:0;padding:calc(var(--space-5) * var(--vhx,1)) clamp(8px,1.1vw,var(--space-6))}
+.hstat .v{font-size:clamp(24px,2.2vw,42px);white-space:nowrap;overflow:hidden}
+.hstat .l{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 </style>
 
 
@@ -588,8 +594,8 @@ small{ font-size:var(--t-cap); }
     </div>
     <div class="hero-stats hero-enter d4">
       <div class="hstat"><div class="v"><span class="accent" data-count="25">0</span></div><div class="l">家供应商</div></div>
-      <div class="hstat"><div class="v" data-count="91571">0</div><div class="l">条底价</div></div>
-      <div class="hstat"><div class="v" data-count="678">0</div><div class="l">个仓码</div></div>
+      <div class="hstat"><div class="v" data-count="91930">0</div><div class="l">条底价</div></div>
+      <div class="hstat"><div class="v" data-count="404">0</div><div class="l">个仓码</div></div>
       <div class="hstat"><div class="v" data-count="3">0</div><div class="l">条线路</div></div>
     </div>
   </div>
