@@ -503,6 +503,40 @@ small{ font-size:var(--t-cap); }
 .fd-step{padding:18px 20px;gap:9px}
 .fm-mid{margin:8px 0}
 .fm-doc-foot{margin-top:14px}
+
+/* ===== 09-17 补丁15：一屏不滚（间距随视口自适应收缩，字号一律不动） ===== */
+.pn-panel-scroll > .wrap{padding-top:calc(var(--nav-h) + 12px * var(--vhx,1)) !important;padding-bottom:calc(12px * var(--vhx,1)) !important}
+.sec-head h2{font-size:clamp(38px,5.8vh,64px);margin-bottom:calc(clamp(8px,1.1vh,16px) * var(--vhx,1))}
+.sec-head{margin-bottom:calc(clamp(10px,1.6vh,40px) * var(--vhx,1))}
+.pn-panel-scroll > .wrap > .sec-head:first-child{margin-bottom:calc(clamp(12px,1.8vh,34px) * var(--vhx,1))}
+#pn1 .sol-block,#pn2 .sol-block,#pn3 .sol-block,#pn4 .sol-block,#pn5 .sol-block{margin-top:calc(clamp(12px,1.8vh,34px) * var(--vhx,1))}
+/* pn0 视频演示 */
+#pn0 .video-wrap{height:calc(clamp(170px,34vh,430px) * var(--vhx,1))}
+#pn0 .video-wrap video{display:block;width:100%;height:100%;object-fit:contain;background:#000}
+#pn0 .demo-nav{gap:calc(clamp(6px,.9vh,12px) * var(--vhx,1))}
+#pn0 .demo-tab{padding:calc(clamp(8px,1.1vh,14px) * var(--vhx,1)) 16px}
+#pn0 .chat-body{gap:calc(clamp(8px,1.1vh,14px) * var(--vhx,1))}
+/* pn1 项目背景 */
+#pn1 .pain-grid-inner{gap:calc(clamp(10px,1.5vh,22px) * var(--vhx,1))}
+#pn1 .pain-row{padding:calc(clamp(12px,1.9vh,24px) * var(--vhx,1)) clamp(16px,1.8vw,32px);min-height:0}
+/* pn3 人机协作 */
+#pn3 .flow-lanes{margin:calc(clamp(4px,.8vh,12px) * var(--vhx,1)) 0 calc(clamp(2px,.5vh,6px) * var(--vhx,1))}
+#pn3 .flow-lane{padding:calc(clamp(10px,1.5vh,20px) * var(--vhx,1));gap:calc(clamp(8px,1.2vh,14px) * var(--vhx,1))}
+#pn3 .flow-step{padding:calc(clamp(8px,1.1vh,14px) * var(--vhx,1))}
+#pn3 .sol-block{margin-top:calc(clamp(10px,1.4vh,20px) * var(--vhx,1))}
+/* pn4 / pn5 */
+#pn4 .metric,#pn5 .metric{padding:calc(clamp(12px,1.9vh,32px) * var(--vhx,1)) clamp(14px,1.6vw,30px)}
+#pn4 .sol-block{margin-top:calc(clamp(12px,1.8vh,28px) * var(--vhx,1))}
+#pn4 .cmp-h,#pn4 .sol-tag{margin-bottom:calc(6px * var(--vhx,1))}
+#pn5 .sf-list{gap:calc(clamp(6px,1vh,11px) * var(--vhx,1))}
+#pn5 .pain-footer{margin-top:calc(12px * var(--vhx,1))}
+/* pn6 询价网页 */
+#pn6 .ui-frame img,#pn6 .ui-frame video{max-height:58vh;width:auto}
+#pn6 .ui-qr{gap:calc(clamp(10px,1.6vh,22px) * var(--vhx,1))}
+#pn6 .sf-row{gap:clamp(14px,1.8vw,30px)}
+/* pn7 达成目标 */
+#pn7 .goal-list{gap:calc(clamp(8px,1.2vh,14px) * var(--vhx,1))}
+#pn7 .goal{padding:calc(clamp(10px,1.6vh,18px) * var(--vhx,1)) clamp(14px,1.4vw,22px)}
 </style>
 
 
@@ -568,7 +602,7 @@ small{ font-size:var(--t-cap); }
   <div class="wrap">
     <div class="sec-head">
       <h2 class="reveal">视频演示 · 企业微信端六大功能</h2>
-      <p class="reveal" data-reveal-delay="1">下面每一段都是企业微信端的实际录屏，非效果图 —— 演示时择要播放，其余可现场点开。</p>
+      <p class="reveal" data-reveal-delay="1">每一段都是企业微信端的实际录屏，非效果图；演示时择要播放，其余可点开。</p>
     </div>
 <div class="demo-stage reveal">
       <div class="demo-nav">
@@ -828,13 +862,9 @@ small{ font-size:var(--t-cap); }
   <div class="wrap">
     <div class="sec-head">
       <h2 class="reveal">人机协作：AI 处理，商务把关</h2>
-      <p class="reveal" data-reveal-delay="1">AI 把繁琐的全做了 —— 识别、比价、核算、校验；商务只做判断：能不能接、什么价。</p>
+      <p class="reveal" data-reveal-delay="1">客户开口询价后，机器做确定性工作，人只做两件事——把关、拍板。</p>
     </div>
     <div class="reveal"><div class="diagram-html reveal flow-2lane">
-    <div class="flow-entry">
-        <div class="flow-box">客户开口询价</div>
-    </div>
-    <div class="flow-arrow-d">↓</div>
     <div class="flow-lanes">
         <div class="flow-lane flow-lane-ai">
             <div class="flow-lane-hd">AI 智能助手 · 自动处理</div>
@@ -1629,6 +1659,36 @@ initFromHashFromLocation();
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && isOpen) close(); });
   window.addEventListener('hashchange', close);
   window.qrZoomClose = close;
+})();
+</script>
+<script>
+/* 一屏不滚：二分求「刚好放得下」的最大间距系数（只缩间距，字号一律不动） */
+(function(){
+  function fit(){
+    var list=document.querySelectorAll('.pn-panel-scroll');
+    for(var n=0;n<list.length;n++){
+      var sc=list[n], w=sc.querySelector('.wrap');
+      if(!w) continue;
+      var avail=sc.clientHeight;
+      w.style.setProperty('--vhx','1');
+      if(w.scrollHeight<=avail+2) continue;
+      var lo=0.5, hi=1, mid, i;
+      for(i=0;i<9;i++){
+        mid=(lo+hi)/2;
+        w.style.setProperty('--vhx',mid.toFixed(4));
+        if(w.scrollHeight<=avail+1){ hi=mid; } else { lo=mid; }
+      }
+      w.style.setProperty('--vhx',hi.toFixed(4));
+    }
+  }
+  function schedule(){ clearTimeout(window.__ft2); window.__ft2=setTimeout(fit,120); }
+  window.__fit=fit;
+  if(document.readyState!=='loading') fit(); else document.addEventListener('DOMContentLoaded',fit);
+  window.addEventListener('load',fit);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){fit();});
+  window.addEventListener('resize',schedule);
+  try{ new MutationObserver(schedule).observe(document.body,{attributes:true,attributeFilter:['class'],subtree:true}); }catch(e){}
+  setTimeout(fit,700); setTimeout(fit,1800); setTimeout(fit,3200);
 })();
 </script>
 </body>
