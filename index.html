@@ -407,7 +407,99 @@ small{ font-size:var(--t-cap); }
 #pn6 .ui-frame{flex:1;display:flex;flex-direction:column;justify-content:center}
 
 
-#pn5 .sf-card{min-height:196px;display:flex;flex-direction:column;justify-content:center}
+#pn5 .sf-card{min-height:0;display:flex;flex-direction:column;justify-content:flex-start;padding:30px}
+
+/* 8) pn5 扩充（09-17）：要点列表 + 四格数据带，填满整屏 */
+.sf-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px}
+.sf-list li{position:relative;padding-left:22px;font-size:var(--t-body);color:var(--muted);line-height:var(--lh-tight)}
+.sf-list li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--accent);opacity:.8}
+#growth-metrics{margin-top:34px}
+#growth-metrics .metric{padding:26px 30px;display:flex;flex-direction:column;justify-content:center}
+#growth-metrics .metric .v{font-size:var(--t-num);margin-bottom:10px}
+#pn5 .pain-footer{margin-top:28px}
+
+/* 9) pn2 流程图（页面内概览） */
+#sol-flow{display:flex;flex-direction:column}
+.flowmap{display:flex;align-items:stretch}
+.fm-step{flex:1;min-width:0;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:var(--r-card);padding:24px 22px 26px;box-shadow:var(--shadow)}
+.fm-num{display:inline-flex;align-items:center;justify-content:center;width:1.7em;height:1.7em;border-radius:50%;background:var(--accent);color:#fff;font-size:var(--t-cap);font-weight:700;margin-bottom:12px}
+.fm-step h4{font-size:var(--t-body);font-weight:700;color:var(--text);margin:0 0 10px;letter-spacing:normal}
+.fm-step p{font-size:var(--t-cap);color:var(--muted);line-height:var(--lh-body);margin:0}
+.fm-arrow{flex:none;display:flex;align-items:center;justify-content:center;width:2.4em;font-size:var(--t-h3);color:var(--accent);font-weight:700}
+.fm-monitor{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;background:var(--surface-2);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--r-card);padding:20px 28px;margin-top:24px;text-align:center}
+.fm-monitor strong{font-size:var(--t-body);color:var(--text)}
+.fm-monitor span{font-size:var(--t-body);color:var(--muted);line-height:var(--lh-tight)}
+.fm-open{margin-top:24px;display:inline-flex;align-items:center;gap:10px;padding:15px 36px;border-radius:var(--r-pill);border:1px solid var(--accent);background:transparent;color:var(--accent);font-family:inherit;font-size:var(--t-body);font-weight:700;cursor:pointer;transition:background var(--dur-fast) var(--ease-out-quint),color var(--dur-fast) var(--ease-out-quint)}
+.fm-open:hover{background:var(--accent);color:#fff}
+
+/* 9b) 全流程图放大弹层（点开即全屏大图） */
+.flow-modal{position:fixed;inset:0;z-index:90;background:rgba(8,12,20,.58);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;overflow:auto;padding:3vh 2.5vw}
+.flow-modal.on{display:flex}
+.fm-doc{position:relative;width:min(1720px,96vw);background:var(--bg);border:1px solid var(--frame-line);border-radius:var(--r-card);box-shadow:0 30px 80px rgba(0,0,0,.40);padding:42px 48px 46px}
+.fm-doc-head{margin-bottom:28px;padding-right:80px}
+.fm-doc-head h3{font-size:var(--t-h2);font-weight:700;color:var(--text);margin:0 0 12px;letter-spacing:normal}
+.fm-doc-head p{font-size:var(--t-body);color:var(--muted);margin:0}
+.fm-close{position:absolute;top:24px;right:24px;width:2.2em;height:2.2em;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--muted);font-size:var(--t-cap);line-height:1;padding:0;cursor:pointer}
+.fm-close:hover{color:var(--text);border-color:var(--accent)}
+.fm-doc-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.fd-step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);padding:24px 26px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:14px}
+.fd-head{display:flex;align-items:center;gap:14px}
+.fd-num{flex:none;display:inline-flex;align-items:center;justify-content:center;width:1.8em;height:1.8em;border-radius:50%;background:var(--accent);color:#fff;font-size:var(--t-body);font-weight:700}
+.fd-head h4{font-size:var(--t-h4);font-weight:700;color:var(--text);margin:0;letter-spacing:normal}
+.fd-step dl{margin:0;display:flex;flex-direction:column;gap:12px}
+.fd-step dt{font-size:var(--t-cap);font-weight:700;color:var(--accent);margin-bottom:3px}
+.fd-step dd{margin:0;font-size:var(--t-body);color:var(--muted);line-height:var(--lh-body)}
+.fm-mid{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--accent);font-size:var(--t-h4);font-weight:700;margin:18px 0}
+.fm-doc-foot{margin-top:28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.fd-foot{background:var(--surface-2);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--r-card);padding:22px 26px}
+.fd-foot strong{display:block;font-size:var(--t-body);color:var(--text);margin-bottom:10px}
+.fd-foot p{margin:0;font-size:var(--t-body);color:var(--muted);line-height:var(--lh-body)}
+
+/* 10) pn7：内容撑满整屏，消除上方空档（09-17） */
+#pn7 .wrap{display:flex;flex-direction:column;min-height:100vh}
+#pn7 .sec-head{margin-bottom:24px}
+#pn7 .goal-list{flex:1;align-content:space-between;gap:20px}
+#pn7 .goal{min-height:0;padding:26px 28px;align-items:center}
+
+/* 11) 收紧：pn5 内容扩充后一屏不滚（09-17） */
+#pn5 .sec-head{margin-bottom:22px}
+#pn5 .sf-card{padding:24px 26px}
+#pn5 .sf-card h4{margin:2px 0 12px !important}
+#pn5 .sf-list{gap:11px}
+#pn5 .sf-list li{line-height:1.45}
+#growth-metrics{margin-top:22px}
+#growth-metrics .metric{padding:18px 26px}
+#growth-metrics .metric .v{margin-bottom:6px}
+#pn5 .pain-footer{margin-top:18px}
+#pn2 .sol-block{margin-top:26px}
+#sol-flow .flowmap{margin-top:0}
+
+/* 12) 弹层大图压缩 + pn5 再收（09-17，1080p 一屏/一屏可见） */
+.fm-doc{padding:30px 38px 34px}
+.fm-doc-head{margin-bottom:20px}
+.fm-doc-head h3{margin:0 0 8px}
+.fm-doc-flow{gap:16px}
+.fd-step{padding:20px 22px;gap:10px}
+.fd-step dl{gap:9px}
+.fd-step dd{line-height:1.42}
+.fm-mid{margin:12px 0}
+.fm-doc-foot{margin-top:18px;gap:16px}
+.fd-foot{padding:18px 22px}
+#pn5 .sf-card{padding:22px 24px}
+#growth-metrics .metric{padding:16px 24px}
+#pn5 .pain-footer{margin-top:14px}
+
+/* 13) 最终收紧（09-17）：pn5 一屏不滚 + 弹层大图 1080p 一屏看全 */
+#pn5 .sec-head{margin-bottom:16px}
+#growth-metrics{margin-top:16px}
+#growth-metrics .metric{padding:12px 24px}
+#pn5 .pain-footer{margin-top:12px}
+.fm-doc{padding:24px 34px 26px}
+.fm-doc-head{margin-bottom:16px}
+.fm-doc-head h3{margin:0 0 6px}
+.fd-step{padding:18px 20px;gap:9px}
+.fm-mid{margin:8px 0}
+.fm-doc-foot{margin-top:14px}
 </style>
 
 
@@ -511,7 +603,7 @@ small{ font-size:var(--t-cap); }
             <div class="chat-head"><span class="avatar">宝</span><span class="who">小宝 · 询价顾问</span><span class="tag">供应商价格对比</span></div>
             <div class="chat-body">
               <div class="video-wrap"><video controls playsinline preload="metadata" src="demo-price-compare.mp4"></video><button class="video-cover" type="button" aria-label="播放演示"><span class="vc-play"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="vc-cap">点击播放演示</span></button></div>
-              <div class="note">ONT8 普船卡派系列最低价 · 英美跨境 5.99 元/kg（义乌）</div>
+              <div class="note">ONT8 普船特惠卡派最低 6.20 元/KG（义乌进仓）· 25 家同屏比价，最低价自动标注</div>
             </div>
           </div>
         </div>
@@ -541,7 +633,7 @@ small{ font-size:var(--t-cap); }
             <div class="chat-head"><span class="avatar">宝</span><span class="who">小宝 · 询价顾问</span><span class="tag">供应商信息查询</span></div>
             <div class="chat-body">
               <div class="video-wrap"><video controls playsinline preload="metadata" src="demo-supplier.mp4"></video><button class="video-cover" type="button" aria-label="播放演示"><span class="vc-play"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="vc-cap">点击播放演示</span></button></div>
-              <div class="note">16 家美线活跃供应商，另计欧线 5 家、加线 4 家</div>
+              <div class="note">美线 16 家 · 欧英线 5 家 · 加拿大线 4 家，全维度画像随问随答</div>
             </div>
           </div>
         </div>
@@ -609,46 +701,95 @@ small{ font-size:var(--t-cap); }
 
     <div class="sol-block reveal" id="sol-flow">
       <div class="sol-tag">全流程模拟 · 一条「LAX9 · 200kg · 普船卡派」从入库到出价</div>
-      <div class="sf-row">
-        <div class="sf-card cur">
-          <span class="sf-label" style="display:block;margin-bottom:6px">STEP 1 · 入库</span>
-          <h4 style="font-size:var(--t-body);font-weight:700;color:var(--text);margin:0 0 6px">自动识别布局族</h4>
-          <p style="margin:0;font-size:var(--t-body);color:var(--muted);line-height:var(--lh-tight)">卡派 / 海派 / 船期 / 规则四类数据同一口径落库</p>
-        </div>
-        <div class="sf-card cur">
-          <span class="sf-label" style="display:block;margin-bottom:6px">STEP 2 · 防错</span>
-          <h4 style="font-size:var(--t-body);font-weight:700;color:var(--text);margin:0 0 6px">准入拦截</h4>
-          <p style="margin:0;font-size:var(--t-body);color:var(--muted);line-height:var(--lh-tight)">渠道不在标准表不入库 · 非白名单仓码直接退件</p>
-        </div>
-        <div class="sf-card cur">
-          <span class="sf-label" style="display:block;margin-bottom:6px">STEP 3 · 防错</span>
-          <h4 style="font-size:var(--t-body);font-weight:700;color:var(--text);margin:0 0 6px">逐格对账</h4>
-          <p style="margin:0;font-size:var(--t-body);color:var(--muted);line-height:var(--lh-tight)">真值器三方比对 · 测试库过了才进生产库</p>
-        </div>
+      <div class="flowmap">
+        <div class="fm-step"><span class="fm-num">1</span><h4>价表入库</h4><p>卡派 / 海派 / 船期 / 规则<br>四类数据同一口径落库</p></div>
+        <span class="fm-arrow">→</span>
+        <div class="fm-step"><span class="fm-num">2</span><h4>准入拦截</h4><p>渠道不在标准表不入库<br>非白名单仓码直接退件</p></div>
+        <span class="fm-arrow">→</span>
+        <div class="fm-step"><span class="fm-num">3</span><h4>逐格对账</h4><p>真值器三方逐格比对<br>全过才进生产库</p></div>
+        <span class="fm-arrow">→</span>
+        <div class="fm-step"><span class="fm-num">4</span><h4>渠道与仓点归一</h4><p>20 多种叫法归 11 个标准渠道<br>查「深圳」自动含「福永/坂田」</p></div>
+        <span class="fm-arrow">→</span>
+        <div class="fm-step"><span class="fm-num">5</span><h4>一键比价 25 家</h4><p>同口径取最低档位<br>多仓逐仓择优</p></div>
+        <span class="fm-arrow">→</span>
+        <div class="fm-step"><span class="fm-num">6</span><h4>截图即出价</h4><p>OCR 识别 → 底价 + 附加费逐条<br>五项要素齐全</p></div>
       </div>
-      <div class="sf-row">
-        <div class="sf-card cur">
-          <span class="sf-label" style="display:block;margin-bottom:6px">STEP 4 · 归一</span>
-          <h4 style="font-size:var(--t-body);font-weight:700;color:var(--text);margin:0 0 6px">渠道与仓点自动归一</h4>
-          <p style="margin:0;font-size:var(--t-body);color:var(--muted);line-height:var(--lh-tight)">20 多种叫法归到 11 个标准渠道 · 查「深圳」自动含「福永/坂田」</p>
-        </div>
-        <div class="sf-card cur">
-          <span class="sf-label" style="display:block;margin-bottom:6px">STEP 5 · 比价</span>
-          <h4 style="font-size:var(--t-body);font-weight:700;color:var(--text);margin:0 0 6px">一键拉齐 25 家</h4>
-          <p style="margin:0;font-size:var(--t-body);color:var(--muted);line-height:var(--lh-tight)">取最低档位 · 多仓逐仓择优</p>
-        </div>
-        <div class="sf-card cur">
-          <span class="sf-label" style="display:block;margin-bottom:6px">STEP 6 · 输出</span>
-          <h4 style="font-size:var(--t-body);font-weight:700;color:var(--text);margin:0 0 6px">截图即出价</h4>
-          <p style="margin:0;font-size:var(--t-body);color:var(--muted);line-height:var(--lh-tight)">OCR 识别 → 底价 + 附加费逐条 + 五项要素齐全</p>
-        </div>
+      <div class="fm-monitor">
+        <strong>全程监控 · 入库后自动巡检</strong>
+        <span>强不变量扫描 · 快照涨跌对比 · 有效期到期预警 · 偏差立即报警喊人</span>
       </div>
-      <div class="sf-card cur" style="margin-top:14px;text-align:center">
-        <h4 style="font-size:var(--t-body);font-weight:700;color:var(--text);margin:0 0 4px">全程监控 · 入库后自动巡检</h4>
-        <p style="margin:0;font-size:var(--t-body);color:var(--muted);line-height:var(--lh-tight)">强不变量扫描 · 快照涨跌对比 · 有效期到期预警 · 偏差立即报警喊人</p>
+      <div style="display:flex;justify-content:center">
+        <button class="fm-open" id="flowOpen" type="button">点开看全流程图（放大版）</button>
       </div>
     </div>
   </div>
+
+<div class="flow-modal" id="flowModal" role="dialog" aria-modal="true" aria-label="从入库到出单全流程图">
+  <div class="fm-doc">
+    <button class="fm-close" id="flowClose" type="button" aria-label="关闭">✕</button>
+    <div class="fm-doc-head">
+      <h3>从价表入库到报价出单 · 全流程图</h3>
+      <p>六道关口逐层收口，外加一层入库后自动巡检；人只在两处介入 —— 把关、拍板。</p>
+    </div>
+    <div class="fm-doc-flow">
+      <div class="fd-step">
+        <div class="fd-head"><span class="fd-num">1</span><h4>价表入库</h4></div>
+        <dl>
+          <div><dt>做什么</dt><dd>自动识别布局族，卡派 / 海派 / 船期 / 规则四类数据一次落库</dd></div>
+          <div><dt>怎么防错</dt><dd>结构变了先阻断，不猜着入库；产出测试库数据 + 新旧结构差异报告</dd></div>
+        </dl>
+      </div>
+      <div class="fd-step">
+        <div class="fd-head"><span class="fd-num">2</span><h4>准入拦截</h4></div>
+        <dl>
+          <div><dt>做什么</dt><dd>渠道比对标准归类表、仓码比对白名单</dd></div>
+          <div><dt>怎么防错</dt><dd>不在标准表的渠道直接拒收；产出准入清单（收哪些、退哪些）</dd></div>
+        </dl>
+      </div>
+      <div class="fd-step">
+        <div class="fd-head"><span class="fd-num">3</span><h4>逐格对账</h4></div>
+        <dl>
+          <div><dt>做什么</dt><dd>独立真值解析器 vs 提取结果 vs 库内数据，三方逐格比对</dd></div>
+          <div><dt>怎么防错</dt><dd>一格不一致就阻断，测试库全过才进生产库</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="fm-mid">↓ 继续</div>
+    <div class="fm-doc-flow">
+      <div class="fd-step">
+        <div class="fd-head"><span class="fd-num">4</span><h4>渠道与仓点归一</h4></div>
+        <dl>
+          <div><dt>做什么</dt><dd>20 多种叫法归到 11 个标准渠道，查「深圳」自动含「福永 / 坂田」</dd></div>
+          <div><dt>怎么防错</dt><dd>别名只在查询时展开，存储保持原始值，不改账</dd></div>
+        </dl>
+      </div>
+      <div class="fd-step">
+        <div class="fd-head"><span class="fd-num">5</span><h4>一键比价 25 家</h4></div>
+        <dl>
+          <div><dt>做什么</dt><dd>同口径取最低档位、多仓逐仓择优，默认一家通吃</dd></div>
+          <div><dt>怎么防错</dt><dd>公斤与按方两套口径严格隔离；产出每仓最优 + 次选</dd></div>
+        </dl>
+      </div>
+      <div class="fd-step">
+        <div class="fd-head"><span class="fd-num">6</span><h4>截图即出价</h4></div>
+        <dl>
+          <div><dt>做什么</dt><dd>OCR 识别仓码 / 重量 / 方数 → 底价 + 附加费逐条列</dd></div>
+          <div><dt>怎么防错</dt><dd>缺仓码或缺货量不报价；产出五要素齐全的报价单</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="fm-doc-foot">
+      <div class="fd-foot">
+        <strong>全程监控 · 入库后自动巡检</strong>
+        <p>强不变量扫描 · 快照涨跌对比 · 有效期到期预警 · 偏差立即报警喊人</p>
+      </div>
+      <div class="fd-foot">
+        <strong>人只做两件事</strong>
+        <p>把关：格式大改、数据异常时确认放行；拍板：异常价与特殊货型由商务定夺。</p>
+      </div>
+    </div>
+  </div>
+</div>
   <!-- 放大弹窗 -->
 
 
@@ -788,27 +929,44 @@ small{ font-size:var(--t-cap); }
       <h2 class="reveal">复制推广：一套引擎，多线复用</h2>
       <p class="reveal" data-reveal-delay="1">不止服务一条线路 —— 同一套底座接入新线，能力越用越强。</p>
     </div>
-
-<div class="sol-block reveal" id="growth-engine">
+    <div class="sol-block reveal" id="growth-engine">
       <h3 class="blk-title">持续成长性 · 通用引擎族</h3>
       <div class="sf-row">
         <div class="sf-card cur">
-          <span class="sf-label" style="display:block;margin-bottom:6px">STEP 1 · 归纳</span>
-          <h4 style="font-size:var(--t-body);font-weight:700;color:var(--text);margin:0 0 6px">25 家归纳成 8 个布局族</h4>
-          <p style="margin:0;font-size:var(--t-body);color:var(--muted);line-height:var(--lh-tight)">渠道映射、进仓点、重量档位抽成布局模板</p>
+          <span class="sf-label">STEP 1 · 归纳</span>
+          <h4 style="margin:2px 0 14px">25 家归纳成 8 个布局族</h4>
+          <ul class="sf-list">
+            <li>渠道映射、进仓点、重量档位、计费规则抽成模板</li>
+            <li>模板库 41 套，新表先比对结构再入库</li>
+            <li>新供应商不再是「重新做一遍」，而是「对号入座」</li>
+          </ul>
         </div>
         <div class="sf-card cur">
-          <span class="sf-label" style="display:block;margin-bottom:6px">STEP 2 · 复用</span>
-          <h4 style="font-size:var(--t-body);font-weight:700;color:var(--text);margin:0 0 6px">新供应商对号即用</h4>
-          <p style="margin:0;font-size:var(--t-body);color:var(--muted);line-height:var(--lh-tight)">欧英线 08-21、加拿大线 08-27 两周内全量接入</p>
+          <span class="sf-label">STEP 2 · 复用</span>
+          <h4 style="margin:2px 0 14px">新线路对号即用</h4>
+          <ul class="sf-list">
+            <li>欧英线 08-21 接入、加拿大线 08-27 接入，各两周内全量上线</li>
+            <li>新线复用同一套校验器与报价口径，无需重写</li>
+            <li>三线共用一条流水线，维护成本不随家数线性增长</li>
+          </ul>
         </div>
         <div class="sf-card cur">
-          <span class="sf-label" style="display:block;margin-bottom:6px">STEP 3 · 自省</span>
-          <h4 style="font-size:var(--t-body);font-weight:700;color:var(--text);margin:0 0 6px">学不会的也会喊人</h4>
-          <p style="margin:0;font-size:var(--t-body);color:var(--muted);line-height:var(--lh-tight)">漂移检测报警，能力可持续、可交接</p>
+          <span class="sf-label">STEP 3 · 自省</span>
+          <h4 style="margin:2px 0 14px">学不会的也会喊人</h4>
+          <ul class="sf-list">
+            <li>结构变了先阻断，不自作主张入库</li>
+            <li>漂移检测 + 入库日报，异常立即报警喊人</li>
+            <li>能力沉淀在模板与文档里，可交接、不依赖个人记忆</li>
+          </ul>
         </div>
       </div>
     </div>
+<div class="metrics reveal" id="growth-metrics">
+  <div class="metric"><div class="v"><span class="accent">25</span></div><div class="l">家供应商同一套口径</div></div>
+  <div class="metric"><div class="v">8</div><div class="l">个布局族模板 · 41 套模板文件</div></div>
+  <div class="metric"><div class="v">3</div><div class="l">条线路：美线 / 欧英线 / 加拿大线</div></div>
+  <div class="metric"><div class="v">4</div><div class="l">类数据同一入口：卡派 / 海派 / 船期 / 规则</div></div>
+</div>
 <div class="pain-footer">已复制到三条线路：美线 16 家 · 欧英线 5 家 · 加拿大线 4 家；卡派 / 海派 / 船期 / 规则四类数据同一口径；企业微信端与询价网页同一份底价</div>
   </div>
   <!-- 放大弹窗 -->
@@ -1058,6 +1216,23 @@ small{ font-size:var(--t-cap); }
     sc.addEventListener('scroll', updateNavState, {passive: true});
   });
   updateNavState();
+
+  // 全流程图放大弹层（09-17）
+  (function(){
+    var modal = document.getElementById('flowModal');
+    var open = document.getElementById('flowOpen');
+    var close = document.getElementById('flowClose');
+    if (!modal || !open) return;
+    function show(){ modal.classList.add('on'); }
+    function hide(){ modal.classList.remove('on'); }
+    open.addEventListener('click', function(e){ e.preventDefault(); show(); });
+    if (close) close.addEventListener('click', hide);
+    modal.addEventListener('click', function(e){ if (e.target === modal) hide(); });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') { hide(); return; }
+      if (modal.classList.contains('on') && /^Arrow(Left|Right|Up|Down)$/.test(e.key)) e.stopImmediatePropagation();
+    }, true);
+  })();
 
   // Theme toggle
   var btn = document.getElementById('themeBtn');
