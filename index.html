@@ -345,7 +345,7 @@
 .qr-zoom-x{position:absolute;top:12px;right:12px;width:2em;height:2em;border-radius:50%;border:1px solid var(--frame-line,rgba(0,0,0,.10));background:transparent;color:var(--frame-cap,#86868B);cursor:pointer;font-size:var(--t-cap);line-height:1;padding:0}
 .qr-zoom-x:hover{color:var(--text,#1D1D1F)}
 @media (max-width:480px){.qr-zoom{padding:22px 18px 20px}}
-@media (prefers-reduced-motion:reduce){.qr-zoom,.qr-zoom-backdrop{transition:none}.apple-expand,.apple-fade-up{animation:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.qr-zoom,.qr-zoom-backdrop,.video-zoom{transition:none}.apple-expand,.apple-fade-up{animation:none;opacity:1}}
 
 small{ font-size:var(--t-cap); }
 .demo-tab{ font-size:var(--t-cap); }
@@ -572,7 +572,7 @@ small{ font-size:var(--t-cap); }
 #pn6 .ui-panel.on{flex:1 1 auto;min-height:0}
 #pn6 .ui-frame{height:100%;justify-content:stretch}
 #pn6 .ui-frame > a{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
-#pn6 .ui-frame img{flex:1 1 auto;min-height:0;width:100%;height:auto;object-fit:contain;max-height:none}
+#pn6 .ui-frame img{flex:1 1 auto;min-height:0;width:100%;height:100%;object-fit:cover;max-height:none}
 #pn6 .ui-cap{flex:none}
 
 /* 补丁19：pn0 残余 4px 溢出（消除按钮最小高硬底） */
@@ -624,7 +624,7 @@ small{ font-size:var(--t-cap); }
 /* 视频区随视口高度收窄（保证视频等比完整、不滚动、无黑边） */
 #pn0 .demo-stage{max-width:calc((100vh - 470px) * 1.867 + 362px);margin-inline:auto}
 /* 5) pn6：截图贴卡顶（不再居中留空），卡片撑满 */
-#pn6 .ui-frame img{object-position:top center}
+#pn6 .ui-frame img{object-position:center}
 
 /* 6) pn3：两栏卡片吃掉剩余高度（消除底部大片空白） */
 #pn3 .pn-panel-scroll > .wrap > .reveal > .flow-2lane{display:flex;flex-direction:column;flex:0 0 auto;min-height:0}
@@ -1611,11 +1611,17 @@ small{ font-size:var(--t-cap); }
     var big = document.getElementById('videoBig');
     var close = document.getElementById('videoClose');
     if (!modal || !big) return;
+    var vTimer = null;
     function hide() {
       big.pause();
       modal.classList.remove('on');
       if (bd) bd.classList.remove('on');
-      big.removeAttribute('src'); big.load();
+      clearTimeout(vTimer);
+      vTimer = setTimeout(function(){
+        if (modal.classList.contains('on')) return;
+        modal.style.display = 'none';
+        big.removeAttribute('src'); big.load();
+      }, 460);
     }
     document.querySelectorAll('#pn0 .video-cover').forEach(function(btn) {
       btn.addEventListener('click', function() {
@@ -1623,9 +1629,15 @@ small{ font-size:var(--t-cap); }
         var src = v && (v.getAttribute('src') || v.currentSrc);
         if (!src) return;
         big.src = src;
-        if (bd) bd.classList.add('on');
-        modal.classList.add('on');
-        var p = big.play(); if (p && p.catch) p.catch(function(){});
+        clearTimeout(vTimer);
+        /* 两帧写法：display 先落定，再叠 .on，缩放+淡入过渡才会真正播放（与二维码弹层同口径） */
+        modal.style.display = 'block';
+        void modal.offsetWidth;
+        requestAnimationFrame(function(){
+          if (bd) bd.classList.add('on');
+          modal.classList.add('on');
+          var p = big.play(); if (p && p.catch) p.catch(function(){});
+        });
       });
     });
     if (close) close.addEventListener('click', hide);
