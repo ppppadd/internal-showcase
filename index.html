@@ -148,8 +148,7 @@
   border:1px solid var(--line);background:transparent;color:var(--muted);transition:color var(--dur-fast) var(--ease-out-quint),border-color var(--dur-fast) var(--ease-out-quint),background var(--dur-fast) var(--ease-out-quint)}.ui-tab:hover{border-color:var(--accent);color:var(--accent)}.ui-tab:active{transform:scale(.97)}.ui-tab.on{background:var(--text);border-color:var(--text);color:var(--bg)}.ui-panel{display:none}.ui-panel.on{display:block}.ui-frame{background:var(--frame-bg);border:1px solid var(--frame-line);border-radius:var(--r-card);overflow:hidden;box-shadow:var(--shadow-lg)}.ui-frame img{width:100%;height:auto;display:block}[data-theme="dark"] .ui-frame img{filter:brightness(.92)}[data-theme="dark"] .ui-frame{box-shadow:0 0 0 1px var(--on-dark-fill-2)}.ui-cap{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;border-top:1px solid var(--frame-line);font-size:var(--t-cap);color:var(--frame-cap)}.ui-cap b{color:var(--frame-ink);font-weight:700}/* ===== HTML/CSS Diagram 替换 SVG 组件 ===== */
 .diagram-html{width:100%;margin:0 auto}/* 痛点网格 */
 .pain-grid{max-width:100%;margin:0 auto}.pain-grid-inner{display:flex;flex-direction:column;gap:var(--space-4)}.pain-row{display:flex;align-items:stretch;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;transition:transform var(--dur-base) cubic-bezier(.16,1,.3,1),box-shadow var(--dur-base) cubic-bezier(.16,1,.3,1)}.pain-row:hover{box-shadow:var(--shadow)}.pain-left{flex:1.35;display:flex;align-items:center;gap:20px;padding:var(--space-6) var(--space-7);min-width:0}.pain-num{flex:none;width:1.7em;font-size:var(--t-cap);font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums;letter-spacing:var(--ls-num)}.pain-copy{min-width:0}.pain-title{font-size:var(--t-h4);font-weight:700;color:var(--text);margin-bottom:3px;letter-spacing:normal}.pain-sub{font-size:var(--t-body);color:var(--muted);line-height:var(--lh-tight)}.pain-arrow{flex:none;font-size:var(--t-body);color:var(--muted-2);line-height:1;margin-right:2px}.pain-footer{text-align:center;font-size:var(--t-cap);color:var(--muted);margin-top:16px;padding-bottom:4px}
-@media (max-width: 768px) {.pain-row{flex-direction:column}.pain-left{padding:var(--space-4) var(--space-5)}.pain-consequence{border-left:none;border-top:var(--bw-bar) solid var(--cost);padding:16px 20px}
-}/* 双泳道流程 */
+/* 双泳道流程 */
 .flow-2lane{max-width:100%;margin:0 auto}.flow-entry{display:flex;justify-content:center;margin-bottom:8px}.flow-box{display:inline-block;background:var(--surface);border:var(--bw-line) solid var(--line);border-radius:var(--r-md);padding:var(--space-4) 40px;font-size:var(--t-body);font-weight:700;color:var(--text)}.flow-arrow-d{text-align:center;font-size:var(--t-h4);color:var(--accent);margin:4px 0}.flow-lanes{display:flex;gap:20px;align-items:stretch;margin:8px 0 16px}.flow-lane{flex:1;border-radius:var(--r-card);border:var(--bw-line) solid var(--line);background:var(--surface);padding:28px}.flow-lane-ai{border-color:var(--line)}.flow-lane-biz{border-color:var(--accent);background:var(--accent-soft);box-shadow:var(--shadow-accent)}.flow-lane-hd{font-size:var(--t-cap);font-weight:700;color:var(--muted);text-transform:none;letter-spacing:normal;margin-bottom:16px}.flow-lane-hd-biz{color:var(--accent)}.flow-step{display:flex;gap:var(--space-4);padding:16px;background:var(--surface);border-left:var(--bw-bar) solid var(--accent-soft-2);border-radius:var(--r-md);margin-bottom:12px;box-shadow:var(--shadow)}.flow-step-biz{background:var(--surface)}.flow-step:last-child,.flow-step-biz:last-child{margin-bottom:0}.flow-num{width:1.55em;height:1.55em;border-radius:50%;background:var(--accent);color:#fff;font-size:var(--t-cap);font-weight:700;display:flex;align-items:center;justify-content:center;flex:none}.flow-stitle{font-size:var(--t-body);font-weight:700;color:var(--text);margin-bottom:2px}.flow-ssub{font-size:var(--t-body);color:var(--muted);line-height:var(--lh-tight)}.flow-arrow-r{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:none;gap:4px}.flow-arrow-label{font-size:var(--t-cap);color:var(--accent);font-weight:700}.flow-connect-line{border-top:var(--bw-line) solid var(--line);margin:0 auto 8px;max-width:560px}.flow-result{background:var(--accent-soft);border:var(--bw-line) solid var(--accent);border-radius:var(--r-card);padding:var(--space-6) var(--space-10);text-align:center;max-width:560px;margin:12px auto;box-shadow:var(--shadow-accent)}.flow-result-title{font-size:var(--t-h4);font-weight:700;color:var(--text)}.flow-result-sub{font-size:var(--t-body);color:var(--muted);margin-top:4px}.flow-remark{text-align:center;font-size:var(--t-cap);color:var(--muted);margin-top:12px}/* 三库架构 */
 .flow-3db{max-width:100%;margin:0 auto}.flow-3db-label{text-align:center;font-size:var(--t-cap);font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:var(--r-sm);padding:8px 16px;margin-bottom:16px;display:inline-block;margin-left:50%;transform:translateX(-50%)}.flow-3db-entry{display:flex;justify-content:center;margin-bottom:8px}.flow-3db-row{display:flex;gap:12px;align-items:stretch;margin-bottom:24px}.flow-3db-card{flex:1;border-radius:var(--r-card);padding:var(--space-6);min-width:0}.flow-3db-test{background:var(--surface);border:var(--bw-line) solid var(--line)}.flow-3db-prod{background:var(--accent-soft);border:2px solid var(--accent);box-shadow:var(--shadow-accent)}.flow-3db-archive{background:var(--surface);border:var(--bw-line) solid var(--line)}.flow-3db-card-hd{font-size:var(--t-body);font-weight:700;color:var(--text);margin-bottom:8px;padding-left:4px;border-left:var(--bw-bar) solid var(--muted);opacity:0.7}.flow-3db-card-hd-accent{border-left-color:var(--accent);opacity:1}.flow-3db-item{font-size:var(--t-body);color:var(--muted);line-height:var(--lh-body)}.flow-3db-tag{font-size:var(--t-cap);font-weight:700;color:var(--accent);margin:var(--space-2) 0}.flow-3db-sub{font-size:var(--t-cap);color:var(--muted);margin-top:6px}.flow-3db-3cols{display:flex;gap:8px;margin:var(--space-3) 0}.flow-3db-col{flex:1;min-width:0;background:var(--surface);border-radius:var(--r-md);padding:8px;text-align:center}.flow-3db-col-t{font-size:var(--t-cap);font-weight:700;color:var(--text)}.flow-3db-col-s{font-size:var(--t-cap);color:var(--muted)}.flow-3db-arrow{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:none;gap:4px}.flow-3db-arrow-label{font-size:var(--t-cap);font-weight:700}.flow-3db-arrow .flow-3db-arrow-label{color:var(--accent)}.flow-3db-arrow-muted .flow-3db-arrow-label{color:var(--muted)}.flow-3db-converge{display:flex;justify-content:center;margin:8px 0}/* 竖排流程 */
 .flow-vert{max-width:560px;margin:0 auto;display:flex;flex-direction:column;align-items:center}.flow-vert-line{width:2px;height:22px;background:var(--accent);opacity:0.5;border-radius:var(--r-hair)}.flow-vert-step{display:flex;gap:var(--space-4);align-items:flex-start;padding:20px 32px;background:var(--surface);border:var(--bw-line) solid var(--line);border-radius:var(--r-card);width:100%}/* 持续循环 */
@@ -194,13 +193,9 @@
 .metrics{display:grid;grid-template-columns:repeat(4, minmax(0,1fr));border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden;background:var(--surface);box-shadow:var(--shadow)}.metric{padding:40px 32px;border-right:1px solid var(--line);transition:background var(--dur-base) cubic-bezier(.16,1,.3,1)}.metric:last-child{border-right:none}.metric:hover{background:var(--surface-2)}.metric .v{font-size:var(--t-display-num);font-weight:700;letter-spacing:var(--ls-num-tight);line-height:1;font-variant-numeric:tabular-nums;margin-bottom:12px;transition:transform var(--dur-base) cubic-bezier(.16,1,.3,1)}.metric .v .accent{color:var(--accent)}.metric .l{font-size:var(--t-body);color:var(--muted)}.hero .eyebrow,.hero h1 .hl{color:var(--accent-on-photo)}.hero .eyebrow::before{background:var(--accent-on-photo)}/* 动效 */
 .reveal{opacity:0;transform:translateY(16px);transition:opacity var(--dur-slow) cubic-bezier(.16,1,.3,1),transform var(--dur-slow) cubic-bezier(.16,1,.3,1)}.reveal.in{opacity:1;transform:none}[data-reveal-delay="1"]{transition-delay:var(--stagger)}[data-reveal-delay="2"]{transition-delay:calc(var(--stagger) * 2)}[data-reveal-delay="3"]{transition-delay:calc(var(--stagger) * 3)}.hero-enter{opacity:0;transform:translateY(24px);animation:enter var(--dur-slow) cubic-bezier(.16,1,.3,1) forwards}
 @keyframes enter{to{opacity:1;transform:none}}.hero-enter.d1{animation-delay:0s}.hero-enter.d2{animation-delay:var(--stagger)}.hero-enter.d3{animation-delay:calc(var(--stagger) * 2)}.hero-enter.d4{animation-delay:calc(var(--stagger) * 3)}.video-wrap{position:relative;background:var(--ink);border-radius:var(--r-card);overflow:hidden;border:1px solid var(--line);max-width:860px;margin:0 auto;box-shadow:var(--shadow-lg)}.video-wrap video{width:100%;height:auto;display:block;background:var(--ink)}
-@media (max-width: 1024px) {.demo-stage{grid-template-columns:minmax(0,1fr)}.demo-nav{position:static;flex-direction:row;overflow-x:auto}.demo-tab{white-space:nowrap}.metrics{grid-template-columns:repeat(2, minmax(0,1fr))}.metric{border-bottom:1px solid var(--line)}.metric:nth-child(2n){border-right:none}.metric:nth-child(n+3){border-bottom:none}
-}
-@media (max-width: 768px) {.wrap{padding:0 24px}.hero{min-height:auto;padding:120px 0 var(--space-16)}.hero-stats{grid-template-columns:repeat(2, minmax(0,1fr));width:calc(100% - 48px);right:24px;bottom:84px}.hstat{border-bottom:1px solid var(--on-dark-line-2)}.hstat:nth-child(2n){border-right:none}.hstat:nth-child(n+3){border-bottom:none}
-  }
-@media (max-width: 480px) {.wrap{padding:0 24px}.hero-cta{flex-direction:column;align-items:stretch}.hero-cta .btn{justify-content:center}.metrics{grid-template-columns:minmax(0,1fr)}.metric{border-right:none}.metric:nth-child(n+3){border-bottom:1px solid var(--line)}.metric:last-child{border-bottom:none}/* DD-24：窄屏真实内容裁剪修复（三处横排容器在 ≤414px 被 overflow-x:hidden 静默裁掉） */
-  .flow-lanes{flex-direction:column}.cover-3-cards{flex-direction:column}.sustain-top{flex-direction:column;gap:8px}.sustain-top .sustain-arrow-r svg{transform:rotate(90deg)}.sustain-card{max-width:100%}.demo-nav{flex-wrap:wrap;overflow-x:visible}
-}
+
+
+
 @media(prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}.reveal,.hero-enter{opacity:1;transform:none}
 }/* ===== 新增：分组标签 + 达成目标清单 ===== */
 .sol-block{margin-top:var(--space-12)}.sol-block:first-of-type{margin-top:0}/* ===== Solution Flow Cards (HTML/CSS) ===== */
@@ -208,8 +203,7 @@
   position:relative;overflow:hidden;
   box-shadow:var(--shadow-sm);
   transition:transform var(--dur-base) cubic-bezier(.16,1,.3,1),box-shadow var(--dur-base) cubic-bezier(.16,1,.3,1)}.sf-card:hover{box-shadow:var(--shadow-lg);border-color:var(--accent-soft-2)}.sf-card::after{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:var(--r-hair) 0 0 var(--r-hair)}.sf-cells{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:0;margin:var(--space-4) 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}.sf-cells li{padding:var(--space-4) 0;text-align:center;border-left:1px solid var(--line)}.sf-cells li:first-child{border-left:0}.sf-cells h4{font-size:var(--t-h4);font-weight:700;margin:0 0 var(--space-1);letter-spacing:normal}.sf-cap{font-size:var(--t-cap);color:var(--muted);margin:0}.sf-card.sf-flat::after{display:none}
-@media (max-width: 768px) {.sf-cells{grid-template-columns:minmax(0,1fr)}.sf-cells li{border-left:0;border-top:1px solid var(--line)}.sf-cells li:first-child{border-top:0}
-}.sf-card.w2{flex:2}.sf-card.w3{flex:3}.sf-card.w-half{flex:0 0 48%}.sf-card.w-full{flex:0 0 100%}/* dark card */
+.sf-card.w2{flex:2}.sf-card.w3{flex:3}.sf-card.w-half{flex:0 0 48%}.sf-card.w-full{flex:0 0 100%}/* dark card */
 .sf-card.dk{background:var(--surface-2);border-color:var(--line)}.sf-card.dk2{background:var(--ink);border-color:var(--on-dark-line-4)}/* brand fill */
 .sf-card.fill{background:var(--fill-soft);border-color:var(--fill-soft-line);border-width:var(--bw-hair)}.sf-card.fill-hd{background:var(--surface);border:1px solid var(--line);border-top:2px solid var(--accent);box-shadow:none}.sf-card.fill-s{background:var(--accent);border-color:var(--accent-ink)}.sf-card .sf-badge{display:inline-flex;align-items:center;justify-content:center;
   width:24px;height:24px;border-radius:50%;font-size:var(--t-cap);font-weight:700;flex:none}.sf-card .sf-badge.i{background:var(--accent);color:#fff}.sf-card .sf-badge.ii{background:var(--muted-2);color:#fff}.sf-card .sf-badge.iii{background:var(--accent);color:#fff}.sf-card .sf-badge.iv{background:var(--accent);color:#fff}.sf-card .sf-label{font-size:var(--t-cap);font-weight:700;color:var(--accent);letter-spacing:.01em}.sf-card .sf-label.r{color:var(--muted-2)}.sf-card .sf-label.g{color:#a0aec0}
@@ -231,8 +225,7 @@
 .sf-card.dk{box-shadow:none}.sf-card h4{font-size:var(--t-h4);font-weight:700;margin:var(--space-1) 0 var(--space-1);letter-spacing:normal}.sf-card h4.w{color:#fff}.sf-card h4.r{color:var(--muted)}.sf-card h4.g{color:#a0aec0}.sf-card p{font-size:var(--t-body);color:var(--muted);line-height:var(--lh-body);margin:0}.sf-card p.dk{color:var(--muted)}.sf-card p.w{color:rgba(255,255,255,.72)}.sf-conn{display:flex;align-items:center;justify-content:center;padding:8px 0}.sf-conn .line{width:2px;height:24px;background:var(--accent);border-radius:var(--r-hair);opacity:.45}.sf-conn .pill{display:inline-flex;align-items:center;justify-content:center;padding:10px 26px;border-radius:var(--r-pill);background:var(--accent);color:#fff;font-size:var(--t-h4);font-weight:700;box-shadow:var(--shadow-accent)}.sf-conn .pill span{font-size:var(--t-cap);margin-right:6px}/* progress bar */
 .sf-prog{display:flex;gap:12px;padding:var(--space-2) 0;align-items:center}.sf-prog .seg{height:3px;border-radius:var(--r-hair)}.sf-prog .dot{width:8px;height:8px;border-radius:50%}/* split row with connector lines */
 .sf-split{display:flex;gap:0;align-items:stretch;margin-bottom:14px}.sf-split .sf-left{flex:1;display:flex;flex-direction:column;gap:var(--space-3)}.sf-split .sf-gap{width:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-3)}.sf-split .sf-gap line{stroke:var(--accent);stroke-width:1;opacity:0.35}.sf-split .sf-right{flex:1;display:flex;flex-direction:column}
-@media (max-width: 768px) {.sf-row,.sf-split{flex-direction:column}.sf-card.w2,.sf-card.w3{flex:1}.sf-split .sf-gap{width:100%;height:14px;flex-direction:row}
-}.sol-tag{font-size:var(--t-cap);font-weight:700;letter-spacing:normal;text-transform:none;color:var(--accent);margin-bottom:24px;display:flex;align-items:center;gap:12px}.sol-tag::before{content:'';width:24px;height:2px;background:var(--accent);display:inline-block}.blk-title{font-size:var(--t-h4);font-weight:700;color:var(--text);margin:0 0 20px;letter-spacing:normal}.goal-list{display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:16px}.goal{display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);min-height:135px;padding:24px 24px;position:relative;overflow:hidden;box-shadow:var(--shadow);transition:transform var(--dur-base) cubic-bezier(.16,1,.3,1),border-color var(--dur-base) cubic-bezier(.16,1,.3,1),box-shadow var(--dur-base) cubic-bezier(.16,1,.3,1)}.goal::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-on-dark));transform:scaleX(0);transform-origin:left;transition:transform var(--dur-base) cubic-bezier(.16,1,.3,1)}.goal:hover{transform:translateY(-2px);border-color:var(--accent-soft-2);box-shadow:var(--shadow-lg)}.goal:hover::before{transform:scaleX(1)}.goal .check{flex:none;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;margin-top:2px;position:relative}.goal .check::after{content:"";width:9px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg);margin-top:-2px}.goal h3{font-size:var(--t-body);font-weight:700;margin:0 0 8px;letter-spacing:normal}.goal p{font-size:var(--t-body);color:var(--muted);margin:0;line-height:var(--lh-body)}.mono{font-variant-numeric:tabular-nums}/* ===== Panel Architecture ===== */
+.sol-tag{font-size:var(--t-cap);font-weight:700;letter-spacing:normal;text-transform:none;color:var(--accent);margin-bottom:24px;display:flex;align-items:center;gap:12px}.sol-tag::before{content:'';width:24px;height:2px;background:var(--accent);display:inline-block}.blk-title{font-size:var(--t-h4);font-weight:700;color:var(--text);margin:0 0 20px;letter-spacing:normal}.goal-list{display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:16px}.goal{display:flex;gap:16px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);min-height:135px;padding:24px 24px;position:relative;overflow:hidden;box-shadow:var(--shadow);transition:transform var(--dur-base) cubic-bezier(.16,1,.3,1),border-color var(--dur-base) cubic-bezier(.16,1,.3,1),box-shadow var(--dur-base) cubic-bezier(.16,1,.3,1)}.goal::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--accent-on-dark));transform:scaleX(0);transform-origin:left;transition:transform var(--dur-base) cubic-bezier(.16,1,.3,1)}.goal:hover{transform:translateY(-2px);border-color:var(--accent-soft-2);box-shadow:var(--shadow-lg)}.goal:hover::before{transform:scaleX(1)}.goal .check{flex:none;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;margin-top:2px;position:relative}.goal .check::after{content:"";width:9px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg);margin-top:-2px}.goal h3{font-size:var(--t-body);font-weight:700;margin:0 0 8px;letter-spacing:normal}.goal p{font-size:var(--t-body);color:var(--muted);margin:0;line-height:var(--lh-body)}.mono{font-variant-numeric:tabular-nums}/* ===== Panel Architecture ===== */
 *, *::before, *::after{ margin: 0; padding: 0; box-sizing: border-box; }html, body{ height: 100%; overflow: hidden; }
 @supports (overflow: clip) {html, body{ overflow: clip; } }body{
   font-family: "Geist", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -312,13 +305,10 @@
   cursor: pointer; display: flex; align-items:center; justify-content:center;
   transition: background-color var(--dur-fast) cubic-bezier(.16,1,.3,1), border-color var(--dur-fast) cubic-bezier(.16,1,.3,1), color var(--dur-fast) cubic-bezier(.16,1,.3,1), box-shadow var(--dur-fast) cubic-bezier(.16,1,.3,1), transform var(--dur-fast) cubic-bezier(.16,1,.3,1);
   pointer-events: auto; user-select: none;
-}.pn-prev{ left: max(16px, calc(50vw - 880px)); }.pn-next{ right: max(16px, calc(50vw - 880px)); }.pn-arrow svg{ width: 20px; height: 20px; }.pn-arrow:hover{ background: var(--accent); border-color: var(--accent); color: #fff; transform: translateY(-50%) scale(1.06); }.pn-arrow:active{ transform: translateY(-50%) scale(.96); }[data-theme="dark"] .pn-arrow{ background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.14); color: rgba(255,255,255,.78); }.nav, .hero .nav, header.hero .nav, #top .nav{ display: none !important; visibility: hidden; pointer-events: none; }
-@media (max-width: 1024px) {.pn-arrow{ width: 44px; height: 44px; }.pn-prev{ left: 12px; }.pn-next{ right: 12px; }.pn-nav-inner{ padding: 0 6px 0 14px; gap: 6px; }.pn-tab{ padding: var(--space-2) var(--space-3); font-size:var(--t-cap); }.sustain-card{ padding: var(--space-6) var(--space-6); }.sustain-card .flow-ssub{ font-size: var(--t-cap); }.fix-row{ grid-template-columns: minmax(0,1fr); gap: 12px; }.fix-row, .cmp-table th, .cmp-table td{ padding-left: 16px; padding-right: 16px; }
-}
-@media (max-width: 768px) {.pn-nav{ padding: 8px 12px; }.pn-stage{ top: 0; }.pn-arrow{ display: none; }.pn-tab{ padding: var(--space-2) var(--space-3); font-size: var(--t-cap-xs); }.pn-counter{ display: none; }.pn-nav-logo{ font-size:var(--t-body); }.pn-nav-inner{ padding: 0 6px 0 12px; height: 48px; }.goal-list{ grid-template-columns: minmax(0,1fr); }
-}
-@media (max-width: 480px) {.pn-nav-inner{ padding: 0 4px 0 10px; gap: 4px; }.pn-tab{ padding: 4px 8px; font-size: var(--t-cap-2xs); }
-}/* P1#5 卡片内文字容器撑满剩余宽度，消除大面积空白 */
+}.pn-prev{ left: max(16px, calc(50vw - 900px)); }.pn-next{ right: max(16px, calc(50vw - 900px)); }.pn-arrow svg{ width: 20px; height: 20px; }.pn-arrow:hover{ background: var(--accent); border-color: var(--accent); color: #fff; transform: translateY(-50%) scale(1.06); }.pn-arrow:active{ transform: translateY(-50%) scale(.96); }[data-theme="dark"] .pn-arrow{ background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.14); color: rgba(255,255,255,.78); }.nav, .hero .nav, header.hero .nav, #top .nav{ display: none !important; visibility: hidden; pointer-events: none; }
+
+
+/* P1#5 卡片内文字容器撑满剩余宽度，消除大面积空白 */
 .pain-left > div:last-child, .flow-step > div:last-child, .goal > div:last-child, .sustain-card > div:last-child, .cover-card > div:last-child, .flow-vert-step > div:last-child{ flex: 1 1 auto; min-width: 0; }/* 小修C 视频自绘播放封面，替代原生控件第一眼 */
 .video-cover{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--space-4);background:rgba(10,14,22,.52);border:0;cursor:pointer;color:#fff;transition:opacity var(--dur-base) var(--ease-out-quint),visibility var(--dur-base) var(--ease-out-quint);z-index:2}.video-cover.off{opacity:0;visibility:hidden;pointer-events:none}.vc-play{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.16);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;padding-left:5px;transition:transform var(--dur-base) cubic-bezier(.16,1,.3,1)}.video-cover:hover .vc-play{transform:scale(1.08)}.vc-cap{font-size:var(--t-cap);letter-spacing:normal;color:rgba(255,255,255,.9)}/* P2#9 宽屏放宽版心 + 目标清单三栏 */
 @media (min-width:1680px){ .goal-list{grid-template-columns:repeat(3, minmax(0,1fr))} }/* ===== P2#10 三个面板差异化：pn0 后果条 / pn3 勾选清单 / pn4 对比表 ===== */
@@ -549,6 +539,14 @@ small{ font-size:var(--t-cap); }
 #pn0 .demo-stage{align-items:stretch}
 #pn0 .demo-nav{position:static;height:100%;justify-content:space-between}
 #pn0 .demo-tab{flex:1 1 0;min-height:0}
+
+/* J. pn5 复制推广：卡片紧跟标题并吃掉剩余高度（原 space-between 把卡片推到底部留大白） */
+#pn5 .sol-block{justify-content:flex-start}
+#pn5 .sf-row{flex:1 1 auto;min-height:0}
+#pn5 .sf-card{display:flex;flex-direction:column}
+#pn5 .sf-card ul{flex:1 1 auto;display:flex;flex-direction:column;justify-content:space-evenly;gap:0}
+#pn5 .sf-card li{margin-bottom:0;padding:18px 0;border-top:1px dashed var(--line);font-size:17px;line-height:1.5}
+#pn5 .sf-card li:first-child{border-top:none}
 #pn0 .demo-stage > div:last-child{display:flex;flex-direction:column;min-height:0}
 #pn0 .demo-panel.on{display:flex;flex-direction:column;flex:1;min-height:0}
 #pn0 .chat-card{flex:1;min-height:0;display:flex;flex-direction:column}
@@ -615,7 +613,7 @@ small{ font-size:var(--t-cap); }
 #pn1 .pain-grid-inner{flex:1 1 auto;min-height:0;grid-auto-rows:1fr}
 #pn2 .sol-block{display:flex;flex-direction:column;justify-content:space-between}
 #pn3 .pn-panel-scroll > .wrap > .reveal{display:flex;flex-direction:column}
-#pn3 .flow-2lane{flex:1 1 auto;min-height:0}
+#pn3 .flow-2lane{flex:0 0 auto;min-height:0}
 #pn4 .sol-block{display:flex;flex-direction:column;justify-content:space-between}
 #pn5 .sol-block{flex:2 1 0;display:flex;flex-direction:column;justify-content:space-between}
 #pn5 .metrics{flex:1 1 0}
@@ -629,14 +627,153 @@ small{ font-size:var(--t-cap); }
 #pn6 .ui-frame img{object-position:top center}
 
 /* 6) pn3：两栏卡片吃掉剩余高度（消除底部大片空白） */
-#pn3 .pn-panel-scroll > .wrap > .reveal > .flow-2lane{display:flex;flex-direction:column;flex:1 1 auto;min-height:0}
-#pn3 .flow-lanes{flex:1 1 auto;min-height:0;grid-auto-rows:1fr}
+#pn3 .pn-panel-scroll > .wrap > .reveal > .flow-2lane{display:flex;flex-direction:column;flex:0 0 auto;min-height:0}
+#pn3 .flow-lanes{flex:0 0 auto;min-height:0;grid-auto-rows:minmax(0,1fr)}
 #pn3 .flow-lane{justify-content:space-between}
 #pn3 .flow-step{flex:1 1 0;display:flex;flex-direction:column;justify-content:center}
 
 /* 7) 小屏（高度不足）兜底：允许页面内滚动，避免内容被截 */
 @media (max-height:860px){.pn-panel-scroll{overflow-y:auto}}
-#pn3 .flow-lanes{flex:none;margin:6px 0 8px}#pn3 .flow-lane{padding:14px 18px}#pn3 .flow-lane-hd{margin-bottom:8px}#pn3 .flow-step{padding:9px 14px;margin-bottom:8px}#pn3 .flow-stitle{margin-bottom:0}#pn3 .flow-connect-line{display:none}#pn3 .flow-result{padding:12px 36px;margin:6px auto}#pn3 .flow-remark{margin-top:4px}#pn3 .flow-arrow-d{margin:2px 0}@media (max-height:960px){#pn3 .flow-lanes{margin:2px 0 6px}#pn3 .flow-lane{padding:11px 16px}#pn3 .flow-lane-hd{margin-bottom:6px}#pn3 .flow-step{padding:7px 12px;margin-bottom:7px}#pn3 .flow-ssub{line-height:1.15}#pn3 .flow-result{padding:8px 32px;margin:4px auto}#pn3 .flow-remark{display:none}}</style>
+/* 09-17 排版重做：原「压回一屏」补丁段（补丁23a-23f）已整体删除 */
+.pn-arrow{z-index:30}
+#pnHero .wrap.hero-content{z-index:1}
+
+/* ==========================================================================
+   09-17 排版重做 v6 —— 投影优先（会议室投屏可读性）
+   设计原则
+     ① 字号整体上调一档：屏标题 54 / 卡片标题 21 / 正文 17.5 / 注释 15，
+        远距离可读是硬要求，不再为「一屏不溢出」压字号；
+     ② 版心 1440（投影 1920 宽下不空），内容区撑满面板高度、按屏高分配；
+     ③ 「撑满」= 卡片内边距与字号同步放大后的自然高度，不是空拉卡片；
+     ④ 说明文字一律收敛成一行以内，投影不做论文式段落。
+   ========================================================================== */
+
+/* A. 内容屏字号体系（一处定义，全屏继承） */
+.pn-panel:not(#pnHero) .pn-panel-scroll{
+  --t-display-2:54px;     /* 屏标题 */
+  --t-h3:24px;
+  --t-h4:21px;            /* 卡片标题 */
+  --t-body:17.5px;        /* 正文 / 说明 */
+  --t-cap:15px;           /* 标签 / 注释 */
+  --t-num:54px;
+  --t-display-num:52px;   /* 大数字 */
+  --lh-tight:1.42;
+  --lh-body:1.6;
+}
+
+/* B. 版心 + 屏骨架（pn0 视频页保持原有精调，不套此骨架） */
+.pn-panel:not(#pnHero):not(#pn0) .pn-panel-scroll{--vhx:1;display:flex;flex-direction:column;overflow-y:auto}
+.pn-panel:not(#pnHero):not(#pn0) .pn-panel-scroll > .wrap{
+  display:flex;flex-direction:column;margin:0 auto;width:100%;min-height:0;
+  flex:1 1 auto;max-width:1680px;padding:calc(var(--nav-h) + 34px) 44px 46px !important}
+.pn-panel:not(#pnHero):not(#pn0) .sec-head{margin-bottom:34px;flex:none}
+.pn-panel:not(#pnHero):not(#pn0) .sec-head h2{font-size:54px;margin-bottom:14px;max-width:none;line-height:1.12}
+.pn-panel:not(#pnHero):not(#pn0) .sec-head p{font-size:21px;line-height:1.55;max-width:84ch}
+
+/* C. 主内容区吃掉剩余高度（卡片内边距同步放大，非空撑） */
+#pn1 .pn-panel-scroll > .wrap > .diagram-html.pain-grid,
+#pn2 .sol-block,#pn3 .diagram-html.flow-2lane,#pn4 .sol-block,
+#pn5 .sol-block,#pn6 .sf-row,#pn7 .goal-list{flex:1 1 auto;min-height:0}
+#pn1 .pain-grid-inner{flex:1 1 auto;justify-content:space-between;gap:16px}
+#pn1 .pain-row{flex:1 1 auto}
+#pn3 .diagram-html.flow-2lane{display:flex;flex-direction:column}
+#pn3 .flow-lanes{flex:0 0 auto;margin-bottom:0}
+#pn3 .flow-lane{display:flex;flex-direction:column;justify-content:space-between}
+#pn3 .flow-step{flex:none}
+#pn7 .goal-list{grid-auto-rows:1fr;align-content:stretch}
+#pn7 .goal{align-items:center}
+#pn2 .sol-block,#pn5 .sol-block{justify-content:space-between}
+#pn5 .sf-card{display:flex;flex-direction:column}
+#pn5 .sf-list{display:flex;flex-direction:column;justify-content:space-between;flex:1 1 auto}
+
+/* D. pn1 四痛点：满宽 + 行高随屏高分配 */
+#pn1 .pain-grid{max-width:none}
+#pn1 .pain-row{padding:24px 34px;min-height:0}
+#pn1 .pain-left{flex:2.2;padding:0;gap:22px}
+#pn1 .pain-consequence{flex:0 0 420px;padding:24px 30px}
+#pn1 .pain-num{font-size:38px;width:1.1em;letter-spacing:0}
+#pn1 .pain-footer{margin-top:22px;flex:none}
+
+/* E. pn2 六步流程：3×2 网格，两段轨道随屏高分配 */
+#pn2 .fg-stripes{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:12px}
+#pn2 .fg-stripes-2{margin-top:20px}
+#pn2 .fm-track{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 26px;margin-bottom:22px;flex:1 1 auto;background-size:calc(100% - 150px) 3px}
+#pn2 .fm-col{display:flex;flex-direction:column;justify-content:center}
+#pn2 .fm-above,#pn2 .fm-below{height:auto;min-height:0;padding:0;align-items:center}
+#pn2 .fm-above{margin-bottom:14px}
+#pn2 .fm-below{margin-top:14px}
+#pn2 .fm-monitor{margin-top:0;flex:none}
+#pn2 .sol-tag{margin-bottom:18px;flex:none}
+
+/* F. pn4 量化价值：2×2 四格，数字与说明同步放大 */
+.metric .v{white-space:nowrap}
+#pn4 .metrics{grid-template-columns:repeat(2,minmax(0,1fr));flex:1 1 auto}
+#pn4 .metric{padding:32px 38px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;justify-content:center}
+#pn4 .metric:nth-child(2n){border-right:none}
+#pn4 .metric:nth-child(n+3){border-bottom:none}
+#pn4 .metric .v{font-size:52px;margin-bottom:12px}
+#pn4 .metric .l{margin-top:0;line-height:1.5}
+#pn4 .cmp-table td{padding-top:16px;padding-bottom:16px}
+#pn5 .metrics{flex:none}
+
+/* G. 注释行：紧贴内容 + 投影档字号 */
+.pain-footer,.flow-remark,.sustain-bottom,.cover-converge,.flow-3db-converge{margin-top:20px;flex:none}
+.pain-footer{font-size:15px}
+
+/* H. pn3 说明块 / pn7 下一阶段：长句改短标签，每卡一行说明 */
+#why-not-llm{margin-top:22px !important;flex:none}
+#why-not-llm .why-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+#why-not-llm .why-item{background:var(--surface);border:1px solid var(--line);border-left:var(--bw-bar) solid var(--accent);border-radius:var(--r-md);padding:18px 22px;font-size:16px;color:var(--muted);line-height:1.5}
+#why-not-llm .why-item b{display:block;font-size:19px;color:var(--text);margin-bottom:6px}
+#next-stage{margin-top:22px !important;flex:none}
+#next-stage .next-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+#next-stage .next-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:16px 20px;display:flex;flex-direction:column;gap:6px;min-width:0}
+#next-stage .next-item b{font-size:19px;color:var(--text)}
+#next-stage .next-item span{font-size:15.5px;color:var(--muted);line-height:1.45}
+#next-stage .next-item i{font-size:14px;color:var(--accent);font-style:normal;font-weight:700}
+
+/* I. pn0 视频演示：套同一骨架，演示区吃掉剩余高度 */
+#pn0 .pn-panel-scroll{--vhx:1;display:flex;flex-direction:column}
+#pn0 .pn-panel-scroll > .wrap{display:flex;flex-direction:column;margin:0 auto;width:100%;flex:1 1 auto;max-width:1680px;padding:calc(var(--nav-h) + 34px) 44px 46px !important}
+#pn0 .sec-head{flex:none;margin-bottom:30px}
+#pn0 .sec-head h2{font-size:54px;line-height:1.12;margin-bottom:14px}
+#pn0 .sec-head p{font-size:21px;line-height:1.55}
+#pn0 .demo-stage{flex:1 1 auto;min-height:0}
+#pn0 .demo-stage > div:last-child{display:flex;flex-direction:column;min-height:0}
+#pn0 .demo-panel.on{display:flex;flex-direction:column;flex:1 1 auto;min-height:0}
+#pn0 .chat-card{flex:1 1 auto;display:flex;flex-direction:column;min-height:0}
+#pn0 .chat-body{flex:1 1 auto;display:flex;flex-direction:column;min-height:0}
+#pn0 .video-wrap{flex:1 1 auto;min-height:0;height:auto;max-height:100%;aspect-ratio:1916/1026;width:auto;max-width:100%;margin:0 auto;align-self:center}
+#pn0 .video-wrap video{object-fit:cover}
+/* v6.3：演示视频点击 → 先展开放大再播放（复用二维码弹层的毛玻璃幕布 + Apple 分层动效） */
+.video-zoom{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.92);opacity:0;display:none;z-index:81;width:min(92vw,calc(86vh * 1.867));border-radius:var(--r-card);overflow:hidden;background:#0b0f16;box-shadow:0 6px 16px rgba(0,0,0,.10),0 32px 72px rgba(0,0,0,.22);transition:transform .45s cubic-bezier(.25,.1,.25,1),opacity .35s cubic-bezier(.25,.1,.25,1)}
+.video-zoom.on{display:block;transform:translate(-50%,-50%) scale(1);opacity:1}
+.video-zoom video{width:100%;height:auto;display:block;background:#000}
+.video-zoom .qr-zoom-x{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.30);color:#fff;z-index:2}
+#pn0 .video-wrap video{width:100%;height:100%;object-fit:contain}
+#pn0 .demo-nav{height:100%}
+#pn0 .demo-tab{flex:1 1 0;min-height:0}
+
+/* J. pn5 复制推广：卡片紧跟标题并吃掉剩余高度（原 space-between 把卡片推到底部留大白） */
+#pn5 .sol-block{justify-content:flex-start}
+#pn5 .sf-row{flex:1 1 auto;min-height:0}
+#pn5 .sf-card{display:flex;flex-direction:column}
+#pn5 .sf-card ul{flex:1 1 auto;display:flex;flex-direction:column;justify-content:space-evenly;gap:0}
+#pn5 .sf-card li{margin-bottom:0;padding:18px 0;border-top:1px dashed var(--line);font-size:17px;line-height:1.5}
+#pn5 .sf-card li:first-child{border-top:none}
+
+/* K. v6.1：版心加宽后收尾 —— pn3 去重叠 + 间距收紧 + pn1 代价列加宽 */
+#pn3 .flow-lane{padding:24px}
+#pn3 .flow-step{padding:10px 16px;margin-bottom:8px}
+#pn3 .flow-result{padding:14px 36px;margin:10px auto 0}
+#pn3 .flow-remark{margin-top:6px}
+#pn3 .flow-lanes{margin:6px 0 4px}
+#why-not-llm{margin-top:12px !important}
+#why-not-llm .why-item{padding:12px 20px}
+#pn1 .pain-consequence{flex:0 0 560px}
+
+#pn1 .pain-result{flex:1;text-align:right}
+</style>
 
 
 <script>try{document.documentElement.setAttribute("data-navinit",/^#pn[0-7]$/.test(location.hash)?"panel":"hero")}catch(e){}</script>
@@ -665,12 +802,7 @@ small{ font-size:var(--t-cap); }
   </div>
 </nav>
 <div class="pn-stage" id="pnStage">
-<button type="button" class="pn-arrow pn-prev" id="pnPrev" aria-label="上一个板块">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events:none"><polyline points="15 18 9 12 15 6"/></svg>
-</button>
-<button type="button" class="pn-arrow pn-next" id="pnNext" aria-label="下一个板块">
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events:none"><polyline points="9 18 15 12 9 6"/></svg>
-</button>
+
   <div class="pn-panel on" id="pnHero">
     <div class="pn-panel-scroll">
 <div class="hero hero-fullpage">
@@ -718,7 +850,7 @@ small{ font-size:var(--t-cap); }
           <div class="chat-card">
             <div class="chat-head"><span class="avatar">宝</span><span class="who">小宝 · 询价顾问</span><span class="tag">基础智能询价</span></div>
             <div class="chat-body">
-              <div class="video-wrap"><video controls playsinline preload="metadata" src="demo-quote.mp4"></video><button class="video-cover" type="button" aria-label="播放演示"><span class="vc-play"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="vc-cap">点击播放演示</span></button></div>
+              <div class="video-wrap"><video muted controls playsinline preload="metadata" src="demo-quote.mp4"></video><button class="video-cover" type="button" aria-label="播放演示"><span class="vc-play"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="vc-cap">点击播放演示</span></button></div>
               <div class="note">输入仓码+重量+品名，一次返回全渠道底价，商务只做判断</div>
             </div>
           </div>
@@ -728,7 +860,7 @@ small{ font-size:var(--t-cap); }
           <div class="chat-card">
             <div class="chat-head"><span class="avatar">宝</span><span class="who">小宝 · 询价顾问</span><span class="tag">智能对比查价</span></div>
             <div class="chat-body">
-              <div class="video-wrap"><video controls playsinline preload="metadata" src="demo-price-compare-2.mp4"></video><button class="video-cover" type="button" aria-label="播放演示"><span class="vc-play"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="vc-cap">点击播放演示</span></button></div>
+              <div class="video-wrap"><video muted controls playsinline preload="metadata" src="demo-price-compare-2.mp4"></video><button class="video-cover" type="button" aria-label="播放演示"><span class="vc-play"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="vc-cap">点击播放演示</span></button></div>
               <div class="note">多仓点同时比价，逐仓返回最低价，直观排名</div>
             </div>
           </div>
@@ -738,7 +870,7 @@ small{ font-size:var(--t-cap); }
           <div class="chat-card">
             <div class="chat-head"><span class="avatar">宝</span><span class="who">小宝 · 询价顾问</span><span class="tag">供应商价格对比</span></div>
             <div class="chat-body">
-              <div class="video-wrap"><video controls playsinline preload="metadata" src="demo-price-compare.mp4"></video><button class="video-cover" type="button" aria-label="播放演示"><span class="vc-play"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="vc-cap">点击播放演示</span></button></div>
+              <div class="video-wrap"><video muted controls playsinline preload="metadata" src="demo-price-compare.mp4"></video><button class="video-cover" type="button" aria-label="播放演示"><span class="vc-play"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="vc-cap">点击播放演示</span></button></div>
               <div class="note">ONT8 普船特惠卡派最低 6.20 元/KG（义乌进仓）· 25 家同屏比价，最低价自动标注</div>
             </div>
           </div>
@@ -748,7 +880,7 @@ small{ font-size:var(--t-cap); }
           <div class="chat-card">
             <div class="chat-head"><span class="avatar">宝</span><span class="who">小宝 · 询价顾问</span><span class="tag">供应商评分排名</span></div>
             <div class="chat-body">
-              <div class="video-wrap"><video controls playsinline preload="metadata" src="demo-score.mp4"></video><button class="video-cover" type="button" aria-label="播放演示"><span class="vc-play"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="vc-cap">点击播放演示</span></button></div>
+              <div class="video-wrap"><video muted controls playsinline preload="metadata" src="demo-score.mp4"></video><button class="video-cover" type="button" aria-label="播放演示"><span class="vc-play"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="vc-cap">点击播放演示</span></button></div>
               <div class="note">价格竞争力、渠道覆盖、仓点深度、综合竞争力四维评分</div>
             </div>
           </div>
@@ -758,7 +890,7 @@ small{ font-size:var(--t-cap); }
           <div class="chat-card">
             <div class="chat-head"><span class="avatar">宝</span><span class="who">小宝 · 询价顾问</span><span class="tag">供应商价表更新</span></div>
             <div class="chat-body">
-              <div class="video-wrap"><video controls playsinline preload="metadata" src="demo-update.mp4"></video><button class="video-cover" type="button" aria-label="播放演示"><span class="vc-play"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="vc-cap">点击播放演示</span></button></div>
+              <div class="video-wrap"><video muted controls playsinline preload="metadata" src="demo-update.mp4"></video><button class="video-cover" type="button" aria-label="播放演示"><span class="vc-play"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="vc-cap">点击播放演示</span></button></div>
               <div class="note">新价表拖入即解析入库，校验器自动对账，新旧差异一目了然</div>
             </div>
           </div>
@@ -768,7 +900,7 @@ small{ font-size:var(--t-cap); }
           <div class="chat-card">
             <div class="chat-head"><span class="avatar">宝</span><span class="who">小宝 · 询价顾问</span><span class="tag">供应商信息查询</span></div>
             <div class="chat-body">
-              <div class="video-wrap"><video controls playsinline preload="metadata" src="demo-supplier.mp4"></video><button class="video-cover" type="button" aria-label="播放演示"><span class="vc-play"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="vc-cap">点击播放演示</span></button></div>
+              <div class="video-wrap"><video muted controls playsinline preload="metadata" src="demo-supplier.mp4"></video><button class="video-cover" type="button" aria-label="播放演示"><span class="vc-play"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="vc-cap">点击播放演示</span></button></div>
               <div class="note">美线 16 家 · 欧英线 5 家 · 加拿大线 4 家，全维度画像随问随答</div>
             </div>
           </div>
@@ -849,8 +981,6 @@ small{ font-size:var(--t-cap); }
       <div class="sol-tag">全流程模拟 · 一条「LAX9 · 200kg · 普船卡派」从入库到出价</div>
       <div class="fg-stripes">
         <span class="fg-stripe" style="grid-column:span 3">阶段一 · 数据进来（入库 + 两道校验）</span>
-        <span class="fg-stripe" style="grid-column:span 1">阶段二 · 归一</span>
-        <span class="fg-stripe" style="grid-column:span 2">阶段三 · 报价出去（比价 + 出价）</span>
       </div>
       <div class="fm-track">
         <div class="fm-col">
@@ -868,6 +998,12 @@ small{ font-size:var(--t-cap); }
           <div class="fm-node"><span class="fm-dot">3</span>逐格对账</div>
           <div class="fm-below">关卡｜一格不一致即阻断，全过才放行</div>
         </div>
+      </div>
+      <div class="fg-stripes fg-stripes-2">
+        <span class="fg-stripe">阶段二 · 归一</span>
+        <span class="fg-stripe" style="grid-column:span 2">阶段三 · 报价出去（比价 + 出价）</span>
+      </div>
+      <div class="fm-track">
         <div class="fm-col">
           <div class="fm-above">20 多种叫法归到 11 个标准渠道</div>
           <div class="fm-node"><span class="fm-dot">4</span>渠道与仓点归一</div>
@@ -889,77 +1025,11 @@ small{ font-size:var(--t-cap); }
         <span>强不变量扫描 · 快照涨跌对比 · 有效期到期预警 · 偏差立即报警喊人</span>
       </div>
       <div style="display:flex;justify-content:center">
-        <button class="fm-open" id="flowOpen" type="button">点开看全流程图（放大版）</button>
       </div>
     </div>
   </div>
 
-<div class="flow-modal" id="flowModal" role="dialog" aria-modal="true" aria-label="从入库到出单全流程图">
-  <div class="fm-doc">
-    <button class="fm-close" id="flowClose" type="button" aria-label="关闭">✕</button>
-    <div class="fm-doc-head">
-      <h3>从价表入库到报价出单 · 全流程图</h3>
-      <p>六道关口逐层收口，外加一层入库后自动巡检；人只在两处介入 —— 把关、拍板。</p>
-    </div>
-    <div class="fm-doc-flow">
-      <div class="fd-step">
-        <div class="fd-head"><span class="fd-num">1</span><h4>价表入库</h4></div>
-        <dl>
-          <div><dt>做什么</dt><dd>自动识别布局族，卡派 / 海派 / 船期 / 规则四类数据一次落库</dd></div>
-          <div><dt>怎么防错</dt><dd>结构变了先阻断，不猜着入库；产出测试库数据 + 新旧结构差异报告</dd></div>
-        </dl>
-      </div>
-      <div class="fd-step">
-        <div class="fd-head"><span class="fd-num">2</span><h4>准入拦截</h4></div>
-        <dl>
-          <div><dt>做什么</dt><dd>渠道比对标准归类表、仓码比对白名单</dd></div>
-          <div><dt>怎么防错</dt><dd>不在标准表的渠道直接拒收；产出准入清单（收哪些、退哪些）</dd></div>
-        </dl>
-      </div>
-      <div class="fd-step">
-        <div class="fd-head"><span class="fd-num">3</span><h4>逐格对账</h4></div>
-        <dl>
-          <div><dt>做什么</dt><dd>独立真值解析器 vs 提取结果 vs 库内数据，三方逐格比对</dd></div>
-          <div><dt>怎么防错</dt><dd>一格不一致就阻断，测试库全过才进生产库</dd></div>
-        </dl>
-      </div>
-    </div>
-    <div class="fm-mid">↓ 继续</div>
-    <div class="fm-doc-flow">
-      <div class="fd-step">
-        <div class="fd-head"><span class="fd-num">4</span><h4>渠道与仓点归一</h4></div>
-        <dl>
-          <div><dt>做什么</dt><dd>20 多种叫法归到 11 个标准渠道，查「深圳」自动含「福永 / 坂田」</dd></div>
-          <div><dt>怎么防错</dt><dd>别名只在查询时展开，存储保持原始值，不改账</dd></div>
-        </dl>
-      </div>
-      <div class="fd-step">
-        <div class="fd-head"><span class="fd-num">5</span><h4>一键比价 25 家</h4></div>
-        <dl>
-          <div><dt>做什么</dt><dd>同口径取最低档位、多仓逐仓择优，默认一家通吃</dd></div>
-          <div><dt>怎么防错</dt><dd>公斤与按方两套口径严格隔离；产出每仓最优 + 次选</dd></div>
-        </dl>
-      </div>
-      <div class="fd-step">
-        <div class="fd-head"><span class="fd-num">6</span><h4>截图即出价</h4></div>
-        <dl>
-          <div><dt>做什么</dt><dd>OCR 识别仓码 / 重量 / 方数 → 底价 + 附加费逐条列</dd></div>
-          <div><dt>怎么防错</dt><dd>缺仓码或缺货量不报价；产出五要素齐全的报价单</dd></div>
-        </dl>
-      </div>
-    </div>
-    <div class="fm-doc-foot">
-      <div class="fd-foot">
-        <strong>全程监控 · 入库后自动巡检</strong>
-        <p>强不变量扫描 · 快照涨跌对比 · 有效期到期预警 · 偏差立即报警喊人</p>
-      </div>
-      <div class="fd-foot">
-        <strong>人只做两件事</strong>
-        <p>把关：格式大改、数据异常时确认放行；拍板：异常价与特殊货型由商务定夺。</p>
-      </div>
-    </div>
-  </div>
-</div>
+>
   <!-- 放大弹窗 -->
 
 
@@ -1036,38 +1106,15 @@ small{ font-size:var(--t-cap); }
     </div>
     <div class="flow-remark">AI 把繁琐的全做了 · 商务只需做判断</div>
 </div></div>
-    <div class="sol-block reveal" id="why-not-llm" style="margin-top:32px">
+    <div class="sol-block reveal" id="why-not-llm" style="margin-top:20px">
       <div class="sol-tag">为什么不让大模型直接报价</div>
-      <div class="sf-row">
-        <div class="sf-card cur">
-          <span class="sf-label">底线</span>
-          <h4 style="margin:2px 0 14px">价格是事实，不是生成内容</h4>
-          <ul class="sf-list">
-            <li>报价底线：宁可不报价，不可报错价</li>
-            <li>大模型会「编」价格，而且编得和真的一样</li>
-            <li>报价单错一次，赔的是真金白银和客户信任</li>
-          </ul>
-        </div>
-        <div class="sf-card cur">
-          <span class="sf-label">分工</span>
-          <h4 style="margin:2px 0 14px">AI 只做能容错的活</h4>
-          <ul class="sf-list">
-            <li>识别类交给 AI：截图 OCR、仓码、渠道、表结构</li>
-            <li>价格与规则走确定性路径：规则库 + 计费引擎</li>
-            <li>识别错了能被校验拦住，报价错了拦不住</li>
-          </ul>
-        </div>
-        <div class="sf-card cur">
-          <span class="sf-label">可验证</span>
-          <h4 style="margin:2px 0 14px">每个数字都能对账</h4>
-          <ul class="sf-list">
-            <li>三方逐格对账：独立真值解析器 = 提取结果 = 库内容</li>
-            <li>一格不一致即阻断，绝不「猜着入库」</li>
-            <li>大模型直接报价，给不出这种可验证性</li>
-          </ul>
-        </div>
+      <div class="why-row">
+        <div class="why-item"><b>价格是事实，不是生成内容</b>宁可不报价，不可报错价</div>
+        <div class="why-item"><b>AI 只做能容错的活</b>识别交给 AI，价格与规则走确定性路径</div>
+        <div class="why-item"><b>每个数字都能对账</b>真值解析 = 提取结果 = 库内容，一格不一致即阻断</div>
       </div>
     </div>
+</div>
       </div>
   <!-- 放大弹窗 -->
   
@@ -1086,10 +1133,10 @@ small{ font-size:var(--t-cap); }
     <div class="sol-block reveal" id="impact-q">
       <div class="sol-tag">量化价值呈现</div>
       <div class="metrics">
-        <div class="metric"><div class="v">90 分钟 → 1 分钟</div><div class="l">查价比价整段 · 翻表 / 算比重 / 核时效 / 比家数；省 1/3 ≈ 200 小时/年</div></div>
-        <div class="metric"><div class="v"><span class="accent">9,510</span> 次</div><div class="l">上线 7 周实际服务询价 · 3 位商务在用 · 平均响应 36 毫秒</div></div>
-        <div class="metric"><div class="v">+655 元/票</div><div class="l">全库最低价拓宽报价空间 · 按 400 票/年 ≈ 26 万元</div></div>
-        <div class="metric"><div class="v">4 家 → 25 家</div><div class="l">比价广度 · 人工凭经验挑 4 家 → 全库 25 家一屏比完</div></div>
+        <div class="metric"><div class="v">45 分钟 → 1 分钟</div><div class="l">4 家 × 10 个仓点完整查价比价 · 预计省 44 分钟/票 ≈ 293 小时/年</div></div>
+        <div class="metric"><div class="v"><span class="accent">9,510</span> 次</div><div class="l">线上查价 · 自 8 月起稳定运行 · 12 位业务同事在用 · 457 次企微询价 · 72 份价格对比表</div></div>
+        <div class="metric"><div class="v">预计 +230 元/票</div><div class="l">全库最低价拓宽空间 · 预计 400 票/年 ≈ 9.2 万元</div></div>
+        <div class="metric"><div class="v">4 家 → 25 家</div><div class="l">比价广度 · 凭经验挑 4 家 → 全库 25 家（91,930 条底价）</div></div>
       </div>
     </div>
 
@@ -1103,17 +1150,17 @@ small{ font-size:var(--t-cap); }
             <tr>
                 <td class="cmp-cap">全渠道全仓点比价</td>
                 <td class="cmp-before">人工做不完每个渠道仓点</td>
-                <td class="cmp-after">入库即刷新 17 个 sheet 对比表 · 约 2.6 秒生成 · 25 家一屏看清每家优劣</td>
+                <td class="cmp-after">17 个 sheet 对比表入库即刷新 · 2.6 秒生成 · 25 家一屏比完</td>
             </tr>
             <tr>
                 <td class="cmp-cap">智能询报价</td>
                 <td class="cmp-before">逐家翻价表，手工算比重与附加费</td>
-                <td class="cmp-after">截图即出报价 · 10 仓整票约 1 分钟 · 自动套计费规则、逐仓择优</td>
+                <td class="cmp-after">截图即出报价 · 10 仓整票约 1 分钟 · 自动套规则逐仓择优</td>
             </tr>
             <tr>
                 <td class="cmp-cap">供应商优势评估</td>
                 <td class="cmp-before">谁家强全靠印象和经验</td>
-                <td class="cmp-after">3 条线 130 渠道价格 / 时效 / 覆盖多维评分排名 · 入库即重算</td>
+                <td class="cmp-after">3 条线 130 渠道价格 / 时效 / 覆盖评分排名 · 入库即重算</td>
             </tr>
             
             
@@ -1121,19 +1168,11 @@ small{ font-size:var(--t-cap); }
         </tbody>
     </table>
     <div class="pain-footer">以前做不到或很难做的，现在一条命令就完成</div>
+      <div class="pain-footer" style="margin-top:8px;font-size:15px;opacity:.75">36 毫秒为单次查价响应，与人工「看仓点价」11.5 秒/仓非同一工作量，不作直接换算</div>
 </div>
     </div>
 
-    <div class="sol-block reveal" id="impact-trace">
-      <div class="sol-tag">上线之后的真实使用 · 截至 2026-09-17</div>
-      <div class="metrics">
-        <div class="metric"><div class="v"><span class="accent">9,510</span></div><div class="l">次询价查询 · 上线 7 周累计（日均约 194 次）</div></div>
-        <div class="metric"><div class="v">36 毫秒</div><div class="l">单次查价平均响应 · 人工查 1 个仓点约 11.5 秒</div></div>
-        <div class="metric"><div class="v">91,930</div><div class="l">条底价在线 · 25 家 / 130 渠道 / 三线分表</div></div>
-        <div class="metric"><div class="v">3 位</div><div class="l">商务日常在用 · 马佳莉 5,138 次 / 周冬斌 4,364 次</div></div>
-      </div>
-      <div class="pain-footer">数据来自系统查询日志与数据库实时统计；36 毫秒为单次查价响应，人工 11.5 秒/仓为「看仓点价」单项耗时，两者工作量不同，不作直接换算</div>
-    </div>
+
 
     
   <!-- 放大弹窗 -->
@@ -1148,7 +1187,7 @@ small{ font-size:var(--t-cap); }
   <div class="wrap">
     <div class="sec-head">
       <h2 class="reveal">复制推广：一套引擎，多线复用</h2>
-      <p class="reveal" data-reveal-delay="1">不止服务一条线路 —— 同一套底座接入新线，能力越用越强。</p>
+      <p class="reveal" data-reveal-delay="1">新线路对号即用；框架设计与流程设计同样可复用于其他 AI 垂类应用产品开发。</p>
     </div>
     <div class="sol-block reveal" id="growth-engine">
       <h3 class="blk-title">持续成长性 · 通用引擎族</h3>
@@ -1160,15 +1199,21 @@ small{ font-size:var(--t-cap); }
             <li>渠道映射、进仓点、重量档位、计费规则抽成模板</li>
             <li>模板库 41 套，新表先比对结构再入库</li>
             <li>新供应商不再是「重新做一遍」，而是「对号入座」</li>
+            <li>25 家在库供应商收进 8 个布局族，族内共用一份提取骨架</li>
+            <li>母集渠道对照表为唯一归类依据，归类差异一次性收敛</li>
+            <li>卡派 / 海派 / 船期 / 规则四类数据各自成模，互不串味</li>
           </ul>
         </div>
         <div class="sf-card cur">
           <span class="sf-label">STEP 2 · 复用</span>
-          <h4 style="margin:2px 0 14px">新线路对号即用</h4>
+          <h4 style="margin:2px 0 14px">新线对号即用 · 换产品可迁移</h4>
           <ul class="sf-list">
             <li>欧英线 08-21 接入、加拿大线 08-27 接入，各两周内全量上线</li>
             <li>新线复用同一套校验器与报价口径，无需重写</li>
             <li>三线共用一条流水线，维护成本不随家数线性增长</li>
+            <li>提取器与真值解析器成对生成，新线不漏校验</li>
+            <li>框架设计：数据接入 / 规则归一 / 结果校验三段骨架，不绑物流场景</li>
+            <li>流程设计：归纳 → 模板 → 校验三步法，可复用于其他 AI 垂类应用开发</li>
           </ul>
         </div>
         <div class="sf-card cur">
@@ -1178,17 +1223,14 @@ small{ font-size:var(--t-cap); }
             <li>结构变了先阻断，不自作主张入库</li>
             <li>漂移检测 + 入库日报，异常立即报警喊人</li>
             <li>能力沉淀在模板与文档里，可交接、不依赖个人记忆</li>
+            <li>入库后三方对账：提取 = 真值 = 库，一格不一致即阻断</li>
+            <li>仓码不在白名单直接拦下，宁可不报价</li>
+            <li>价表过期自动排除并提示，不用人记日期</li>
           </ul>
         </div>
       </div>
     </div>
-<div class="metrics reveal" id="growth-metrics">
-  <div class="metric"><div class="v"><span class="accent">25</span></div><div class="l">家供应商同一套口径</div></div>
-  <div class="metric"><div class="v">8</div><div class="l">个布局族模板 · 41 套模板文件</div></div>
-  <div class="metric"><div class="v">3</div><div class="l">条线路：美线 / 欧英线 / 加拿大线</div></div>
-  <div class="metric"><div class="v">4</div><div class="l">类数据同一入口：卡派 / 海派 / 船期 / 规则</div></div>
-</div>
-<div class="pain-footer">已复制到三条线路：美线 16 家 · 欧英线 5 家 · 加拿大线 4 家；卡派 / 海派 / 船期 / 规则四类数据同一口径；企业微信端与询价网页同一份底价</div>
+<div class="pain-footer">25 家 · 8 布局族 · 41 套模板 · 3 条线路（美线 16 / 欧英 5 / 加拿大 4）· 卡派 / 海派 / 船期 / 规则同一口径 · 企微端与询价网页同一份底价</div>
   </div>
   <!-- 放大弹窗 -->
 
@@ -1213,7 +1255,7 @@ small{ font-size:var(--t-cap); }
       </div>
     </div>
     <div class="ui-panel on reveal">
-      <div class="ui-frame"><a href="https://ppppadd.github.io/price-query/" target="_blank"><img src="assets/showcase-web-hero-v3.png" alt="询价网页 Hero 页 · 一搜比价"><div class="ui-cap"><span><b>询价网页</b> · Hero 页一搜比价，输入仓码即返最低价</span></div></a></div>
+      <div class="ui-frame"><a href="https://ppppadd.github.io/price-query/" target="_blank"><img src="assets/showcase-web-hero-v4.png" alt="询价网页 Hero 页 · 一搜比价"><div class="ui-cap"><span><b>询价网页</b> · Hero 页一搜比价，输入仓码即返最低价</span></div></a></div>
     </div>
     </div>
   </div>
@@ -1231,53 +1273,50 @@ small{ font-size:var(--t-cap); }
         <div class="goal-list reveal">
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
-        <div><h3>三条线路全量入库</h3><p>美线 16 家 73,117 条 · 欧英线 5 家 12,443 条 · 加拿大线 4 家 6,370 条，三线分表物理隔离。</p></div>
+        <div><h3>三条线路全量入库</h3><p>美线 16 家 / 欧英 5 家 / 加拿大 4 家，三线分表隔离。</p></div>
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
-        <div><h3>企业微信端六大功能上线</h3><p>智能询价、对比查价、价格对比、评分排名、价表更新、信息查询，业务日常全接上。</p></div>
+        <div><h3>企业微信端六大功能上线</h3><p>智能询价、对比查价、评分排名、价表更新、信息查询。</p></div>
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
-        <div><h3>询价网页上线公开</h3><p>GitHub Pages 托管、扫码即查，与企微端同一份底价、同一套校验，外部也能自取。</p></div>
+        <div><h3>询价网页上线公开</h3><p>GitHub Pages 托管、扫码即查，与企微端同一份底价。</p></div>
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
-        <div><h3>价格监控自动比对</h3><p>价表入库即触发全量对比，涨跌一目了然，最低价自动生成，不用人工翻表。</p></div>
+        <div><h3>价格监控自动比对</h3><p>入库即触发全量对比，涨跌一目了然，最低价自动生成。</p></div>
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
-        <div><h3>四层防护体系落地</h3><p>硬束缚、软引导、围栏（含强不变量扫描）、人工终审四层递进，错误挡在入库前。</p></div>
+        <div><h3>四层防护体系落地</h3><p>硬束缚、软引导、围栏、人工终审，错误挡在入库前。</p></div>
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
-        <div><h3>时效与船期数据接入</h3><p>截单、开船日期与「开船后入仓」时效逐家落库，缺源的按周模式自动推算。</p></div>
+        <div><h3>时效与船期数据接入</h3><p>截单 / 开船 / 入仓时效逐家落库，缺源按周推算。</p></div>
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
-        <div><h3>对比表与评分排名自动刷新</h3><p>入库即重算价格对比表与供应商评分排名，交付即最新，无需人工整理。</p></div>
+        <div><h3>对比表与评分排名自动刷新</h3><p>入库即重算对比表与评分排名，交付即最新。</p></div>
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
-        <div><h3>供应商画像随问随答</h3><p>随口问「某某家怎么样」，直接出渠道构成、价格水平、进仓点全维度画像。</p></div>
+        <div><h3>供应商画像随问随答</h3><p>问「某某家怎么样」，出渠道 / 价格 / 进仓点画像。</p></div>
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
-        <div><h3>报价全程留痕可溯源</h3><p>每条报价都能指回「哪份价表、哪次入库、哪条规则」，逐格对账记录留存可复盘。</p></div>
+        <div><h3>报价全程留痕可溯源</h3><p>每条报价可指回价表 / 入库 / 规则，对账记录留存。</p></div>
       </div>
     </div>
 
-    <div class="sol-block reveal" id="next-stage" style="margin-top:32px">
+    <div class="sol-block reveal" id="next-stage" style="margin-top:18px">
       <div class="sol-tag">下一阶段 · 在攻的难点</div>
-      <div class="cmp-wrap"><table class="cmp-table">
-        <thead><tr><th class="cmp-h">方向</th><th class="cmp-h">目标</th><th class="cmp-h">计划</th></tr></thead>
-        <tbody>
-          <tr><td class="cmp-cap">报价链路后段</td><td class="cmp-after">打通需求确认 / 货量整理 / 结果核对 / 报价输出 —— 整段里剩下的约 2/3（≈60 分钟/票）</td><td>分步推进</td></tr>
-          <tr><td class="cmp-cap">欧线 / 加拿大线趋势</td><td class="cmp-after">与美线同款的渠道价格趋势图（数据攒到 6~8 周即可出图）</td><td>2026-10 中旬</td></tr>
-          <tr><td class="cmp-cap">EXX 快船与附加费类目</td><td class="cmp-after">EXX 快船补入库；线下附加费类目补录进规则库</td><td>随价表版本</td></tr>
-          <tr><td class="cmp-cap">知识产权</td><td class="cmp-after">布局族模板库 + 三方校验器申请软件著作权</td><td>材料准备中</td></tr>
-        </tbody>
-      </table></div>
+      <div class="next-grid">
+        <div class="next-item"><b>接入更多航线询报价</b><span>新航线按引擎族对号接入，复用同一套校验口径</span><i>持续接入</i></div>
+        <div class="next-item"><b>探索报价链路后段</b><span>需求确认 · 货量整理 · 结果核对 · 报价输出</span><i>分步推进</i></div>
+        <div class="next-item"><b>提升高难度报价能力</b><span>条件型附加费 · 多供应商混搭 · 特殊品名认证</span><i>规则补录</i></div>
+        <div class="next-item"><b>推进软著知识产权</b><span>布局族模板库 + 三方校验器软著登记</span><i>材料准备中</i></div>
+      </div>
     </div>
   </div>
   <!-- 放大弹窗 -->
@@ -1286,6 +1325,20 @@ small{ font-size:var(--t-cap); }
     </div>
   </div>
   </div>
+<div class="qr-zoom-backdrop" id="videoBackdrop"></div>
+<div class="video-zoom" id="videoModal" role="dialog" aria-modal="true" aria-label="演示视频放大播放">
+  <button class="qr-zoom-x" id="videoClose" type="button" aria-label="关闭">✕</button>
+  <video id="videoBig" muted controls playsinline preload="metadata"></video>
+</div>
+
+<!-- 翻页按钮：必须放在 #pnStage 之外（stage 内 z-index 抬不过内容层，pn4~pn7 曾完全点不动） -->
+<button type="button" class="pn-arrow pn-prev" id="pnPrev" aria-label="上一个板块">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events:none"><polyline points="15 18 9 12 15 6"/></svg>
+</button>
+<button type="button" class="pn-arrow pn-next" id="pnNext" aria-label="下一个板块">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="pointer-events:none"><polyline points="9 18 15 12 9 6"/></svg>
+</button>
+
 <script>
 (function(){
   var TOTAL = 8;            /* 内容面板 pn0~pn7：视频/背景/方案/人机/成效/推广/网站/目标 */
@@ -1463,22 +1516,6 @@ small{ font-size:var(--t-cap); }
   });
   updateNavState();
 
-  // 全流程图放大弹层（09-17）
-  (function(){
-    var modal = document.getElementById('flowModal');
-    var open = document.getElementById('flowOpen');
-    var close = document.getElementById('flowClose');
-    if (!modal || !open) return;
-    function show(){ modal.classList.add('on'); }
-    function hide(){ modal.classList.remove('on'); }
-    open.addEventListener('click', function(e){ e.preventDefault(); show(); });
-    if (close) close.addEventListener('click', hide);
-    modal.addEventListener('click', function(e){ if (e.target === modal) hide(); });
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape') { hide(); return; }
-      if (modal.classList.contains('on') && /^Arrow(Left|Right|Up|Down)$/.test(e.key)) e.stopImmediatePropagation();
-    }, true);
-  })();
 
   // Theme toggle
   var btn = document.getElementById('themeBtn');
@@ -1564,20 +1601,39 @@ small{ font-size:var(--t-cap); }
     });
   });
 
-  // 视频自绘封面：初始隐藏原生控件，点击播放后启用并淡出封面
+  // 演示视频：点击封面 → 先展开放大，再在弹层内播放（09-17）
   document.querySelectorAll('.video-wrap video').forEach(function(v) {
     v.removeAttribute('controls');
   });
-  document.querySelectorAll('.video-cover').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var v = btn.parentNode.querySelector('video');
-      if (!v) return;
-      btn.classList.add('off');
-      v.controls = true;
-      var p = v.play();
-      if (p && p.catch) p.catch(function(){});
+  (function(){
+    var modal = document.getElementById('videoModal');
+    var bd = document.getElementById('videoBackdrop');
+    var big = document.getElementById('videoBig');
+    var close = document.getElementById('videoClose');
+    if (!modal || !big) return;
+    function hide() {
+      big.pause();
+      modal.classList.remove('on');
+      if (bd) bd.classList.remove('on');
+      big.removeAttribute('src'); big.load();
+    }
+    document.querySelectorAll('#pn0 .video-cover').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var v = btn.parentNode.querySelector('video');
+        var src = v && (v.getAttribute('src') || v.currentSrc);
+        if (!src) return;
+        big.src = src;
+        if (bd) bd.classList.add('on');
+        modal.classList.add('on');
+        var p = big.play(); if (p && p.catch) p.catch(function(){});
+      });
     });
-  });
+    if (close) close.addEventListener('click', hide);
+    if (bd) bd.addEventListener('click', hide);
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && modal.classList.contains('on')) { hide(); e.stopImmediatePropagation(); }
+    }, true);
+  })();
 /* ===== US-003 hero 交互层：背景粒子氛围 + 指针视差 ===== */
 (function(){
   window.heroFx = null;   /* 关闭态哨兵：门控/异常路径一律保持 null */
