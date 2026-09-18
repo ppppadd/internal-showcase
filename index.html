@@ -357,8 +357,8 @@ small{ font-size:var(--t-cap); }
 #pn3 .flow-step{padding:14px}
 #pn3 .flow-result{padding:var(--space-4) var(--space-8)}
 #pn4 .metric,#pn5 .metric{padding:24px 26px}
-#pn6 .ui-qr{flex:0 0 340px}
-#pn6 .ui-panel.on{display:block;flex:1;min-width:0}
+#pn7 .ui-qr{flex:0 0 340px}
+#pn7 .ui-panel.on{display:block;flex:1;min-width:0}
 /* 投屏档（A+）：进一步收紧垂直节奏，保证后排看得清且一屏不滚 */
 
 /* ===== 排版修版 v4（09-17）：内容垂直居中 + 节奏收紧 + pn3 双栏对齐（字号一律不动）===== */
@@ -391,10 +391,10 @@ small{ font-size:var(--t-cap); }
 .flow-result{display:flex;flex-direction:column;align-items:center;gap:6px;margin:12px auto 0;padding:20px 40px}
 
 /* 5) pn6：二维码卡与网页卡等高，内部不再上下各空一截 */
-#pn6 .sf-row{align-items:stretch}
-#pn6 .ui-qr{justify-content:center;gap:22px}
-#pn6 .ui-panel{display:flex;flex-direction:column}
-#pn6 .ui-frame{flex:1;display:flex;flex-direction:column;justify-content:center}
+#pn7 .sf-row{align-items:stretch}
+#pn7 .ui-qr{justify-content:center;gap:22px}
+#pn7 .ui-panel{display:flex;flex-direction:column}
+#pn7 .ui-frame{flex:1;display:flex;flex-direction:column;justify-content:center}
 
 
 #pn5 .sf-card{min-height:0;display:flex;flex-direction:column;justify-content:flex-start;padding:30px}
@@ -448,11 +448,11 @@ small{ font-size:var(--t-cap); }
 .fd-foot p{margin:0;font-size:var(--t-body);color:var(--muted);line-height:var(--lh-body)}
 
 /* 10) pn7：内容撑满整屏，消除上方空档（09-17） */
-#pn7 .wrap{display:flex;flex-direction:column;min-height:100vh}
-#pn7 .sec-head{margin-bottom:18px}
-#pn7 .goal-list{flex:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:1fr;gap:14px;align-content:stretch}
-#pn7 .goal{min-height:0;padding:18px 22px;align-items:center}
-#pn7 .goal h3{margin-bottom:8px}
+#pn6 .wrap{display:flex;flex-direction:column;min-height:100vh}
+#pn6 .sec-head{margin-bottom:18px}
+#pn6 .goal-list{flex:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:1fr;gap:14px;align-content:stretch}
+#pn6 .goal{min-height:0;padding:18px 22px;align-items:center}
+#pn6 .goal h3{margin-bottom:8px}
 
 /* 11) 收紧：pn5 内容扩充后一屏不滚（09-17） */
 #pn5 .sec-head{margin-bottom:22px}
@@ -521,12 +521,12 @@ small{ font-size:var(--t-cap); }
 #pn5 .sf-list{gap:calc(clamp(6px,1vh,11px) * var(--vhx,1))}
 #pn5 .pain-footer{margin-top:calc(12px * var(--vhx,1))}
 /* pn6 询价网页 */
-#pn6 .ui-frame img,#pn6 .ui-frame video{max-height:58vh;width:auto}
-#pn6 .ui-qr{gap:calc(clamp(10px,1.6vh,22px) * var(--vhx,1))}
-#pn6 .sf-row{gap:clamp(14px,1.8vw,30px)}
+#pn7 .ui-frame img,#pn7 .ui-frame video{max-height:58vh;width:auto}
+#pn7 .ui-qr{gap:calc(clamp(10px,1.6vh,22px) * var(--vhx,1))}
+#pn7 .sf-row{gap:clamp(14px,1.8vw,30px)}
 /* pn7 达成目标 */
-#pn7 .goal-list{gap:calc(clamp(8px,1.2vh,14px) * var(--vhx,1))}
-#pn7 .goal{padding:calc(clamp(10px,1.6vh,18px) * var(--vhx,1)) clamp(14px,1.4vw,22px)}
+#pn6 .goal-list{gap:calc(clamp(8px,1.2vh,14px) * var(--vhx,1))}
+#pn6 .goal{padding:calc(clamp(10px,1.6vh,18px) * var(--vhx,1)) clamp(14px,1.4vw,22px)}
 
 /* ===== 09-17 补丁16：封面四格数字不超框（宽度放开 + 字号随视口 + 不换行） ===== */
 .hero-stats{width:min(56%,780px)}
@@ -555,25 +555,25 @@ small{ font-size:var(--t-cap); }
 #pn0 .video-wrap{flex:1;min-height:0;height:auto;max-width:none;margin:0}
 #pn0 .note{flex:none;margin-top:calc(clamp(8px,1.1vh,14px) * var(--vhx,1))}
 /* pn6：左卡内容纵向铺满整卡高度，右卡截图按卡宽铺满 */
-#pn6 .ui-qr{justify-content:space-evenly;gap:0}
-#pn6 .ui-frame{justify-content:flex-start}
-#pn6 .ui-frame img{width:100%;height:auto;max-height:none}
-#pn6 .ui-frame > a{display:block;width:100%}
+#pn7 .ui-qr{justify-content:space-evenly;gap:0}
+#pn7 .ui-frame{justify-content:flex-start}
+#pn7 .ui-frame img{width:100%;height:auto;max-height:none}
+#pn7 .ui-frame > a{display:block;width:100%}
 
 /* ===== 09-17 补丁18：pn0 / pn6 真正撑满一屏（wrap flex 化 + 内部弹性收缩，字号不动） ===== */
-#pn0 .pn-panel-scroll > .wrap,#pn6 .pn-panel-scroll > .wrap{display:flex;flex-direction:column;flex:1 1 auto;min-height:0}
+#pn0 .pn-panel-scroll > .wrap,#pn7 .pn-panel-scroll > .wrap{display:flex;flex-direction:column;flex:1 1 auto;min-height:0}
 #pn0 .demo-stage{flex:1 1 0;min-height:0}
 #pn0 .demo-stage > div:last-child{flex:1 1 auto;min-height:0}
 #pn0 .demo-panel.on{flex:1 1 auto;min-height:0}
 #pn0 .chat-card{flex:1 1 auto;min-height:0}
 #pn0 .chat-body{flex:1 1 auto;min-height:0}
 #pn0 .video-wrap{flex:1 1 auto;min-height:0;height:auto}
-#pn6 .sf-row{flex:1 1 auto;min-height:0}
-#pn6 .ui-panel.on{flex:1 1 auto;min-height:0}
-#pn6 .ui-frame{height:100%;justify-content:stretch}
-#pn6 .ui-frame > a{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
-#pn6 .ui-frame img{flex:1 1 auto;min-height:0;width:100%;height:100%;object-fit:cover;max-height:none}
-#pn6 .ui-cap{flex:none}
+#pn7 .sf-row{flex:1 1 auto;min-height:0}
+#pn7 .ui-panel.on{flex:1 1 auto;min-height:0}
+#pn7 .ui-frame{height:100%;justify-content:stretch}
+#pn7 .ui-frame > a{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
+#pn7 .ui-frame img{flex:1 1 auto;min-height:0;width:100%;height:100%;object-fit:cover;max-height:none}
+#pn7 .ui-cap{flex:none}
 
 /* 补丁19：pn0 残余 4px 溢出（消除按钮最小高硬底） */
 #pn0 .demo-nav{gap:calc(clamp(3px,.6vh,10px) * var(--vhx,1))}
@@ -602,11 +602,11 @@ small{ font-size:var(--t-cap); }
 /* ===== 09-17 补丁22：全屏铺满（全屏展示时不留上下大片空白）+ pn0 视频去黑边 + pn6 图贴顶 ===== */
 /* 1) 内容区撑满视口剩余高度（仅 8 个内容页，hero 封面不动） */
 #pn0 .pn-panel-scroll > .wrap,#pn1 .pn-panel-scroll > .wrap,#pn2 .pn-panel-scroll > .wrap,#pn3 .pn-panel-scroll > .wrap,
-#pn4 .pn-panel-scroll > .wrap,#pn5 .pn-panel-scroll > .wrap,#pn6 .pn-panel-scroll > .wrap,#pn7 .pn-panel-scroll > .wrap{
+#pn4 .pn-panel-scroll > .wrap,#pn5 .pn-panel-scroll > .wrap,#pn7 .pn-panel-scroll > .wrap,#pn6 .pn-panel-scroll > .wrap{
   display:flex;flex-direction:column;flex:1 1 auto;min-height:0;margin:0 auto}
-#pn0 .sec-head,#pn1 .sec-head,#pn2 .sec-head,#pn3 .sec-head,#pn4 .sec-head,#pn5 .sec-head,#pn6 .sec-head,#pn7 .sec-head{flex:none}
+#pn0 .sec-head,#pn1 .sec-head,#pn2 .sec-head,#pn3 .sec-head,#pn4 .sec-head,#pn5 .sec-head,#pn7 .sec-head,#pn6 .sec-head{flex:none}
 /* 2) 各页主内容块吃掉剩余高度 */
-#pn1 .pn-panel-scroll > .wrap > .diagram-html.pain-grid,#pn2 .pn-panel-scroll > .wrap > .sol-block,#pn4 .pn-panel-scroll > .wrap > .sol-block,#pn5 .pn-panel-scroll > .wrap > .sol-block,#pn6 .pn-panel-scroll > .wrap > .sf-row,#pn7 .pn-panel-scroll > .wrap > .goal-list,
+#pn1 .pn-panel-scroll > .wrap > .diagram-html.pain-grid,#pn2 .pn-panel-scroll > .wrap > .sol-block,#pn4 .pn-panel-scroll > .wrap > .sol-block,#pn5 .pn-panel-scroll > .wrap > .sol-block,#pn7 .pn-panel-scroll > .wrap > .sf-row,#pn6 .pn-panel-scroll > .wrap > .goal-list,
 #pn3 .pn-panel-scroll > .wrap > .reveal{flex:1 1 auto;min-height:0}
 /* 3) 块内弹性分布 */
 #pn1 .diagram-html.pain-grid{display:flex;flex-direction:column}
@@ -617,14 +617,14 @@ small{ font-size:var(--t-cap); }
 #pn4 .sol-block{display:flex;flex-direction:column;justify-content:space-between}
 #pn5 .sol-block{flex:2 1 0;display:flex;flex-direction:column;justify-content:space-between}
 #pn5 .metrics{flex:1 1 0}
-#pn7 .goal-list{align-content:space-between}
+#pn6 .goal-list{align-content:space-between}
 /* 4) pn0：视频容器贴合视频真实比例（消除 contain 上下黑边），标题与内容两端对齐铺满 */
 #pn0 .pn-panel-scroll > .wrap{justify-content:space-between}
 #pn0 .video-wrap{flex:none;height:auto;aspect-ratio:1916/1026;min-height:0;max-height:calc(100vh - 470px)}
 /* 视频区随视口高度收窄（保证视频等比完整、不滚动、无黑边） */
 #pn0 .demo-stage{max-width:calc((100vh - 470px) * 1.867 + 362px);margin-inline:auto}
 /* 5) pn6：截图贴卡顶（不再居中留空），卡片撑满 */
-#pn6 .ui-frame img{object-position:center}
+#pn7 .ui-frame img{object-position:center}
 
 /* 6) pn3：两栏卡片吃掉剩余高度（消除底部大片空白） */
 #pn3 .pn-panel-scroll > .wrap > .reveal > .flow-2lane{display:flex;flex-direction:column;flex:0 0 auto;min-height:0}
@@ -673,15 +673,15 @@ small{ font-size:var(--t-cap); }
 /* C. 主内容区吃掉剩余高度（卡片内边距同步放大，非空撑） */
 #pn1 .pn-panel-scroll > .wrap > .diagram-html.pain-grid,
 #pn2 .sol-block,#pn3 .diagram-html.flow-2lane,#pn4 .sol-block,
-#pn5 .sol-block,#pn6 .sf-row,#pn7 .goal-list{flex:1 1 auto;min-height:0}
+#pn5 .sol-block,#pn7 .sf-row,#pn6 .goal-list{flex:1 1 auto;min-height:0}
 #pn1 .pain-grid-inner{flex:1 1 auto;justify-content:space-between;gap:16px}
 #pn1 .pain-row{flex:1 1 auto}
 #pn3 .diagram-html.flow-2lane{display:flex;flex-direction:column}
 #pn3 .flow-lanes{flex:0 0 auto;margin-bottom:0}
 #pn3 .flow-lane{display:flex;flex-direction:column;justify-content:space-between}
 #pn3 .flow-step{flex:none}
-#pn7 .goal-list{grid-auto-rows:1fr;align-content:stretch}
-#pn7 .goal{align-items:center}
+#pn6 .goal-list{grid-auto-rows:1fr;align-content:stretch}
+#pn6 .goal{align-items:center}
 #pn2 .sol-block,#pn5 .sol-block{justify-content:space-between}
 #pn5 .sf-card{display:flex;flex-direction:column}
 #pn5 .sf-list{display:flex;flex-direction:column;justify-content:space-between;flex:1 1 auto}
@@ -789,8 +789,8 @@ small{ font-size:var(--t-cap); }
       <button class="pn-tab" data-pn="3">人机协作</button>
       <button class="pn-tab" data-pn="4">创新成效</button>
       <button class="pn-tab" data-pn="5">复制推广</button>
-      <button class="pn-tab" data-pn="6">询价网页</button>
-      <button class="pn-tab" data-pn="7">达成目标</button>
+      <button class="pn-tab" data-pn="6">达成目标</button>
+      <button class="pn-tab" data-pn="7">询价网页</button>
     </div>
     <div class="pn-nav-right">
       <div class="pn-counter mono" id="pnCounter">封面</div>
@@ -814,8 +814,8 @@ small{ font-size:var(--t-cap); }
     <h1 class="hero-enter d2">二十五家供应商，<br><span class="hl">一次命令</span>多次比价</h1>
     <p class="hero-sub hero-enter d3">三条线底价一次拉齐，价表入库到报价出单全程可校验。</p>
     <div class="hero-cta hero-enter d4">
-      <a class="btn btn-primary" href="#pn6">看功能展示</a>
-      <a class="btn btn-ghost" href="#pn7">看真实界面</a>
+      <a class="btn btn-primary" href="#pn7">看功能展示</a>
+      <a class="btn btn-ghost" href="#pn6">看真实界面</a>
     </div>
     <div class="hero-stats hero-enter d4">
       <div class="hstat"><div class="v"><span class="accent" data-count="25">0</span></div><div class="l">家供应商</div></div>
@@ -1242,31 +1242,6 @@ small{ font-size:var(--t-cap); }
 
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="reveal">公开询价网页</h2>
-      <p class="reveal" data-reveal-delay="1">企业微信之外，同一套底价另开一个公开询价网页：输入仓码即可查价对比。</p>
-    </div>
-    <div class="sf-row" style="align-items:stretch">
-    <div class="ui-qr reveal" data-reveal-delay="1" role="button" tabindex="0" data-qr-zoom aria-label="点击放大询价网页二维码" style="display:flex;flex-direction:column;justify-content:center;gap:14px;align-items:center;margin:0;padding:26px 22px;background:var(--card-bg,#fff);border:1px solid var(--frame-line,#e5e7eb);border-radius:var(--r-card);box-shadow:var(--shadow-lg)">
-      <img src="assets/qr-price-query.png" alt="扫码访问询价网页" style="width:clamp(190px,21vh,250px);height:clamp(190px,21vh,250px);border-radius:var(--r-md);display:block;flex:none">
-      <div style="text-align:center">
-        <strong style="font-size:var(--t-body);color:var(--text)">手机扫码 · 直达询价网页</strong>
-        <p style="margin:8px 0 0;font-size:var(--t-cap);color:var(--frame-cap);line-height:var(--lh-body)">企业微信之外，同一套底价。扫码即可在手机打开<a href="https://ppppadd.github.io/price-query/" target="_blank" style="color:var(--accent)">ppppadd.github.io/price-query</a></p>
-        <span class="ui-qr-hint">点击放大二维码</span>
-      </div>
-    </div>
-    <div class="ui-panel on reveal">
-      <div class="ui-frame"><a href="https://ppppadd.github.io/price-query/" target="_blank"><img src="assets/showcase-web-hero-v4.png" alt="询价网页 Hero 页 · 一搜比价"><div class="ui-cap"><span><b>询价网页</b> · Hero 页一搜比价，输入仓码即返最低价</span></div></a></div>
-    </div>
-    </div>
-  </div>
-    
-    </div>
-  </div>
-<div class="pn-panel" id="pn7">
-    <div class="pn-panel-scroll">
-
-  <div class="wrap">
-    <div class="sec-head">
       <h2 class="reveal">现阶段达成目标</h2>
       <p class="reveal" data-reveal-delay="1">从供应商价表到可验证的报价：规则与 AI 落在同一条流程里，每条都可现场验证。</p>
     </div>
@@ -1324,6 +1299,31 @@ small{ font-size:var(--t-cap); }
 
     </div>
   </div>
+  </div>
+<div class="pn-panel" id="pn7">
+    <div class="pn-panel-scroll">
+
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="reveal">公开询价网页</h2>
+      <p class="reveal" data-reveal-delay="1">企业微信之外，同一套底价另开一个公开询价网页：输入仓码即可查价对比。</p>
+    </div>
+    <div class="sf-row" style="align-items:stretch">
+    <div class="ui-qr reveal" data-reveal-delay="1" role="button" tabindex="0" data-qr-zoom aria-label="点击放大询价网页二维码" style="display:flex;flex-direction:column;justify-content:center;gap:14px;align-items:center;margin:0;padding:26px 22px;background:var(--card-bg,#fff);border:1px solid var(--frame-line,#e5e7eb);border-radius:var(--r-card);box-shadow:var(--shadow-lg)">
+      <img src="assets/qr-price-query.png" alt="扫码访问询价网页" style="width:clamp(190px,21vh,250px);height:clamp(190px,21vh,250px);border-radius:var(--r-md);display:block;flex:none">
+      <div style="text-align:center">
+        <strong style="font-size:var(--t-body);color:var(--text)">手机扫码 · 直达询价网页</strong>
+        <p style="margin:8px 0 0;font-size:var(--t-cap);color:var(--frame-cap);line-height:var(--lh-body)">企业微信之外，同一套底价。扫码即可在手机打开<a href="https://ppppadd.github.io/price-query/" target="_blank" style="color:var(--accent)">ppppadd.github.io/price-query</a></p>
+        <span class="ui-qr-hint">点击放大二维码</span>
+      </div>
+    </div>
+    <div class="ui-panel on reveal">
+      <div class="ui-frame"><a href="https://ppppadd.github.io/price-query/" target="_blank"><img src="assets/showcase-web-hero-v4.png" alt="询价网页 Hero 页 · 一搜比价"><div class="ui-cap"><span><b>询价网页</b> · Hero 页一搜比价，输入仓码即返最低价</span></div></a></div>
+    </div>
+    </div>
+  </div>
+    
+    </div>
   </div>
 <div class="qr-zoom-backdrop" id="videoBackdrop"></div>
 <div class="video-zoom" id="videoModal" role="dialog" aria-modal="true" aria-label="演示视频放大播放">
