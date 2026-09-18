@@ -333,7 +333,7 @@
 .ui-qr{cursor:zoom-in;transition:transform .3s cubic-bezier(.25,.1,.25,1),box-shadow .3s cubic-bezier(.25,.1,.25,1)}
 @media (hover:hover) and (pointer:fine){.ui-qr:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.06),0 24px 56px rgba(0,0,0,.12)}}
 .ui-qr:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.ui-qr-hint{display:inline-block;margin-top:10px;padding:3px 10px;border-radius:999px;background:rgba(0,122,255,.10);color:var(--accent);font-size:var(--t-cap-xs,14px);line-height:1.6}
+.ui-qr-hint{display:inline-block;margin-top:10px;padding:3px 10px;border-radius:999px;background:rgba(0,122,255,.10);color:var(--accent);font-size:var(--t-cap);line-height:1.6}
 .qr-zoom-backdrop{position:fixed;inset:0;z-index:80;background:rgba(10,14,22,.30);backdrop-filter:blur(6px) saturate(.9);-webkit-backdrop-filter:blur(6px) saturate(.9);opacity:0;pointer-events:none;transition:opacity .4s cubic-bezier(.22,.61,.36,1)}
 .qr-zoom-backdrop.on{opacity:1;pointer-events:auto}
 .qr-zoom{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.92);opacity:0;display:none;flex-direction:column;align-items:center;text-align:center;z-index:81;width:calc(100% - 32px);max-width:400px;padding:28px 26px 24px;background:var(--card-bg,#fff);border:1px solid var(--frame-line,rgba(0,0,0,.10));border-radius:var(--r-card,20px);box-shadow:0 6px 16px rgba(0,0,0,.10),0 32px 72px rgba(0,0,0,.22);transition:transform .45s cubic-bezier(.25,.1,.25,1),opacity .35s cubic-bezier(.25,.1,.25,1)}
@@ -545,7 +545,7 @@ small{ font-size:var(--t-cap); }
 #pn5 .sf-row{flex:1 1 auto;min-height:0}
 #pn5 .sf-card{display:flex;flex-direction:column}
 #pn5 .sf-card ul{flex:1 1 auto;display:flex;flex-direction:column;justify-content:space-evenly;gap:0}
-#pn5 .sf-card li{margin-bottom:0;padding:18px 0;border-top:1px dashed var(--line);font-size:17px;line-height:1.5}
+#pn5 .sf-card li{margin-bottom:0;padding:18px 0;border-top:1px dashed var(--line);font-size:22px;line-height:1.5}
 #pn5 .sf-card li:first-child{border-top:none}
 #pn0 .demo-stage > div:last-child{display:flex;flex-direction:column;min-height:0}
 #pn0 .demo-panel.on{display:flex;flex-direction:column;flex:1;min-height:0}
@@ -650,15 +650,15 @@ small{ font-size:var(--t-cap); }
 
 /* A. 内容屏字号体系（一处定义，全屏继承） */
 .pn-panel:not(#pnHero) .pn-panel-scroll{
-  --t-display-2:54px;     /* 屏标题 */
-  --t-h3:24px;
-  --t-h4:21px;            /* 卡片标题 */
-  --t-body:17.5px;        /* 正文 / 说明 */
-  --t-cap:15px;           /* 标签 / 注释 */
-  --t-num:54px;
-  --t-display-num:52px;   /* 大数字 */
-  --lh-tight:1.42;
-  --lh-body:1.6;
+  --t-display-2:68px;     /* 屏标题 */
+  --t-h3:31px;
+  --t-h4:27px;            /* 卡片标题 */
+  --t-body:23px;          /* 正文 / 说明 */
+  --t-cap:20px;           /* 标签 / 注释 */
+  --t-num:64px;
+  --t-display-num:64px;   /* 大数字 */
+  --lh-tight:1.4;
+  --lh-body:1.55;
 }
 
 /* B. 版心 + 屏骨架（pn0 视频页保持原有精调，不套此骨架） */
@@ -667,8 +667,8 @@ small{ font-size:var(--t-cap); }
   display:flex;flex-direction:column;margin:0 auto;width:100%;min-height:0;
   flex:1 1 auto;max-width:1680px;padding:calc(var(--nav-h) + 34px) 44px 46px !important}
 .pn-panel:not(#pnHero):not(#pn0) .sec-head{margin-bottom:34px;flex:none}
-.pn-panel:not(#pnHero):not(#pn0) .sec-head h2{font-size:54px;margin-bottom:14px;max-width:none;line-height:1.12}
-.pn-panel:not(#pnHero):not(#pn0) .sec-head p{font-size:21px;line-height:1.55;max-width:84ch}
+.pn-panel:not(#pnHero):not(#pn0) .sec-head h2{font-size:68px;margin-bottom:14px;max-width:none;line-height:1.12;text-wrap:balance}
+.pn-panel:not(#pnHero):not(#pn0) .sec-head p{font-size:26px;line-height:1.55;max-width:84ch}
 
 /* C. 主内容区吃掉剩余高度（卡片内边距同步放大，非空撑） */
 #pn1 .pn-panel-scroll > .wrap > .diagram-html.pain-grid,
@@ -691,7 +691,7 @@ small{ font-size:var(--t-cap); }
 #pn1 .pain-row{padding:24px 34px;min-height:0}
 #pn1 .pain-left{flex:2.2;padding:0;gap:22px}
 #pn1 .pain-consequence{flex:0 0 420px;padding:24px 30px}
-#pn1 .pain-num{font-size:38px;width:1.1em;letter-spacing:0}
+#pn1 .pain-num{font-size:44px;width:1.1em;letter-spacing:0}
 #pn1 .pain-footer{margin-top:22px;flex:none}
 
 /* E. pn2 六步流程：3×2 网格，两段轨道随屏高分配 */
@@ -711,33 +711,33 @@ small{ font-size:var(--t-cap); }
 #pn4 .metric{padding:32px 38px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;justify-content:center}
 #pn4 .metric:nth-child(2n){border-right:none}
 #pn4 .metric:nth-child(n+3){border-bottom:none}
-#pn4 .metric .v{font-size:52px;margin-bottom:12px}
+#pn4 .metric .v{font-size:62px;margin-bottom:12px}
 #pn4 .metric .l{margin-top:0;line-height:1.5}
 #pn4 .cmp-table td{padding-top:16px;padding-bottom:16px}
 #pn5 .metrics{flex:none}
 
 /* G. 注释行：紧贴内容 + 投影档字号 */
 .pain-footer,.flow-remark,.sustain-bottom,.cover-converge,.flow-3db-converge{margin-top:20px;flex:none}
-.pain-footer{font-size:15px}
+.pain-footer{font-size:20px}
 
 /* H. pn3 说明块 / pn7 下一阶段：长句改短标签，每卡一行说明 */
 #why-not-llm{margin-top:22px !important;flex:none}
 #why-not-llm .why-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-#why-not-llm .why-item{background:var(--surface);border:1px solid var(--line);border-left:var(--bw-bar) solid var(--accent);border-radius:var(--r-md);padding:18px 22px;font-size:16px;color:var(--muted);line-height:1.5}
-#why-not-llm .why-item b{display:block;font-size:19px;color:var(--text);margin-bottom:6px}
+#why-not-llm .why-item{background:var(--surface);border:1px solid var(--line);border-left:var(--bw-bar) solid var(--accent);border-radius:var(--r-md);padding:18px 22px;font-size:21px;color:var(--muted);line-height:1.5}
+#why-not-llm .why-item b{display:block;font-size:25px;color:var(--text);margin-bottom:6px}
 #next-stage{margin-top:22px !important;flex:none}
 #next-stage .next-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 #next-stage .next-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:16px 20px;display:flex;flex-direction:column;gap:6px;min-width:0}
-#next-stage .next-item b{font-size:19px;color:var(--text)}
-#next-stage .next-item span{font-size:15.5px;color:var(--muted);line-height:1.45}
-#next-stage .next-item i{font-size:14px;color:var(--accent);font-style:normal;font-weight:700}
+#next-stage .next-item b{font-size:25px;color:var(--text)}
+#next-stage .next-item span{font-size:20px;color:var(--muted);line-height:1.45}
+#next-stage .next-item i{font-size:18px;color:var(--accent);font-style:normal;font-weight:700}
 
 /* I. pn0 视频演示：套同一骨架，演示区吃掉剩余高度 */
 #pn0 .pn-panel-scroll{--vhx:1;display:flex;flex-direction:column}
 #pn0 .pn-panel-scroll > .wrap{display:flex;flex-direction:column;margin:0 auto;width:100%;flex:1 1 auto;max-width:1680px;padding:calc(var(--nav-h) + 34px) 44px 46px !important}
 #pn0 .sec-head{flex:none;margin-bottom:30px}
-#pn0 .sec-head h2{font-size:54px;line-height:1.12;margin-bottom:14px}
-#pn0 .sec-head p{font-size:21px;line-height:1.55}
+#pn0 .sec-head h2{font-size:68px;line-height:1.12;margin-bottom:14px}
+#pn0 .sec-head p{font-size:26px;line-height:1.5}
 #pn0 .demo-stage{flex:1 1 auto;min-height:0}
 #pn0 .demo-stage > div:last-child{display:flex;flex-direction:column;min-height:0}
 #pn0 .demo-panel.on{display:flex;flex-direction:column;flex:1 1 auto;min-height:0}
@@ -759,7 +759,7 @@ small{ font-size:var(--t-cap); }
 #pn5 .sf-row{flex:1 1 auto;min-height:0}
 #pn5 .sf-card{display:flex;flex-direction:column}
 #pn5 .sf-card ul{flex:1 1 auto;display:flex;flex-direction:column;justify-content:space-evenly;gap:0}
-#pn5 .sf-card li{margin-bottom:0;padding:18px 0;border-top:1px dashed var(--line);font-size:17px;line-height:1.5}
+#pn5 .sf-card li{margin-bottom:0;padding:18px 0;border-top:1px dashed var(--line);font-size:22px;line-height:1.5}
 #pn5 .sf-card li:first-child{border-top:none}
 
 /* K. v6.1：版心加宽后收尾 —— pn3 去重叠 + 间距收紧 + pn1 代价列加宽 */
@@ -773,6 +773,29 @@ small{ font-size:var(--t-cap); }
 #pn1 .pain-consequence{flex:0 0 560px}
 
 #pn1 .pain-result{flex:1;text-align:right}
+
+/* ===== 投屏字号放大（09-18）连带补偿：内容最密的两屏收紧纵向间距，避免块间重叠 ===== */
+#pn5.pn-panel:not(#pnHero) .sf-card{flex:1 1 0;min-width:0}
+#pn5 .sf-card li{padding:12px 0}
+/* pn4 细节修正（09-18）：小字两行换行均衡 + 四格文字等高 + 消除整屏 22px 溢出 */
+#pn4 .metric .l{text-wrap:balance;min-height:3em}
+.nw{white-space:nowrap}
+#pn4 .metric{padding:24px 38px}
+#pn4.pn-panel:not(#pnHero) .pn-panel-scroll > .wrap > .sec-head:first-child{margin-bottom:16px !important}
+#pn4 .sol-block{margin-top:12px}
+#pn4 .metric .v{font-size:56px;margin-bottom:8px}
+#pn3.pn-panel:not(#pnHero) .pn-panel-scroll > .wrap{padding-top:88px !important;padding-bottom:12px !important}
+#pn3.pn-panel:not(#pnHero) .sec-head{margin-bottom:6px !important}
+#pn3.pn-panel:not(#pnHero) .pn-panel-scroll > .wrap > .reveal{flex:0 0 auto;min-height:auto}
+#pn3.pn-panel:not(#pnHero) .pn-panel-scroll > .wrap > .sol-block{flex:0 0 auto;margin-top:2px !important}
+#pn3 .flow-lane{padding:6px 14px}
+#pn3 .flow-lane-hd{margin-bottom:4px}
+#pn3 .flow-step{padding:4px 10px;margin-bottom:5px}
+#pn3 .flow-arrow-d{margin:0}
+#pn3 .flow-connect-line{margin-bottom:0}
+#pn3 .flow-result{padding:6px 30px;margin:4px auto 0}
+#pn3 .flow-remark{margin-top:0}
+#pn3 .flow-ssub{font-size:var(--t-cap);line-height:1.25}
 </style>
 
 
@@ -1134,8 +1157,8 @@ small{ font-size:var(--t-cap); }
       <div class="sol-tag">量化价值呈现</div>
       <div class="metrics">
         <div class="metric"><div class="v">30 分钟 → 1 分钟</div><div class="l">4 家 × 10 个仓点完整查价比价 · 预计省 29 分钟/票 ≈ 193 小时/年</div></div>
-        <div class="metric"><div class="v"><span class="accent">9,510</span> 次</div><div class="l">线上查价 · 自 8 月起稳定运行 · 12 位业务同事在用 · 457 次企微询价 · 72 份价格对比表</div></div>
-        <div class="metric"><div class="v">预计 +230 元/票</div><div class="l">全库最低价拓宽空间 · 预计 400 票/年 ≈ 9.2 万元</div></div>
+        <div class="metric"><div class="v"><span class="accent">9,510</span> 次</div><div class="l">线上查价 · 自 8 月起稳定运行 · <span class="nw">12 位业务同事在用</span> · 457 次企微询价 · 72 份价格对比表</div></div>
+        <div class="metric"><div class="v">78.9% → 99.8%</div><div class="l">最低价捕捉率 · 含底价 / 比重优惠 / <span class="nw">报关费</span> / 附加费 · <span class="nw">高压模拟真实人工报价环境</span></div></div>
         <div class="metric"><div class="v">4 家 → 25 家</div><div class="l">比价广度 · 凭经验挑 4 家 → 全库 25 家（91,930 条底价）</div></div>
       </div>
     </div>
@@ -1168,7 +1191,7 @@ small{ font-size:var(--t-cap); }
         </tbody>
     </table>
     <div class="pain-footer">以前做不到或很难做的，现在一条命令就完成</div>
-      <div class="pain-footer" style="margin-top:8px;font-size:15px;opacity:.75">36 毫秒为单次查价响应，与人工「看仓点价」11.5 秒/仓非同一工作量，不作直接换算</div>
+      <div class="pain-footer" style="margin-top:8px;font-size:20px;opacity:.75">36 毫秒为单次查价响应，与人工「看仓点价」11.5 秒/仓非同一工作量，不作直接换算</div>
 </div>
     </div>
 
