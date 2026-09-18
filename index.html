@@ -1936,16 +1936,23 @@ initFromHashFromLocation();
 <script>
 /* 一屏不滚：二分求「刚好放得下」的最大间距系数（只缩间距，字号一律不动） */
 (function(){
-  /* 精确出屏量：叶节点底部超出视口底部的最大像素（catch flex 压缩后 overflow:visible 的隐藏溢出） */
-  function outOver(sc){
-    var r0=sc.getBoundingClientRect(), m=0, els=sc.querySelectorAll('*');
+  /* 溢出实测：叶节点越出「滚动容器底部」或被最近 hidden/clip 祖先裁掉的最大像素 */
+  function overflowPx(sc){
+    var CLIP_TOL=8;  /* 卡片圆角/内距造成的次要裁切给 8px 容差，避免为几像素触发整体缩放 */
+    var m=0, r0=sc.getBoundingClientRect(), els=sc.querySelectorAll('*'), top=sc.parentElement;
     for(var i=0;i<els.length;i++){
       var e=els[i];
-      if(e.tagName==='SCRIPT'||e.tagName==='STYLE'||e.children.length) continue;
-      if(!e.textContent||!e.textContent.trim()) continue;
-      var B=e.getBoundingClientRect();
-      if(B.height<=0) continue;
-      if(B.bottom>r0.bottom+2) m=Math.max(m,B.bottom-r0.bottom);
+      if(e.children.length||!e.textContent||!e.textContent.trim()) continue;
+      var B=e.getBoundingClientRect(); if(B.height<=0) continue;
+      var lim=r0.bottom, clipped=false, a=e.parentElement;
+      while(a && a!==top){
+        var ov=getComputedStyle(a).overflowY;
+        if(ov==='hidden'||ov==='clip'){ var A=a.getBoundingClientRect(); if(A.bottom<lim){ lim=A.bottom; clipped=true; } }
+        a=a.parentElement;
+      }
+      var d=B.bottom-lim; if(d<=0) continue;
+      if(clipped) d-=CLIP_TOL;
+      if(d>m) m=d;
     }
     return m;
   }
@@ -1958,9 +1965,9 @@ initFromHashFromLocation();
       w.style.zoom='';
       var avail=sc.clientHeight;
       if(avail<=0) continue;
-      var over=function(){ return Math.max(sc.scrollHeight-sc.clientHeight, w.scrollHeight-w.clientHeight); };
+      function over(){ return Math.max(sc.scrollHeight-sc.clientHeight, w.scrollHeight-w.clientHeight, overflowPx(sc)); }
       w.style.setProperty('--vhx','1');
-      if(over()<=SAFE && outOver(sc)<=2) continue;
+      if(over()<=SAFE) continue;
       var lo=0.3, hi=1, mid, i;
       for(i=0;i<14;i++){
         mid=(lo+hi)/2;
@@ -1968,10 +1975,10 @@ initFromHashFromLocation();
         if(over()<=SAFE){ hi=mid; } else { lo=mid; }
       }
       w.style.setProperty('--vhx',hi.toFixed(4));
-      /* 间距缩到极限仍放不下 → 整体等比缩小（保证一屏不滚、不出屏） */
-      for(var z=0; z<10; z++){
-        var need=Math.max(over(), outOver(sc));
-        if(need<=0) break;              /* zoom 阶段必须收到 0px 溢出 */
+      /* 间距缩到极限仍放不下 → 整体等比缩小（保证一屏不滚、不出屏、卡片不裁字） */
+      for(var z=0; z<12; z++){
+        var need=over();
+        if(need<=0) break;
         var base=sc.clientHeight;
         if(base<=0) break;
         var k=(base-1)/(base+need);
