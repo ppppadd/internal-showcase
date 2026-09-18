@@ -1936,24 +1936,51 @@ initFromHashFromLocation();
 <script>
 /* 一屏不滚：二分求「刚好放得下」的最大间距系数（只缩间距，字号一律不动） */
 (function(){
+  /* 精确出屏量：叶节点底部超出视口底部的最大像素（catch flex 压缩后 overflow:visible 的隐藏溢出） */
+  function outOver(sc){
+    var r0=sc.getBoundingClientRect(), m=0, els=sc.querySelectorAll('*');
+    for(var i=0;i<els.length;i++){
+      var e=els[i];
+      if(e.tagName==='SCRIPT'||e.tagName==='STYLE'||e.children.length) continue;
+      if(!e.textContent||!e.textContent.trim()) continue;
+      var B=e.getBoundingClientRect();
+      if(B.height<=0) continue;
+      if(B.bottom>r0.bottom+2) m=Math.max(m,B.bottom-r0.bottom);
+    }
+    return m;
+  }
   function fit(){
     var list=document.querySelectorAll('.pn-panel-scroll');
+    var SAFE=6; /* 安全余量：留 6px 防亚像素取整 */
     for(var n=0;n<list.length;n++){
       var sc=list[n], w=sc.querySelector('.wrap');
       if(!w) continue;
+      w.style.zoom='';
       var avail=sc.clientHeight;
+      if(avail<=0) continue;
+      var over=function(){ return Math.max(sc.scrollHeight-sc.clientHeight, w.scrollHeight-w.clientHeight); };
       w.style.setProperty('--vhx','1');
-      if(w.scrollHeight<=avail+2) continue;
-      var lo=0.5, hi=1, mid, i;
-      for(i=0;i<9;i++){
+      if(over()<=SAFE && outOver(sc)<=2) continue;
+      var lo=0.3, hi=1, mid, i;
+      for(i=0;i<14;i++){
         mid=(lo+hi)/2;
         w.style.setProperty('--vhx',mid.toFixed(4));
-        if(w.scrollHeight<=avail+1){ hi=mid; } else { lo=mid; }
+        if(over()<=SAFE){ hi=mid; } else { lo=mid; }
       }
       w.style.setProperty('--vhx',hi.toFixed(4));
+      /* 间距缩到极限仍放不下 → 整体等比缩小（保证一屏不滚、不出屏） */
+      for(var z=0; z<10; z++){
+        var need=Math.max(over(), outOver(sc));
+        if(need<=0) break;              /* zoom 阶段必须收到 0px 溢出 */
+        var base=sc.clientHeight;
+        if(base<=0) break;
+        var k=(base-1)/(base+need);
+        var cur=parseFloat(w.style.zoom||'1');
+        w.style.zoom=(cur*k).toFixed(4);
+      }
     }
   }
-  function schedule(){ clearTimeout(window.__ft2); window.__ft2=setTimeout(fit,120); }
+  function schedule(){ clearTimeout(window.__ft2); window.__ft2=setTimeout(fit,40); }
   window.__fit=fit;
   if(document.readyState!=='loading') fit(); else document.addEventListener('DOMContentLoaded',fit);
   window.addEventListener('load',fit);
