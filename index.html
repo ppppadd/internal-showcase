@@ -694,14 +694,14 @@ small{ font-size:var(--t-cap); }
 #pn1 .pain-num{font-size:44px;width:1.1em;letter-spacing:0}
 #pn1 .pain-footer{margin-top:22px;flex:none}
 
-/* E. pn2 六步流程：3×2 网格，两段轨道随屏高分配 */
-#pn2 .fg-stripes{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:12px}
-#pn2 .fg-stripes-2{margin-top:20px}
-#pn2 .fm-track{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 26px;margin-bottom:22px;flex:1 1 auto;background-size:calc(100% - 150px) 3px}
+/* E. pn2 六步流程：3 阶段 × 2 列（无引导线，每阶段自带水平轨道） */
+#pn2 .fg-stripes{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:10px}
+#pn2 .fg-stripes-2{margin-top:14px}
+#pn2 .fm-track{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 26px;margin-bottom:0;flex:0 1 auto;background-size:calc(100% - 200px) 3px}
 #pn2 .fm-col{display:flex;flex-direction:column;justify-content:center}
 #pn2 .fm-above,#pn2 .fm-below{height:auto;min-height:0;padding:0;align-items:center}
-#pn2 .fm-above{margin-bottom:14px}
-#pn2 .fm-below{margin-top:14px}
+#pn2 .fm-above{margin-bottom:8px}
+#pn2 .fm-below{margin-top:8px}
 #pn2 .fm-monitor{margin-top:0;flex:none}
 #pn2 .sol-tag{margin-bottom:18px;flex:none}
 
@@ -1003,7 +1003,7 @@ small{ font-size:var(--t-cap); }
     <div class="sol-block reveal" id="sol-flow">
       <div class="sol-tag">全流程模拟 · 一条「LAX9 · 200kg · 普船卡派」从入库到出价</div>
       <div class="fg-stripes">
-        <span class="fg-stripe" style="grid-column:span 3">阶段一 · 数据进来（入库 + 两道校验）</span>
+        <span class="fg-stripe" style="grid-column:span 2">阶段一 · 数据进来（入库 + 归类映射）</span>
       </div>
       <div class="fm-track">
         <div class="fm-col">
@@ -1012,34 +1012,38 @@ small{ font-size:var(--t-cap); }
           <div class="fm-below">防错｜结构变了先阻断，不猜着入库</div>
         </div>
         <div class="fm-col">
-          <div class="fm-above">渠道比对标准归类表，仓码比对白名单</div>
-          <div class="fm-node"><span class="fm-dot">2</span>准入拦截</div>
-          <div class="fm-below">防错｜不合规直接退件，出具准入清单</div>
+          <div class="fm-above">渠道比对标准归类表，仓点 / 地区 / 第三方仓逐项映射</div>
+          <div class="fm-node"><span class="fm-dot">2</span>渠道与仓点归一</div>
+          <div class="fm-below">口径｜20 多种叫法归到 11 个标准渠道</div>
+        </div>
+      </div>
+      <div class="fg-stripes fg-stripes-2">
+        <span class="fg-stripe" style="grid-column:span 2">阶段二 · 把关（准入拦截 + 逐格对账）</span>
+      </div>
+      <div class="fm-track">
+        <div class="fm-col">
+          <div class="fm-above">仓码比对白名单，不合规直接退件</div>
+          <div class="fm-node"><span class="fm-dot">3</span>准入拦截</div>
+          <div class="fm-below">防错｜出具准入清单，退件不留隐患</div>
         </div>
         <div class="fm-col">
           <div class="fm-above">真值解析 vs 提取结果 vs 库内，逐格对账</div>
-          <div class="fm-node"><span class="fm-dot">3</span>逐格对账</div>
+          <div class="fm-node"><span class="fm-dot">4</span>逐格对账</div>
           <div class="fm-below">关卡｜一格不一致即阻断，全过才放行</div>
         </div>
       </div>
       <div class="fg-stripes fg-stripes-2">
-        <span class="fg-stripe">阶段二 · 归一</span>
-        <span class="fg-stripe" style="grid-column:span 2">阶段三 · 报价出去（比价 + 出价）</span>
+        <span class="fg-stripe" style="grid-column:span 2">阶段三 · 报价出去（要素整理 + 比价出价）</span>
       </div>
       <div class="fm-track">
         <div class="fm-col">
-          <div class="fm-above">20 多种叫法归到 11 个标准渠道</div>
-          <div class="fm-node"><span class="fm-dot">4</span>渠道与仓点归一</div>
-          <div class="fm-below">口径｜查「深圳」自动含「福永 / 坂田」</div>
-        </div>
-        <div class="fm-col">
-          <div class="fm-above">同口径取最低档位、多仓逐仓择优</div>
-          <div class="fm-node"><span class="fm-dot">5</span>一键比价 25 家</div>
+          <div class="fm-above">截图 / 文字识别仓码、重量、方数 → 要素对齐</div>
+          <div class="fm-node"><span class="fm-dot">5</span>要素整理</div>
           <div class="fm-below">口径｜公斤与按方两套绝不混算</div>
         </div>
         <div class="fm-col">
-          <div class="fm-above">OCR 识别仓码 / 重量 / 方数 → 底价 + 附加费</div>
-          <div class="fm-node"><span class="fm-dot">6</span>截图即出价</div>
+          <div class="fm-above">同口径取最低档位、多仓逐仓择优</div>
+          <div class="fm-node"><span class="fm-dot">6</span>一键比价 25 家</div>
           <div class="fm-below">产出｜五要素齐全的报价单</div>
         </div>
       </div>
