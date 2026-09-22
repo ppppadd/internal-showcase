@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="data:,">
-  <title>海盟 · 跨境物流智能询报价系统</title>
+  <title>FreightGo · 跨境物流智能询报价系统</title>
   <style>:root{
   --nav-h:64px;
   /* ── 导航毛玻璃（Apple 风 · 高纯度透明）── */
@@ -796,24 +796,94 @@ small{ font-size:var(--t-cap); }
 #pn3 .flow-result{padding:6px 30px;margin:4px auto 0}
 #pn3 .flow-remark{margin-top:0}
 #pn3 .flow-ssub{font-size:var(--t-cap);line-height:1.25}
+
+
+/* PROTO-CSS-START */
+.proto-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:22px;align-items:stretch}
+.proto-card{position:relative;display:flex;flex-direction:column;gap:14px;padding:22px;background:var(--card-bg);border:1px solid var(--frame-line);border-radius:var(--r-card,20px);box-shadow:var(--shadow);min-width:0}
+.proto-card>input{position:absolute;top:0;left:0;width:0;height:0;opacity:0;pointer-events:none}
+.proto-head{display:flex;align-items:center;gap:10px}
+.proto-head h3{margin:0;font-size:var(--t-h4);font-weight:600;color:var(--text);letter-spacing:-.01em}
+.proto-step{font-size:var(--t-cap);font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.proto-tag{margin-left:auto;font-size:16px;line-height:1;color:var(--muted-2);border:1px solid var(--frame-line);border-radius:999px;padding:5px 11px;white-space:nowrap}
+.proto-chips{display:flex;flex-wrap:wrap;gap:8px}
+.proto-chips label{font-size:17px;line-height:1;padding:8px 14px;border-radius:999px;border:1px solid var(--frame-line);background:var(--surface-2);color:var(--muted);cursor:pointer;user-select:none;transition:background .25s var(--ease-apple),color .25s var(--ease-apple),border-color .25s var(--ease-apple),transform .18s var(--ease-apple)}
+.proto-chips label:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+#p1a:checked~.proto-chips label[for="p1a"],#p1b:checked~.proto-chips label[for="p1b"],#p1c:checked~.proto-chips label[for="p1c"],
+#p2a:checked~.proto-chips label[for="p2a"],#p2b:checked~.proto-chips label[for="p2b"],#p2c:checked~.proto-chips label[for="p2c"],
+#p3a:checked~.proto-chips label[for="p3a"],#p3b:checked~.proto-chips label[for="p3b"],#p3c:checked~.proto-chips label[for="p3c"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.proto-out{position:relative;flex:1 1 auto;min-height:0;margin-top:2px}
+.proto-out .o{display:none;flex-direction:column;gap:9px;animation:protoIn .32s var(--ease-apple) both}
+@keyframes protoIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+#p1a:checked~.proto-out .o-a,#p1b:checked~.proto-out .o-b,#p1c:checked~.proto-out .o-c,
+#p2a:checked~.proto-out .o-a,#p2b:checked~.proto-out .o-b,#p2c:checked~.proto-out .o-c,
+#p3a:checked~.proto-out .o-a,#p3b:checked~.proto-out .o-b,#p3c:checked~.proto-out .o-c{display:flex}
+.prow{display:flex;align-items:baseline;gap:10px;padding:11px 14px;border-radius:12px;background:var(--fill-soft);border:1px solid var(--fill-soft-line)}
+.pch{font-size:19px;font-weight:600;color:var(--text)}
+.pwt{font-size:16px;color:var(--muted-2);font-variant-numeric:tabular-nums}
+.pprice{margin-left:auto;font-size:26px;font-weight:700;color:var(--accent-ink);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.pprice i{font-size:15px;font-weight:500;font-style:normal;color:var(--muted-2);margin-left:2px}
+.pmeta{font-size:16px;color:var(--muted);padding:0 2px}
+.prow.low{background:#FEF7E6;border-color:#F5D98B}
+.prow.low .pprice{color:#B7791F}
+.bar{display:flex;align-items:center;gap:10px}
+.bname{flex:0 0 82px;font-size:16px;color:var(--muted)}
+.btrack{flex:1 1 auto;height:14px;border-radius:999px;background:var(--surface-2);overflow:hidden;min-width:0}
+.btrack i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-ink));animation:protoBar .55s var(--ease-apple) both}
+.btrack i.gold{background:linear-gradient(90deg,#F7C948,#E9A319)}
+@keyframes protoBar{from{width:0!important}}
+.bval{flex:0 0 58px;text-align:right;font-size:18px;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums}
+.bval.gold{color:#B7791F}
+.bflag{flex:0 0 auto;font-size:14px;font-weight:600;color:#fff;background:#E9A319;border-radius:6px;padding:3px 7px;line-height:1}
+.score{display:flex;align-items:center;gap:10px}
+.sname{flex:0 0 96px;font-size:16px;color:var(--muted)}
+.strack{flex:1 1 auto;height:10px;border-radius:999px;background:var(--surface-2);overflow:hidden;min-width:0}
+.strack i{display:block;height:100%;border-radius:999px;background:var(--accent);animation:protoBar .55s var(--ease-apple) both}
+.sval{flex:0 0 42px;text-align:right;font-size:17px;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums}
+.sumbox{display:flex;align-items:center;gap:12px;margin-top:2px;padding:10px 14px;border-radius:12px;background:var(--accent-soft);border:1px solid var(--accent-soft-2)}
+.sumbox b{font-size:28px;font-weight:700;color:var(--accent-ink);font-variant-numeric:tabular-nums}
+.sumbox span{font-size:16px;color:var(--muted)}
+.proto-note{margin-top:18px;text-align:center;font-size:17px;color:var(--muted-2)}
+@media (max-width:1180px){.proto-grid{grid-template-columns:1fr;gap:16px}}
+/* PROTO-CSS-END */
+/* ROLE-CSS-START */
+#pn9 .role-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:26px;margin-top:6px}
+#pn9 .role-col{display:flex;flex-direction:column;gap:13px}
+#pn9 .role-col-h{font-size:calc(var(--t-cap) * .82);letter-spacing:.16em;color:var(--muted);font-weight:700}
+#pn9 .role-item{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px 20px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;box-shadow:var(--shadow)}
+#pn9 .role-item .n{font-size:calc(var(--t-cap) * .74);font-weight:700;color:var(--accent-ink);background:var(--accent-soft);border-radius:9px;padding:4px 10px;line-height:1.45;white-space:nowrap}
+#pn9 .role-item b{display:block;font-size:var(--t-body);font-weight:650;color:var(--text);margin-bottom:7px}
+#pn9 .role-item p{margin:0;font-size:calc(var(--t-cap) * .86);line-height:1.55;color:var(--muted)}
+#pn9 .stack{display:flex;flex-wrap:wrap;gap:8px}
+#pn9 .stack span{font-size:calc(var(--t-cap) * .8);padding:6px 13px;border-radius:999px;background:var(--surface-2);border:1px solid var(--line);color:var(--text)}
+#pn9 .role-foot{margin-top:16px;padding:16px 22px;border-radius:14px;background:var(--accent-soft);border:1px solid var(--fill-soft-line);font-size:calc(var(--t-cap) * .88);line-height:1.55;color:var(--text)}
+#pn9 .role-foot b{color:var(--accent-ink)}
+.demo-entry{display:flex;align-items:center;gap:22px;margin-top:20px;padding:18px 24px;border:1px solid var(--line);border-radius:16px;background:var(--surface);box-shadow:var(--shadow)}
+.demo-entry img{width:108px;height:108px;border-radius:12px;background:#fff;padding:6px;border:1px solid var(--line);flex:0 0 auto;image-rendering:pixelated}
+.demo-entry .de-t{display:flex;flex-direction:column;gap:7px;min-width:0}
+.demo-entry .de-t b{font-size:var(--t-h4);font-weight:650;color:var(--text)}
+.demo-entry .de-t span{font-size:calc(var(--t-cap) * .86);line-height:1.5;color:var(--muted)}
+.demo-entry .de-link{font-size:calc(var(--t-cap) * .86);color:var(--accent-ink);text-decoration:none;border-bottom:1px solid currentColor;align-self:flex-start;padding-bottom:1px}
+.demo-entry .de-link:hover{color:#0058B0}
+@media (max-width:860px){#pn9 .role-grid{grid-template-columns:1fr}.demo-entry{flex-direction:column;align-items:flex-start}}
+/* ROLE-CSS-END */
 </style>
 
 
-<script>try{document.documentElement.setAttribute("data-navinit",/^#pn[0-7]$/.test(location.hash)?"panel":"hero")}catch(e){}</script>
+<script>try{document.documentElement.setAttribute("data-navinit",/^#pn\d+$/.test(location.hash)?"panel":"hero")}catch(e){}</script>
 </head>
 <body>
 <nav class="pn-nav nav-clear" id="pnNav">
   <div class="pn-nav-inner">
-    <div class="pn-nav-logo" id="pnLogo" tabindex="0" role="button" aria-label="打开封面页"><img class="logo-mark" src="assets/showcase-logo.png" alt="海盟" width="28" height="28">海盟</div>
+    <div class="pn-nav-logo" id="pnLogo" tabindex="0" role="button" aria-label="打开封面页"><span class="logo-mark" aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;background:var(--nav-accent);color:#fff;font-size:13px;font-weight:700;border-radius:8px;margin-right:9px">F</span>FreightGo</div>
     <div class="pn-nav-tabs" id="pnTabs">
-      <button class="pn-tab" data-pn="0">视频演示</button>
+      <button class="pn-tab" data-pn="8">交互原型</button>
+      <button class="pn-tab" data-pn="9">我的角色</button>
       <button class="pn-tab" data-pn="1">项目背景</button>
       <button class="pn-tab" data-pn="2">解决方案</button>
       <button class="pn-tab" data-pn="3">人机协作</button>
-      <button class="pn-tab" data-pn="4">创新成效</button>
       <button class="pn-tab" data-pn="5">复制推广</button>
       <button class="pn-tab" data-pn="6">达成目标</button>
-      <button class="pn-tab" data-pn="7">询价网页</button>
     </div>
     <div class="pn-nav-right">
       <div class="pn-counter mono" id="pnCounter">封面</div>
@@ -833,109 +903,91 @@ small{ font-size:var(--t-cap); }
   <div class="hero-overlay"></div>
   <canvas class="hero-particles" id="heroParticles" aria-hidden="true"></canvas>
   <div class="wrap hero-content">
-    <div class="eyebrow hero-enter d1">跨境物流智能询报价系统</div>
-    <h1 class="hero-enter d2">二十五家供应商，<br><span class="hl">一次命令</span>多次比价</h1>
+    <div class="eyebrow hero-enter d1">FreightGo · 跨境物流智能询报价系统</div>
+    <h1 class="hero-enter d2">多家供应商，<br><span class="hl">一次命令</span>多次比价</h1>
     <p class="hero-sub hero-enter d3">三条线底价一次拉齐，价表入库到报价出单全程可校验。</p>
     <div class="hero-cta hero-enter d4">
-      <a class="btn btn-primary" href="#pn7">看功能展示</a>
-      <a class="btn btn-ghost" href="#pn6">看真实界面</a>
+      <a class="btn btn-primary" href="https://ppppadd.github.io/freight-rfq-demo/" target="_blank" rel="noopener">看在线 Demo ↗</a>
+      <a class="btn btn-ghost" href="#pn1">看功能展示</a>
     </div>
-    <div class="hero-stats hero-enter d4">
-      <div class="hstat"><div class="v"><span class="accent" data-count="25">0</span></div><div class="l">家供应商</div></div>
-      <div class="hstat"><div class="v" data-count="91930">0</div><div class="l">条底价</div></div>
-      <div class="hstat"><div class="v" data-count="719">0</div><div class="l">个目的地</div></div>
-      <div class="hstat"><div class="v" data-count="3">0</div><div class="l">条线路</div></div>
-    </div>
+
   </div>
 </div>
     </div>
   </div>
-  <div class="pn-panel" id="pn0">
-    <div class="pn-panel-scroll">
 
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 class="reveal">视频演示 · 企业微信端六大功能</h2>
-      <p class="reveal" data-reveal-delay="1">每一段都是企业微信端的实际录屏，非效果图；演示时择要播放，其余可点开。</p>
-    </div>
-<div class="demo-stage reveal">
-      <div class="demo-nav">
-        <button class="demo-tab on" data-demo="0"><span class="ico">询</span><span><span class="dt">基础智能询价</span></span></button>
-        <button class="demo-tab" data-demo="1"><span class="ico">比</span><span><span class="dt">智能对比查价</span></span></button>
-        <button class="demo-tab" data-demo="2"><span class="ico">价</span><span><span class="dt">供应商价格对比</span></span></button>
-        <button class="demo-tab" data-demo="3"><span class="ico">评</span><span><span class="dt">供应商评分排名</span></span></button>
-        <button class="demo-tab" data-demo="4"><span class="ico">更</span><span><span class="dt">供应商价表更新</span></span></button>
-        <button class="demo-tab" data-demo="5"><span class="ico">查</span><span><span class="dt">供应商信息查询</span></span></button>
+<!-- PROTO-START -->
+<div class="pn-panel" id="pn8">
+  <div class="pn-panel-scroll">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="reveal">交互原型：点着看</h2>
+        <p class="reveal" data-reveal-delay="1">选仓点、切渠道、换供应商 —— 界面即时响应；纯前端实现，数值为示意。</p>
       </div>
-
-      <div>
-        <div class="demo-panel on" data-demop="0">
-          <div class="chat-card">
-            <div class="chat-head"><span class="avatar">宝</span><span class="who">小宝 · 询价顾问</span><span class="tag">基础智能询价</span></div>
-            <div class="chat-body">
-              <div class="video-wrap"><video muted controls playsinline preload="metadata" src="demo-quote.mp4"></video><button class="video-cover" type="button" aria-label="播放演示"><span class="vc-play"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="vc-cap">点击播放演示</span></button></div>
-              <div class="note">输入仓码+重量+品名，一次返回全渠道底价，商务只做判断</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="demo-panel" data-demop="1">
-          <div class="chat-card">
-            <div class="chat-head"><span class="avatar">宝</span><span class="who">小宝 · 询价顾问</span><span class="tag">智能对比查价</span></div>
-            <div class="chat-body">
-              <div class="video-wrap"><video muted controls playsinline preload="metadata" src="demo-price-compare-2.mp4"></video><button class="video-cover" type="button" aria-label="播放演示"><span class="vc-play"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="vc-cap">点击播放演示</span></button></div>
-              <div class="note">多仓点同时比价，逐仓返回最低价，直观排名</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="demo-panel" data-demop="2">
-          <div class="chat-card">
-            <div class="chat-head"><span class="avatar">宝</span><span class="who">小宝 · 询价顾问</span><span class="tag">供应商价格对比</span></div>
-            <div class="chat-body">
-              <div class="video-wrap"><video muted controls playsinline preload="metadata" src="demo-price-compare.mp4"></video><button class="video-cover" type="button" aria-label="播放演示"><span class="vc-play"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="vc-cap">点击播放演示</span></button></div>
-              <div class="note">ONT8 普船特惠卡派最低 6.20 元/KG（义乌进仓）· 25 家同屏比价，最低价自动标注</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="demo-panel" data-demop="3">
-          <div class="chat-card">
-            <div class="chat-head"><span class="avatar">宝</span><span class="who">小宝 · 询价顾问</span><span class="tag">供应商评分排名</span></div>
-            <div class="chat-body">
-              <div class="video-wrap"><video muted controls playsinline preload="metadata" src="demo-score.mp4"></video><button class="video-cover" type="button" aria-label="播放演示"><span class="vc-play"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="vc-cap">点击播放演示</span></button></div>
-              <div class="note">价格竞争力、渠道覆盖、仓点深度、综合竞争力四维评分</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="demo-panel" data-demop="4">
-          <div class="chat-card">
-            <div class="chat-head"><span class="avatar">宝</span><span class="who">小宝 · 询价顾问</span><span class="tag">供应商价表更新</span></div>
-            <div class="chat-body">
-              <div class="video-wrap"><video muted controls playsinline preload="metadata" src="demo-update.mp4"></video><button class="video-cover" type="button" aria-label="播放演示"><span class="vc-play"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="vc-cap">点击播放演示</span></button></div>
-              <div class="note">新价表拖入即解析入库，校验器自动对账，新旧差异一目了然</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="demo-panel" data-demop="5">
-          <div class="chat-card">
-            <div class="chat-head"><span class="avatar">宝</span><span class="who">小宝 · 询价顾问</span><span class="tag">供应商信息查询</span></div>
-            <div class="chat-body">
-              <div class="video-wrap"><video muted controls playsinline preload="metadata" src="demo-supplier.mp4"></video><button class="video-cover" type="button" aria-label="播放演示"><span class="vc-play"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span><span class="vc-cap">点击播放演示</span></button></div>
-              <div class="note">美线 16 家 · 欧英线 5 家 · 加拿大线 4 家，全维度画像随问随答</div>
-            </div>
-          </div>
+      <div class="proto-grid reveal">
+<div class="proto-card">
+  <input type="radio" name="p1" id="p1a" checked><input type="radio" name="p1" id="p1b"><input type="radio" name="p1" id="p1c">
+  <div class="proto-head"><span class="proto-step">01</span><h3>智能询价</h3><span class="proto-tag">点仓点</span></div>
+  <div class="proto-chips"><label for="p1a">仓点 A</label><label for="p1b">仓点 B</label><label for="p1c">仓点 C</label></div>
+  <div class="proto-out"><div class="o o-a"><div class="prow"><span class="pch">普船卡派</span><span class="pwt">100KG+</span><span class="pprice">6.80<i>/KG</i></span></div><div class="pmeta">预计开船后 28–35 天入仓 · 进仓 华东</div><div class="prow"><span class="pch">快船卡派</span><span class="pwt">100KG+</span><span class="pprice">9.40<i>/KG</i></span></div><div class="pmeta">预计开船后 18–22 天入仓 · 进仓 华东</div></div><div class="o o-b"><div class="prow"><span class="pch">普船卡派</span><span class="pwt">100KG+</span><span class="pprice">7.10<i>/KG</i></span></div><div class="pmeta">预计开船后 30–38 天入仓 · 进仓 华南</div><div class="prow low"><span class="pch">特惠卡派</span><span class="pwt">2CBM+</span><span class="pprice">6.95<i>/KG</i></span></div><div class="pmeta">预计开船后 32–40 天入仓 · 进仓 华南</div></div><div class="o o-c"><div class="prow"><span class="pch">海派快线</span><span class="pwt">100KG+</span><span class="pprice">8.60<i>/KG</i></span></div><div class="pmeta">预计开船后 22–28 天入仓 · 进仓 华东</div><div class="prow"><span class="pch">普船海派</span><span class="pwt">100KG+</span><span class="pprice">7.90<i>/KG</i></span></div><div class="pmeta">预计开船后 30–36 天入仓 · 进仓 华东</div></div></div>
+</div>
+<div class="proto-card">
+  <input type="radio" name="p2" id="p2a" checked><input type="radio" name="p2" id="p2b"><input type="radio" name="p2" id="p2c">
+  <div class="proto-head"><span class="proto-step">02</span><h3>多渠道比价</h3><span class="proto-tag">切渠道</span></div>
+  <div class="proto-chips"><label for="p2a">普船卡派</label><label for="p2b">快船卡派</label><label for="p2c">海派</label></div>
+  <div class="proto-out"><div class="o o-a"><div class="bar"><span class="bname">供应商 A</span><span class="btrack"><i style="width:86%"></i></span><span class="bval">6.80</span></div><div class="bar"><span class="bname">供应商 B</span><span class="btrack"><i style="width:94%"></i></span><span class="bval">7.40</span></div><div class="bar"><span class="bname">供应商 C</span><span class="btrack"><i class="gold" style="width:78%"></i></span><span class="bval gold">6.95</span><span class="bflag">最低</span></div><div class="bar"><span class="bname">供应商 D</span><span class="btrack"><i style="width:90%"></i></span><span class="bval">7.05</span></div><div class="pmeta">同口径取最低档位 · 只取该仓最低价</div></div><div class="o o-b"><div class="bar"><span class="bname">供应商 A</span><span class="btrack"><i style="width:92%"></i></span><span class="bval">9.40</span></div><div class="bar"><span class="bname">供应商 B</span><span class="btrack"><i class="gold" style="width:80%"></i></span><span class="bval gold">8.75</span><span class="bflag">最低</span></div><div class="bar"><span class="bname">供应商 C</span><span class="btrack"><i style="width:96%"></i></span><span class="bval">9.90</span></div><div class="bar"><span class="bname">供应商 D</span><span class="btrack"><i style="width:88%"></i></span><span class="bval">9.10</span></div><div class="pmeta">快船单列对比 · 不与普船混算</div></div><div class="o o-c"><div class="bar"><span class="bname">供应商 A</span><span class="btrack"><i style="width:90%"></i></span><span class="bval">8.60</span></div><div class="bar"><span class="bname">供应商 B</span><span class="btrack"><i style="width:84%"></i></span><span class="bval">7.90</span></div><div class="bar"><span class="bname">供应商 C</span><span class="btrack"><i class="gold" style="width:76%"></i></span><span class="bval gold">7.35</span><span class="bflag">最低</span></div><div class="bar"><span class="bname">供应商 D</span><span class="btrack"><i style="width:88%"></i></span><span class="bval">8.20</span></div><div class="pmeta">海派按分区计费 · 分区不同单价不同</div></div></div>
+</div>
+<div class="proto-card">
+  <input type="radio" name="p3" id="p3a" checked><input type="radio" name="p3" id="p3b"><input type="radio" name="p3" id="p3c">
+  <div class="proto-head"><span class="proto-step">03</span><h3>供应商评分</h3><span class="proto-tag">换供应商</span></div>
+  <div class="proto-chips"><label for="p3a">供应商 A</label><label for="p3b">供应商 B</label><label for="p3c">供应商 C</label></div>
+  <div class="proto-out"><div class="o o-a"><div class="score"><span class="sname">价格竞争力</span><span class="strack"><i style="width:92%"></i></span><span class="sval">92</span></div><div class="score"><span class="sname">渠道覆盖</span><span class="strack"><i style="width:86%"></i></span><span class="sval">86</span></div><div class="score"><span class="sname">仓点深度</span><span class="strack"><i style="width:78%"></i></span><span class="sval">78</span></div><div class="score"><span class="sname">时效稳定</span><span class="strack"><i style="width:83%"></i></span><span class="sval">83</span></div><div class="sumbox"><b>85.4</b><span>综合竞争力 · 入库即重算</span></div></div><div class="o o-b"><div class="score"><span class="sname">价格竞争力</span><span class="strack"><i style="width:96%"></i></span><span class="sval">96</span></div><div class="score"><span class="sname">渠道覆盖</span><span class="strack"><i style="width:72%"></i></span><span class="sval">72</span></div><div class="score"><span class="sname">仓点深度</span><span class="strack"><i style="width:68%"></i></span><span class="sval">68</span></div><div class="score"><span class="sname">时效稳定</span><span class="strack"><i style="width:80%"></i></span><span class="sval">80</span></div><div class="sumbox"><b>79.2</b><span>综合竞争力 · 入库即重算</span></div></div><div class="o o-c"><div class="score"><span class="sname">价格竞争力</span><span class="strack"><i style="width:74%"></i></span><span class="sval">74</span></div><div class="score"><span class="sname">渠道覆盖</span><span class="strack"><i style="width:94%"></i></span><span class="sval">94</span></div><div class="score"><span class="sname">仓点深度</span><span class="strack"><i style="width:90%"></i></span><span class="sval">90</span></div><div class="score"><span class="sname">时效稳定</span><span class="strack"><i style="width:88%"></i></span><span class="sval">88</span></div><div class="sumbox"><b>86.7</b><span>综合竞争力 · 入库即重算</span></div></div></div>
+</div>
+      </div>
+      <div class="proto-note reveal">以上为可点交互原型（纯 CSS 实现）；真实系统读取底价库与规则库，输出可逐条对账的报价单。</div>
+<!-- DEMOENTRY-START -->
+      <div class="demo-entry reveal">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAV4AAAFeAQMAAAD35eVZAAAABlBMVEUKDhb////OAAqZAAACAElEQVR42u2by23EMAxEibgAl+TWXZILMMCsRVJDAzkkl2AEjA7GfnTSW5IzFNf89+s2bWbcfFou92tzP/fn82t8srkdny259vvL/rC0+X82WyIbLAsefgcPt/xFnCJIS/C2AAWC5xN+tvcwFcEFCD5Z9JM2vVKpi+ByBD8vjiqBgfHcRXCdOvg8IgYRjVBGIkhL8BWNPz2kRbkJtlVu4pNKkUVbRdTRcRKs6tdlaD0gZx5nqKOjrYPhHKZ0SR8/onHAu6Rk+AmWFg0ZGlr0fktTEeR1E9F/OcbjCtVi0KJVFkWQV4uGID26c8i3rSyKILGSCRk6XGDql2qynSiGUjLMWbSl0iFN3VtftFyHCLL6wXkfdc18esFSmAjSZ9EhPqczrPADwfxWBIljMGj1yCs3EddOUjL8buLVmOktmsIoJcOdRUOG1iUhuqFpKdL06+i4/WA1tW2q0vfYjAjSEty8GQmUwNmimflUR8erZA5HP/tuVj9LoGKQvScDBVqXEdscsGjSVEdHqkW90xqW4ihhU0sEqbNoLTgH3E0E3+yV6uhotSgqYr3dqjGDQVIRZM6iGAt9t0nz8t6kRcl7Mhiux1hFX+rJrEEQtn5+0S7v5SbWIAhHj3HtOW+ho1ugDsJN4HK3JtlEkF+LzrlDy253Nbpv3Q+u4Af1f9gVN38DFM1oKXc+y6QAAAAASUVORK5CYII=" alt="扫码打开在线 Demo" width="108" height="108">
+        <div class="de-t">
+          <b>在线 Demo</b>
+          <span>扫码或点链接，打开完整可交互的演示系统（虚拟数据）：可直接点仓点、切渠道、看比价与供应商评分。</span>
+          <a class="de-link mono" href="https://ppppadd.github.io/freight-rfq-demo/" target="_blank" rel="noopener">ppppadd.github.io/freight-rfq-demo/ ↗</a>
         </div>
       </div>
+<!-- DEMOENTRY-END -->
     </div>
   </div>
-  <!-- 放大弹窗 -->
-
-
+</div>
+<!-- PROTO-END -->
+<!-- ROLE-START -->
+<div class="pn-panel" id="pn9">
+  <div class="pn-panel-scroll">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="reveal">我在项目里的角色与技术栈</h2>
+        <p class="reveal" data-reveal-delay="1">从业务痛点到能上线的系统：需求、数据、AI、工程四段都自己走了一遍。</p>
+      </div>
+      <div class="role-grid reveal">
+        <div class="role-col">
+          <div class="role-col-h">角色 · 我做了什么</div>
+          <div class="role-item"><span class="n">01</span><div><b>业务侧 · 定义问题</b><p>把「查价慢 / 比价难 / 报价乱」拆成可验收的功能与口径：查询秒级返回、比价结果与底价逐格一致、报价单可逐条溯源。</p></div></div>
+          <div class="role-item"><span class="n">02</span><div><b>数据侧 · 定模型</b><p>设计「供应商 × 渠道 × 仓点 × 重量段」四维报价模型；生产 / 测试 / 档案三库分离，原始渠道名与进仓点保真留存。</p></div></div>
+          <div class="role-item"><span class="n">03</span><div><b>AI 侧 · 划边界</b><p>判断哪些环节交给模型（截图识别、比价推荐、周报摘要），哪些必须规则兜底（算钱、校验、溯源）；做模型路由与防幻觉设计。</p></div></div>
+          <div class="role-item"><span class="n">04</span><div><b>工程侧 · 立规矩</b><p>把踩过的坑写成铁律，再变成自动门禁：逐格对账、锚点校验、改动前后回归对拍 —— 可回归、可追溯、可回滚。</p></div></div>
+        </div>
+        <div class="role-col">
+          <div class="role-col-h">技术栈</div>
+          <div class="role-item"><span class="n">数据</span><div><b>Python · SQLite</b><div class="stack"><span>Python</span><span>SQLite 三库分离</span><span>Excel 价表解析</span><span>SQL 口径统一</span></div></div></div>
+          <div class="role-item"><span class="n">AI</span><div><b>模型能力与边界</b><div class="stack"><span>多模态 VLM 截图识别</span><span>模型路由 · 成本/效果分层</span><span>防幻觉 · 白名单 + 编辑距离兜底</span><span>多 Agent 编排</span></div></div></div>
+          <div class="role-item"><span class="n">前端</span><div><b>可交付的界面</b><div class="stack"><span>单文件 HTML / CSS / JS</span><span>纯 CSS 交互原型</span><span>GitHub Pages 发布</span></div></div></div>
+          <div class="role-item"><span class="n">工程</span><div><b>让它可维护</b><div class="stack"><span>Git 分支与提交溯源</span><span>真值对账验证闸门</span><span>哨兵巡检</span><span>定时任务编排</span></div></div></div>
+        </div>
+      </div>
+      <div class="role-foot reveal">角色定位：<b>既懂业务口径，也能把数据与 AI 落地成能上线的系统</b> —— 需求定义、数据建模、AI 能力边界、工程化验证，全链路自己走通。</div>
     </div>
   </div>
+</div>
+<!-- ROLE-END -->
 <div class="pn-panel" id="pn1">
     <div class="pn-panel-scroll">
 <div class="wrap">
@@ -950,7 +1002,7 @@ small{ font-size:var(--t-cap); }
                 <div class="pain-num">慢</div>
                 <div class="pain-copy">
                     <div class="pain-title">比价靠人工翻表</div>
-                    <div class="pain-sub">25 家价表逐一打开，重量档还不统一</div>
+                    <div class="pain-sub">多家价表逐一打开，重量档还不统一</div>
                 </div>
             </div>
             <div class="pain-consequence"><span class="pain-arrow" aria-hidden="true">→</span><span class="pain-cost-tag">代价</span><span class="pain-result">报价慢半拍 · 错过下单窗口</span></div>
@@ -960,7 +1012,7 @@ small{ font-size:var(--t-cap); }
                 <div class="pain-num">乱</div>
                 <div class="pain-copy">
                     <div class="pain-title">各家写法全不一样</div>
-                    <div class="pain-sub">同一渠道 20 多种叫法，仓码、进仓点各写各的</div>
+                    <div class="pain-sub">同一渠道多种叫法，仓码、进仓点各写各的</div>
                 </div>
             </div>
             <div class="pain-consequence"><span class="pain-arrow" aria-hidden="true">→</span><span class="pain-cost-tag">代价</span><span class="pain-result">看串行 · 归错渠道</span></div>
@@ -1001,7 +1053,7 @@ small{ font-size:var(--t-cap); }
     </div>
 
     <div class="sol-block reveal" id="sol-flow">
-      <div class="sol-tag">全流程模拟 · 一条「LAX9 · 200kg · 普船卡派」从入库到出价</div>
+      <div class="sol-tag">全流程模拟 · 一条真实询价从入库到出价</div>
       <div class="fg-stripes">
         <span class="fg-stripe" style="grid-column:span 2">阶段一 · 数据进来（入库 + 归类映射）</span>
       </div>
@@ -1014,7 +1066,7 @@ small{ font-size:var(--t-cap); }
         <div class="fm-col">
           <div class="fm-above">渠道比对标准归类表，仓点 / 地区 / 第三方仓逐项映射</div>
           <div class="fm-node"><span class="fm-dot">2</span>渠道与仓点归一</div>
-          <div class="fm-below">口径｜20 多种叫法归到 11 个标准渠道</div>
+          <div class="fm-below">口径｜多种叫法归到标准渠道</div>
         </div>
       </div>
       <div class="fg-stripes fg-stripes-2">
@@ -1043,7 +1095,7 @@ small{ font-size:var(--t-cap); }
         </div>
         <div class="fm-col">
           <div class="fm-above">同口径取最低档位、多仓逐仓择优</div>
-          <div class="fm-node"><span class="fm-dot">6</span>一键比价 25 家</div>
+          <div class="fm-node"><span class="fm-dot">6</span>一键比价全库供应商</div>
           <div class="fm-below">产出｜五要素齐全的报价单</div>
         </div>
       </div>
@@ -1085,7 +1137,7 @@ small{ font-size:var(--t-cap); }
                 <div class="flow-num">2</div>
                 <div>
                     <div class="flow-stitle">全渠道底价比对并出价</div>
-                    <div class="flow-ssub">25 家三线一次拉齐 · 只取该仓最低档</div>
+                    <div class="flow-ssub">多条线路一次拉齐 · 只取该仓最低档</div>
                 </div>
             </div>
             <div class="flow-step">
@@ -1148,66 +1200,7 @@ small{ font-size:var(--t-cap); }
 
     </div>
   </div>
-  <div class="pn-panel" id="pn4">
-    <div class="pn-panel-scroll">
 
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 class="reveal">创新成效：以前做不到的现在能</h2>
-      <p class="reveal" data-reveal-delay="1">价值用数字说话；每一条规则都是实际踩坑之后的不妥协。</p>
-    </div>
-
-    <div class="sol-block reveal" id="impact-q">
-      <div class="sol-tag">量化价值呈现</div>
-      <div class="metrics">
-        <div class="metric"><div class="v">30 分钟 → 1 分钟</div><div class="l">4 家 × 10 个仓点完整查价比价 · 预计省 29 分钟/票 ≈ 193 小时/年</div></div>
-        <div class="metric"><div class="v"><span class="accent">9,510</span> 次</div><div class="l">线上查价 · 自 8 月起稳定运行 · <span class="nw">12 位业务同事在用</span> · 457 次企微询价 · 72 份价格对比表</div></div>
-        <div class="metric"><div class="v">78.9% → 99.8%</div><div class="l">最低价捕捉率 · 含底价 / 比重优惠 / <span class="nw">报关费</span> / 附加费 · <span class="nw">高压模拟真实人工报价环境</span></div></div>
-        <div class="metric"><div class="v">4 家 → 25 家</div><div class="l">比价广度 · 凭经验挑 4 家 → 全库 25 家（91,930 条底价）</div></div>
-      </div>
-    </div>
-
-    <div class="sol-block reveal" id="impact-leap">
-      <div class="diagram-html reveal cmp-wrap">
-    <table class="cmp-table">
-        <thead>
-            <tr><th class="cmp-h">能力项</th><th class="cmp-h">以前</th><th class="cmp-h">现在</th></tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="cmp-cap">全渠道全仓点比价</td>
-                <td class="cmp-before">人工做不完每个渠道仓点</td>
-                <td class="cmp-after">17 个 sheet 对比表入库即刷新 · 2.6 秒生成 · 25 家一屏比完</td>
-            </tr>
-            <tr>
-                <td class="cmp-cap">智能询报价</td>
-                <td class="cmp-before">逐家翻价表，手工算比重与附加费</td>
-                <td class="cmp-after">截图即出报价 · 10 仓整票约 1 分钟 · 自动套规则逐仓择优</td>
-            </tr>
-            <tr>
-                <td class="cmp-cap">供应商优势评估</td>
-                <td class="cmp-before">谁家强全靠印象和经验</td>
-                <td class="cmp-after">3 条线 130 渠道价格 / 时效 / 覆盖评分排名 · 入库即重算</td>
-            </tr>
-            
-            
-            
-        </tbody>
-    </table>
-    <div class="pain-footer">以前做不到或很难做的，现在一条命令就完成</div>
-      <div class="pain-footer" style="margin-top:8px;font-size:20px;opacity:.75">36 毫秒为单次查价响应，与人工「看仓点价」11.5 秒/仓非同一工作量，不作直接换算</div>
-</div>
-    </div>
-
-
-
-    
-  <!-- 放大弹窗 -->
-  
-
-    </div>
-  </div>
-  </div>
 <div class="pn-panel" id="pn5">
     <div class="pn-panel-scroll">
 
@@ -1221,12 +1214,12 @@ small{ font-size:var(--t-cap); }
       <div class="sf-row">
         <div class="sf-card cur">
           <span class="sf-label">STEP 1 · 归纳</span>
-          <h4 style="margin:2px 0 14px">25 家归纳成 8 个布局族</h4>
+          <h4 style="margin:2px 0 14px">多家供应商归纳成若干布局族</h4>
           <ul class="sf-list">
             <li>渠道映射、进仓点、重量档位、计费规则抽成模板</li>
-            <li>模板库 41 套，新表先比对结构再入库</li>
+            <li>模板库成套，新表先比对结构再入库</li>
             <li>新供应商不再是「重新做一遍」，而是「对号入座」</li>
-            <li>25 家在库供应商收进 8 个布局族，族内共用一份提取骨架</li>
+            <li>在库供应商收进若干布局族，族内共用一份提取骨架</li>
             <li>母集渠道对照表为唯一归类依据，归类差异一次性收敛</li>
             <li>卡派 / 海派 / 船期 / 规则四类数据各自成模，互不串味</li>
           </ul>
@@ -1235,7 +1228,7 @@ small{ font-size:var(--t-cap); }
           <span class="sf-label">STEP 2 · 复用</span>
           <h4 style="margin:2px 0 14px">新线对号即用 · 换产品可迁移</h4>
           <ul class="sf-list">
-            <li>欧英线 08-21 接入、加拿大线 08-27 接入，各两周内全量上线</li>
+            <li>新线路按引擎族对号接入，两周内全量上线</li>
             <li>新线复用同一套校验器与报价口径，无需重写</li>
             <li>三线共用一条流水线，维护成本不随家数线性增长</li>
             <li>提取器与真值解析器成对生成，新线不漏校验</li>
@@ -1257,7 +1250,7 @@ small{ font-size:var(--t-cap); }
         </div>
       </div>
     </div>
-<div class="pain-footer">25 家 · 8 布局族 · 41 套模板 · 3 条线路（美线 16 / 欧英 5 / 加拿大 4）· 卡派 / 海派 / 船期 / 规则同一口径 · 企微端与询价网页同一份底价</div>
+<div class="pain-footer">多供应商 · 若干布局族 · 成套模板 · 三条线路 · 卡派 / 海派 / 船期 / 规则同一口径</div>
   </div>
   <!-- 放大弹窗 -->
 
@@ -1275,15 +1268,15 @@ small{ font-size:var(--t-cap); }
         <div class="goal-list reveal">
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
-        <div><h3>三条线路全量入库</h3><p>美线 16 家 / 欧英 5 家 / 加拿大 4 家，三线分表隔离。</p></div>
+        <div><h3>三条线路全量入库</h3><p>美线 / 欧英线 / 加拿大线三线分表隔离，全量入库。</p></div>
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
-        <div><h3>企业微信端六大功能上线</h3><p>智能询价、对比查价、评分排名、价表更新、信息查询。</p></div>
+        <div><h3>内部 IM 端六大功能上线</h3><p>智能询价、对比查价、评分排名、价表更新、信息查询。</p></div>
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
-        <div><h3>询价网页上线公开</h3><p>GitHub Pages 托管、扫码即查，与企微端同一份底价。</p></div>
+        <div><h3>询价网页上线公开</h3><p>静态托管、扫码即查，与 IM 端同一份底价。</p></div>
       </div>
       <div class="goal">
         <span class="check" aria-hidden="true"></span>
@@ -1327,31 +1320,7 @@ small{ font-size:var(--t-cap); }
     </div>
   </div>
   </div>
-<div class="pn-panel" id="pn7">
-    <div class="pn-panel-scroll">
 
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 class="reveal">公开询价网页</h2>
-      <p class="reveal" data-reveal-delay="1">企业微信之外，同一套底价另开一个公开询价网页：输入仓码即可查价对比。</p>
-    </div>
-    <div class="sf-row" style="align-items:stretch">
-    <div class="ui-qr reveal" data-reveal-delay="1" role="button" tabindex="0" data-qr-zoom aria-label="点击放大询价网页二维码" style="display:flex;flex-direction:column;justify-content:center;gap:14px;align-items:center;margin:0;padding:26px 22px;background:var(--card-bg,#fff);border:1px solid var(--frame-line,#e5e7eb);border-radius:var(--r-card);box-shadow:var(--shadow-lg)">
-      <img src="assets/qr-price-query.png" alt="扫码访问询价网页" style="width:clamp(190px,21vh,250px);height:clamp(190px,21vh,250px);border-radius:var(--r-md);display:block;flex:none">
-      <div style="text-align:center">
-        <strong style="font-size:var(--t-body);color:var(--text)">手机扫码 · 直达询价网页</strong>
-        <p style="margin:8px 0 0;font-size:var(--t-cap);color:var(--frame-cap);line-height:var(--lh-body)">企业微信之外，同一套底价。扫码即可在手机打开<a href="https://ppppadd.github.io/price-query/" target="_blank" style="color:var(--accent)">ppppadd.github.io/price-query</a></p>
-        <span class="ui-qr-hint">点击放大二维码</span>
-      </div>
-    </div>
-    <div class="ui-panel on reveal">
-      <div class="ui-frame"><a href="https://ppppadd.github.io/price-query/" target="_blank"><img src="assets/showcase-web-hero-v4.png" alt="询价网页 Hero 页 · 一搜比价"><div class="ui-cap"><span><b>询价网页</b> · Hero 页一搜比价，输入仓码即返最低价</span></div></a></div>
-    </div>
-    </div>
-  </div>
-    
-    </div>
-  </div>
 <div class="qr-zoom-backdrop" id="videoBackdrop"></div>
 <div class="video-zoom" id="videoModal" role="dialog" aria-modal="true" aria-label="演示视频放大播放">
   <button class="qr-zoom-x" id="videoClose" type="button" aria-label="关闭">✕</button>
@@ -1368,7 +1337,10 @@ small{ font-size:var(--t-cap); }
 
 <script>
 (function(){
-  var TOTAL = 8;            /* 内容面板 pn0~pn7：视频/背景/方案/人机/成效/推广/网站/目标 */
+  /* 外部版保留面板（按展示顺序）：交互原型 / 我的角色 / 背景 / 方案 / 人机协作 / 复制推广 / 达成目标 */
+  var ORDER = ['pn8','pn9','pn1','pn2','pn3','pn5','pn6'];
+  var TOTAL = ORDER.length;
+  function pid(i) { return ORDER[i]; }
   var cur = 0;
   var inHero = true;        /* 封面页 #pnHero：由左侧 logo 打开，不占 tab 序号 */
   var heroPanel = document.getElementById('pnHero');
@@ -1380,13 +1352,13 @@ small{ font-size:var(--t-cap); }
   var nextBtn = document.getElementById('pnNext');
 
   function showPanel(idx, dir) {
-    /* idx < 0 = 从第 1 页（视频演示）左翻 → 回到封面页 #pnHero */
+    /* idx < 0 = 从第 1 页（交互原型）左翻 → 回到封面页 #pnHero */
     if (idx < 0) { openHero(); return; }
     if (idx >= TOTAL || (!inHero && idx === cur)) return;
     var wasHero = inHero;
     inHero = false;
-    var oldPanel = wasHero ? heroPanel : document.getElementById('pn' + cur);
-    var newPanel = document.getElementById('pn' + idx);
+    var oldPanel = wasHero ? heroPanel : document.getElementById(pid(cur));
+    var newPanel = document.getElementById(pid(idx));
 
     oldPanel.classList.remove('on', 'pn-enter-left', 'pn-enter-right');
     newPanel.classList.add('on');
@@ -1426,7 +1398,7 @@ small{ font-size:var(--t-cap); }
       if (window.heroFx) window.heroFx.setActive(true);
       return;
     }
-    var oldPanel = document.getElementById('pn' + cur);
+    var oldPanel = document.getElementById(pid(cur));
     oldPanel.classList.remove('on');
     oldPanel.classList.add('pn-exit-right');
     heroPanel.classList.add('on', 'pn-enter-left');
@@ -1451,22 +1423,24 @@ small{ font-size:var(--t-cap); }
   /* 面板深链：URL hash 直达（#pn3）· 刷新保持 · 前进后退跟随 */
   function initFromHashFromLocation() {
     if (location.hash === '#hero') return;              /* 封面即默认首屏 */
-    var m = /^#pn([0-7])$/.exec(location.hash);
+    var m = /^#pn(\d+)$/.exec(location.hash);
     if (!m) return;
-    var i = parseInt(m[1], 10);
-    if (i >= 0 && i < TOTAL) showPanel(i, 1);
+    var i = ORDER.indexOf('pn' + m[1]);
+    if (i >= 0) showPanel(i, 1);
   }
   window.addEventListener('hashchange', function() {
     if (location.hash === '#hero') { openHero(); return; }
-    var m = /^#pn([0-7])$/.exec(location.hash);
+    var m = /^#pn(\d+)$/.exec(location.hash);
     if (!m) return;
-    var i = parseInt(m[1], 10);
+    var i = ORDER.indexOf('pn' + m[1]);
+    if (i < 0) return;
     if (inHero || i !== cur) showPanel(i, inHero ? 1 : (i > cur ? 1 : -1));
   });
 
   tabs.forEach(function(t) {
     t.addEventListener('click', function() {
-      var idx = parseInt(this.dataset.pn, 10);
+      var idx = ORDER.indexOf('pn' + this.dataset.pn);   /* data-pn 是原面板编号，需映射为保留顺序的位置 */
+      if (idx < 0) return;
       showPanel(idx, (inHero || idx > cur) ? 1 : -1);
     });
   });
@@ -1531,12 +1505,12 @@ small{ font-size:var(--t-cap); }
   navEl.addEventListener('animationend', function() { navEl.style.animation = 'none'; });
   var navProgress = document.getElementById('pnProgress');
   function updateNavState() {
-    var sc = (inHero ? heroPanel : document.getElementById('pn' + cur)).querySelector('.pn-panel-scroll');
+    var sc = (inHero ? heroPanel : document.getElementById(pid(cur))).querySelector('.pn-panel-scroll');
     var st = sc ? sc.scrollTop : 0;
     navEl.classList.toggle('nav-clear', inHero && st < 12);
     navEl.classList.toggle('nav-photo', inHero && st >= 12);
     navEl.classList.toggle('nav-glass', !inHero && st >= 12);
-    if (navProgress) navProgress.style.width = (inHero ? 0 : (cur + 1) / 8 * 100) + '%';
+    if (navProgress) navProgress.style.width = (inHero ? 0 : (cur + 1) / TOTAL * 100) + '%';
   }
   Array.prototype.forEach.call(document.querySelectorAll('.pn-panel-scroll'), function(sc) {
     sc.addEventListener('scroll', updateNavState, {passive: true});
@@ -1565,7 +1539,7 @@ small{ font-size:var(--t-cap); }
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
   function observeReveals() {
-    var panel = inHero ? heroPanel : document.getElementById('pn' + cur);
+    var panel = inHero ? heroPanel : document.getElementById(pid(cur));
     if (!panel) return;
     panel.querySelectorAll('.reveal:not(.in)').forEach(function(el) { io.observe(el); });
     panel.querySelectorAll('[data-count]:not(.counted)').forEach(function(el) {
@@ -1856,83 +1830,7 @@ initFromHashFromLocation();
 })();
 </script>
 
-<!-- ===== 二维码放大浮层（对齐询价网页排名卡片放大：毛玻璃幕布 + Apple 分层动画） ===== -->
-<div class="qr-zoom-backdrop" id="qrZoomBackdrop"></div>
-<div class="qr-zoom" id="qrZoom" role="dialog" aria-modal="true" aria-label="询价网页二维码">
-  <button class="qr-zoom-x" id="qrZoomClose" type="button" aria-label="关闭">✕</button>
-  <img id="qrZoomImg" src="assets/qr-price-query.png" alt="询价网页二维码（放大）">
-  <strong class="qr-zoom-title" id="qrZoomTitle">手机扫码 · 直达询价网页</strong>
-  <p class="qr-zoom-sub" id="qrZoomSub">企业微信之外，同一套底价。扫码即可在手机打开 ppppadd.github.io/price-query</p>
-  <a class="qr-zoom-link" href="https://ppppadd.github.io/price-query/" target="_blank" rel="noopener">打开询价网页</a>
-</div>
-<script>
-(function(){
-  var COLLAPSE_MS = 520;                       /* 与询价网页收起过渡一致 */
-  var panel = document.getElementById('qrZoom');
-  var backdrop = document.getElementById('qrZoomBackdrop');
-  var img = document.getElementById('qrZoomImg');
-  var title = document.getElementById('qrZoomTitle');
-  var sub = document.getElementById('qrZoomSub');
-  var closeBtn = document.getElementById('qrZoomClose');
-  var card = document.querySelector('[data-qr-zoom]');
-  if (!panel || !backdrop || !card) return;
-  var isOpen = false, lastFocus = null, timer = null;
 
-  function open(){
-    if (isOpen) return;
-    isOpen = true;
-    lastFocus = document.activeElement;
-    /* 重置子元素动画并强制回流，确保动画可重播 */
-    [img, title, sub].forEach(function(el){ el.classList.remove('apple-expand','apple-fade-up'); el.style.animationDelay=''; });
-    void img.offsetWidth;
-    panel.style.display = 'flex';
-    void panel.offsetWidth;
-    requestAnimationFrame(function(){
-      panel.classList.add('on');
-      /* 二维码从中心竖直展开（延迟 0.12s）／标题立即淡入／说明延迟 0.32s —— 对齐排名卡片口径 */
-      title.classList.add('apple-fade-up');
-      img.classList.add('apple-expand'); img.style.animationDelay = '0.12s';
-      sub.classList.add('apple-fade-up'); sub.style.animationDelay = '0.32s';
-    });
-    backdrop.classList.add('on');
-    if (closeBtn && closeBtn.focus) closeBtn.focus();
-  }
-
-  function close(){
-    if (!isOpen) return;
-    isOpen = false;
-    panel.classList.remove('on');
-    backdrop.classList.remove('on');
-    [img, title, sub].forEach(function(el){ el.classList.remove('apple-expand','apple-fade-up'); el.style.animationDelay=''; });
-    clearTimeout(timer);
-    timer = setTimeout(function(){
-      if (!panel.classList.contains('on')) panel.style.display = 'none';
-    }, COLLAPSE_MS);
-    if (lastFocus && lastFocus.focus) lastFocus.focus();
-  }
-
-  /* 卡片：点开（卡内链接照常跳转，不拦截） */
-  card.addEventListener('click', function(e){
-    if (e.target.closest('a')) return;
-    e.preventDefault();
-    open();
-  });
-  card.addEventListener('keydown', function(e){
-    if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar'){ e.preventDefault(); open(); }
-  });
-
-  /* 点浮层与卡片以外任意区域收起（对齐询价网页 collapseTrend 的 document 级监听） */
-  document.addEventListener('click', function(e){
-    if (!isOpen) return;
-    if (e.target.closest('.qr-zoom') || e.target.closest('[data-qr-zoom]')) return;
-    close();
-  });
-  if (closeBtn) closeBtn.addEventListener('click', close);
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && isOpen) close(); });
-  window.addEventListener('hashchange', close);
-  window.qrZoomClose = close;
-})();
-</script>
 <script>
 /* 一屏不滚：二分求「刚好放得下」的最大间距系数（只缩间距，字号一律不动） */
 (function(){
