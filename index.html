@@ -867,6 +867,20 @@ small{ font-size:var(--t-cap); }
 .demo-entry .de-link:hover{color:#0058B0}
 @media (max-width:860px){#pn9 .role-grid{grid-template-columns:1fr}.demo-entry{flex-direction:column;align-items:flex-start}}
 /* ROLE-CSS-END */
+/* WEBFLOW-CSS-START */
+html, body{ height: auto !important; overflow: visible !important; }
+.pn-stage{ position: static !important; top: auto; left: auto; right: auto; bottom: auto; overflow: visible !important; }
+.pn-panel{ position: static !important; inset: auto !important; opacity: 1 !important; visibility: visible !important; pointer-events: auto !important; transition: none !important; }
+.pn-panel{ display: none; }
+.pn-panel.on{ display: block; animation: webflowIn .3s ease both; }
+.pn-panel.pn-exit-left, .pn-panel.pn-exit-right, .pn-panel.pn-enter-left, .pn-panel.pn-enter-right{ animation: none !important; }
+@keyframes webflowIn{ from{ opacity: 0; transform: translateY(8px); } to{ opacity: 1; transform: none; } }
+.pn-panel-scroll{ height: auto !important; overflow: visible !important; }
+.pn-arrow{ position: fixed !important; }
+.pn-panel-scroll > .wrap{ margin: 0 auto !important; padding-top: calc(var(--nav-h) + 30px) !important; padding-bottom: 72px !important; }
+@media (prefers-reduced-motion: reduce){ .pn-panel.on{ animation: none; } }
+@media (max-width: 860px){ .pn-panel-scroll > .wrap{ padding-bottom: 56px !important; } }
+/* WEBFLOW-CSS-END */
 </style>
 
 
@@ -877,11 +891,11 @@ small{ font-size:var(--t-cap); }
   <div class="pn-nav-inner">
     <div class="pn-nav-logo" id="pnLogo" tabindex="0" role="button" aria-label="打开封面页"><span class="logo-mark" aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;background:var(--nav-accent);color:#fff;font-size:13px;font-weight:700;border-radius:8px;margin-right:9px">F</span>FreightGo</div>
     <div class="pn-nav-tabs" id="pnTabs">
-      <button class="pn-tab" data-pn="8">交互原型</button>
-      <button class="pn-tab" data-pn="9">我的角色</button>
       <button class="pn-tab" data-pn="1">项目背景</button>
       <button class="pn-tab" data-pn="2">解决方案</button>
+      <button class="pn-tab" data-pn="8">交互原型</button>
       <button class="pn-tab" data-pn="3">人机协作</button>
+      <button class="pn-tab" data-pn="9">我的角色</button>
       <button class="pn-tab" data-pn="5">复制推广</button>
       <button class="pn-tab" data-pn="6">达成目标</button>
     </div>
@@ -907,7 +921,7 @@ small{ font-size:var(--t-cap); }
     <h1 class="hero-enter d2">多家供应商，<br><span class="hl">一次命令</span>多次比价</h1>
     <p class="hero-sub hero-enter d3">三条线底价一次拉齐，价表入库到报价出单全程可校验。</p>
     <div class="hero-cta hero-enter d4">
-      <a class="btn btn-primary" href="https://ppppadd.github.io/freight-rfq-demo/" target="_blank" rel="noopener">看在线 Demo ↗</a>
+      <a class="btn btn-primary" href="https://ppppadd.github.io/freight-rfq-demo/quote.html" target="_blank" rel="noopener">看在线 Demo ↗</a>
       <a class="btn btn-ghost" href="#pn1">看功能展示</a>
     </div>
 
@@ -947,11 +961,11 @@ small{ font-size:var(--t-cap); }
       <div class="proto-note reveal">以上为可点交互原型（纯 CSS 实现）；真实系统读取底价库与规则库，输出可逐条对账的报价单。</div>
 <!-- DEMOENTRY-START -->
       <div class="demo-entry reveal">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAV4AAAFeAQMAAAD35eVZAAAABlBMVEUKDhb////OAAqZAAACAElEQVR42u2by23EMAxEibgAl+TWXZILMMCsRVJDAzkkl2AEjA7GfnTSW5IzFNf89+s2bWbcfFou92tzP/fn82t8srkdny259vvL/rC0+X82WyIbLAsefgcPt/xFnCJIS/C2AAWC5xN+tvcwFcEFCD5Z9JM2vVKpi+ByBD8vjiqBgfHcRXCdOvg8IgYRjVBGIkhL8BWNPz2kRbkJtlVu4pNKkUVbRdTRcRKs6tdlaD0gZx5nqKOjrYPhHKZ0SR8/onHAu6Rk+AmWFg0ZGlr0fktTEeR1E9F/OcbjCtVi0KJVFkWQV4uGID26c8i3rSyKILGSCRk6XGDql2qynSiGUjLMWbSl0iFN3VtftFyHCLL6wXkfdc18esFSmAjSZ9EhPqczrPADwfxWBIljMGj1yCs3EddOUjL8buLVmOktmsIoJcOdRUOG1iUhuqFpKdL06+i4/WA1tW2q0vfYjAjSEty8GQmUwNmimflUR8erZA5HP/tuVj9LoGKQvScDBVqXEdscsGjSVEdHqkW90xqW4ihhU0sEqbNoLTgH3E0E3+yV6uhotSgqYr3dqjGDQVIRZM6iGAt9t0nz8t6kRcl7Mhiux1hFX+rJrEEQtn5+0S7v5SbWIAhHj3HtOW+ho1ugDsJN4HK3JtlEkF+LzrlDy253Nbpv3Q+u4Af1f9gVN38DFM1oKXc+y6QAAAAASUVORK5CYII=" alt="扫码打开在线 Demo" width="108" height="108">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAV4AAAFeAQMAAAD35eVZAAAABlBMVEUKDhb////OAAqZAAAB9UlEQVR42u1bQYrEMAwz2wfkSf16n5QHFLzT2I6dYQd2L4sCyqFM2zAHC9uSnIr+ft3CzYibL/E1bkXaLf4vfT4bq91f8ofFzf+z+YVgSywPNdzGsyuxVLtl6EARjMy7RiL2Q8vtVX8xdPAIDvDWlFQiuA+CVkAfGE/rfv6LCO7SB3NlAWUf3ADBJRt/upCLYiP4MfOckBbpwdChq4nmMMrZZeWnzzMiCMxkhoawijlIjF0Mt0hO5iBsFY18i4s6A01JEZWVoYPtg0M5ZD2tCLbxljm4BRd9s0mvyEYvpeSisAg+6TfsmADUYcy26E4bQweLoPPO5vzFiI3NJjq5KD6TqS3Q1UT0QUu/s9NVA1cT4bqolso6KI4VUCekDB0oF3UNkcOIAujZi+Bg6HCr6NQQRRRKNEhW0Q24qE8ftORgmGwHPZkNFL3XSckZfZyycJnBPgjNZNKTcfK52NtKV20DLhqKL0wYWYe76i8YOtwcnKIhzskkblFjiSAuk5FJQ2M+mDDaLfsgPpPRCl6VFMlpiCByDiYNXcfz1TBlFQXug3HMftLQkIelshJBZC6a5DNP/OYBC4mTowwdPIKq5djv9Ep9J/sgPoJdpgfqBXR1SBk69D6oqunEFFSdsxJBdC5qhCXG8/Xjic4+uIUe5PewO27+BpZIYHYtah+1AAAAAElFTkSuQmCC" alt="扫码打开在线 Demo" width="108" height="108">
         <div class="de-t">
           <b>在线 Demo</b>
           <span>扫码或点链接，打开完整可交互的演示系统（虚拟数据）：可直接点仓点、切渠道、看比价与供应商评分。</span>
-          <a class="de-link mono" href="https://ppppadd.github.io/freight-rfq-demo/" target="_blank" rel="noopener">ppppadd.github.io/freight-rfq-demo/ ↗</a>
+          <a class="de-link mono" href="https://ppppadd.github.io/freight-rfq-demo/quote.html" target="_blank" rel="noopener">ppppadd.github.io/freight-rfq-demo/quote.html ↗</a>
         </div>
       </div>
 <!-- DEMOENTRY-END -->
@@ -1337,8 +1351,8 @@ small{ font-size:var(--t-cap); }
 
 <script>
 (function(){
-  /* 外部版保留面板（按展示顺序）：交互原型 / 我的角色 / 背景 / 方案 / 人机协作 / 复制推广 / 达成目标 */
-  var ORDER = ['pn8','pn9','pn1','pn2','pn3','pn5','pn6'];
+  /* 外部版保留面板（按 PRD 逻辑顺序）：背景 / 方案 / 交互原型 / 人机协作 / 我的角色 / 复制推广 / 达成目标 */
+  var ORDER = ['pn1','pn2','pn8','pn3','pn9','pn5','pn6'];
   var TOTAL = ORDER.length;
   function pid(i) { return ORDER[i]; }
   var cur = 0;
@@ -1352,7 +1366,7 @@ small{ font-size:var(--t-cap); }
   var nextBtn = document.getElementById('pnNext');
 
   function showPanel(idx, dir) {
-    /* idx < 0 = 从第 1 页（交互原型）左翻 → 回到封面页 #pnHero */
+    /* idx < 0 = 从第 1 页（项目背景）左翻 → 回到封面页 #pnHero */
     if (idx < 0) { openHero(); return; }
     if (idx >= TOTAL || (!inHero && idx === cur)) return;
     var wasHero = inHero;
@@ -1895,5 +1909,50 @@ initFromHashFromLocation();
   setTimeout(fit,700); setTimeout(fit,1800); setTimeout(fit,3200);
 })();
 </script>
+<!-- WEBFLOW-START -->
+<script>
+/* 网页展示模式：① 取消「一屏不滚」自动缩放 ② 触摸滑动/方向键恢复为页面滚动 ③ 切屏后回到页首 */
+(function(){
+  window.__fit = function(){};
+  var st = document.getElementById('pnStage');
+  if (st) {
+    ['touchstart','touchmove','touchend'].forEach(function(t){
+      st.addEventListener(t, function(e){ e.stopImmediatePropagation(); }, true);
+    });
+  }
+  document.addEventListener('keydown', function(e){
+    var k = e.key;
+    if (k === 'ArrowLeft' || k === 'ArrowRight' || k === 'ArrowUp' || k === 'ArrowDown' ||
+        k === 'PageUp' || k === 'PageDown' || k === ' ' || k === 'Spacebar') {
+      e.stopImmediatePropagation();
+    }
+  }, true);
+  /* 导航玻璃态改由 window 滚动 + 切屏事件驱动（静态排版下 .pn-panel-scroll 不再滚动）*/
+  var navEl = document.querySelector('.pn-nav'), heroP = document.getElementById('pnHero');
+  function navSync(){
+    if (!navEl || !heroP) return;
+    var onHero = heroP.classList.contains('on');
+    var st = window.scrollY || document.documentElement.scrollTop || 0;
+    navEl.classList.toggle('nav-clear', onHero && st < 12);
+    navEl.classList.toggle('nav-photo', onHero && st >= 12);
+    navEl.classList.toggle('nav-glass', !onHero);
+  }
+  window.addEventListener('scroll', navSync, {passive:true});
+  window.addEventListener('resize', navSync, {passive:true});
+  try {
+    var obs = new MutationObserver(function(){ setTimeout(navSync, 0); });
+    Array.prototype.forEach.call(document.querySelectorAll('.pn-panel'), function(p){ obs.observe(p, {attributes:true, attributeFilter:['class']}); });
+  } catch(e) {}
+  navSync();
+  document.addEventListener('click', function(e){
+    var t = e.target;
+    if (!t || !t.closest) return;
+    if (t.closest('.pn-tab') || t.closest('.pn-arrow') || t.closest('.pn-nav-logo')) {
+      setTimeout(function(){ window.scrollTo({ top: 0, behavior: 'auto' }); }, 0);
+    }
+  }, true);
+})();
+</script>
+<!-- WEBFLOW-END -->
 </body>
 </html>
