@@ -798,54 +798,6 @@ small{ font-size:var(--t-cap); }
 #pn3 .flow-ssub{font-size:var(--t-cap);line-height:1.25}
 
 
-/* PROTO-CSS-START */
-.proto-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:22px;align-items:stretch}
-.proto-card{position:relative;display:flex;flex-direction:column;gap:14px;padding:22px;background:var(--card-bg);border:1px solid var(--frame-line);border-radius:var(--r-card,20px);box-shadow:var(--shadow);min-width:0}
-.proto-card>input{position:absolute;top:0;left:0;width:0;height:0;opacity:0;pointer-events:none}
-.proto-head{display:flex;align-items:center;gap:10px}
-.proto-head h3{margin:0;font-size:var(--t-h4);font-weight:600;color:var(--text);letter-spacing:-.01em}
-.proto-step{font-size:var(--t-cap);font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
-.proto-tag{margin-left:auto;font-size:16px;line-height:1;color:var(--muted-2);border:1px solid var(--frame-line);border-radius:999px;padding:5px 11px;white-space:nowrap}
-.proto-chips{display:flex;flex-wrap:wrap;gap:8px}
-.proto-chips label{font-size:17px;line-height:1;padding:8px 14px;border-radius:999px;border:1px solid var(--frame-line);background:var(--surface-2);color:var(--muted);cursor:pointer;user-select:none;transition:background .25s var(--ease-apple),color .25s var(--ease-apple),border-color .25s var(--ease-apple),transform .18s var(--ease-apple)}
-.proto-chips label:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
-#p1a:checked~.proto-chips label[for="p1a"],#p1b:checked~.proto-chips label[for="p1b"],#p1c:checked~.proto-chips label[for="p1c"],
-#p2a:checked~.proto-chips label[for="p2a"],#p2b:checked~.proto-chips label[for="p2b"],#p2c:checked~.proto-chips label[for="p2c"],
-#p3a:checked~.proto-chips label[for="p3a"],#p3b:checked~.proto-chips label[for="p3b"],#p3c:checked~.proto-chips label[for="p3c"]{background:var(--accent);border-color:var(--accent);color:#fff}
-.proto-out{position:relative;flex:1 1 auto;min-height:0;margin-top:2px}
-.proto-out .o{display:none;flex-direction:column;gap:9px;animation:protoIn .32s var(--ease-apple) both}
-@keyframes protoIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-#p1a:checked~.proto-out .o-a,#p1b:checked~.proto-out .o-b,#p1c:checked~.proto-out .o-c,
-#p2a:checked~.proto-out .o-a,#p2b:checked~.proto-out .o-b,#p2c:checked~.proto-out .o-c,
-#p3a:checked~.proto-out .o-a,#p3b:checked~.proto-out .o-b,#p3c:checked~.proto-out .o-c{display:flex}
-.prow{display:flex;align-items:baseline;gap:10px;padding:11px 14px;border-radius:12px;background:var(--fill-soft);border:1px solid var(--fill-soft-line)}
-.pch{font-size:19px;font-weight:600;color:var(--text)}
-.pwt{font-size:16px;color:var(--muted-2);font-variant-numeric:tabular-nums}
-.pprice{margin-left:auto;font-size:26px;font-weight:700;color:var(--accent-ink);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
-.pprice i{font-size:15px;font-weight:500;font-style:normal;color:var(--muted-2);margin-left:2px}
-.pmeta{font-size:16px;color:var(--muted);padding:0 2px}
-.prow.low{background:#FEF7E6;border-color:#F5D98B}
-.prow.low .pprice{color:#B7791F}
-.bar{display:flex;align-items:center;gap:10px}
-.bname{flex:0 0 82px;font-size:16px;color:var(--muted)}
-.btrack{flex:1 1 auto;height:14px;border-radius:999px;background:var(--surface-2);overflow:hidden;min-width:0}
-.btrack i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--accent),var(--accent-ink));animation:protoBar .55s var(--ease-apple) both}
-.btrack i.gold{background:linear-gradient(90deg,#F7C948,#E9A319)}
-@keyframes protoBar{from{width:0!important}}
-.bval{flex:0 0 58px;text-align:right;font-size:18px;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums}
-.bval.gold{color:#B7791F}
-.bflag{flex:0 0 auto;font-size:14px;font-weight:600;color:#fff;background:#E9A319;border-radius:6px;padding:3px 7px;line-height:1}
-.score{display:flex;align-items:center;gap:10px}
-.sname{flex:0 0 96px;font-size:16px;color:var(--muted)}
-.strack{flex:1 1 auto;height:10px;border-radius:999px;background:var(--surface-2);overflow:hidden;min-width:0}
-.strack i{display:block;height:100%;border-radius:999px;background:var(--accent);animation:protoBar .55s var(--ease-apple) both}
-.sval{flex:0 0 42px;text-align:right;font-size:17px;font-weight:600;color:var(--text);font-variant-numeric:tabular-nums}
-.sumbox{display:flex;align-items:center;gap:12px;margin-top:2px;padding:10px 14px;border-radius:12px;background:var(--accent-soft);border:1px solid var(--accent-soft-2)}
-.sumbox b{font-size:28px;font-weight:700;color:var(--accent-ink);font-variant-numeric:tabular-nums}
-.sumbox span{font-size:16px;color:var(--muted)}
-.proto-note{margin-top:18px;text-align:center;font-size:17px;color:var(--muted-2)}
-@media (max-width:1180px){.proto-grid{grid-template-columns:1fr;gap:16px}}
-/* PROTO-CSS-END */
 /* ROLE-CSS-START */
 #pn9 .role-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:26px;margin-top:6px}
 #pn9 .role-col{display:flex;flex-direction:column;gap:13px}
@@ -881,6 +833,198 @@ html, body{ height: auto !important; overflow: visible !important; }
 @media (prefers-reduced-motion: reduce){ .pn-panel.on{ animation: none; } }
 @media (max-width: 860px){ .pn-panel-scroll > .wrap{ padding-bottom: 56px !important; } }
 /* WEBFLOW-CSS-END */
+
+/* ===== v5 交互原型（移植自 freight-rfq-demo，作用域 #protoEmbed）===== */
+#protoEmbed .nav-logo .dot{width:22px;height:22px;border-radius:6px;background:var(--ac);display:grid;place-items:center;color:#fff;font-size:12px;font-weight:800}
+#protoEmbed .hm .num{font-family:var(--mono);font-size:clamp(22px,2.4vw,34px);font-weight:700;letter-spacing:-.03em;color:var(--text);font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+#protoEmbed .hm .num em{font-style:normal;color:var(--ac)}
+#protoEmbed .sec{position:relative;padding:clamp(96px,13vw,190px) 0}
+#protoEmbed .sec-label{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--ac);font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+#protoEmbed .sec-label::before{content:"";width:34px;height:1px;background:var(--ac)}
+#protoEmbed .sec-title{font-size:clamp(30px,4.2vw,54px);font-weight:800;letter-spacing:-.035em;line-height:1.05;color:var(--text);max-width:24ch;text-wrap:balance}
+#protoEmbed .sec-lead{color:var(--sub);font-size:clamp(16px,1.6vw,20px);line-height:1.75;max-width:560px;margin-top:clamp(20px,3vw,36px);text-wrap:pretty}
+#protoEmbed .chapter .wrap,#protoEmbed .sec .wrap{display:grid;grid-template-columns:minmax(230px,300px) 1fr;gap:clamp(32px,4vw,56px);align-items:start}
+#protoEmbed .ch-head .sec-label{margin-bottom:clamp(14px,2vw,20px)}
+#protoEmbed .ch-head .sec-title{font-size:clamp(25px,2.4vw,36px);line-height:1.14;margin:0 0 clamp(16px,2vw,22px)}
+#protoEmbed .ch-head .sec-lead{font-size:15px;line-height:1.7;margin-top:0;max-width:34ch}
+#protoEmbed .demo-tabs{display:flex;gap:6px;margin:48px 0 0;flex-wrap:wrap}
+#protoEmbed .demo-tab{
+  font-size:14px;font-weight:600;padding:10px 22px;border-radius:22px;cursor:pointer;
+  background:var(--card-solid);border:1px solid var(--border);color:var(--sub);
+  transition:all .3s var(--ease);
+}
+#protoEmbed .demo-tab.on{background:var(--text);color:#fff;border-color:var(--text)}
+#protoEmbed .demo-stage{
+  margin-top:24px;background:var(--card-solid);border:1px solid var(--border);
+  border-radius:24px;box-shadow:var(--shadow-lg);overflow:hidden;position:relative;
+}
+#protoEmbed .demo-header{
+  display:flex;align-items:center;justify-content:space-between;padding:15px 20px;
+  border-bottom:1px solid var(--border);background:rgba(0,0,0,.02);
+}
+#protoEmbed .demo-header .logo{font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px;letter-spacing:-.01em}
+#protoEmbed .demo-header .logo .dot{width:18px;height:18px;border-radius:5px;background:var(--ac);color:#fff;font-size:10px;font-weight:700;display:inline-flex;align-items:center;justify-content:center}
+#protoEmbed .demo-header .hint{font-size:12px;color:var(--muted);font-weight:400}
+#protoEmbed .demo-body{padding:34px 36px}
+#protoEmbed .demo-panel{display:none}
+#protoEmbed .demo-panel.on{display:block;animation:panelIn .45s var(--ease)}
+#protoEmbed .q-search{
+  display:flex;gap:10px;margin-bottom:26px;max-width:560px;
+}
+#protoEmbed .q-search input{
+  flex:1;padding:13px 20px;border-radius:14px;border:1px solid var(--border-strong);
+  font-size:15px;font-family:inherit;outline:none;background:var(--bg-2);color:var(--text);
+  transition:border-color .3s var(--ease),box-shadow .3s var(--ease);
+}
+#protoEmbed .q-search input:focus{border-color:var(--ac);box-shadow:0 0 0 4px var(--ac-soft)}
+#protoEmbed .q-search button{
+  padding:13px 28px;border-radius:14px;border:none;background:var(--ac);color:#fff;
+  font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;
+  transition:transform .25s var(--spring);
+}
+#protoEmbed .q-search button:hover{transform:scale(1.03)}
+#protoEmbed .q-result-head{
+  display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap;
+}
+#protoEmbed .q-wh{font-size:18px;font-weight:700;letter-spacing:-.01em}
+#protoEmbed .q-wh-badge{font-size:12px;color:#1a7f37;background:var(--gn-soft);padding:3px 10px;border-radius:10px;font-weight:600}
+#protoEmbed .q-row{
+  display:grid;grid-template-columns:1.4fr 1fr .7fr .7fr .9fr;gap:12px;align-items:center;
+  padding:15px 18px;border:1px solid var(--border);border-radius:14px;margin-bottom:10px;
+  background:var(--bg-2);transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease);
+}
+#protoEmbed .q-row:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);border-color:var(--border-strong)}
+#protoEmbed .q-row.best{border-color:rgba(48,179,82,.4);background:rgba(48,179,82,.05)}
+#protoEmbed .q-sup{font-size:14px;font-weight:600}
+#protoEmbed .q-sup .raw{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:2px}
+#protoEmbed .q-ch{font-size:14px;color:var(--sub)}
+#protoEmbed .q-rate{font-size:22px;font-weight:700;letter-spacing:-.02em;text-align:right}
+#protoEmbed .q-rate .u{font-size:12px;color:var(--sub);font-weight:400}
+#protoEmbed .q-time{font-size:13px;color:var(--sub);text-align:right}
+#protoEmbed .q-in{font-size:12px;color:var(--muted);text-align:right;line-height:1.4}
+#protoEmbed .q-best-tag{
+  font-size:10px;font-weight:700;color:#fff;background:var(--gn);padding:2px 7px;border-radius:6px;
+  letter-spacing:.04em;margin-left:8px;vertical-align:2px;
+}
+#protoEmbed .q-head{display:grid;grid-template-columns:1.4fr 1fr .7fr .7fr .9fr;gap:12px;padding:0 18px 8px;font-size:12px;color:var(--muted);font-weight:500}
+#protoEmbed .rk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+#protoEmbed .rk-card{
+  border:1px solid var(--border);border-radius:16px;padding:22px 20px;background:var(--bg-2);
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease);
+}
+#protoEmbed .rk-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+#protoEmbed .rk-card h4{font-size:15px;font-weight:700;margin-bottom:16px;letter-spacing:-.01em}
+#protoEmbed .rk-item{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--border)}
+#protoEmbed .rk-item:last-child{border-bottom:none}
+#protoEmbed .rk-medal{
+  width:20px;height:20px;border-radius:50%;flex:none;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;font-variant-numeric:tabular-nums;
+}
+#protoEmbed .rk-medal.m1{background:var(--ac);color:#fff}
+#protoEmbed .rk-medal.m2{background:rgba(0,113,227,.14);color:var(--ac)}
+#protoEmbed .rk-medal.m3{background:rgba(0,0,0,.06);color:var(--sub)}
+#protoEmbed .rk-sup{font-size:13px;font-weight:600;flex:1}
+#protoEmbed .rk-sup .raw{display:block;font-size:10px;color:var(--muted);font-weight:400}
+#protoEmbed .rk-rate{font-size:16px;font-weight:700;letter-spacing:-.02em}
+#protoEmbed .rk-rate .u{font-size:10px;color:var(--sub);font-weight:400}
+#protoEmbed .trend-wrap{position:relative}
+#protoEmbed .trend-legend{display:flex;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+#protoEmbed .trend-lg{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--sub)}
+#protoEmbed .trend-lg .sw{width:10px;height:10px;border-radius:3px}
+#protoEmbed .trend-svg{width:100%;height:auto;display:block}
+#protoEmbed .weekly-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+#protoEmbed .weekly-card{
+  border:1px solid var(--border);border-radius:16px;padding:20px;background:var(--bg-2);
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease);
+}
+#protoEmbed .weekly-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+#protoEmbed .weekly-card .wlabel{font-size:11px;font-weight:600;color:var(--ac);letter-spacing:.05em;margin-bottom:8px;text-transform:uppercase}
+#protoEmbed .weekly-card .wval{font-size:26px;font-weight:700;letter-spacing:-.02em;line-height:1.2}
+#protoEmbed .weekly-card .wval .delta{font-size:13px;font-weight:600;margin-left:6px}
+#protoEmbed .weekly-card .wdesc{font-size:13px;color:var(--sub);margin-top:8px;line-height:1.55}
+#protoEmbed .reveal{opacity:1;transform:translateY(14px);transition:transform .7s var(--ease)}
+#protoEmbed .reveal.in{transform:translateY(0)}
+#protoEmbed .reveal-d1{transition-delay:.08s}
+#protoEmbed .reveal-d2{transition-delay:.16s}
+#protoEmbed .reveal-d3{transition-delay:.24s}
+
+
+  
+  .ocr-flow{display:flex;align-items:center;gap:10px;margin-bottom:26px;flex-wrap:wrap;
+    padding:14px 18px;border:1px solid var(--border);border-radius:16px;background:var(--bg-2)}
+
+  .ocr-step{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--sub)}
+
+  .ocr-step svg{width:16px;height:16px;color:var(--ac)}
+
+  .ocr-arr{color:var(--muted);font-size:13px}
+
+  .ocr-note{width:100%;font-size:12px;color:var(--muted);margin-top:6px;padding-top:8px;border-top:1px dashed var(--border)}
+
+  
+  .mon-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+
+  .mon-title{display:inline-flex;align-items:center;gap:8px;font-size:16px;font-weight:700;letter-spacing:-.01em}
+
+  .mon-title svg{width:18px;height:18px;color:var(--ac)}
+
+  .mon-sub{font-size:13px;color:var(--sub)}
+
+  .mon-foot{font-size:13px;color:var(--sub);margin-top:16px;padding-top:14px;border-top:1px solid var(--border)}
+
+  .score-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+
+  .score-head .mon-sub{font-size:13px;color:var(--sub)}
+/* ===== v5b 原型：变量映射 + 响应式适配 ===== */
+#protoEmbed{
+  --bg-2:var(--surface-2); --card-solid:var(--surface); --card-2:var(--surface-2);
+  --border:var(--line); --border-strong:rgba(0,0,0,.16);
+  --sub:var(--muted); --muted:var(--muted-2);
+  --ac:var(--accent-ink); --ac-2:var(--accent-ink); --ac-soft:var(--accent-soft);
+  --gn:#34c759; --gn-soft:rgba(52,199,89,.12); --rd:#ff3b30; --amber:#ff9f0a;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.05); --shadow-md:var(--shadow);
+  --ease:var(--ease-apple);
+  --r-lg:14px; --r-xl:20px;
+  --mono:ui-monospace,"SF Mono","JetBrains Mono","Roboto Mono",monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei","Helvetica Neue",sans-serif;
+  font-family:var(--sans);
+}
+[data-theme="dark"] #protoEmbed{
+  --border-strong:rgba(255,255,255,.24);
+  --gn:#30D158; --gn-soft:rgba(48,209,88,.16);
+  --rd:#FF453A; --amber:#FFD60A;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.3); --shadow-md:var(--shadow);
+}
+@media (max-width:1180px){
+  #protoEmbed .rk-grid,#protoEmbed .weekly-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:860px){
+  #protoEmbed .demo-tabs{ margin-top:26px; }
+  #protoEmbed .demo-tab{ font-size:13px; padding:8px 14px; border-radius:16px; }
+  #protoEmbed .demo-body{ padding:20px 16px; }
+  #protoEmbed .demo-header{ flex-wrap:wrap; gap:6px; }
+  #protoEmbed .rk-grid,#protoEmbed .weekly-grid{ grid-template-columns:1fr; }
+  #protoEmbed .q-search{ flex-direction:column; max-width:100%; }
+  #protoEmbed .q-head{ display:none; }
+  #protoEmbed .q-row{ grid-template-columns:1fr auto; gap:6px 12px; padding:14px; }
+  #protoEmbed .q-sup,#protoEmbed .q-ch,#protoEmbed .q-in{ grid-column:1/-1; }
+  #protoEmbed .q-ch{ font-size:13px; }
+  #protoEmbed .q-rate,#protoEmbed .q-time{ text-align:left; }
+  #protoEmbed .ocr-flow{ gap:6px; font-size:12px; padding:10px; }
+  #protoEmbed .trend-wrap{ overflow-x:auto; }
+  #protoEmbed .trend-svg{ min-width:560px; }
+  #protoEmbed .stg{ padding:14px; }
+  #protoEmbed table{ display:block; overflow-x:auto; white-space:nowrap; max-width:100%; }
+  #protoEmbed .demo-stage{ border-radius:18px; }
+}
+/* ===== v5c 冲突重置：展示页存在全局 .demo-* 规则（原「Demo 技能演示」块），须在原型作用域内显式覆盖 ===== */
+#protoEmbed .demo-stage{ display:block; grid-template-columns:none; gap:0; align-items:normal; }
+#protoEmbed .demo-nav{ display:none; }
+#protoEmbed .demo-tab{ display:inline-block; position:static; text-align:center; align-items:normal; gap:0; }
+#protoEmbed .demo-tab::before{ content:none; }
+#protoEmbed .demo-tab .ico{ display:none; }
+#protoEmbed .demo-tab.on{ background:var(--text); color:#fff; border-color:var(--text); }
 </style>
 
 
@@ -938,26 +1082,139 @@ html, body{ height: auto !important; overflow: visible !important; }
         <h2 class="reveal">交互原型：点着看</h2>
         <p class="reveal" data-reveal-delay="1">选仓点、切渠道、换供应商 —— 界面即时响应；纯前端实现，数值为示意。</p>
       </div>
-      <div class="proto-grid reveal">
-<div class="proto-card">
-  <input type="radio" name="p1" id="p1a" checked><input type="radio" name="p1" id="p1b"><input type="radio" name="p1" id="p1c">
-  <div class="proto-head"><span class="proto-step">01</span><h3>智能询价</h3><span class="proto-tag">点仓点</span></div>
-  <div class="proto-chips"><label for="p1a">仓点 A</label><label for="p1b">仓点 B</label><label for="p1c">仓点 C</label></div>
-  <div class="proto-out"><div class="o o-a"><div class="prow"><span class="pch">普船卡派</span><span class="pwt">100KG+</span><span class="pprice">6.80<i>/KG</i></span></div><div class="pmeta">预计开船后 28–35 天入仓 · 进仓 华东</div><div class="prow"><span class="pch">快船卡派</span><span class="pwt">100KG+</span><span class="pprice">9.40<i>/KG</i></span></div><div class="pmeta">预计开船后 18–22 天入仓 · 进仓 华东</div></div><div class="o o-b"><div class="prow"><span class="pch">普船卡派</span><span class="pwt">100KG+</span><span class="pprice">7.10<i>/KG</i></span></div><div class="pmeta">预计开船后 30–38 天入仓 · 进仓 华南</div><div class="prow low"><span class="pch">特惠卡派</span><span class="pwt">2CBM+</span><span class="pprice">6.95<i>/KG</i></span></div><div class="pmeta">预计开船后 32–40 天入仓 · 进仓 华南</div></div><div class="o o-c"><div class="prow"><span class="pch">海派快线</span><span class="pwt">100KG+</span><span class="pprice">8.60<i>/KG</i></span></div><div class="pmeta">预计开船后 22–28 天入仓 · 进仓 华东</div><div class="prow"><span class="pch">普船海派</span><span class="pwt">100KG+</span><span class="pprice">7.90<i>/KG</i></span></div><div class="pmeta">预计开船后 30–36 天入仓 · 进仓 华东</div></div></div>
-</div>
-<div class="proto-card">
-  <input type="radio" name="p2" id="p2a" checked><input type="radio" name="p2" id="p2b"><input type="radio" name="p2" id="p2c">
-  <div class="proto-head"><span class="proto-step">02</span><h3>多渠道比价</h3><span class="proto-tag">切渠道</span></div>
-  <div class="proto-chips"><label for="p2a">普船卡派</label><label for="p2b">快船卡派</label><label for="p2c">海派</label></div>
-  <div class="proto-out"><div class="o o-a"><div class="bar"><span class="bname">供应商 A</span><span class="btrack"><i style="width:86%"></i></span><span class="bval">6.80</span></div><div class="bar"><span class="bname">供应商 B</span><span class="btrack"><i style="width:94%"></i></span><span class="bval">7.40</span></div><div class="bar"><span class="bname">供应商 C</span><span class="btrack"><i class="gold" style="width:78%"></i></span><span class="bval gold">6.95</span><span class="bflag">最低</span></div><div class="bar"><span class="bname">供应商 D</span><span class="btrack"><i style="width:90%"></i></span><span class="bval">7.05</span></div><div class="pmeta">同口径取最低档位 · 只取该仓最低价</div></div><div class="o o-b"><div class="bar"><span class="bname">供应商 A</span><span class="btrack"><i style="width:92%"></i></span><span class="bval">9.40</span></div><div class="bar"><span class="bname">供应商 B</span><span class="btrack"><i class="gold" style="width:80%"></i></span><span class="bval gold">8.75</span><span class="bflag">最低</span></div><div class="bar"><span class="bname">供应商 C</span><span class="btrack"><i style="width:96%"></i></span><span class="bval">9.90</span></div><div class="bar"><span class="bname">供应商 D</span><span class="btrack"><i style="width:88%"></i></span><span class="bval">9.10</span></div><div class="pmeta">快船单列对比 · 不与普船混算</div></div><div class="o o-c"><div class="bar"><span class="bname">供应商 A</span><span class="btrack"><i style="width:90%"></i></span><span class="bval">8.60</span></div><div class="bar"><span class="bname">供应商 B</span><span class="btrack"><i style="width:84%"></i></span><span class="bval">7.90</span></div><div class="bar"><span class="bname">供应商 C</span><span class="btrack"><i class="gold" style="width:76%"></i></span><span class="bval gold">7.35</span><span class="bflag">最低</span></div><div class="bar"><span class="bname">供应商 D</span><span class="btrack"><i style="width:88%"></i></span><span class="bval">8.20</span></div><div class="pmeta">海派按分区计费 · 分区不同单价不同</div></div></div>
-</div>
-<div class="proto-card">
-  <input type="radio" name="p3" id="p3a" checked><input type="radio" name="p3" id="p3b"><input type="radio" name="p3" id="p3c">
-  <div class="proto-head"><span class="proto-step">03</span><h3>供应商评分</h3><span class="proto-tag">换供应商</span></div>
-  <div class="proto-chips"><label for="p3a">供应商 A</label><label for="p3b">供应商 B</label><label for="p3c">供应商 C</label></div>
-  <div class="proto-out"><div class="o o-a"><div class="score"><span class="sname">价格竞争力</span><span class="strack"><i style="width:92%"></i></span><span class="sval">92</span></div><div class="score"><span class="sname">渠道覆盖</span><span class="strack"><i style="width:86%"></i></span><span class="sval">86</span></div><div class="score"><span class="sname">仓点深度</span><span class="strack"><i style="width:78%"></i></span><span class="sval">78</span></div><div class="score"><span class="sname">时效稳定</span><span class="strack"><i style="width:83%"></i></span><span class="sval">83</span></div><div class="sumbox"><b>85.4</b><span>综合竞争力 · 入库即重算</span></div></div><div class="o o-b"><div class="score"><span class="sname">价格竞争力</span><span class="strack"><i style="width:96%"></i></span><span class="sval">96</span></div><div class="score"><span class="sname">渠道覆盖</span><span class="strack"><i style="width:72%"></i></span><span class="sval">72</span></div><div class="score"><span class="sname">仓点深度</span><span class="strack"><i style="width:68%"></i></span><span class="sval">68</span></div><div class="score"><span class="sname">时效稳定</span><span class="strack"><i style="width:80%"></i></span><span class="sval">80</span></div><div class="sumbox"><b>79.2</b><span>综合竞争力 · 入库即重算</span></div></div><div class="o o-c"><div class="score"><span class="sname">价格竞争力</span><span class="strack"><i style="width:74%"></i></span><span class="sval">74</span></div><div class="score"><span class="sname">渠道覆盖</span><span class="strack"><i style="width:94%"></i></span><span class="sval">94</span></div><div class="score"><span class="sname">仓点深度</span><span class="strack"><i style="width:90%"></i></span><span class="sval">90</span></div><div class="score"><span class="sname">时效稳定</span><span class="strack"><i style="width:88%"></i></span><span class="sval">88</span></div><div class="sumbox"><b>86.7</b><span>综合竞争力 · 入库即重算</span></div></div></div>
-</div>
+      <div class="proto-embed" id="protoEmbed">
+<div class="demo-tabs">
+      <div class="demo-tab on" data-panel="p-query">询价查询</div>
+      <div class="demo-tab" data-panel="p-rank">智能比价</div>
+      <div class="demo-tab" data-panel="p-screenshot">截图报价</div>
+      <div class="demo-tab" data-panel="p-audit">报价校验</div>
+      <div class="demo-tab" data-panel="p-monitor">价格监控</div>
+      <div class="demo-tab" data-panel="p-score">供应商评分</div>
+      <div class="demo-tab" data-panel="p-trend">价格趋势</div>
+      <div class="demo-tab" data-panel="p-weekly">航运周报</div>
+    </div>
+    <div class="demo-stage">
+      <div class="demo-header">
+        <span class="logo"><span class="dot">F</span>FreightGo</span>
+        <a href="quote.html" target="_blank" rel="noopener" class="hint" style="text-decoration:none;display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;background:var(--ac);color:#fff;font-weight:600;letter-spacing:.01em">打开完整系统 →</a>
       </div>
+      <div class="demo-body">
+
+        <!-- 询价查询（合成：真交互，复用 demo 虚拟数据·脱敏） -->
+        <div class="demo-panel on" id="p-query">
+          <div class="q-search">
+            <input type="text" id="qInput" value="" placeholder="输入仓库代码，如 SUM1 / SUM2 / SUM3" autocomplete="off">
+            <button id="qBtn">查价</button>
+          </div>
+          <div class="q-result-head" id="qHead">
+            <span class="q-wh" id="qWh">SUM1 <span class="q-wh-badge">演示仓</span></span>
+            <span style="font-size:13px;color:var(--muted)">按最低单价排序 · 每渠道取最低档</span>
+          </div>
+          <div class="q-head">
+            <span>供应商</span><span>渠道</span><span style="text-align:right">单价</span><span style="text-align:right">时效</span><span style="text-align:right">进仓地</span>
+          </div>
+          <div id="qList"></div>
+        </div>
+
+        <!-- 智能比价（合成：真交互，选仓点/渠道组 → Top3 比价卡） -->
+        <div class="demo-panel" id="p-rank">
+          <div class="demo-action" style="margin-bottom:6px">
+            <span class="ctrl-label">仓点</span>
+            <span class="ctrl" id="rankWhCtrl"></span>
+            <span class="ctrl-label" style="margin-left:14px">渠道组</span>
+            <span class="ctrl" id="rankCgCtrl"></span>
+          </div>
+          <div class="rk-grid" id="rankGrid"></div>
+        </div>
+
+        <!-- 截图报价（合成：剧本化交互：OCR→白名单校验→疑似确认→出报价） -->
+        <div class="demo-panel" id="p-screenshot">
+          <div class="ocr-flow">
+            <span class="ocr-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M9 12h6M9 9h3"/></svg>识别截图</span>
+            <span class="ocr-arr">→</span>
+            <span class="ocr-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>白名单校验</span>
+            <span class="ocr-arr">→</span>
+            <span class="ocr-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a1 1 0 0 0-1 1v3"/><path d="M16 3h3a1 1 0 0 1 1 1v3"/><path d="M8 21H5a1 1 0 0 1-1-1v-3"/><path d="M16 21h3a1 1 0 0 0 1-1v-3"/><path d="M10 15l2 2 4-4"/></svg>直接出报价</span>
+            <span class="ocr-note">形近字符 O/0、I/1 存疑 → 列出候选让用户确认，不硬报</span>
+          </div>
+          <div class="demo-action" style="margin:16px 0 10px">
+            <button id="shotReplay" class="shot-btn">▶ 重放识别</button>
+            <span id="shotStatus" class="shot-status">示例：识别一张含「SUM1 / SUMI」仓码的报价截图</span>
+          </div>
+          <div id="shotStage" class="stg" style="background:var(--bg-2);border:1px solid var(--border);border-radius:14px;padding:18px 20px"></div>
+        </div>
+
+        <!-- 报价校验（合成：三道闸剧本：拦报错价/纯底价/不该接直接拒） -->
+        <div class="demo-panel" id="p-audit">
+          <div class="demo-action" style="margin-bottom:14px">
+            <span class="ctrl-label">选择票样</span>
+            <span class="ctrl" id="auditScnCtrl"></span>
+            <button id="auditRun" class="shot-btn" style="margin-left:6px">运行三道闸</button>
+          </div>
+          <div id="auditStage" class="stg"></div>
+        </div>
+
+        <!-- 价格监控（合成：真交互：渠道/周期切换 → 涨价榜/降价榜/价差/异常告警） -->
+        <div class="demo-panel" id="p-monitor">
+          <div class="mon-head">
+            <span class="mon-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 3v5h-5"/></svg><span id="monTitle">本周价格变动 · 普船特惠卡派</span></span>
+            <span class="mon-sub" id="monSub"></span>
+          </div>
+          <div class="demo-action" style="margin-bottom:10px">
+            <span class="ctrl-label">监控渠道</span>
+            <span class="ctrl" id="monChCtrl"></span>
+          </div>
+          <div class="rk-grid" id="monGrid"></div>
+          <div id="monAlerts"></div>
+          <div class="mon-foot">价表入库自动对比，变动秒级推送，商务无需手动盯价。</div>
+        </div>
+
+        <!-- 供应商评分（合成：真交互：4 维加权，口径切换重排，Top3 高亮） -->
+        <div class="demo-panel" id="p-score">
+          <div class="score-head">
+            <span class="mon-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.5 6.3.9-4.5 4.4 1 6.2-5.5-2.9L6 20l1-6.2L2.5 9.4l6.3-.9L12 3z"/></svg>供应商综合评分</span>
+            <span class="mon-sub">价格 40% · 时效 25% · 覆盖 20% · 稳定 15%</span>
+          </div>
+          <div class="demo-action" style="margin-bottom:10px">
+            <span class="ctrl-label">评分口径</span>
+            <span class="ctrl" id="scoreDimCtrl"></span>
+          </div>
+          <div class="rk-grid" id="scoreGrid"></div>
+          <div class="mon-foot">从「凭感觉选供应商」到「按可量化维度加权选型」，结果可溯源、可复现。</div>
+        </div>
+
+        <!-- 价格趋势 -->
+        <div class="demo-panel" id="p-trend">
+          <div class="demo-action" style="margin-bottom:14px">
+            <span style="font-size:12px;color:var(--sub);font-weight:600;letter-spacing:.05em">趋势分组</span>
+            <span class="pill on" data-tgrp="kp">卡派系列</span>
+            <span class="pill" data-tgrp="fast">快船系列</span>
+          </div>
+          <div class="trend-legend" id="trendLegend">
+            <span class="trend-lg"><span class="sw" style="background:#0071e3"></span>普船特惠卡派</span>
+            <span class="trend-lg"><span class="sw" style="background:#30b352"></span>普船卡派</span>
+            <span class="trend-lg"><span class="sw" style="background:#ff9f0a"></span>美森CLX正班卡派</span>
+            <span class="trend-lg"><span class="sw" style="background:#ff3b30"></span>美森MAX加班卡派</span>
+          </div>
+          <div class="trend-wrap">
+            <svg class="trend-svg" viewBox="0 0 900 300" preserveAspectRatio="xMidYMid meet" id="trendSvg"></svg>
+          </div>
+        </div>
+
+        <!-- 航运周报（合成：轻量交互：本周/上周切换，数值已脱敏） -->
+        <div class="demo-panel" id="p-weekly">
+          <div class="demo-action" style="margin-bottom:14px">
+            <span class="ctrl-label">报告期</span>
+            <span class="ctrl" id="weeklyCycleCtrl"></span>
+          </div>
+          <div id="weeklyGrid" class="weekly-grid"></div>
+        </div>
+
+
+
+      </div>
+    </div>
+</div>
       <div class="proto-note reveal">以上为可点交互原型（纯 CSS 实现）；真实系统读取底价库与规则库，输出可逐条对账的报价单。</div>
 <!-- DEMOENTRY-START -->
       <div class="demo-entry reveal">
@@ -1954,5 +2211,439 @@ initFromHashFromLocation();
 })();
 </script>
 <!-- WEBFLOW-END -->
+
+<!-- v5 交互原型（移植自 freight-rfq-demo）-->
+<script>
+(function(){
+/* ===== 合成注入：虚拟数据（脱敏） ===== */
+var DEMO_WH_KEYS = {"SUM1":"D1","SUM2":"D2","SUM3":"D3","SUM4":"D4","SUM5":"D5","SUM6":"D6"};
+var DEMO_US = [{"w":"SUM1","s":"云帆国际","c":"休斯顿卡派","wt":12,"p":8.77,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":32},{"w":"SUM1","s":"云帆国际","c":"休斯顿卡派","wt":51,"p":7.21,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":32},{"w":"SUM1","s":"云帆国际","c":"休斯顿卡派","wt":100,"p":6.99,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":25,"t_max":35},{"w":"SUM1","s":"顺达集运","c":"休斯顿卡派","wt":12,"p":8.48,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":33},{"w":"SUM1","s":"顺达集运","c":"休斯顿卡派","wt":51,"p":7.43,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":27,"t_max":33},{"w":"SUM1","s":"顺达集运","c":"休斯顿卡派","wt":100,"p":7.03,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":27,"t_max":33},{"w":"SUM1","s":"云帆国际","c":"合德ZIM快提","wt":12,"p":10.51,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":14,"t_max":15},{"w":"SUM1","s":"云帆国际","c":"合德ZIM快提","wt":51,"p":9.43,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":14,"t_max":15},{"w":"SUM1","s":"云帆国际","c":"合德ZIM快提","wt":100,"p":8.58,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":14,"t_max":16},{"w":"SUM1","s":"星辰速运","c":"合德ZIM快提","wt":12,"p":10.3,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":14,"t_max":17},{"w":"SUM1","s":"星辰速运","c":"合德ZIM快提","wt":51,"p":8.61,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":12,"t_max":18},{"w":"SUM1","s":"星辰速运","c":"合德ZIM快提","wt":100,"p":8.61,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":12,"t_max":17},{"w":"SUM1","s":"顺达集运","c":"合德ZIM快提","wt":12,"p":10.52,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":14,"t_max":18},{"w":"SUM1","s":"顺达集运","c":"合德ZIM快提","wt":51,"p":8.64,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":14,"t_max":18},{"w":"SUM1","s":"顺达集运","c":"合德ZIM快提","wt":100,"p":8.42,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":14,"t_max":17},{"w":"SUM1","s":"云帆国际","c":"合德ZIM普提","wt":12,"p":9.68,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":16,"t_max":19},{"w":"SUM1","s":"云帆国际","c":"合德ZIM普提","wt":51,"p":8.65,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":17,"t_max":19},{"w":"SUM1","s":"云帆国际","c":"合德ZIM普提","wt":100,"p":7.52,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":17,"t_max":18},{"w":"SUM1","s":"启航物流","c":"合德ZIM普提","wt":12,"p":9.47,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":17,"t_max":19},{"w":"SUM1","s":"启航物流","c":"合德ZIM普提","wt":51,"p":8.5,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":16,"t_max":19},{"w":"SUM1","s":"启航物流","c":"合德ZIM普提","wt":100,"p":7.64,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":16,"t_max":18},{"w":"SUM1","s":"蓝海物流","c":"合德ZIM普提","wt":12,"p":9.64,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":16,"t_max":20},{"w":"SUM1","s":"蓝海物流","c":"合德ZIM普提","wt":51,"p":8.67,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":17,"t_max":20},{"w":"SUM1","s":"蓝海物流","c":"合德ZIM普提","wt":100,"p":7.73,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":15,"t_max":20},{"w":"SUM1","s":"通达国际","c":"合德ZIM普提","wt":12,"p":9.81,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":15,"t_max":19},{"w":"SUM1","s":"通达国际","c":"合德ZIM普提","wt":51,"p":8.8,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":17,"t_max":19},{"w":"SUM1","s":"通达国际","c":"合德ZIM普提","wt":100,"p":7.72,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":15,"t_max":21},{"w":"SUM1","s":"顺达集运","c":"合德ZIM普提","wt":12,"p":10.11,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":15,"t_max":21},{"w":"SUM1","s":"顺达集运","c":"合德ZIM普提","wt":51,"p":8.83,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":16,"t_max":20},{"w":"SUM1","s":"顺达集运","c":"合德ZIM普提","wt":100,"p":7.47,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":16,"t_max":19},{"w":"SUM1","s":"云帆国际","c":"普船卡派","wt":12,"p":7.62,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":24,"t_max":28},{"w":"SUM1","s":"云帆国际","c":"普船卡派","wt":51,"p":6.37,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":24,"t_max":30},{"w":"SUM1","s":"云帆国际","c":"普船卡派","wt":100,"p":5.95,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":24,"t_max":30},{"w":"SUM1","s":"星辰速运","c":"普船卡派","wt":12,"p":7.35,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":24,"t_max":30},{"w":"SUM1","s":"星辰速运","c":"普船卡派","wt":51,"p":6.74,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":23,"t_max":29},{"w":"SUM1","s":"星辰速运","c":"普船卡派","wt":100,"p":6.1,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":22,"t_max":31},{"w":"SUM1","s":"蓝海物流","c":"普船卡派","wt":12,"p":7.1,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":22,"t_max":31},{"w":"SUM1","s":"蓝海物流","c":"普船卡派","wt":51,"p":6.73,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":22,"t_max":31},{"w":"SUM1","s":"蓝海物流","c":"普船卡派","wt":100,"p":6.16,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":23,"t_max":29},{"w":"SUM1","s":"星辰速运","c":"普船特惠卡派","wt":12,"p":6.71,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":24,"t_max":30},{"w":"SUM1","s":"星辰速运","c":"普船特惠卡派","wt":51,"p":5.78,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":24,"t_max":33},{"w":"SUM1","s":"星辰速运","c":"普船特惠卡派","wt":100,"p":5.36,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":33},{"w":"SUM1","s":"蓝海物流","c":"普船特惠卡派","wt":12,"p":6.83,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":32},{"w":"SUM1","s":"蓝海物流","c":"普船特惠卡派","wt":51,"p":5.78,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":31},{"w":"SUM1","s":"蓝海物流","c":"普船特惠卡派","wt":100,"p":5.62,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":33},{"w":"SUM1","s":"通达国际","c":"普船特惠卡派","wt":12,"p":6.82,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":32},{"w":"SUM1","s":"通达国际","c":"普船特惠卡派","wt":51,"p":5.83,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":33},{"w":"SUM1","s":"通达国际","c":"普船特惠卡派","wt":100,"p":5.63,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":24,"t_max":30},{"w":"SUM1","s":"启航物流","c":"纽约卡派","wt":12,"p":8.47,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":34},{"w":"SUM1","s":"启航物流","c":"纽约卡派","wt":51,"p":7.78,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":27,"t_max":33},{"w":"SUM1","s":"启航物流","c":"纽约卡派","wt":100,"p":6.64,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":34},{"w":"SUM1","s":"云帆国际","c":"美森CLX正班","wt":12,"p":12.47,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":12,"t_max":14},{"w":"SUM1","s":"云帆国际","c":"美森CLX正班","wt":51,"p":11.09,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":10,"t_max":15},{"w":"SUM1","s":"云帆国际","c":"美森CLX正班","wt":100,"p":10.2,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":11,"t_max":13},{"w":"SUM1","s":"启航物流","c":"美森CLX正班","wt":12,"p":13.23,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":11,"t_max":13},{"w":"SUM1","s":"启航物流","c":"美森CLX正班","wt":51,"p":11.06,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":10,"t_max":15},{"w":"SUM1","s":"启航物流","c":"美森CLX正班","wt":100,"p":9.92,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":12,"t_max":13},{"w":"SUM1","s":"启航物流","c":"美森MAX加班","wt":12,"p":11.76,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":11,"t_max":13},{"w":"SUM1","s":"启航物流","c":"美森MAX加班","wt":51,"p":10.21,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":11,"t_max":14},{"w":"SUM1","s":"启航物流","c":"美森MAX加班","wt":100,"p":9.77,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":12,"t_max":15},{"w":"SUM1","s":"星辰速运","c":"美森MAX加班","wt":12,"p":12.08,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":11,"t_max":16},{"w":"SUM1","s":"星辰速运","c":"美森MAX加班","wt":51,"p":10.58,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":11,"t_max":16},{"w":"SUM1","s":"星辰速运","c":"美森MAX加班","wt":100,"p":10.02,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":12,"t_max":15},{"w":"SUM1","s":"蓝海物流","c":"芝加哥卡派","wt":12,"p":8.31,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":34},{"w":"SUM1","s":"蓝海物流","c":"芝加哥卡派","wt":51,"p":7.28,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":24,"t_max":31},{"w":"SUM1","s":"蓝海物流","c":"芝加哥卡派","wt":100,"p":6.66,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":24,"t_max":33},{"w":"SUM1","s":"通达国际","c":"芝加哥卡派","wt":12,"p":7.93,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":24,"t_max":33},{"w":"SUM1","s":"通达国际","c":"芝加哥卡派","wt":51,"p":7.54,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":31},{"w":"SUM1","s":"通达国际","c":"芝加哥卡派","wt":100,"p":6.85,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":24,"t_max":32},{"w":"SUM1","s":"顺达集运","c":"芝加哥卡派","wt":12,"p":8.66,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":25,"t_max":34},{"w":"SUM1","s":"顺达集运","c":"芝加哥卡派","wt":51,"p":7.25,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":24,"t_max":33},{"w":"SUM1","s":"顺达集运","c":"芝加哥卡派","wt":100,"p":6.71,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":25,"t_max":32},{"w":"SUM1","s":"启航物流","c":"萨凡纳卡派","wt":12,"p":8.56,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":27,"t_max":34},{"w":"SUM1","s":"启航物流","c":"萨凡纳卡派","wt":51,"p":7.63,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":35},{"w":"SUM1","s":"启航物流","c":"萨凡纳卡派","wt":100,"p":7.49,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":33},{"w":"SUM1","s":"星辰速运","c":"萨凡纳卡派","wt":12,"p":9.38,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":28,"t_max":33},{"w":"SUM1","s":"星辰速运","c":"萨凡纳卡派","wt":51,"p":7.65,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":34},{"w":"SUM1","s":"星辰速运","c":"萨凡纳卡派","wt":100,"p":7.12,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":28,"t_max":33},{"w":"SUM1","s":"蓝海物流","c":"萨凡纳卡派","wt":12,"p":8.79,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":28,"t_max":36},{"w":"SUM1","s":"蓝海物流","c":"萨凡纳卡派","wt":51,"p":7.65,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":28,"t_max":35},{"w":"SUM1","s":"蓝海物流","c":"萨凡纳卡派","wt":100,"p":7.05,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":27,"t_max":35},{"w":"SUM1","s":"通达国际","c":"萨凡纳卡派","wt":12,"p":8.59,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":28,"t_max":33},{"w":"SUM1","s":"通达国际","c":"萨凡纳卡派","wt":51,"p":7.94,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":27,"t_max":34},{"w":"SUM1","s":"通达国际","c":"萨凡纳卡派","wt":100,"p":7.32,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":36},{"w":"SUM1","s":"顺达集运","c":"萨凡纳卡派","wt":12,"p":9.12,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":36},{"w":"SUM1","s":"顺达集运","c":"萨凡纳卡派","wt":51,"p":7.46,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":33},{"w":"SUM1","s":"顺达集运","c":"萨凡纳卡派","wt":100,"p":7.25,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":36},{"w":"SUM2","s":"云帆国际","c":"休斯顿卡派","wt":12,"p":8.82,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":25,"t_max":32},{"w":"SUM2","s":"云帆国际","c":"休斯顿卡派","wt":51,"p":7.44,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":27,"t_max":33},{"w":"SUM2","s":"云帆国际","c":"休斯顿卡派","wt":100,"p":7.12,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":27,"t_max":35},{"w":"SUM2","s":"启航物流","c":"休斯顿卡派","wt":12,"p":8.23,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":25,"t_max":34},{"w":"SUM2","s":"启航物流","c":"休斯顿卡派","wt":51,"p":7.31,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":25,"t_max":33},{"w":"SUM2","s":"启航物流","c":"休斯顿卡派","wt":100,"p":6.8,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":27,"t_max":33},{"w":"SUM2","s":"蓝海物流","c":"休斯顿卡派","wt":12,"p":8.19,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":25,"t_max":35},{"w":"SUM2","s":"蓝海物流","c":"休斯顿卡派","wt":51,"p":7.59,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":25,"t_max":34},{"w":"SUM2","s":"蓝海物流","c":"休斯顿卡派","wt":100,"p":6.87,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":26,"t_max":32},{"w":"SUM2","s":"远洋供应链","c":"休斯顿卡派","wt":12,"p":8.83,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":27,"t_max":35},{"w":"SUM2","s":"远洋供应链","c":"休斯顿卡派","wt":51,"p":7.2,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":34},{"w":"SUM2","s":"远洋供应链","c":"休斯顿卡派","wt":100,"p":6.84,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":35},{"w":"SUM2","s":"云帆国际","c":"合德ZIM快提","wt":12,"p":10.65,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":13,"t_max":15},{"w":"SUM2","s":"云帆国际","c":"合德ZIM快提","wt":51,"p":8.97,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":14,"t_max":16},{"w":"SUM2","s":"云帆国际","c":"合德ZIM快提","wt":100,"p":8.19,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":14,"t_max":16},{"w":"SUM2","s":"启航物流","c":"合德ZIM快提","wt":12,"p":10.61,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":13,"t_max":18},{"w":"SUM2","s":"启航物流","c":"合德ZIM快提","wt":51,"p":9.2,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":13,"t_max":15},{"w":"SUM2","s":"启航物流","c":"合德ZIM快提","wt":100,"p":7.88,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":13,"t_max":15},{"w":"SUM2","s":"宏图跨境","c":"合德ZIM普提","wt":12,"p":9.65,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":15,"t_max":20},{"w":"SUM2","s":"宏图跨境","c":"合德ZIM普提","wt":51,"p":8.88,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":16,"t_max":19},{"w":"SUM2","s":"宏图跨境","c":"合德ZIM普提","wt":100,"p":7.65,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":16,"t_max":18},{"w":"SUM2","s":"星辰速运","c":"合德ZIM普提","wt":12,"p":10.15,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":17,"t_max":19},{"w":"SUM2","s":"星辰速运","c":"合德ZIM普提","wt":51,"p":8.65,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":17,"t_max":20},{"w":"SUM2","s":"星辰速运","c":"合德ZIM普提","wt":100,"p":7.99,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":16,"t_max":21},{"w":"SUM2","s":"启航物流","c":"普船卡派","wt":12,"p":7.32,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":31},{"w":"SUM2","s":"启航物流","c":"普船卡派","wt":51,"p":6.59,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":28},{"w":"SUM2","s":"启航物流","c":"普船卡派","wt":100,"p":6.11,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":23,"t_max":29},{"w":"SUM2","s":"宏图跨境","c":"普船卡派","wt":12,"p":7.77,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":24,"t_max":28},{"w":"SUM2","s":"宏图跨境","c":"普船卡派","wt":51,"p":6.8,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":22,"t_max":29},{"w":"SUM2","s":"宏图跨境","c":"普船卡派","wt":100,"p":6.24,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":22,"t_max":31},{"w":"SUM2","s":"星辰速运","c":"普船卡派","wt":12,"p":7.24,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":23,"t_max":28},{"w":"SUM2","s":"星辰速运","c":"普船卡派","wt":51,"p":6.26,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":24,"t_max":31},{"w":"SUM2","s":"星辰速运","c":"普船卡派","wt":100,"p":6.16,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":23,"t_max":29},{"w":"SUM2","s":"蓝海物流","c":"普船卡派","wt":12,"p":7.43,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":29},{"w":"SUM2","s":"蓝海物流","c":"普船卡派","wt":51,"p":6.36,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":28},{"w":"SUM2","s":"蓝海物流","c":"普船卡派","wt":100,"p":5.7,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":28},{"w":"SUM2","s":"远洋供应链","c":"普船卡派","wt":12,"p":7.74,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":22,"t_max":28},{"w":"SUM2","s":"远洋供应链","c":"普船卡派","wt":51,"p":6.43,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":28},{"w":"SUM2","s":"远洋供应链","c":"普船卡派","wt":100,"p":6.13,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":30},{"w":"SUM2","s":"云帆国际","c":"普船特惠卡派","wt":12,"p":7.12,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":31},{"w":"SUM2","s":"云帆国际","c":"普船特惠卡派","wt":51,"p":6.28,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":25,"t_max":31},{"w":"SUM2","s":"云帆国际","c":"普船特惠卡派","wt":100,"p":5.61,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":31},{"w":"SUM2","s":"蓝海物流","c":"普船特惠卡派","wt":12,"p":7.02,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":25,"t_max":33},{"w":"SUM2","s":"蓝海物流","c":"普船特惠卡派","wt":51,"p":6.28,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":31},{"w":"SUM2","s":"蓝海物流","c":"普船特惠卡派","wt":100,"p":5.47,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":24,"t_max":33},{"w":"SUM2","s":"远洋供应链","c":"普船特惠卡派","wt":12,"p":6.97,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":31},{"w":"SUM2","s":"远洋供应链","c":"普船特惠卡派","wt":51,"p":6.24,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":32},{"w":"SUM2","s":"远洋供应链","c":"普船特惠卡派","wt":100,"p":5.29,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":25,"t_max":30},{"w":"SUM2","s":"云帆国际","c":"纽约卡派","wt":12,"p":8.21,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":27,"t_max":32},{"w":"SUM2","s":"云帆国际","c":"纽约卡派","wt":51,"p":7.77,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":34},{"w":"SUM2","s":"云帆国际","c":"纽约卡派","wt":100,"p":6.64,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":33},{"w":"SUM2","s":"启航物流","c":"纽约卡派","wt":12,"p":8.32,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":32},{"w":"SUM2","s":"启航物流","c":"纽约卡派","wt":51,"p":7.16,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":27,"t_max":34},{"w":"SUM2","s":"启航物流","c":"纽约卡派","wt":100,"p":6.86,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":25,"t_max":32},{"w":"SUM2","s":"宏图跨境","c":"纽约卡派","wt":12,"p":8.96,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":25,"t_max":32},{"w":"SUM2","s":"宏图跨境","c":"纽约卡派","wt":51,"p":7.67,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":27,"t_max":33},{"w":"SUM2","s":"宏图跨境","c":"纽约卡派","wt":100,"p":6.59,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":27,"t_max":33},{"w":"SUM2","s":"星辰速运","c":"纽约卡派","wt":12,"p":8.26,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":33},{"w":"SUM2","s":"星辰速运","c":"纽约卡派","wt":51,"p":7.45,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":32},{"w":"SUM2","s":"星辰速运","c":"纽约卡派","wt":100,"p":6.75,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":27,"t_max":32},{"w":"SUM2","s":"宏图跨境","c":"美森CLX正班","wt":12,"p":12.85,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":11,"t_max":15},{"w":"SUM2","s":"宏图跨境","c":"美森CLX正班","wt":51,"p":11.54,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":12,"t_max":14},{"w":"SUM2","s":"宏图跨境","c":"美森CLX正班","wt":100,"p":10.02,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":12,"t_max":15},{"w":"SUM2","s":"星辰速运","c":"美森CLX正班","wt":12,"p":12.84,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":10,"t_max":13},{"w":"SUM2","s":"星辰速运","c":"美森CLX正班","wt":51,"p":11.23,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":10,"t_max":14},{"w":"SUM2","s":"星辰速运","c":"美森CLX正班","wt":100,"p":10.42,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":11,"t_max":13},{"w":"SUM2","s":"蓝海物流","c":"美森CLX正班","wt":12,"p":12.34,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":11,"t_max":13},{"w":"SUM2","s":"蓝海物流","c":"美森CLX正班","wt":51,"p":10.48,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":12,"t_max":14},{"w":"SUM2","s":"蓝海物流","c":"美森CLX正班","wt":100,"p":10.54,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":11,"t_max":14},{"w":"SUM2","s":"云帆国际","c":"美森MAX加班","wt":12,"p":12.17,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":13,"t_max":14},{"w":"SUM2","s":"云帆国际","c":"美森MAX加班","wt":51,"p":10.97,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":12,"t_max":16},{"w":"SUM2","s":"云帆国际","c":"美森MAX加班","wt":100,"p":9.43,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":12,"t_max":13},{"w":"SUM2","s":"远洋供应链","c":"美森MAX加班","wt":12,"p":12.61,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":12,"t_max":13},{"w":"SUM2","s":"远洋供应链","c":"美森MAX加班","wt":51,"p":10.41,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":12,"t_max":15},{"w":"SUM2","s":"远洋供应链","c":"美森MAX加班","wt":100,"p":9.75,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":11,"t_max":15},{"w":"SUM2","s":"启航物流","c":"芝加哥卡派","wt":12,"p":8.12,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":31},{"w":"SUM2","s":"启航物流","c":"芝加哥卡派","wt":51,"p":7.1,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":31},{"w":"SUM2","s":"启航物流","c":"芝加哥卡派","wt":100,"p":6.72,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":34},{"w":"SUM2","s":"星辰速运","c":"芝加哥卡派","wt":12,"p":8.02,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":33},{"w":"SUM2","s":"星辰速运","c":"芝加哥卡派","wt":51,"p":7.36,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":31},{"w":"SUM2","s":"星辰速运","c":"芝加哥卡派","wt":100,"p":6.56,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":33},{"w":"SUM2","s":"蓝海物流","c":"芝加哥卡派","wt":12,"p":8.68,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":25,"t_max":33},{"w":"SUM2","s":"蓝海物流","c":"芝加哥卡派","wt":51,"p":6.85,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":33},{"w":"SUM2","s":"蓝海物流","c":"芝加哥卡派","wt":100,"p":6.54,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":34},{"w":"SUM2","s":"远洋供应链","c":"萨凡纳卡派","wt":12,"p":9.12,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":26,"t_max":34},{"w":"SUM2","s":"远洋供应链","c":"萨凡纳卡派","wt":51,"p":7.98,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":26,"t_max":34},{"w":"SUM2","s":"远洋供应链","c":"萨凡纳卡派","wt":100,"p":7.17,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":28,"t_max":33},{"w":"SUM3","s":"宏图跨境","c":"休斯顿卡派","wt":12,"p":8.4,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":25,"t_max":32},{"w":"SUM3","s":"宏图跨境","c":"休斯顿卡派","wt":51,"p":7.83,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":26,"t_max":33},{"w":"SUM3","s":"宏图跨境","c":"休斯顿卡派","wt":100,"p":7.04,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":25,"t_max":32},{"w":"SUM3","s":"星辰速运","c":"休斯顿卡派","wt":12,"p":8.78,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":27,"t_max":34},{"w":"SUM3","s":"星辰速运","c":"休斯顿卡派","wt":51,"p":7.43,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":27,"t_max":34},{"w":"SUM3","s":"星辰速运","c":"休斯顿卡派","wt":100,"p":6.7,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":35},{"w":"SUM3","s":"蓝海物流","c":"休斯顿卡派","wt":12,"p":8.97,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":25,"t_max":32},{"w":"SUM3","s":"蓝海物流","c":"休斯顿卡派","wt":51,"p":7.43,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":33},{"w":"SUM3","s":"蓝海物流","c":"休斯顿卡派","wt":100,"p":7.23,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":25,"t_max":34},{"w":"SUM3","s":"远洋供应链","c":"休斯顿卡派","wt":12,"p":8.87,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":27,"t_max":33},{"w":"SUM3","s":"远洋供应链","c":"休斯顿卡派","wt":51,"p":7.28,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":32},{"w":"SUM3","s":"远洋供应链","c":"休斯顿卡派","wt":100,"p":7.09,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":25,"t_max":35},{"w":"SUM3","s":"顺达集运","c":"休斯顿卡派","wt":12,"p":8.28,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":27,"t_max":35},{"w":"SUM3","s":"顺达集运","c":"休斯顿卡派","wt":51,"p":7.36,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":32},{"w":"SUM3","s":"顺达集运","c":"休斯顿卡派","wt":100,"p":6.71,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":25,"t_max":35},{"w":"SUM3","s":"宏图跨境","c":"合德ZIM快提","wt":12,"p":10.84,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":13,"t_max":15},{"w":"SUM3","s":"宏图跨境","c":"合德ZIM快提","wt":51,"p":9.23,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":12,"t_max":16},{"w":"SUM3","s":"宏图跨境","c":"合德ZIM快提","wt":100,"p":8.45,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":13,"t_max":17},{"w":"SUM3","s":"星辰速运","c":"合德ZIM快提","wt":12,"p":10.63,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":13,"t_max":15},{"w":"SUM3","s":"星辰速运","c":"合德ZIM快提","wt":51,"p":9.31,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":13,"t_max":16},{"w":"SUM3","s":"星辰速运","c":"合德ZIM快提","wt":100,"p":8.36,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":12,"t_max":18},{"w":"SUM3","s":"宏图跨境","c":"合德ZIM普提","wt":12,"p":9.48,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":16,"t_max":18},{"w":"SUM3","s":"宏图跨境","c":"合德ZIM普提","wt":51,"p":8.15,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":17,"t_max":19},{"w":"SUM3","s":"宏图跨境","c":"合德ZIM普提","wt":100,"p":7.61,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":16,"t_max":18},{"w":"SUM3","s":"蓝海物流","c":"合德ZIM普提","wt":12,"p":10.0,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":16,"t_max":19},{"w":"SUM3","s":"蓝海物流","c":"合德ZIM普提","wt":51,"p":8.82,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":17,"t_max":21},{"w":"SUM3","s":"蓝海物流","c":"合德ZIM普提","wt":100,"p":8.13,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":16,"t_max":18},{"w":"SUM3","s":"启航物流","c":"普船卡派","wt":12,"p":7.71,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":29},{"w":"SUM3","s":"启航物流","c":"普船卡派","wt":51,"p":6.43,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":22,"t_max":28},{"w":"SUM3","s":"启航物流","c":"普船卡派","wt":100,"p":5.75,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":28},{"w":"SUM3","s":"星辰速运","c":"普船卡派","wt":12,"p":7.38,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":22,"t_max":28},{"w":"SUM3","s":"星辰速运","c":"普船卡派","wt":51,"p":6.3,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":22,"t_max":28},{"w":"SUM3","s":"星辰速运","c":"普船卡派","wt":100,"p":5.95,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":24,"t_max":31},{"w":"SUM3","s":"远洋供应链","c":"普船卡派","wt":12,"p":7.2,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":24,"t_max":28},{"w":"SUM3","s":"远洋供应链","c":"普船卡派","wt":51,"p":6.82,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":22,"t_max":30},{"w":"SUM3","s":"远洋供应链","c":"普船卡派","wt":100,"p":6.05,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":24,"t_max":28},{"w":"SUM3","s":"顺达集运","c":"普船卡派","wt":12,"p":7.73,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":22,"t_max":30},{"w":"SUM3","s":"顺达集运","c":"普船卡派","wt":51,"p":6.25,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":31},{"w":"SUM3","s":"顺达集运","c":"普船卡派","wt":100,"p":5.8,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":23,"t_max":30},{"w":"SUM3","s":"启航物流","c":"普船特惠卡派","wt":12,"p":6.83,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":24,"t_max":32},{"w":"SUM3","s":"启航物流","c":"普船特惠卡派","wt":51,"p":6.21,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":25,"t_max":31},{"w":"SUM3","s":"启航物流","c":"普船特惠卡派","wt":100,"p":5.62,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":30},{"w":"SUM3","s":"星辰速运","c":"普船特惠卡派","wt":12,"p":6.57,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":31},{"w":"SUM3","s":"星辰速运","c":"普船特惠卡派","wt":51,"p":5.98,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":33},{"w":"SUM3","s":"星辰速运","c":"普船特惠卡派","wt":100,"p":5.38,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":31},{"w":"SUM3","s":"远洋供应链","c":"纽约卡派","wt":12,"p":8.96,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":27,"t_max":33},{"w":"SUM3","s":"远洋供应链","c":"纽约卡派","wt":51,"p":7.56,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":27,"t_max":35},{"w":"SUM3","s":"远洋供应链","c":"纽约卡派","wt":100,"p":6.86,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":32},{"w":"SUM3","s":"顺达集运","c":"纽约卡派","wt":12,"p":8.21,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":27,"t_max":32},{"w":"SUM3","s":"顺达集运","c":"纽约卡派","wt":51,"p":7.59,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":27,"t_max":35},{"w":"SUM3","s":"顺达集运","c":"纽约卡派","wt":100,"p":6.88,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":27,"t_max":34},{"w":"SUM3","s":"云帆国际","c":"美森CLX正班","wt":12,"p":12.21,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":12,"t_max":13},{"w":"SUM3","s":"云帆国际","c":"美森CLX正班","wt":51,"p":11.51,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":10,"t_max":13},{"w":"SUM3","s":"云帆国际","c":"美森CLX正班","wt":100,"p":10.41,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":12,"t_max":13},{"w":"SUM3","s":"顺达集运","c":"美森CLX正班","wt":12,"p":12.1,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":10,"t_max":15},{"w":"SUM3","s":"顺达集运","c":"美森CLX正班","wt":51,"p":10.93,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":10,"t_max":13},{"w":"SUM3","s":"顺达集运","c":"美森CLX正班","wt":100,"p":10.3,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":12,"t_max":12},{"w":"SUM3","s":"云帆国际","c":"美森MAX加班","wt":12,"p":12.23,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":13,"t_max":16},{"w":"SUM3","s":"云帆国际","c":"美森MAX加班","wt":51,"p":10.35,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":13,"t_max":13},{"w":"SUM3","s":"云帆国际","c":"美森MAX加班","wt":100,"p":9.19,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":11,"t_max":13},{"w":"SUM3","s":"启航物流","c":"美森MAX加班","wt":12,"p":12.07,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":12,"t_max":13},{"w":"SUM3","s":"启航物流","c":"美森MAX加班","wt":51,"p":10.77,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":13,"t_max":16},{"w":"SUM3","s":"启航物流","c":"美森MAX加班","wt":100,"p":9.57,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":11,"t_max":13},{"w":"SUM3","s":"宏图跨境","c":"美森MAX加班","wt":12,"p":11.5,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":12,"t_max":15},{"w":"SUM3","s":"宏图跨境","c":"美森MAX加班","wt":51,"p":9.99,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":12,"t_max":16},{"w":"SUM3","s":"宏图跨境","c":"美森MAX加班","wt":100,"p":9.34,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":11,"t_max":16},{"w":"SUM3","s":"蓝海物流","c":"美森MAX加班","wt":12,"p":12.3,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":11,"t_max":15},{"w":"SUM3","s":"蓝海物流","c":"美森MAX加班","wt":51,"p":10.15,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":12,"t_max":13},{"w":"SUM3","s":"蓝海物流","c":"美森MAX加班","wt":100,"p":9.63,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":11,"t_max":14},{"w":"SUM3","s":"顺达集运","c":"美森MAX加班","wt":12,"p":12.67,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":12,"t_max":15},{"w":"SUM3","s":"顺达集运","c":"美森MAX加班","wt":51,"p":10.15,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":13,"t_max":14},{"w":"SUM3","s":"顺达集运","c":"美森MAX加班","wt":100,"p":10.08,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":12,"t_max":16},{"w":"SUM3","s":"云帆国际","c":"芝加哥卡派","wt":12,"p":8.05,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":32},{"w":"SUM3","s":"云帆国际","c":"芝加哥卡派","wt":51,"p":6.97,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":24,"t_max":33},{"w":"SUM3","s":"云帆国际","c":"芝加哥卡派","wt":100,"p":6.44,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":25,"t_max":34},{"w":"SUM3","s":"云帆国际","c":"萨凡纳卡派","wt":12,"p":8.76,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":28,"t_max":36},{"w":"SUM3","s":"云帆国际","c":"萨凡纳卡派","wt":51,"p":8.08,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":28,"t_max":33},{"w":"SUM3","s":"云帆国际","c":"萨凡纳卡派","wt":100,"p":6.93,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":28,"t_max":36},{"w":"SUM3","s":"启航物流","c":"萨凡纳卡派","wt":12,"p":8.97,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":28,"t_max":34},{"w":"SUM3","s":"启航物流","c":"萨凡纳卡派","wt":51,"p":8.0,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":28,"t_max":36},{"w":"SUM3","s":"启航物流","c":"萨凡纳卡派","wt":100,"p":7.32,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":28,"t_max":34},{"w":"SUM3","s":"蓝海物流","c":"萨凡纳卡派","wt":12,"p":9.41,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":27,"t_max":33},{"w":"SUM3","s":"蓝海物流","c":"萨凡纳卡派","wt":51,"p":8.05,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":28,"t_max":35},{"w":"SUM3","s":"蓝海物流","c":"萨凡纳卡派","wt":100,"p":7.12,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":34},{"w":"SUM3","s":"远洋供应链","c":"萨凡纳卡派","wt":12,"p":8.81,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":36},{"w":"SUM3","s":"远洋供应链","c":"萨凡纳卡派","wt":51,"p":7.82,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":27,"t_max":34},{"w":"SUM3","s":"远洋供应链","c":"萨凡纳卡派","wt":100,"p":7.46,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":33},{"w":"SUM4","s":"远洋供应链","c":"休斯顿卡派","wt":12,"p":8.66,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":25,"t_max":32},{"w":"SUM4","s":"远洋供应链","c":"休斯顿卡派","wt":51,"p":7.6,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":25,"t_max":33},{"w":"SUM4","s":"远洋供应链","c":"休斯顿卡派","wt":100,"p":7.08,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":25,"t_max":35},{"w":"SUM4","s":"通达国际","c":"休斯顿卡派","wt":12,"p":9.04,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":32},{"w":"SUM4","s":"通达国际","c":"休斯顿卡派","wt":51,"p":7.63,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":32},{"w":"SUM4","s":"通达国际","c":"休斯顿卡派","wt":100,"p":7.03,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":27,"t_max":34},{"w":"SUM4","s":"宏图跨境","c":"合德ZIM快提","wt":12,"p":10.32,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":14,"t_max":16},{"w":"SUM4","s":"宏图跨境","c":"合德ZIM快提","wt":51,"p":9.17,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":14,"t_max":17},{"w":"SUM4","s":"宏图跨境","c":"合德ZIM快提","wt":100,"p":8.01,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":12,"t_max":18},{"w":"SUM4","s":"远洋供应链","c":"合德ZIM快提","wt":12,"p":10.55,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":14,"t_max":16},{"w":"SUM4","s":"远洋供应链","c":"合德ZIM快提","wt":51,"p":9.19,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":13,"t_max":17},{"w":"SUM4","s":"远洋供应链","c":"合德ZIM快提","wt":100,"p":7.91,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":12,"t_max":17},{"w":"SUM4","s":"启航物流","c":"普船卡派","wt":12,"p":7.71,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":24,"t_max":28},{"w":"SUM4","s":"启航物流","c":"普船卡派","wt":51,"p":6.81,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":23,"t_max":30},{"w":"SUM4","s":"启航物流","c":"普船卡派","wt":100,"p":6.06,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":22,"t_max":30},{"w":"SUM4","s":"远洋供应链","c":"普船卡派","wt":12,"p":7.53,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":22,"t_max":28},{"w":"SUM4","s":"远洋供应链","c":"普船卡派","wt":51,"p":6.53,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":23,"t_max":29},{"w":"SUM4","s":"远洋供应链","c":"普船卡派","wt":100,"p":5.84,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":23,"t_max":28},{"w":"SUM4","s":"通达国际","c":"普船卡派","wt":12,"p":7.42,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":22,"t_max":30},{"w":"SUM4","s":"通达国际","c":"普船卡派","wt":51,"p":6.42,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":23,"t_max":28},{"w":"SUM4","s":"通达国际","c":"普船卡派","wt":100,"p":6.16,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":23,"t_max":30},{"w":"SUM4","s":"顺达集运","c":"普船卡派","wt":12,"p":7.35,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":22,"t_max":28},{"w":"SUM4","s":"顺达集运","c":"普船卡派","wt":51,"p":6.67,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":22,"t_max":29},{"w":"SUM4","s":"顺达集运","c":"普船卡派","wt":100,"p":6.19,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":23,"t_max":31},{"w":"SUM4","s":"启航物流","c":"普船特惠卡派","wt":12,"p":6.79,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":24,"t_max":33},{"w":"SUM4","s":"启航物流","c":"普船特惠卡派","wt":51,"p":5.82,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":24,"t_max":33},{"w":"SUM4","s":"启航物流","c":"普船特惠卡派","wt":100,"p":5.55,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":31},{"w":"SUM4","s":"蓝海物流","c":"普船特惠卡派","wt":12,"p":6.99,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":25,"t_max":32},{"w":"SUM4","s":"蓝海物流","c":"普船特惠卡派","wt":51,"p":5.72,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":25,"t_max":31},{"w":"SUM4","s":"蓝海物流","c":"普船特惠卡派","wt":100,"p":5.62,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":24,"t_max":30},{"w":"SUM4","s":"通达国际","c":"普船特惠卡派","wt":12,"p":7.16,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":30},{"w":"SUM4","s":"通达国际","c":"普船特惠卡派","wt":51,"p":6.22,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":32},{"w":"SUM4","s":"通达国际","c":"普船特惠卡派","wt":100,"p":5.26,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":25,"t_max":33},{"w":"SUM4","s":"顺达集运","c":"普船特惠卡派","wt":12,"p":6.64,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":26,"t_max":30},{"w":"SUM4","s":"顺达集运","c":"普船特惠卡派","wt":51,"p":6.13,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":25,"t_max":30},{"w":"SUM4","s":"顺达集运","c":"普船特惠卡派","wt":100,"p":5.66,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":25,"t_max":33},{"w":"SUM4","s":"启航物流","c":"纽约卡派","wt":12,"p":8.68,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":27,"t_max":35},{"w":"SUM4","s":"启航物流","c":"纽约卡派","wt":51,"p":7.15,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":27,"t_max":33},{"w":"SUM4","s":"启航物流","c":"纽约卡派","wt":100,"p":6.61,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":35},{"w":"SUM4","s":"蓝海物流","c":"纽约卡派","wt":12,"p":8.86,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":25,"t_max":33},{"w":"SUM4","s":"蓝海物流","c":"纽约卡派","wt":51,"p":7.78,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":33},{"w":"SUM4","s":"蓝海物流","c":"纽约卡派","wt":100,"p":7.03,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":34},{"w":"SUM4","s":"启航物流","c":"美森CLX正班","wt":12,"p":12.55,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":10,"t_max":13},{"w":"SUM4","s":"启航物流","c":"美森CLX正班","wt":51,"p":10.75,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":10,"t_max":15},{"w":"SUM4","s":"启航物流","c":"美森CLX正班","wt":100,"p":10.53,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":11,"t_max":12},{"w":"SUM4","s":"蓝海物流","c":"美森CLX正班","wt":12,"p":12.58,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":11,"t_max":12},{"w":"SUM4","s":"蓝海物流","c":"美森CLX正班","wt":51,"p":10.98,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":12,"t_max":12},{"w":"SUM4","s":"蓝海物流","c":"美森CLX正班","wt":100,"p":10.48,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":10,"t_max":14},{"w":"SUM4","s":"顺达集运","c":"美森CLX正班","wt":12,"p":12.82,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":12,"t_max":15},{"w":"SUM4","s":"顺达集运","c":"美森CLX正班","wt":51,"p":10.56,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":11,"t_max":13},{"w":"SUM4","s":"顺达集运","c":"美森CLX正班","wt":100,"p":10.12,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":11,"t_max":13},{"w":"SUM4","s":"宏图跨境","c":"美森MAX加班","wt":12,"p":11.6,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":12,"t_max":15},{"w":"SUM4","s":"宏图跨境","c":"美森MAX加班","wt":51,"p":10.41,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":11,"t_max":16},{"w":"SUM4","s":"宏图跨境","c":"美森MAX加班","wt":100,"p":9.89,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":11,"t_max":15},{"w":"SUM4","s":"蓝海物流","c":"美森MAX加班","wt":12,"p":12.25,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":11,"t_max":13},{"w":"SUM4","s":"蓝海物流","c":"美森MAX加班","wt":51,"p":10.8,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":11,"t_max":15},{"w":"SUM4","s":"蓝海物流","c":"美森MAX加班","wt":100,"p":9.2,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":11,"t_max":13},{"w":"SUM4","s":"通达国际","c":"美森MAX加班","wt":12,"p":11.85,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":11,"t_max":14},{"w":"SUM4","s":"通达国际","c":"美森MAX加班","wt":51,"p":10.24,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":13,"t_max":16},{"w":"SUM4","s":"通达国际","c":"美森MAX加班","wt":100,"p":9.41,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":11,"t_max":13},{"w":"SUM4","s":"顺达集运","c":"美森MAX加班","wt":12,"p":12.06,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":13,"t_max":13},{"w":"SUM4","s":"顺达集运","c":"美森MAX加班","wt":51,"p":10.37,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":12,"t_max":13},{"w":"SUM4","s":"顺达集运","c":"美森MAX加班","wt":100,"p":9.63,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":13,"t_max":16},{"w":"SUM4","s":"宏图跨境","c":"芝加哥卡派","wt":12,"p":8.12,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":24,"t_max":33},{"w":"SUM4","s":"宏图跨境","c":"芝加哥卡派","wt":51,"p":6.95,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":34},{"w":"SUM4","s":"宏图跨境","c":"芝加哥卡派","wt":100,"p":6.55,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":25,"t_max":31},{"w":"SUM4","s":"蓝海物流","c":"芝加哥卡派","wt":12,"p":8.36,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":25,"t_max":31},{"w":"SUM4","s":"蓝海物流","c":"芝加哥卡派","wt":51,"p":7.41,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":25,"t_max":32},{"w":"SUM4","s":"蓝海物流","c":"芝加哥卡派","wt":100,"p":6.85,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":24,"t_max":31},{"w":"SUM4","s":"通达国际","c":"芝加哥卡派","wt":12,"p":8.63,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":25,"t_max":34},{"w":"SUM4","s":"通达国际","c":"芝加哥卡派","wt":51,"p":7.1,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":25,"t_max":34},{"w":"SUM4","s":"通达国际","c":"芝加哥卡派","wt":100,"p":6.62,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":32},{"w":"SUM4","s":"启航物流","c":"萨凡纳卡派","wt":12,"p":9.2,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":28,"t_max":36},{"w":"SUM4","s":"启航物流","c":"萨凡纳卡派","wt":51,"p":7.57,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":27,"t_max":33},{"w":"SUM4","s":"启航物流","c":"萨凡纳卡派","wt":100,"p":6.92,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":27,"t_max":35},{"w":"SUM4","s":"远洋供应链","c":"萨凡纳卡派","wt":12,"p":8.74,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":35},{"w":"SUM4","s":"远洋供应链","c":"萨凡纳卡派","wt":51,"p":7.64,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":33},{"w":"SUM4","s":"远洋供应链","c":"萨凡纳卡派","wt":100,"p":7.1,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":27,"t_max":34},{"w":"SUM4","s":"顺达集运","c":"萨凡纳卡派","wt":12,"p":8.8,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":27,"t_max":33},{"w":"SUM4","s":"顺达集运","c":"萨凡纳卡派","wt":51,"p":8.18,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":27,"t_max":34},{"w":"SUM4","s":"顺达集运","c":"萨凡纳卡派","wt":100,"p":7.2,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":27,"t_max":34},{"w":"SUM5","s":"启航物流","c":"休斯顿卡派","wt":12,"p":8.78,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":34},{"w":"SUM5","s":"启航物流","c":"休斯顿卡派","wt":51,"p":7.13,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":27,"t_max":32},{"w":"SUM5","s":"启航物流","c":"休斯顿卡派","wt":100,"p":6.91,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":34},{"w":"SUM5","s":"宏图跨境","c":"休斯顿卡派","wt":12,"p":9.05,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":27,"t_max":34},{"w":"SUM5","s":"宏图跨境","c":"休斯顿卡派","wt":51,"p":7.24,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":25,"t_max":33},{"w":"SUM5","s":"宏图跨境","c":"休斯顿卡派","wt":100,"p":6.85,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":25,"t_max":32},{"w":"SUM5","s":"星辰速运","c":"休斯顿卡派","wt":12,"p":8.81,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":25,"t_max":32},{"w":"SUM5","s":"星辰速运","c":"休斯顿卡派","wt":51,"p":7.39,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":25,"t_max":32},{"w":"SUM5","s":"星辰速运","c":"休斯顿卡派","wt":100,"p":6.87,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":33},{"w":"SUM5","s":"蓝海物流","c":"休斯顿卡派","wt":12,"p":8.99,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":34},{"w":"SUM5","s":"蓝海物流","c":"休斯顿卡派","wt":51,"p":7.35,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":25,"t_max":33},{"w":"SUM5","s":"蓝海物流","c":"休斯顿卡派","wt":100,"p":6.8,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":27,"t_max":34},{"w":"SUM5","s":"宏图跨境","c":"合德ZIM快提","wt":12,"p":10.73,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":12,"t_max":16},{"w":"SUM5","s":"宏图跨境","c":"合德ZIM快提","wt":51,"p":8.68,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":13,"t_max":17},{"w":"SUM5","s":"宏图跨境","c":"合德ZIM快提","wt":100,"p":8.47,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":12,"t_max":16},{"w":"SUM5","s":"远洋供应链","c":"合德ZIM快提","wt":12,"p":9.91,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":12,"t_max":18},{"w":"SUM5","s":"远洋供应链","c":"合德ZIM快提","wt":51,"p":9.38,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":14,"t_max":18},{"w":"SUM5","s":"远洋供应链","c":"合德ZIM快提","wt":100,"p":8.32,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":14,"t_max":18},{"w":"SUM5","s":"宏图跨境","c":"合德ZIM普提","wt":12,"p":10.06,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":17,"t_max":19},{"w":"SUM5","s":"宏图跨境","c":"合德ZIM普提","wt":51,"p":8.82,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":16,"t_max":20},{"w":"SUM5","s":"宏图跨境","c":"合德ZIM普提","wt":100,"p":7.76,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":17,"t_max":19},{"w":"SUM5","s":"蓝海物流","c":"合德ZIM普提","wt":12,"p":10.21,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":16,"t_max":19},{"w":"SUM5","s":"蓝海物流","c":"合德ZIM普提","wt":51,"p":8.61,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":16,"t_max":19},{"w":"SUM5","s":"蓝海物流","c":"合德ZIM普提","wt":100,"p":7.89,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":16,"t_max":18},{"w":"SUM5","s":"启航物流","c":"普船卡派","wt":12,"p":7.46,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":24,"t_max":29},{"w":"SUM5","s":"启航物流","c":"普船卡派","wt":51,"p":6.31,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":24,"t_max":30},{"w":"SUM5","s":"启航物流","c":"普船卡派","wt":100,"p":5.97,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":22,"t_max":29},{"w":"SUM5","s":"星辰速运","c":"普船卡派","wt":12,"p":7.83,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":24,"t_max":28},{"w":"SUM5","s":"星辰速运","c":"普船卡派","wt":51,"p":6.43,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":23,"t_max":31},{"w":"SUM5","s":"星辰速运","c":"普船卡派","wt":100,"p":5.78,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":22,"t_max":29},{"w":"SUM5","s":"远洋供应链","c":"普船卡派","wt":12,"p":7.39,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":22,"t_max":31},{"w":"SUM5","s":"远洋供应链","c":"普船卡派","wt":51,"p":6.56,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":24,"t_max":30},{"w":"SUM5","s":"远洋供应链","c":"普船卡派","wt":100,"p":5.79,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":23,"t_max":31},{"w":"SUM5","s":"通达国际","c":"普船卡派","wt":12,"p":7.18,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":24,"t_max":28},{"w":"SUM5","s":"通达国际","c":"普船卡派","wt":51,"p":6.32,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":23,"t_max":28},{"w":"SUM5","s":"通达国际","c":"普船卡派","wt":100,"p":6.04,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":22,"t_max":29},{"w":"SUM5","s":"宏图跨境","c":"普船特惠卡派","wt":12,"p":6.59,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":31},{"w":"SUM5","s":"宏图跨境","c":"普船特惠卡派","wt":51,"p":5.95,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":30},{"w":"SUM5","s":"宏图跨境","c":"普船特惠卡派","wt":100,"p":5.66,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":31},{"w":"SUM5","s":"蓝海物流","c":"普船特惠卡派","wt":12,"p":6.92,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":24,"t_max":33},{"w":"SUM5","s":"蓝海物流","c":"普船特惠卡派","wt":51,"p":6.28,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":30},{"w":"SUM5","s":"蓝海物流","c":"普船特惠卡派","wt":100,"p":5.63,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":32},{"w":"SUM5","s":"顺达集运","c":"普船特惠卡派","wt":12,"p":7.05,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":25,"t_max":30},{"w":"SUM5","s":"顺达集运","c":"普船特惠卡派","wt":51,"p":6.14,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":31},{"w":"SUM5","s":"顺达集运","c":"普船特惠卡派","wt":100,"p":5.32,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":25,"t_max":33},{"w":"SUM5","s":"启航物流","c":"纽约卡派","wt":12,"p":8.84,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":27,"t_max":33},{"w":"SUM5","s":"启航物流","c":"纽约卡派","wt":51,"p":7.67,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":25,"t_max":34},{"w":"SUM5","s":"启航物流","c":"纽约卡派","wt":100,"p":6.96,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":25,"t_max":34},{"w":"SUM5","s":"星辰速运","c":"纽约卡派","wt":12,"p":8.3,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":33},{"w":"SUM5","s":"星辰速运","c":"纽约卡派","wt":51,"p":7.85,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":27,"t_max":35},{"w":"SUM5","s":"星辰速运","c":"纽约卡派","wt":100,"p":6.95,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":35},{"w":"SUM5","s":"远洋供应链","c":"纽约卡派","wt":12,"p":8.55,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":26,"t_max":33},{"w":"SUM5","s":"远洋供应链","c":"纽约卡派","wt":51,"p":7.18,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":27,"t_max":35},{"w":"SUM5","s":"远洋供应链","c":"纽约卡派","wt":100,"p":6.86,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":26,"t_max":34},{"w":"SUM5","s":"通达国际","c":"纽约卡派","wt":12,"p":9.05,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":25,"t_max":35},{"w":"SUM5","s":"通达国际","c":"纽约卡派","wt":51,"p":7.49,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":34},{"w":"SUM5","s":"通达国际","c":"纽约卡派","wt":100,"p":7.14,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":27,"t_max":35},{"w":"SUM5","s":"顺达集运","c":"纽约卡派","wt":12,"p":8.82,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":25,"t_max":34},{"w":"SUM5","s":"顺达集运","c":"纽约卡派","wt":51,"p":7.73,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":26,"t_max":34},{"w":"SUM5","s":"顺达集运","c":"纽约卡派","wt":100,"p":6.87,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":25,"t_max":35},{"w":"SUM5","s":"蓝海物流","c":"美森CLX正班","wt":12,"p":12.4,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":12,"t_max":15},{"w":"SUM5","s":"蓝海物流","c":"美森CLX正班","wt":51,"p":10.95,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":10,"t_max":12},{"w":"SUM5","s":"蓝海物流","c":"美森CLX正班","wt":100,"p":9.66,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":12,"t_max":12},{"w":"SUM5","s":"远洋供应链","c":"美森CLX正班","wt":12,"p":13.27,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":10,"t_max":12},{"w":"SUM5","s":"远洋供应链","c":"美森CLX正班","wt":51,"p":10.55,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":12,"t_max":15},{"w":"SUM5","s":"远洋供应链","c":"美森CLX正班","wt":100,"p":9.61,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":12,"t_max":14},{"w":"SUM5","s":"通达国际","c":"美森CLX正班","wt":12,"p":13.19,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":12,"t_max":14},{"w":"SUM5","s":"通达国际","c":"美森CLX正班","wt":51,"p":10.67,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":11,"t_max":13},{"w":"SUM5","s":"通达国际","c":"美森CLX正班","wt":100,"p":10.62,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":10,"t_max":14},{"w":"SUM5","s":"顺达集运","c":"美森CLX正班","wt":12,"p":12.13,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":12,"t_max":13},{"w":"SUM5","s":"顺达集运","c":"美森CLX正班","wt":51,"p":11.05,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":11,"t_max":14},{"w":"SUM5","s":"顺达集运","c":"美森CLX正班","wt":100,"p":9.85,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":10,"t_max":12},{"w":"SUM5","s":"启航物流","c":"美森MAX加班","wt":12,"p":11.83,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":11,"t_max":13},{"w":"SUM5","s":"启航物流","c":"美森MAX加班","wt":51,"p":10.8,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":11,"t_max":16},{"w":"SUM5","s":"启航物流","c":"美森MAX加班","wt":100,"p":9.37,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":12,"t_max":14},{"w":"SUM5","s":"宏图跨境","c":"芝加哥卡派","wt":12,"p":8.19,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":32},{"w":"SUM5","s":"宏图跨境","c":"芝加哥卡派","wt":51,"p":7.46,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":32},{"w":"SUM5","s":"宏图跨境","c":"芝加哥卡派","wt":100,"p":6.31,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":32},{"w":"SUM5","s":"星辰速运","c":"萨凡纳卡派","wt":12,"p":9.0,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":27,"t_max":33},{"w":"SUM5","s":"星辰速运","c":"萨凡纳卡派","wt":51,"p":7.53,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":27,"t_max":36},{"w":"SUM5","s":"星辰速运","c":"萨凡纳卡派","wt":100,"p":7.0,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":27,"t_max":33},{"w":"SUM5","s":"蓝海物流","c":"萨凡纳卡派","wt":12,"p":9.01,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":34},{"w":"SUM5","s":"蓝海物流","c":"萨凡纳卡派","wt":51,"p":8.07,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":27,"t_max":36},{"w":"SUM5","s":"蓝海物流","c":"萨凡纳卡派","wt":100,"p":7.15,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":27,"t_max":33},{"w":"SUM5","s":"通达国际","c":"萨凡纳卡派","wt":12,"p":9.2,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":28,"t_max":36},{"w":"SUM5","s":"通达国际","c":"萨凡纳卡派","wt":51,"p":7.65,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":28,"t_max":34},{"w":"SUM5","s":"通达国际","c":"萨凡纳卡派","wt":100,"p":7.4,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":27,"t_max":33},{"w":"SUM5","s":"顺达集运","c":"萨凡纳卡派","wt":12,"p":8.61,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":28,"t_max":35},{"w":"SUM5","s":"顺达集运","c":"萨凡纳卡派","wt":51,"p":7.99,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":33},{"w":"SUM5","s":"顺达集运","c":"萨凡纳卡派","wt":100,"p":7.28,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":36},{"w":"SUM6","s":"蓝海物流","c":"休斯顿卡派","wt":12,"p":8.97,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":27,"t_max":33},{"w":"SUM6","s":"蓝海物流","c":"休斯顿卡派","wt":51,"p":7.62,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":25,"t_max":34},{"w":"SUM6","s":"蓝海物流","c":"休斯顿卡派","wt":100,"p":7.15,"u":"per_kg","dd":"DDP","inbound":"义乌","t_min":26,"t_max":33},{"w":"SUM6","s":"通达国际","c":"休斯顿卡派","wt":12,"p":8.21,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":25,"t_max":35},{"w":"SUM6","s":"通达国际","c":"休斯顿卡派","wt":51,"p":7.68,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":26,"t_max":35},{"w":"SUM6","s":"通达国际","c":"休斯顿卡派","wt":100,"p":7.03,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":27,"t_max":35},{"w":"SUM6","s":"云帆国际","c":"合德ZIM普提","wt":12,"p":10.03,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":16,"t_max":21},{"w":"SUM6","s":"云帆国际","c":"合德ZIM普提","wt":51,"p":8.55,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":16,"t_max":18},{"w":"SUM6","s":"云帆国际","c":"合德ZIM普提","wt":100,"p":7.82,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":15,"t_max":21},{"w":"SUM6","s":"启航物流","c":"合德ZIM普提","wt":12,"p":10.14,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":16,"t_max":19},{"w":"SUM6","s":"启航物流","c":"合德ZIM普提","wt":51,"p":8.69,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":17,"t_max":21},{"w":"SUM6","s":"启航物流","c":"合德ZIM普提","wt":100,"p":8.04,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":16,"t_max":21},{"w":"SUM6","s":"星辰速运","c":"合德ZIM普提","wt":12,"p":9.51,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":17,"t_max":20},{"w":"SUM6","s":"星辰速运","c":"合德ZIM普提","wt":51,"p":8.33,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":16,"t_max":20},{"w":"SUM6","s":"星辰速运","c":"合德ZIM普提","wt":100,"p":8.2,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":17,"t_max":19},{"w":"SUM6","s":"顺达集运","c":"合德ZIM普提","wt":12,"p":9.42,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":17,"t_max":18},{"w":"SUM6","s":"顺达集运","c":"合德ZIM普提","wt":51,"p":8.6,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":16,"t_max":18},{"w":"SUM6","s":"顺达集运","c":"合德ZIM普提","wt":100,"p":7.53,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":15,"t_max":18},{"w":"SUM6","s":"云帆国际","c":"普船卡派","wt":12,"p":7.49,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":22,"t_max":29},{"w":"SUM6","s":"云帆国际","c":"普船卡派","wt":51,"p":6.58,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":23,"t_max":29},{"w":"SUM6","s":"云帆国际","c":"普船卡派","wt":100,"p":6.1,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":23,"t_max":30},{"w":"SUM6","s":"星辰速运","c":"普船卡派","wt":12,"p":7.46,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":23,"t_max":30},{"w":"SUM6","s":"星辰速运","c":"普船卡派","wt":51,"p":6.19,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":23,"t_max":30},{"w":"SUM6","s":"星辰速运","c":"普船卡派","wt":100,"p":6.27,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":29},{"w":"SUM6","s":"蓝海物流","c":"普船卡派","wt":12,"p":7.72,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":30},{"w":"SUM6","s":"蓝海物流","c":"普船卡派","wt":51,"p":6.73,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":22,"t_max":28},{"w":"SUM6","s":"蓝海物流","c":"普船卡派","wt":100,"p":5.69,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":24,"t_max":29},{"w":"SUM6","s":"通达国际","c":"普船卡派","wt":12,"p":7.69,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":22,"t_max":31},{"w":"SUM6","s":"通达国际","c":"普船卡派","wt":51,"p":6.64,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":22,"t_max":30},{"w":"SUM6","s":"通达国际","c":"普船卡派","wt":100,"p":6.22,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":22,"t_max":28},{"w":"SUM6","s":"顺达集运","c":"普船卡派","wt":12,"p":7.4,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":24,"t_max":28},{"w":"SUM6","s":"顺达集运","c":"普船卡派","wt":51,"p":6.58,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":24,"t_max":30},{"w":"SUM6","s":"顺达集运","c":"普船卡派","wt":100,"p":5.89,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":23,"t_max":30},{"w":"SUM6","s":"启航物流","c":"普船特惠卡派","wt":12,"p":6.89,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":24,"t_max":32},{"w":"SUM6","s":"启航物流","c":"普船特惠卡派","wt":51,"p":5.82,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":26,"t_max":30},{"w":"SUM6","s":"启航物流","c":"普船特惠卡派","wt":100,"p":5.66,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":24,"t_max":31},{"w":"SUM6","s":"宏图跨境","c":"普船特惠卡派","wt":12,"p":7.02,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":33},{"w":"SUM6","s":"宏图跨境","c":"普船特惠卡派","wt":51,"p":6.04,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":33},{"w":"SUM6","s":"宏图跨境","c":"普船特惠卡派","wt":100,"p":5.65,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":24,"t_max":33},{"w":"SUM6","s":"通达国际","c":"普船特惠卡派","wt":12,"p":6.79,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":30},{"w":"SUM6","s":"通达国际","c":"普船特惠卡派","wt":51,"p":6.23,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":24,"t_max":31},{"w":"SUM6","s":"通达国际","c":"普船特惠卡派","wt":100,"p":5.44,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":25,"t_max":33},{"w":"SUM6","s":"云帆国际","c":"纽约卡派","wt":12,"p":8.88,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":27,"t_max":34},{"w":"SUM6","s":"云帆国际","c":"纽约卡派","wt":51,"p":7.2,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":25,"t_max":34},{"w":"SUM6","s":"云帆国际","c":"纽约卡派","wt":100,"p":7.22,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":35},{"w":"SUM6","s":"宏图跨境","c":"纽约卡派","wt":12,"p":8.51,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":27,"t_max":34},{"w":"SUM6","s":"宏图跨境","c":"纽约卡派","wt":51,"p":7.86,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":25,"t_max":33},{"w":"SUM6","s":"宏图跨境","c":"纽约卡派","wt":100,"p":7.15,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":27,"t_max":33},{"w":"SUM6","s":"星辰速运","c":"纽约卡派","wt":12,"p":8.47,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":25,"t_max":33},{"w":"SUM6","s":"星辰速运","c":"纽约卡派","wt":51,"p":7.68,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":32},{"w":"SUM6","s":"星辰速运","c":"纽约卡派","wt":100,"p":7.11,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":35},{"w":"SUM6","s":"顺达集运","c":"纽约卡派","wt":12,"p":8.92,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":25,"t_max":32},{"w":"SUM6","s":"顺达集运","c":"纽约卡派","wt":51,"p":7.37,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":27,"t_max":35},{"w":"SUM6","s":"顺达集运","c":"纽约卡派","wt":100,"p":6.76,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":25,"t_max":34},{"w":"SUM6","s":"启航物流","c":"美森CLX正班","wt":12,"p":13.11,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":11,"t_max":12},{"w":"SUM6","s":"启航物流","c":"美森CLX正班","wt":51,"p":11.27,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":10,"t_max":14},{"w":"SUM6","s":"启航物流","c":"美森CLX正班","wt":100,"p":10.6,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":12,"t_max":14},{"w":"SUM6","s":"宏图跨境","c":"美森CLX正班","wt":12,"p":12.88,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":10,"t_max":13},{"w":"SUM6","s":"宏图跨境","c":"美森CLX正班","wt":51,"p":10.48,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":12,"t_max":13},{"w":"SUM6","s":"宏图跨境","c":"美森CLX正班","wt":100,"p":9.91,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":11,"t_max":12},{"w":"SUM6","s":"通达国际","c":"美森CLX正班","wt":12,"p":12.33,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":10,"t_max":15},{"w":"SUM6","s":"通达国际","c":"美森CLX正班","wt":51,"p":11.09,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":12,"t_max":12},{"w":"SUM6","s":"通达国际","c":"美森CLX正班","wt":100,"p":10.14,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":10,"t_max":12},{"w":"SUM6","s":"宏图跨境","c":"美森MAX加班","wt":12,"p":12.3,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":12,"t_max":14},{"w":"SUM6","s":"宏图跨境","c":"美森MAX加班","wt":51,"p":11.02,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":11,"t_max":15},{"w":"SUM6","s":"宏图跨境","c":"美森MAX加班","wt":100,"p":9.44,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":11,"t_max":14},{"w":"SUM6","s":"星辰速运","c":"美森MAX加班","wt":12,"p":11.77,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":12,"t_max":14},{"w":"SUM6","s":"星辰速运","c":"美森MAX加班","wt":51,"p":10.89,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":13,"t_max":15},{"w":"SUM6","s":"星辰速运","c":"美森MAX加班","wt":100,"p":9.7,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":12,"t_max":15},{"w":"SUM6","s":"蓝海物流","c":"美森MAX加班","wt":12,"p":12.05,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":11,"t_max":16},{"w":"SUM6","s":"蓝海物流","c":"美森MAX加班","wt":51,"p":10.94,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":12,"t_max":15},{"w":"SUM6","s":"蓝海物流","c":"美森MAX加班","wt":100,"p":10.07,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":11,"t_max":13},{"w":"SUM6","s":"顺达集运","c":"美森MAX加班","wt":12,"p":11.78,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":11,"t_max":13},{"w":"SUM6","s":"顺达集运","c":"美森MAX加班","wt":51,"p":10.97,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":11,"t_max":15},{"w":"SUM6","s":"顺达集运","c":"美森MAX加班","wt":100,"p":9.68,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":11,"t_max":14},{"w":"SUM6","s":"通达国际","c":"芝加哥卡派","wt":12,"p":8.41,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":26,"t_max":32},{"w":"SUM6","s":"通达国际","c":"芝加哥卡派","wt":51,"p":6.94,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":24,"t_max":32},{"w":"SUM6","s":"通达国际","c":"芝加哥卡派","wt":100,"p":6.88,"u":"per_kg","dd":"DDP","inbound":"上海","t_min":26,"t_max":34},{"w":"SUM6","s":"云帆国际","c":"萨凡纳卡派","wt":12,"p":9.06,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":28,"t_max":33},{"w":"SUM6","s":"云帆国际","c":"萨凡纳卡派","wt":51,"p":7.8,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":36},{"w":"SUM6","s":"云帆国际","c":"萨凡纳卡派","wt":100,"p":6.92,"u":"per_kg","dd":"DDP","inbound":"深圳","t_min":26,"t_max":36},{"w":"SUM6","s":"顺达集运","c":"萨凡纳卡派","wt":12,"p":9.08,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":26,"t_max":33},{"w":"SUM6","s":"顺达集运","c":"萨凡纳卡派","wt":51,"p":8.0,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":27,"t_max":35},{"w":"SUM6","s":"顺达集运","c":"萨凡纳卡派","wt":100,"p":6.9,"u":"per_kg","dd":"DDP","inbound":"宁波","t_min":28,"t_max":35}];
+var DEMO_GEO = "演示仓";
+var ALL_CHANNELS = ["休斯顿卡派","合德ZIM快提","合德ZIM普提","普船卡派","普船特惠卡派","纽约卡派","美森CLX正班","美森MAX加班","芝加哥卡派","萨凡纳卡派"];
+var MONITOR_SNAP = {"普船特惠卡派":[{"s":"宏图跨境","cur":5.65,"old":5.93,"d":-0.28},{"s":"星辰速运","cur":5.36,"old":5.62,"d":-0.26},{"s":"启航物流","cur":5.55,"old":5.32,"d":0.23},{"s":"通达国际","cur":5.26,"old":5.48,"d":-0.22},{"s":"顺达集运","cur":5.32,"old":5.5,"d":-0.18},{"s":"远洋供应链","cur":5.29,"old":5.45,"d":-0.16},{"s":"云帆国际","cur":5.61,"old":5.48,"d":0.13},{"s":"蓝海物流","cur":5.47,"old":5.57,"d":-0.1}],"普船卡派":[{"s":"云帆国际","cur":5.95,"old":6.23,"d":-0.28},{"s":"蓝海物流","cur":5.69,"old":5.44,"d":0.25},{"s":"宏图跨境","cur":6.24,"old":6.05,"d":0.19},{"s":"星辰速运","cur":5.78,"old":5.61,"d":0.17},{"s":"启航物流","cur":5.75,"old":5.89,"d":-0.14},{"s":"通达国际","cur":6.04,"old":5.91,"d":0.13},{"s":"顺达集运","cur":5.8,"old":5.71,"d":0.09},{"s":"远洋供应链","cur":5.79,"old":5.72,"d":0.07}],"纽约卡派":[{"s":"宏图跨境","cur":6.59,"old":6.36,"d":0.23},{"s":"星辰速运","cur":6.75,"old":6.54,"d":0.21},{"s":"启航物流","cur":6.61,"old":6.79,"d":-0.18},{"s":"通达国际","cur":7.14,"old":6.97,"d":0.17},{"s":"顺达集运","cur":6.76,"old":6.63,"d":0.13},{"s":"远洋供应链","cur":6.86,"old":6.75,"d":0.11},{"s":"云帆国际","cur":6.64,"old":6.72,"d":-0.08},{"s":"蓝海物流","cur":7.03,"old":6.98,"d":0.05}],"美森CLX正班":[{"s":"宏图跨境","cur":9.91,"old":10.15,"d":-0.24},{"s":"星辰速运","cur":10.42,"old":10.64,"d":-0.22},{"s":"启航物流","cur":9.92,"old":9.73,"d":0.19},{"s":"通达国际","cur":10.14,"old":10.32,"d":-0.18},{"s":"顺达集运","cur":9.85,"old":9.99,"d":-0.14},{"s":"远洋供应链","cur":9.61,"old":9.73,"d":-0.12},{"s":"云帆国际","cur":10.2,"old":10.11,"d":0.09},{"s":"蓝海物流","cur":9.66,"old":9.72,"d":-0.06}]};
+var SCORE_DATA = [{"s":"星辰速运","price":87.3,"time":26.8,"cov":90.8,"stab":78,"total":71.5},{"s":"通达国际","price":100.0,"time":0.0,"cov":77.2,"stab":76,"total":66.8},{"s":"启航物流","price":52.0,"time":39.3,"cov":100.0,"stab":89,"total":64.0},{"s":"远洋供应链","price":88.9,"time":2.9,"cov":72.7,"stab":74,"total":61.9},{"s":"蓝海物流","price":55.4,"time":32.5,"cov":95.5,"stab":76,"total":60.8},{"s":"宏图跨境","price":0.0,"time":100.0,"cov":86.3,"stab":90,"total":55.8},{"s":"顺达集运","price":31.1,"time":43.0,"cov":90.8,"stab":74,"total":52.5},{"s":"云帆国际","price":15.6,"time":61.8,"cov":81.7,"stab":81,"total":50.2}];
+
+/* ===== 查价（复用 v1） ===== */
+function queryWarehouse(raw){
+  var code = (raw||'').trim().toUpperCase();
+  var list = document.getElementById('qList');
+  var head = document.getElementById('qHead');
+  if(!list) return;
+  if(!code){ list.innerHTML = '<div class="q-row" style="justify-content:center;color:var(--muted)">输入仓码开始查价</div>'; return; }
+  var meta = null;
+  for(var k in DEMO_WH_KEYS){ if(k===code){ meta=k; break; } }
+  if(!meta){
+    list.innerHTML = '<div class="q-row" style="justify-content:center;color:var(--muted)">未找到该仓码，可试：' + Object.keys(DEMO_WH_KEYS).join(' / ') + '</div>';
+    return;
+  }
+  var whEl = document.getElementById('qWh');
+  if(whEl) whEl.innerHTML = meta + ' <span class="q-wh-badge">' + DEMO_GEO + '</span>';
+  var recs = DEMO_US.filter(function(r){ return r.w === meta; });
+  if(!recs.length){ list.innerHTML = '<div class="q-row" style="justify-content:center;color:var(--muted)">该仓暂无价格数据</div>'; return; }
+  var bestByKey = {};
+  recs.forEach(function(r){ var k = r.s + '|' + r.c; if(!bestByKey[k] || r.p < bestByKey[k].p) bestByKey[k] = r; });
+  var rows = Object.keys(bestByKey).map(function(k){ return bestByKey[k]; });
+  rows.sort(function(a,b){ return a.p - b.p; });
+  rows = rows.slice(0, 6);
+  var minP = rows.length ? rows[0].p : 0;
+  list.innerHTML = rows.map(function(r){
+    var u = r.u === 'per_cbm' ? '/CBM' : '/kg';
+    var t = (r.t_min && r.t_max) ? (r.t_min + '-' + r.t_max + '天') : '—';
+    var best = (r.p === minP) ? '<span class="q-best-tag">最低</span>' : '';
+    return '<div class="q-row' + (r.p === minP ? ' best' : '') + '">' +
+      '<div class="q-sup">' + r.s + '<span class="raw">' + r.c + ' · ' + (r.dd||'') + '</span></div>' +
+      '<div class="q-ch">' + r.c + '</div>' +
+      '<div class="q-rate num">' + r.p.toFixed(2) + '<span class="u">' + u + '</span></div>' +
+      '<div class="q-time num">' + t + '</div>' +
+      '<div class="q-in">' + r.inbound + ' · ' + r.wt + 'KG+' + best + '</div></div>';
+  }).join('');
+}
+
+/* ===== 趋势（复用 v1，分组用 .pill） ===== */
+var TREND_WEEKS = ['第29周','第30周','第31周','第32周'];
+var TREND_SERIES = {
+  kp: [
+    {name:'普船特惠卡派', color:'#0071e3', data:[5.42,5.30,5.24,5.21]},
+    {name:'普船卡派',     color:'#30b352', data:[6.01,5.88,5.79,5.70]}
+  ],
+  fast: [
+    {name:'美森CLX正班卡派', color:'#ff9f0a', data:[9.72,9.63,9.55,9.48]},
+    {name:'美森MAX加班卡派', color:'#ff3b30', data:[8.36,8.31,8.20,8.14]}
+  ]
+};
+var _trendGroup = 'kp';
+function drawTrendGrid(group){
+  _trendGroup = group || 'kp';
+  var svg = document.getElementById('trendSvg');
+  if(!svg) return;
+  var series = TREND_SERIES[_trendGroup] || TREND_SERIES.kp;
+  var legend = document.getElementById('trendLegend');
+  if(legend) legend.innerHTML = series.map(function(s){ return '<span class="trend-lg"><span class="sw" style="background:' + s.color + '"></span>' + s.name + '</span>'; }).join('');
+  var W=900, H=300, padL=46, padR=20, padT=24, padB=34;
+  var all = [];
+  series.forEach(function(s){ all = all.concat(s.data); });
+  var yMin = Math.floor(Math.min.apply(null, all)) - 1;
+  var yMax = Math.ceil(Math.max.apply(null, all)) + 1;
+  var x = function(i){ return padL + (W - padL - padR) * (i / (TREND_WEEKS.length - 1)); };
+  var y = function(v){ return padT + (H - padT - padB) * (1 - (v - yMin) / (yMax - yMin)); };
+  var g = '';
+  var step = (yMax - yMin) >= 6 ? 2 : 1;
+  for(var v=yMin; v<=yMax; v+=step){
+    var yy=y(v);
+    g += '<line x1="'+padL+'" y1="'+yy+'" x2="'+(W-padR)+'" y2="'+yy+'" stroke="rgba(0,0,0,.06)" stroke-width="1"/>';
+    g += '<text x="'+(padL-10)+'" y="'+(yy+4)+'" text-anchor="end" font-size="11" fill="#aeaeb2" font-family="-apple-system,sans-serif">'+v+'</text>';
+  }
+  TREND_WEEKS.forEach(function(w,i){ g += '<text x="'+x(i)+'" y="'+(H-12)+'" text-anchor="middle" font-size="12" fill="#aeaeb2" font-family="-apple-system,sans-serif">'+w+'</text>'; });
+  series.forEach(function(s){
+    var pts = s.data.map(function(v,i){ return [x(i), y(v)]; });
+    var line = pts.map(function(p,i){ return (i===0?'M':'L')+p[0].toFixed(1)+' '+p[1].toFixed(1); }).join(' ');
+    var area = line + ' L ' + pts[pts.length-1][0] + ' ' + (H-padB) + ' L ' + pts[0][0] + ' ' + (H-padB) + ' Z';
+    g += '<path d="'+area+'" fill="'+s.color+'" opacity=".06"/>';
+    g += '<path d="'+line+'" fill="none" stroke="'+s.color+'" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>';
+    pts.forEach(function(p){ g += '<circle cx="'+p[0]+'" cy="'+p[1]+'" r="4" fill="#fff" stroke="'+s.color+'" stroke-width="2.5"/>'; });
+    var last = pts[pts.length-1];
+    g += '<text x="'+last[0]+'" y="'+(last[1]-10)+'" text-anchor="middle" font-size="12" font-weight="700" fill="'+s.color+'" font-family="-apple-system,sans-serif">'+s.data[s.data.length-1].toFixed(2)+'</text>';
+  });
+  svg.innerHTML = g;
+}
+
+/* ===== 通用：pill 渲染 ===== */
+function pills(el, items, cur, cb){
+  if(!el) return;
+  el.innerHTML = items.map(function(it){
+    var val = it.v, lab = it.t;
+    return '<span class="pill' + (val===cur?' on':'') + '" data-v="'+val+'">'+lab+'</span>';
+  }).join('');
+  el.querySelectorAll('.pill').forEach(function(p){
+    p.addEventListener('click', function(){
+      el.querySelectorAll('.pill').forEach(function(x){ x.classList.remove('on'); });
+      p.classList.add('on');
+      cb(p.getAttribute('data-v'));
+    });
+  });
+}
+
+/* ===== 智能比价 ===== */
+var RANK_GROUPS = {
+  kp: { label:'卡派系列', channels:['普船特惠卡派','普船卡派','纽约卡派'] },
+  fast: { label:'快船系列', channels:['美森CLX正班','美森MAX加班','合德ZIM快提'] }
+};
+var _rankWh = Object.keys(DEMO_WH_KEYS)[0], _rankCg = 'kp', _rankExpand = {};
+function renderRank(){
+  var grid = document.getElementById('rankGrid');
+  if(!grid) return;
+  var channels = RANK_GROUPS[_rankCg].channels;
+  var html = channels.map(function(ch){
+    var recs = DEMO_US.filter(function(r){ return r.w === _rankWh && r.c === ch; });
+    var bestByKey = {};
+    recs.forEach(function(r){ var k = r.s; if(!bestByKey[k] || r.p < bestByKey[k].p) bestByKey[k] = r; });
+    var rows = Object.keys(bestByKey).map(function(k){ return bestByKey[k]; });
+    rows.sort(function(a,b){ return a.p - b.p; });
+    var total = rows.length;
+    var show = _rankExpand[ch] ? total : Math.min(3, total);
+    var items = rows.slice(0, show).map(function(r, i){
+      var m = ['m1','m2','m3'][i] || '';
+      var gap = i===0 ? '' : ' 较最低 +' + (r.p - rows[0].p).toFixed(2);
+      return '<div class="rk-item"><span class="rk-medal ' + m + '">' + (i+1) + '</span>' +
+        '<span class="rk-sup">' + r.s + '<span class="raw">' + ch + ' · ' + (r.inbound||'') + ' · ' + r.wt + 'KG+</span></span>' +
+        '<span class="rk-rate num">' + r.p.toFixed(2) + '<span class="u">元/kg' + gap + '</span></span></div>';
+    }).join('');
+    var more = total > 3 ? '<button class="pill-link" data-more="'+ch+'" type="button">' + (_rankExpand[ch] ? '收起 ▲' : '展开更多 (' + total + ') ▼') + '</button>' : '';
+    return '<div class="rk-card"><h4>' + ch + '</h4>' + items + more + '</div>';
+  }).join('');
+  grid.innerHTML = html;
+  grid.querySelectorAll('[data-more]').forEach(function(b){
+    b.addEventListener('click', function(){
+      _rankExpand[b.getAttribute('data-more')] = !_rankExpand[b.getAttribute('data-more')];
+      renderRank();
+    });
+  });
+}
+
+/* ===== 截图报价（剧本化） ===== */
+var _shotBuf = [], _shotTimers = [];
+function _shotStatus(t){ var s=document.getElementById('shotStatus'); if(s) s.textContent=t; }
+function _shotStage(h){ var b=document.getElementById('shotStage'); if(b) b.innerHTML=h; }
+function _shotAppend(html){ _shotBuf.push(html); _shotStage(_shotBuf.join('<div style="height:8px"></div>')); }
+function _shotReset(){ _shotBuf=[]; _shotTimers.forEach(function(t){ clearTimeout(t); }); _shotTimers=[]; }
+function _shotQuery(wh){
+  var rowsHtml = '';
+  var recs = DEMO_US.filter(function(r){ return r.w === wh; });
+  var best = {};
+  recs.forEach(function(r){ var k=r.s+'|'+r.c; if(!best[k]||r.p<best[k].p) best[k]=r; });
+  var rows = Object.keys(best).map(function(k){ return best[k]; });
+  rows.sort(function(a,b){ return a.p-b.p; });
+  rows = rows.slice(0,6);
+  var minP = rows.length ? rows[0].p : 0;
+  rowsHtml = rows.map(function(r){
+    var u = r.u === 'per_cbm' ? '/CBM' : '/kg';
+    var t = (r.t_min && r.t_max) ? (r.t_min + '-' + r.t_max + '天') : '—';
+    var bestTag = (r.p === minP) ? '<span class="q-best-tag">最低</span>' : '';
+    return '<div class="q-row' + (r.p===minP?' best':'') + '"><div class="q-sup">'+r.s+'<span class="raw">'+r.c+' · '+(r.dd||'')+'</span></div><div class="q-ch">'+r.c+'</div><div class="q-rate num">'+r.p.toFixed(2)+'<span class="u">'+u+'</span></div><div class="q-time num">'+t+'</div><div class="q-in">'+r.inbound+' · '+r.wt+'KG+'+bestTag+'</div></div>';
+  }).join('');
+  _shotStage('<div class="q-result-head" style="margin-bottom:10px"><span class="q-wh">'+wh+' <span class="q-wh-badge">'+DEMO_GEO+'</span></span><span style="font-size:13px;color:var(--muted)">报价截图识别结果 · 已完成白名单校验</span></div><div class="q-head"><span>供应商</span><span>渠道</span><span style="text-align:right">单价</span><span style="text-align:right">时效</span><span style="text-align:right">进仓地</span></div>' + rowsHtml);
+}
+function _bindShotConfirm(){
+  var btn = document.getElementById('shotConfirm');
+  if(!btn) return;
+  btn.addEventListener('click', function(){ _shotBuf = []; _shotQuery('SUM1'); });
+}
+function _replay(){
+  _shotReset();
+  _shotStatus('正在识别报价截图…');
+  _shotAppend('<div class="muted">读取图片 ……</div>');
+  _shotTimers.push(setTimeout(function(){
+    _shotAppend('<div class="stg-line"><span class="chtag">OCR</span>仓码 token：<b>SUM1</b>（美西）</div><div class="stg-line"><span class="chtag">OCR</span>仓码 token：<b>SUMI</b>（美西）</div>');
+  }, 600));
+  _shotTimers.push(setTimeout(function(){
+    _shotAppend('<div class="stg-line"><span class="chtag">白名单</span>SUM1 → <span class="ok">可通过</span></div><div class="stg-line"><span class="chtag">白名单</span>SUMI → <span class="warn">未命中</span>，形近字符 I/1 存疑</div>');
+  }, 1200));
+  _shotTimers.push(setTimeout(function(){
+    _shotAppend('<div class="stg-line"><span class="chtag">候选</span>编辑距离最相似：<b>SUM1</b>（距离 1，I 读作 1）</div><div class="stg-line muted">疑似仓码必须让用户确认，禁止硬报。下方点「确认 SUM1 → 出报价」。</div><div style="margin-top:12px"><button id="shotConfirm" class="shot-btn ghost">确认 SUM1 → 出报价</button></div>');
+    _bindShotConfirm();
+  }, 1800));
+}
+
+/* ===== 报价校验（三道闸） ===== */
+var _auditCurVal = 'ok';
+var AUDIT_SCN = {
+  ok: { name:'正常货 · DDP 完整信息', gate1:'pass', gate2:'pass', gate3:'pass' },
+  size:{ name:'尺寸特长 · 长 >1.2m', gate1:'pass', gate2:'info', gate3:'pass' },
+  bd: { name:'带电 · 禁运品', gate1:'pass', gate2:'pass', gate3:'block' }
+};
+function auditRun(key){
+  var scn = AUDIT_SCN[key];
+  var out = '<div class="audit-top" style="margin-bottom:16px">';
+  var mw = [
+    {l:'计费重量', v:'52<span class="u" style="font-size:12px;color:var(--sub)">kg</span>', d:'max(实重 48, 体积重 52)，1CBM=363KG'},
+    {l:'比重优惠', v:'0.72<span class="u" style="font-size:12px;color:var(--sub)">元/kg</span>', d:'实重/体积 = 0.92，命中比重优惠档'},
+    {l:'附加费', v:'200<span class="u" style="font-size:12px;color:var(--sub)">元/票</span>', d:'报关费 200 元/票，其余逐条单列'}
+  ];
+  mw.forEach(function(m){ out += '<div class="audit-metric"><div class="wlabel">'+m.l+'</div><div class="wval num">'+m.v+'</div><div class="wdesc">'+m.d+'</div></div>'; });
+  out += '</div>';
+  out += '<div class="q-head" style="margin-top:6px"><span>费用项</span><span>取值</span><span style="text-align:right">单位金额</span><span style="text-align:right">说明</span><span style="text-align:right">是否纳入</span></div>';
+  var rows = [
+    ['基础运费','5.30元/kg','5.30','按重量段','yes'],
+    ['比重折扣','−0.72元/kg','−0.72','明码标价','yes'],
+    ['报关费','200元/票','200','每票','yes']
+  ];
+  rows.forEach(function(r){ out += '<div class="audit-row"><div>'+r[0]+'</div><div>'+r[1]+'</div><div style="text-align:right" class="num">'+r[2]+'</div><div style="text-align:right">'+r[3]+'</div><div style="text-align:right"><span class="audit-badge '+(r[4]==='yes'?'yes':'info')+'">纳入</span></div></div>'; });
+  // 三道闸
+  var gates = '<div style="margin-top:14px;padding:16px;border:1px solid var(--border);border-radius:14px;background:var(--bg-2)"><div style="font-size:13px;font-weight:700;margin-bottom:10px">三道闸校验</div>';
+  var g1 = scn.gate1, g2 = scn.gate2, g3 = scn.gate3;
+  gates += gateLine('闸一 · 拦报错价', g1=== 'pass', '单价与带宽正常，无异常值', '单价 5.30 落在合理区间，无超阈值/单位错判');
+  gates += gateLine('闸二 · 纯底价', g2==='pass', '附加费已单列，未自动加价', g2==='info' ? '尺寸附加费未计入——需提供尺寸，如实提示，绝不自动加价' : '附加费已单列，未自动加价');
+  gates += gateLine('闸三 · 不该接直接拒', g3==='pass', '可正常承接', g3==='block' ? '带电/禁运 → 拒绝，并给出替代方向（改走空运专线/换合规品名）' : '可正常承接');
+  gates += '</div>';
+  out += gates;
+  // 结论
+  var verdict;
+  if(g3==='block'){ verdict = '<div style="margin-top:12px;padding:12px 16px;border-radius:12px;background:rgba(208,52,44,.08);color:#d0342c;font-weight:700">✕ 不该接 → 直接拒：带电 / 禁运品，建议改走空运专线或换合规品名</div>'; }
+  else if(g2==='info'){ verdict = '<div style="margin-top:12px;padding:12px 16px;border-radius:12px;background:rgba(0,113,227,.08);color:var(--ac);font-weight:700">⚠ 放行，但尺寸附加费待补——先给核心报价，尺寸信息补齐后再修正</div>'; }
+  else { verdict = '<div style="margin-top:12px;padding:12px 16px;border-radius:12px;background:rgba(26,127,55,.08);color:#1a7f37;font-weight:700">✓ 三道闸通过 → 放行报价</div>'; }
+  out += verdict;
+  out += '<div class="audit-note">铁律：附加费逐条列出、不堆总价；自动核对单价±比重±附加费，绝不自动加价——宁可不报价，不可报错价。</div>';
+  var b = document.getElementById('auditStage');
+  if(b) b.innerHTML = out;
+}
+function gateLine(title, ok, okMsg, elseMsg){
+  var cls = ok ? 'ok' : 'warn';
+  var txt = ok ? ('通过 · ' + okMsg) : ('拦截 · ' + elseMsg);
+  return '<div class="stg-line"><span class="chtag" style="'+(ok?'color:#1a7f37':'color:#d0342c')+'">'+(ok?'✓':'✕')+'</span><span class="muted" style="flex:1">' + title + '</span><span class="' + cls + '">' + txt + '</span></div>';
+}
+
+/* ===== 价格监控（真交互） ===== */
+var _monCh = '普船特惠卡派';
+function renderMon(ch){
+  _monCh = ch || '普船特惠卡派';
+  var rows = MONITOR_SNAP[_monCh] || [];
+  var grid = document.getElementById('monGrid');
+  var t = document.getElementById('monTitle');
+  var sub = document.getElementById('monSub');
+  function movers(dir){
+    var arr = rows.filter(function(r){ return (dir>0 ? r.d>0 : r.d<0); });
+    return arr.slice(0,3);
+  }
+  function card(title, arr, isUp){
+    var items = arr.map(function(r,i){
+      var m = ['m1','m2','m3'][i]||'';
+      var cls = isUp ? 'mup' : 'mdn';
+      var arrow = isUp ? '↑' : '↓';
+      return '<div class="rk-item"><span class="rk-medal '+m+'">'+(i+1)+'</span><span class="rk-sup">'+r.s+'<span class="raw">'+arrow+' ' + Math.abs(r.d).toFixed(2) + ' 元/kg（'+ r.old.toFixed(2) +' → '+ r.cur.toFixed(2) +'）</span></span><span class="rk-rate num" style="color:'+(isUp?'#d0342c':'#1a7f37')+'">'+r.cur.toFixed(2)+'</span></div>';
+    }).join('');
+    return '<div class="rk-card"><h4>'+title+'</h4>'+(items||'<div class="muted" style="font-size:13px">暂无</div>')+'</div>';
+  }
+  var ups = movers(1), downs = movers(-1);
+  // 价差最大：同渠道高低价差
+  var byPrice = rows.slice().sort(function(a,b){ return b.cur - a.cur; });
+  var maxGap = rows.length ? (byPrice[0].cur - byPrice[byPrice.length-1].cur) : 0;
+  var spread = '<div class="rk-card"><h4>价差最大</h4><div class="rk-item"><span class="rk-medal m1">1</span><span class="rk-sup">'+_monCh+'<span class="raw">同供应商高低价差 '+maxGap.toFixed(2)+' 元/kg</span></span><span class="rk-rate num">'+maxGap.toFixed(2)+'</span></div></div>';
+  grid.innerHTML = card('涨价榜', ups, true) + card('降价榜', downs, false) + spread;
+  if(t) t.textContent = '本周价格变动 · ' + _monCh;
+  if(sub) sub.textContent = rows.length + ' 家供应商报价异动';
+  var alerts = document.getElementById('monAlerts');
+  var worst = rows.filter(function(r){ return Math.abs(r.d) >= 0.20; }).sort(function(a,b){ return Math.abs(b.d)-Math.abs(a.d); });
+  if(alerts){
+    alerts.innerHTML = worst.length ? '<div style="margin-top:14px;padding:12px 16px;border-radius:12px;background:rgba(208,52,44,.08);color:#d0342c;font-weight:700">⚠ 异常告警：' + worst.slice(0,2).map(function(r){ return r.s+' 波动 '+Math.abs(r.d).toFixed(2)+' 元/kg'; }).join('、') + '</div>' : '<div style="margin-top:14px;padding:12px 16px;border-radius:12px;background:rgba(26,127,55,.08);color:#1a7f37;font-weight:700">✓ 无异常告警</div>';
+  }
+}
+
+/* ===== 供应商评分（真交互） ===== */
+var _scoreDim = 'total';
+var SCORE_DIMS = [
+  {v:'total', t:'综合'}, {v:'price', t:'价格'}, {v:'time', t:'时效'}, {v:'cov', t:'覆盖'}, {v:'stab', t:'稳定'}
+];
+function renderScore(dim){
+  _scoreDim = dim || 'total';
+  var data = SCORE_DATA.slice();
+  data.sort(function(a,b){ return b[_scoreDim] - a[_scoreDim]; });
+  var grid = document.getElementById('scoreGrid');
+  var dimLabel = {total:'综合', price:'价格', time:'时效', cov:'覆盖', stab:'稳定'}[_scoreDim];
+  var top = data.slice(0,3);
+  var cards = top.map(function(r, idx){
+    var m = ['m1','m2','m3'][idx];
+    var score = r[_scoreDim];
+    var raw = _scoreDim === 'total' ? '综合评分 ' + r.total : dimLabel + '力 ' + score;
+    var breakdown = '<div class="rk-item" style="border-bottom:none"><span style="font-size:11px;color:var(--sub)">价格 ' + r.price + ' · 时效 ' + r.time + ' · 覆盖 ' + r.cov + ' · 稳定 ' + r.stab + '</span></div>';
+    return '<div class="rk-card"><h4>' + dimLabel + '第 ' + (idx+1) + '</h4>' +
+      '<div class="rk-item"><span class="rk-medal '+m+'">'+(idx+1)+'</span><span class="rk-sup">'+r.s+'<span class="raw">' + raw + '</span></span><span class="rk-rate num">'+score.toFixed(1)+'</span></div>' + breakdown + '</div>';
+  }).join('');
+  grid.innerHTML = cards + rankCard(data.slice(3,6), dimLabel);
+}
+function rankCard(rows, dimLabel){
+  if(!rows.length) return '';
+  var items = rows.map(function(r,i){
+    return '<div class="rk-item"><span class="rk-medal">'+(i+4)+'</span><span class="rk-sup">'+r.s+'<span class="raw">'+dimLabel+' '+r[_scoreDim].toFixed(1)+'</span></span><span class="rk-rate num">'+r[_scoreDim].toFixed(1)+'</span></div>';
+  }).join('');
+  return '<div class="rk-card" style="grid-column:1/-1"><h4>第 4–'+(rows.length+3)+' 名</h4>'+items+'</div>';
+}
+
+/* ===== 航运周报（轻量交互） ===== */
+var WEEKLY = {
+  this: [
+    {l:'运价走势', v:'3,436', d:'↑ 4.67%', up:1, x:'SCFI 综合指数本周反弹，美西线领涨。'},
+    {l:'全球运价', v:'4,712', d:'↑ 2.1%', up:1, x:'WCI 全球集装箱运价指数连续两周上行。'},
+    {l:'本周概览', v:'8万+', d:'条底价', up:0, x:'多家供应商、600+ 通达仓码，实时更新。'},
+    {l:'最优报价', v:'5.30', d:'元/kg', up:0, x:'SUM1 演示仓 · 虚拟供应商普船特惠卡派，51KG+ 起。'},
+    {l:'市场预测', v:'稳中', d:'偏强', up:1, x:'旺季临近，运价预计维持震荡上行。'},
+    {l:'重点关注', v:'800', d:'美元', up:0, x:'免税政策调整，低货值商品成本承压。'}
+  ],
+  last: [
+    {l:'运价走势', v:'3,283', d:'—', up:0, x:'上周 SCFI 低位整理，本周反弹。'},
+    {l:'全球运价', v:'4,615', d:'—', up:0, x:'上周 WCI 横盘，本周小幅上行。'},
+    {l:'本周概览', v:'8万+', d:'条底价', up:0, x:'多家供应商、600+ 通达仓码，实时更新。'},
+    {l:'最优报价', v:'5.42', d:'元/kg', up:0, x:'上周候选：SUM1 演示仓 · 普船特惠卡派。'},
+    {l:'市场预测', v:'稳中', d:'偏强', up:0, x:'旺季临近，运价预计维持震荡上行。'},
+    {l:'重点关注', v:'720', d:'美元', up:0, x:'上周免税政策窗口，报关口径待统一。'}
+  ]
+};
+var _weekCycle = 'this';
+function renderWeekly(cycle){
+  _weekCycle = cycle || 'this';
+  var arr = WEEKLY[_weekCycle];
+  var g = document.getElementById('weeklyGrid');
+  if(!g) return;
+  g.innerHTML = arr.map(function(c){
+    var dl = c.show_delta ? c.show_delta : (c.d ? '<span class="delta '+(c.up?'up':'')+'">' + c.d + '</span>' : '');
+    return '<div class="weekly-card"><div class="wlabel">'+c.l+'</div><div class="wval num">'+c.v+dl+'</div><div class="wdesc">'+c.x+'</div></div>';
+  }).join('');
+}
+
+/* ===== 初始化 ===== */
+(function(){
+  // 查价
+  var qInput = document.getElementById('qInput');
+  var qBtn = document.getElementById('qBtn');
+  function doQ(){ queryWarehouse(qInput ? qInput.value : Object.keys(DEMO_WH_KEYS)[0]); }
+  if(qBtn) qBtn.addEventListener('click', doQ);
+  if(qInput) qInput.addEventListener('keydown', function(e){ if(e.key==='Enter') doQ(); });
+  if(qInput) qInput.value = Object.keys(DEMO_WH_KEYS)[0];
+  doQ();
+  // 趋势
+  document.querySelectorAll('[data-tgrp]').forEach(function(t){
+    t.addEventListener('click', function(){
+      document.querySelectorAll('[data-tgrp]').forEach(function(x){ x.classList.remove('on'); });
+      t.classList.add('on');
+      drawTrendGrid(t.getAttribute('data-tgrp'));
+    });
+  });
+  drawTrendGrid('kp');
+
+  // 智能比价
+  var whCtrl = document.getElementById('rankWhCtrl');
+  var cgCtrl = document.getElementById('rankCgCtrl');
+  if(whCtrl) pills(whCtrl, Object.keys(DEMO_WH_KEYS).map(function(k){ return {v:k, t:k}; }), _rankWh, function(v){ _rankWh=v; renderRank(); });
+  if(cgCtrl) pills(cgCtrl, [{v:'kp', t:'卡派系列'},{v:'fast', t:'快船系列'}], _rankCg, function(v){ _rankCg=v; renderRank(); });
+  renderRank();
+
+  // 截图报价
+  var replayBtn = document.getElementById('shotReplay');
+  if(replayBtn){
+    replayBtn.addEventListener('click', function(){ _replay(); });
+    document.getElementById('shotStatus').textContent = '示例：识别一张含「SUM1 / SUMI」仓码的报价截图';
+    document.getElementById('shotStage').innerHTML = '<div class="muted">点击「重放识别」开始演示。</div>';
+  }
+
+  // 报价校验
+  var scnCtrl = document.getElementById('auditScnCtrl');
+  if(scnCtrl){
+    pills(scnCtrl, Object.keys(AUDIT_SCN).map(function(k){ return {v:k, t:AUDIT_SCN[k].name}; }), 'ok', function(v){ _auditCurVal=v; auditRun(v); });
+    var ar = document.getElementById('auditRun');
+    if(ar) ar.addEventListener('click', function(){ auditRun(_auditCurVal); });
+    auditRun('ok');
+  }
+
+  // 价格监控
+  var monChCtrl = document.getElementById('monChCtrl');
+  if(monChCtrl){
+    var chs = Object.keys(MONITOR_SNAP);
+    pills(monChCtrl, chs.map(function(ch){ return {v:ch, t:ch}; }), '普船特惠卡派', function(v){ renderMon(v); });
+    renderMon('普船特惠卡派');
+  }
+
+  // 供应商评分
+  var dimCtrl = document.getElementById('scoreDimCtrl');
+  if(dimCtrl){
+    pills(dimCtrl, SCORE_DIMS, 'total', function(v){ renderScore(v); });
+    renderScore('total');
+  }
+
+  // 航运周报
+  var wcCtrl = document.getElementById('weeklyCycleCtrl');
+  if(wcCtrl){
+    pills(wcCtrl, [{v:'this', t:'本周'},{v:'last', t:'上周'}], 'this', function(v){ renderWeekly(v); });
+    renderWeekly('this');
+  }
+})();
+
+
+/* 面板首次显示时重绘：SVG/图表在 display:none 下量不到尺寸 */
+document.addEventListener('click', function(e){
+  if (e.target && e.target.closest && e.target.closest('.pn-tab[data-pn="8"]')) {
+    setTimeout(function(){
+      try { drawTrendGrid(_trendGroup); } catch (x) {}
+      try { renderRank(); } catch (x) {}
+      try { renderMon(_monCh); } catch (x) {}
+    }, 150);
+  }
+}, true);
+
+
+/* Tab 切换（取自原 demo 页，作用域限定 #protoEmbed）*/
+(function(){
+  var root = document.getElementById('protoEmbed'); if (!root) return;
+  var tabs = root.querySelectorAll('.demo-tab'), panels = root.querySelectorAll('.demo-panel');
+  Array.prototype.forEach.call(tabs, function(t){
+    t.addEventListener('click', function(){
+      Array.prototype.forEach.call(tabs, function(x){ x.classList.remove('on'); });
+      t.classList.add('on');
+      Array.prototype.forEach.call(panels, function(p){ p.classList.remove('on'); });
+      var target = document.getElementById(t.getAttribute('data-panel'));
+      if (target) target.classList.add('on');
+    });
+  });
+})();
+})();
+</script>
 </body>
 </html>
